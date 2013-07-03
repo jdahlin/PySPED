@@ -86,7 +86,7 @@ if __name__ == '__main__':
         chave_nfe='35100411111111111111551010000000271123456789',
         numero_protocolo='135100018751878',
         justificativa='Somente um teste de cancelamento'
-        )
+    )
 
     print(processo)
     print()

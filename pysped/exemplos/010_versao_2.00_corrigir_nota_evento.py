@@ -86,7 +86,7 @@ if __name__ == '__main__':
         chave_nfe='35100411111111111111551010000000271123456789',
         numero_sequencia=1,
         correcao='Teste de correção de qualquer coisa'
-        )
+    )
 
     print(processo)
     print()

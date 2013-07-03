@@ -63,7 +63,7 @@ DESCEVENTO_CONF_RECEBIMENTO = {
     CONF_RECEBIMENTO_CIENCIA_OPERACAO: 'Ciencia da Operacao',
     CONF_RECEBIMENTO_DESCONHECIMENTO_OPERACAO: 'Desconhecimento da Operacao',
     CONF_RECEBIMENTO_OPERACAO_NAO_REALIZADA: 'Operacao nao Realizada',
-    }
+}
 
 
 class DetEventoConfRecebimento(DetEvento):

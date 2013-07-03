@@ -91,7 +91,7 @@ if __name__ == '__main__':
         serie='101',
         numero_inicial=18,
         justificativa='Testando a inutilização de NF-e'
-        )
+    )
 
     print(processo)
     print()

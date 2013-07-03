@@ -113,7 +113,7 @@ if __name__ == '__main__':
         numero_inicial=18,
         numero_final=28,
         justificativa='Testando a inutilização de NF-e'
-        )
+    )
 
     print(processo)
     print()

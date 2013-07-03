@@ -86,7 +86,7 @@ if __name__ == '__main__':
         cnpj='34274233006488',  # CNPJ do destinatário/gerador do evento
         chave_nfe='35100411111111111111551010000000271123456789',
         justificativa='Cancelamos a compra e o fornecedor perdeu o prazo de cancelamento da nota'
-        )
+    )
 
     print(processo)
     print()

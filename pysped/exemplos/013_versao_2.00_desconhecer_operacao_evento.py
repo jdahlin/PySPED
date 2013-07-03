@@ -85,7 +85,7 @@ if __name__ == '__main__':
     processo = p.desconhecer_operacao_evento(
         cnpj='34274233006488',  # CNPJ do destinatário/gerador do evento
         chave_nfe='35100411111111111111551010000000271123456789',
-        )
+    )
 
     print(processo)
     print()

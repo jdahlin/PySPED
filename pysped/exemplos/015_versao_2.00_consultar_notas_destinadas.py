@@ -102,7 +102,7 @@ if __name__ == '__main__':
         # tipo_emissao=CONS_NFE_SEM_CIENCIA_OPERACAO,
         # tipo_nfe=CONS_NFE_EMISSAO_TODOS_EMITENTES,
         # tipo_nfe=CONS_NFE_EMISSAO_SOMENTE_TERCEIROS,
-        )
+    )
 
     print(processo)
     print()
