@@ -11,3 +11,6 @@ build/
 dist/
 *egg*/
 docs/_build
+
+# IDE/editors
+.idea
