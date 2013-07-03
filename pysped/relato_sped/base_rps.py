@@ -70,10 +70,10 @@ LARGURA_PAISAGEM = PAISAGEM[0] - MARGEM_ESQUERDA - MARGEM_DIREITA
 #
 FONTES_ADICIONAIS = {
     # u'Gentium Book Basic': (
-        #(u'Gentium Book Basic'            , DIRNAME + u'/fonts/genbkbasr.ttf' , False, False),
-        #(u'Gentium Book Basic Bold'       , DIRNAME + u'/fonts/genbkbasb.ttf' , True , False),
-        #(u'Gentium Book Basic Italic'     , DIRNAME + u'/fonts/genbkbasi.ttf' , False, True),
-        #(u'Gentium Book Basic Bold Italic', DIRNAME + u'/fonts/genbkbasbi.ttf', True , True),
+    #(u'Gentium Book Basic'            , DIRNAME + u'/fonts/genbkbasr.ttf' , False, False),
+    #(u'Gentium Book Basic Bold'       , DIRNAME + u'/fonts/genbkbasb.ttf' , True , False),
+    #(u'Gentium Book Basic Italic'     , DIRNAME + u'/fonts/genbkbasi.ttf' , False, True),
+    #(u'Gentium Book Basic Bold Italic', DIRNAME + u'/fonts/genbkbasbi.ttf', True , True),
     #),
     u'DejaVu Sans': (
         (u'DejaVu Sans', DIRNAME + u'/fonts/DejaVuSans.ttf', False, False),
