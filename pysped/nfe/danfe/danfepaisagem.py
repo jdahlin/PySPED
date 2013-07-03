@@ -400,7 +400,7 @@ if __name__ == '__main__':
 
     registra_fontes()
 
-    registros = [{'id': 1}, {'id': 1}, {'id': 1}, {'id': 1}, {'id': 1}, {'id': 1}, {'id': 1}, {'id': 1}, {'id': 1}, {'id': 1},]
+    registros = [{'id': 1}, {'id': 1}, {'id': 1}, {'id': 1}, {'id': 1}, {'id': 1}, {'id': 1}, {'id': 1}, {'id': 1}, {'id': 1}, ]
 
     d = DANFEPaisagem()
     # d.on_new_page = OnNewPage

@@ -154,13 +154,13 @@ class Certificado(object):
             # nome do proprietário
             #
             if ':' in self.proprietario['CN']:
-                return self.proprietario['CN'].rsplit(':',1)[0]
+                return self.proprietario['CN'].rsplit(':', 1)[0]
             else:
                 return self.proprietario['CN']
         else:  # chave CN ainda não disponível
             try:
                 self.prepara_certificado_arquivo_pfx()
-                return self.proprietario['CN'].rsplit(':',1)[0]
+                return self.proprietario['CN'].rsplit(':', 1)[0]
             except IOError:  # arquivo do certificado não disponível
                 return ''
 
@@ -172,13 +172,13 @@ class Certificado(object):
             # nome do proprietário
             #
             if ':' in self.proprietario['CN']:
-                return self.proprietario['CN'].rsplit(':',1)[1]
+                return self.proprietario['CN'].rsplit(':', 1)[1]
             else:
                 return ''
         else:  # chave CN ainda não disponível
             try:
                 self.prepara_certificado_arquivo_pfx()
-                return self.proprietario['CN'].rsplit(':',1)[1]
+                return self.proprietario['CN'].rsplit(':', 1)[1]
             except IOError:  # arquivo do certificado não disponível
                 return ''
 
