@@ -185,7 +185,7 @@ class DANFE(object):
             # Pagamento a prazo
             if (self.NFe.infNFe.ide.indPag.valor == 1) or \
                 (len(self.NFe.infNFe.cobr.dup) > 1) or \
-                ((len(self.NFe.infNFe.cobr.dup) == 1) and \
+                ((len(self.NFe.infNFe.cobr.dup) == 1) and
                 (self.NFe.infNFe.cobr.dup[0].dVenc.valor.toordinal() > self.NFe.infNFe.ide.dEmi.valor.toordinal())):
 
                 if self.imprime_duplicatas:
