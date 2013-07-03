@@ -6,7 +6,7 @@ setup(
     author = "Aristides Caldeira",
     author_email = 'aristides.caldeira@tauga.com.br',
     test_suite='tests',
-    keywords = ['nfe', 'nfse', 'cte', 'sped', 'edf', 'ecd'],
+    keywords = ['nfe', 'nfse', 'cte', 'sped'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Plugins',
@@ -17,10 +17,10 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
     packages = [
-        'pysped', 'pysped.cte', 'pysped.efd', 'pysped.nfe',
+        'pysped', 'pysped.cte', 'pysped.nfe',
         'pysped.nfe.leiaute', 'pysped.nfe.danfe', 'pysped.nfe.manual_300',
         'pysped.nfe.manual_401', 'pysped.nfse', 'pysped.xml_sped',
-        'pysped.ecd', 'pysped.exemplos', 'pysped.nf_paulista',
+        'pysped.exemplos',
         'pysped.relato_sped',
     ],
     package_data = {
