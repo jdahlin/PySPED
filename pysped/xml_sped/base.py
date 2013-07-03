@@ -453,6 +453,7 @@ class TagData(TagCaracter):
         else:
             return self._valor_data.strftime('%d/%m/%Y')
 
+
 class TagHora(TagData):
     def set_valor(self, novo_valor):
         if isinstance(novo_valor, basestring):
@@ -841,6 +842,7 @@ def tirar_acentos(texto):
 
     return texto
 
+
 def por_acentos(texto):
     if not texto:
         return texto
@@ -858,6 +860,7 @@ def por_acentos(texto):
     texto = texto.replace('&AMP;', '&')
 
     return texto
+
 
 def tira_abertura(texto):
     # aberturas = (
@@ -899,6 +902,7 @@ def tira_abertura(texto):
 
     return texto
 
+
 def _tipo_para_string(valor, tipo, obrigatorio, dec_min):
     if (not obrigatorio) and (not valor):
         return '', ''
@@ -930,6 +934,7 @@ def _tipo_para_string(valor, tipo, obrigatorio, dec_min):
 
     return valor, decimais
 
+
 def _string_para_tipo(valor, tipo):
     if valor == None:
         return valor
@@ -945,6 +950,7 @@ def _string_para_tipo(valor, tipo):
 
     return valor
 
+
 def formata_datahora(valor, tipo):
     if (tipo == 'd') and isinstance(valor, (datetime, date,)):
         valor = '%04d-%02d-%02d' % (valor.year, valor.month, valor.day)
@@ -955,6 +961,7 @@ def formata_datahora(valor, tipo):
         valor = '%04d-%02d-%02dT%02d:%02d:%02d' % (valor.year, valor.month, valor.day, valor.hour, valor.minute, valor.second)
 
     return valor
+
 
 def somente_ascii(funcao):
     '''

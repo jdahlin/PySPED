@@ -823,6 +823,7 @@ class FaturaAVistaRetrato(BandaDANFE):
 
         self.height = 1.12*cm
 
+
 class FaturaAPrazoRetrato(BandaDANFE):
     def __init__(self):
         super(FaturaAPrazoRetrato, self).__init__()

@@ -45,6 +45,7 @@ from pysped.nfe.danfe.danferetrato import DANFERetrato
 from pysped.nfe.leiaute import ProtNFe_200, RetCancNFe_200, ProcCancNFe_200
 from pysped.nfe.leiaute import ProcEventoCancNFe_100
 
+
 class DANFE(object):
     def __init__(self):
         self.imprime_canhoto        = True

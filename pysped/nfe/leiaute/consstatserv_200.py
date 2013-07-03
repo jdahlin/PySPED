@@ -57,6 +57,7 @@ class ConsStatServ(consstatserv_107.ConsStatServ):
         self.caminho_esquema = os.path.join(DIRNAME, 'schema', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'consStatServ_v2.00.xsd'
 
+
 class RetConsStatServ(consstatserv_107.RetConsStatServ):
     def __init__(self):
         super(RetConsStatServ, self).__init__()

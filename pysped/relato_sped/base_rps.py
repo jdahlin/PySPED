@@ -183,6 +183,7 @@ class Titulo(Label):
         self.style = TITULO_CAMPO
         self.height = 0.42*cm
 
+
 class Campo(ObjectValue):
     def __init__(self, *args, **kwargs):
         super(Campo, self).__init__(*args, **kwargs)
@@ -192,6 +193,7 @@ class Campo(ObjectValue):
         self.padding_right = 0.1*cm
         self.style = DADO_CAMPO
         self.height = 0.42*cm
+
 
 class Texto(Label):
     def __init__(self, *args, **kwargs):

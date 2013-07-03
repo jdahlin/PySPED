@@ -194,6 +194,7 @@ class LocalRetiradaPaisagem(BandaDANFE):
 
         self.height = 1.12*cm
 
+
 class LocalEntregaPaisagem(BandaDANFE):
     def __init__(self):
         super(LocalEntregaPaisagem, self).__init__()

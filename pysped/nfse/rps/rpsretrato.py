@@ -176,6 +176,7 @@ class CabecalhoRetrato(BandaRPS):
         # self.inclui_campo(nome='remetente_cnpj', titulo=u'CNPJ', conteudo=u'NFe.cnpj_emitente_formatado', top=4.70*cm, left=13*cm, width=6.4*cm, margem_direita=True)
         self.height = 2.3*cm
 
+
 class PrestadorRetrato(BandaRPS):
     def __init__(self):
         super(PrestadorRetrato, self).__init__()

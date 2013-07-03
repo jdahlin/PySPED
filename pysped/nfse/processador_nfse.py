@@ -8,8 +8,10 @@ from __future__ import division, print_function, unicode_literals
 from rps.rpsretrato import RPSRetrato
 from geraldo.generators import PDFGenerator
 
+
 class _Prestador(object):
     pass
+
 
 class RPS(object):
     def __init__(self):
