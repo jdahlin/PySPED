@@ -166,9 +166,9 @@ class DANFE(object):
         # A NF-e foi cancelada por um evento de cancelamento, , no DANFE imprimir o "carimbo" de cancelamento
         if self.procEventoCancNFe.retEvento.infEvento.nProt.valor:
             if self.procEventoCancNFe.evento.infEvento.detEvento.xJust.valor:
-              self.danfe.remetente.obs_cancelamento_com_motivo_evento()
+                self.danfe.remetente.obs_cancelamento_com_motivo_evento()
             else:
-              self.danfe.remetente.obs_cancelamento_evento()
+                self.danfe.remetente.obs_cancelamento_evento()
 
         # Observação de ausência de valor fiscal
         # se não houver protocolo ou se o ambiente for de homologação
