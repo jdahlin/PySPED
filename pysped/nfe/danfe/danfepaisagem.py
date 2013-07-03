@@ -93,6 +93,7 @@ class DANFEPaisagem(Report):
 
 
 class CanhotoPaisagem(BandaDANFE):
+
     def __init__(self):
         super(CanhotoPaisagem, self).__init__()
         self.elements = []
@@ -112,6 +113,7 @@ class CanhotoPaisagem(BandaDANFE):
 
 
 class RemetentePaisagem(BandaDANFE):
+
     def __init__(self):
         super(RemetentePaisagem, self).__init__()
         self.elements = []
@@ -156,6 +158,7 @@ class RemetentePaisagem(BandaDANFE):
 
 
 class DestinatarioPaisagem(BandaDANFE):
+
     def __init__(self):
         super(DestinatarioPaisagem, self).__init__()
         self.elements = []
@@ -183,6 +186,7 @@ class DestinatarioPaisagem(BandaDANFE):
 
 
 class LocalRetiradaPaisagem(BandaDANFE):
+
     def __init__(self):
         super(LocalRetiradaPaisagem, self).__init__()
         self.elements = []
@@ -196,6 +200,7 @@ class LocalRetiradaPaisagem(BandaDANFE):
 
 
 class LocalEntregaPaisagem(BandaDANFE):
+
     def __init__(self):
         super(LocalEntregaPaisagem, self).__init__()
         self.elements = []
@@ -209,6 +214,7 @@ class LocalEntregaPaisagem(BandaDANFE):
 
 
 class FaturaAVistaPaisagem(BandaDANFE):
+
     def __init__(self):
         super(FaturaAVistaPaisagem, self).__init__()
         self.elements = []
@@ -222,6 +228,7 @@ class FaturaAVistaPaisagem(BandaDANFE):
 
 
 class CalculoImpostoPaisagem(BandaDANFE):
+
     def __init__(self):
         super(CalculoImpostoPaisagem, self).__init__()
         self.elements = []
@@ -246,6 +253,7 @@ class CalculoImpostoPaisagem(BandaDANFE):
 
 
 class TransportePaisagem(BandaDANFE):
+
     def __init__(self):
         super(TransportePaisagem, self).__init__()
         self.elements = []
@@ -293,6 +301,7 @@ class TransportePaisagem(BandaDANFE):
 
 
 class CabProdutoPaisagem(BandaDANFE):
+
     def __init__(self):
         super(CabProdutoPaisagem, self).__init__()
         self.elements = []
@@ -335,6 +344,7 @@ class CabProdutoPaisagem(BandaDANFE):
 
 
 class DetProdutoPaisagem(BandaDANFE):
+
     def __init__(self):
         super(DetProdutoPaisagem, self).__init__()
         self.elements = []
@@ -358,6 +368,7 @@ class DetProdutoPaisagem(BandaDANFE):
 
 
 class ISSPaisagem(BandaDANFE):
+
     def __init__(self):
         super(ISSPaisagem, self).__init__()
         self.elements = []
@@ -372,6 +383,7 @@ class ISSPaisagem(BandaDANFE):
 
 
 class DadosAdicionaisPaisagem(BandaDANFE):
+
     def __init__(self):
         super(DadosAdicionaisPaisagem, self).__init__()
         self.elements = []

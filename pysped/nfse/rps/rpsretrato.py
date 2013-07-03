@@ -64,6 +64,7 @@ from pysped.relato_sped.base_rps import (BandaRPS,
 
 
 class RPSRetrato(Report):
+
     def __init__(self, *args, **kargs):
         super(RPSRetrato, self).__init__(*args, **kargs)
         self.title = 'RPS - Recibo Provisório de Serviços'
@@ -107,6 +108,7 @@ class RPSRetrato(Report):
 
 
 class CabecalhoRetrato(BandaRPS):
+
     def __init__(self):
         super(CabecalhoRetrato, self).__init__()
         self.elements = []
@@ -178,6 +180,7 @@ class CabecalhoRetrato(BandaRPS):
 
 
 class PrestadorRetrato(BandaRPS):
+
     def __init__(self):
         super(PrestadorRetrato, self).__init__()
         self.elements = []
@@ -218,6 +221,7 @@ class PrestadorRetrato(BandaRPS):
 
 
 class TomadorRetrato(BandaRPS):
+
     def __init__(self):
         super(TomadorRetrato, self).__init__()
         self.elements = []
@@ -253,6 +257,7 @@ class TomadorRetrato(BandaRPS):
 
 
 class DiscriminacaoRetrato(BandaRPS):
+
     def __init__(self):
         super(DiscriminacaoRetrato, self).__init__()
         self.elements = []
@@ -280,6 +285,7 @@ class DiscriminacaoRetrato(BandaRPS):
 
 
 class DetItemRetrato(BandaRPS):
+
     def __init__(self):
         super(DetItemRetrato, self).__init__()
         self.elements = []
@@ -295,6 +301,7 @@ class DetItemRetrato(BandaRPS):
 
 
 class RodapeRetrato(BandaRPS):
+
     def __init__(self):
         super(RodapeRetrato, self).__init__()
         self.elements = []

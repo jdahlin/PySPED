@@ -52,6 +52,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class EnviNFe(XMLNFe):
+
     def __init__(self):
         super(EnviNFe, self).__init__()
         self.versao  = TagDecimal(nome='enviNFe', codigo='AP02', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.10', raiz='/')
@@ -84,6 +85,7 @@ class EnviNFe(XMLNFe):
 
 
 class InfRec(XMLNFe):
+
     def __init__(self):
         super(InfRec, self).__init__()
         self.nRec     = TagCaracter(nome='nRec'     , codigo='AR08', tamanho=[1, 15, 1], raiz='//retEnviNFe/infRec')
@@ -112,6 +114,7 @@ class InfRec(XMLNFe):
 
 
 class RetEnviNFe(XMLNFe):
+
     def __init__(self):
         super(RetEnviNFe, self).__init__()
         self.versao   = TagDecimal(nome='retEnviNFe', codigo='AR02' , propriedade='versao', namespace=NAMESPACE_NFE, valor='1.10', raiz='/')

@@ -49,6 +49,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class CTeCabecMsg(XMLNFe):
+
     def __init__(self):
         super(CTeCabecMsg, self).__init__()
         self.webservice = ''
@@ -74,6 +75,7 @@ class CTeCabecMsg(XMLNFe):
 
 
 class CTeDadosMsg(XMLNFe):
+
     def __init__(self):
         super(CTeDadosMsg, self).__init__()
         self.webservice = ''
@@ -93,6 +95,7 @@ class CTeDadosMsg(XMLNFe):
 
 
 class SOAPEnvio(XMLNFe):
+
     def __init__(self):
         super(SOAPEnvio, self).__init__()
         self.webservice = ''
@@ -138,6 +141,7 @@ class SOAPEnvio(XMLNFe):
 
 
 class SOAPRetorno(XMLNFe):
+
     def __init__(self):
         super(SOAPRetorno, self).__init__()
         self.webservice = ''

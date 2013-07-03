@@ -52,6 +52,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class ConsStatServ(XMLNFe):
+
     def __init__(self):
         super(ConsStatServ, self).__init__()
         self.versao = TagDecimal(nome='consStatServ', codigo='FP01', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.07', raiz='/')
@@ -82,6 +83,7 @@ class ConsStatServ(XMLNFe):
 
 
 class RetConsStatServ(XMLNFe):
+
     def __init__(self):
         super(RetConsStatServ, self).__init__()
         self.versao    = TagDecimal(nome='retConsStatServ', codigo='FR01', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.07', raiz='/')

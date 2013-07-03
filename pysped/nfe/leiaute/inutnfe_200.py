@@ -51,12 +51,14 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class InfInutEnviado(inutnfe_107.InfInutEnviado):
+
     def __init__(self):
         super(InfInutEnviado, self).__init__()
         self.Id     = TagCaracter(nome='infInut', codigo='DP03', tamanho=[43, 43] , raiz='//inutNFe', propriedade='Id')
 
 
 class InutNFe(inutnfe_107.InutNFe):
+
     def __init__(self):
         super(InutNFe, self).__init__()
         self.versao  = TagDecimal(nome='inutNFe', codigo='DP01', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
@@ -84,11 +86,13 @@ class InutNFe(inutnfe_107.InutNFe):
 
 
 class InfInutRecebido(inutnfe_107.InfInutRecebido):
+
     def __init__(self):
         super(InfInutRecebido, self).__init__()
 
 
 class RetInutNFe(inutnfe_107.RetInutNFe):
+
     def __init__(self):
         super(RetInutNFe, self).__init__()
         self.versao = TagDecimal(nome='retInutNFe', codigo='DR01', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
@@ -98,6 +102,7 @@ class RetInutNFe(inutnfe_107.RetInutNFe):
 
 
 class ProcInutNFe(inutnfe_107.ProcInutNFe):
+
     def __init__(self):
         super(ProcInutNFe, self).__init__()
         #

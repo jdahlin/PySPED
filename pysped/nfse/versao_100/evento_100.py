@@ -48,6 +48,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class ChaveNFe(XMLNFe):
+
     def __init__(self):
         super(ChaveNFe, self).__init__()
         self.InscricaoPrestador   = TagCaracter(nome='InscricaoPrestador'  , tamanho=[ 6,  11]   , raiz='//*/ChaveNFe')
@@ -79,6 +80,7 @@ class ChaveNFe(XMLNFe):
 
 
 class ChaveRPS(XMLNFe):
+
     def __init__(self):
         super(ChaveRPS, self).__init__()
         self.InscricaoPrestador   = TagCaracter(nome='InscricaoPrestador'  , tamanho=[ 6,  11]   , raiz='//*/ChaveRPS')
@@ -113,6 +115,7 @@ class ChaveRPS(XMLNFe):
 
 
 class Alerta(XMLNFe):
+
     def __init__(self):
         super(Alerta, self).__init__()
         self.Codigo    = TagInteiro(nome='Codigo'    , tamanho=[3, 4, 3], raiz='//Alerta')
@@ -141,6 +144,7 @@ class Alerta(XMLNFe):
 
 
 class Erro(XMLNFe):
+
     def __init__(self):
         super(Erro, self).__init__()
         self.Codigo    = TagInteiro(nome='Codigo'    , tamanho=[3, 4, 3], raiz='//Erro')

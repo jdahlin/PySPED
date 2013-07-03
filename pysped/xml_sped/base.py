@@ -61,6 +61,7 @@ locale.setlocale(locale.LC_COLLATE, b'pt_BR.UTF-8')
 
 
 class NohXML(object):
+
     def __init__(self, *args, **kwargs):
         self._xml = None
         self.alertas = []
@@ -163,6 +164,7 @@ class NohXML(object):
 
 
 class ErroObrigatorio(Exception):
+
     def __init__(self, codigo, nome, propriedade):
         if propriedade:
             self.value = 'No campo código ' + codigo + ', "' + nome + '", a propriedade "' + propriedade + '" é de envio obrigatório, mas não foi preenchida.'
@@ -177,6 +179,7 @@ class ErroObrigatorio(Exception):
 
 
 class TamanhoInvalido(Exception):
+
     def __init__(self, codigo, nome, valor, tam_min=None, tam_max=None, dec_min=None, dec_max=None):
         if tam_min:
            self.value = 'O campo código ' + codigo + ', "' + nome + '", deve ter o tamanho mínimo de ' + unicode(tam_min) + ', mas o tamanho enviado foi ' + unicode(len(unicode(valor))) + ': ' + unicode(valor)
@@ -195,6 +198,7 @@ class TamanhoInvalido(Exception):
 
 
 class ErroCaracterInvalido(Exception):
+
     def __init__(self, codigo, nome, propriedade, valor, caracter):
         if propriedade:
             self.value = 'No campo código ' + codigo + ', "' + nome + '", a propriedade "' + propriedade + '" possui um caracter inválido: "' + caracter + '".'
@@ -209,6 +213,7 @@ class ErroCaracterInvalido(Exception):
 
 
 class TagCaracter(NohXML):
+
     def __init__(self, *args, **kwargs):
         super(TagCaracter, self).__init__(*args, **kwargs)
         self.codigo = ''
@@ -334,6 +339,7 @@ class TagCaracter(NohXML):
 
 
 class TagBoolean(TagCaracter):
+
     def __init__(self, **kwargs):
         super(TagBoolean, self).__init__(**kwargs)
         self._valor_boolean = None
@@ -405,6 +411,7 @@ class TagBoolean(TagCaracter):
 
 
 class TagData(TagCaracter):
+
     def __init__(self, **kwargs):
         super(TagData, self).__init__(**kwargs)
         self._valor_data = None
@@ -455,6 +462,7 @@ class TagData(TagCaracter):
 
 
 class TagHora(TagData):
+
     def set_valor(self, novo_valor):
         if isinstance(novo_valor, basestring):
             if novo_valor:
@@ -486,6 +494,7 @@ class TagHora(TagData):
 
 
 class TagDataHora(TagData):
+
     def set_valor(self, novo_valor):
         if isinstance(novo_valor, basestring):
             if novo_valor:
@@ -519,6 +528,7 @@ class TagDataHora(TagData):
 
 
 class TagDataHoraUTC(TagData):
+
     def __init__(self, **kwargs):
         super(TagDataHoraUTC, self).__init__(**kwargs)
         #
@@ -616,6 +626,7 @@ class TagDataHoraUTC(TagData):
 
 
 class TagInteiro(TagCaracter):
+
     def __init__(self, **kwargs):
         super(TagInteiro, self).__init__(**kwargs)
         self._valor_inteiro = 0
@@ -660,6 +671,7 @@ class TagInteiro(TagCaracter):
 
 
 class TagDecimal(TagCaracter):
+
     def __init__(self, *args, **kwargs):
         self._valor_decimal = Decimal('0.0')
         self._valor_string = '0.0'
@@ -782,6 +794,7 @@ class TagDecimal(TagCaracter):
 
 
 class XMLNFe(NohXML):
+
     def __init__(self, *args, **kwargs):
         super(XMLNFe, self).__init__(*args, **kwargs)
         self._xml = None

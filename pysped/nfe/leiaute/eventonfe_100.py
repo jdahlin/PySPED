@@ -53,6 +53,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class DetEvento(XMLNFe):
+
     def __init__(self):
         super(DetEvento, self).__init__()
         self.versao     = TagDecimal(nome='detEvento'  , codigo='HP18', propriedade='versao', valor='1.00', raiz='/')
@@ -74,6 +75,7 @@ class DetEvento(XMLNFe):
 
 
 class InfEvento(XMLNFe):
+
     def __init__(self):
         super(InfEvento, self).__init__()
         self.Id         = TagCaracter(nome='infEvento', codigo='HP07', tamanho=[54, 54]    , raiz='//evento', propriedade='Id')
@@ -129,6 +131,7 @@ class InfEvento(XMLNFe):
 
 
 class Evento(XMLNFe):
+
     def __init__(self):
         super(Evento, self).__init__()
         self.versao    = TagDecimal(nome='evento', codigo='HP04', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.00', raiz='/')
@@ -161,6 +164,7 @@ class Evento(XMLNFe):
 
 
 class InfEventoRecebido(XMLNFe):
+
     def __init__(self):
         super(InfEventoRecebido, self).__init__()
         self.Id          = TagCaracter(nome='infEvento'  , codigo='HR12', tamanho=[15, 15]    , raiz='//retEvento', propriedade='Id', obrigatorio=False)
@@ -230,6 +234,7 @@ class InfEventoRecebido(XMLNFe):
 
 
 class RetEvento(XMLNFe):
+
     def __init__(self):
         super(RetEvento, self).__init__()
         self.versao = TagDecimal(nome='retEvento', codigo='HR10', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.00', raiz='/')
@@ -268,6 +273,7 @@ class RetEvento(XMLNFe):
 
 
 class ProcEvento(XMLNFe):
+
     def __init__(self):
         super(ProcEvento, self).__init__()
         self.versao = TagDecimal(nome='procEventoNFe', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.00', raiz='/')
@@ -294,6 +300,7 @@ class ProcEvento(XMLNFe):
 
 
 class EnvEvento(XMLNFe):
+
     def __init__(self):
         super(EnvEvento, self).__init__()
         self.versao = TagDecimal(nome='envEvento', codigo='HP02', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.00', raiz='/')
@@ -324,6 +331,7 @@ class EnvEvento(XMLNFe):
 
 
 class RetEnvEvento(XMLNFe):
+
     def __init__(self):
         super(RetEnvEvento, self).__init__()
         self.versao    = TagDecimal(nome='retEnvEvento', codigo='HR02', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.00', raiz='/')

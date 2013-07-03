@@ -49,6 +49,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class _Cabecalho(XMLNFe):
+
     def __init__(self):
         super(_Cabecalho, self).__init__()
         self.CodCidade        = TagInteiro(nome='CodCidade'        , tamanho=[ 1, 10, 1], raiz='//nfse:ReqConsultaLote/Cabecalho')
@@ -77,6 +78,7 @@ class _Cabecalho(XMLNFe):
 
 
 class ReqConsultaLote(XMLNFe):
+
     def __init__(self):
         super(ReqConsultaLote, self).__init__()
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')

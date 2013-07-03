@@ -51,6 +51,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class Dup(XMLNFe):
+
     def __init__(self):
         super(Dup, self).__init__()
         self.nDup  = TagCaracter(nome='nDup', codigo='Y08', tamanho=[1, 60],                        raiz='//dup', obrigatorio=False, namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
@@ -79,6 +80,7 @@ class Dup(XMLNFe):
 
 
 class Fat(XMLNFe):
+
     def __init__(self):
         super(Fat, self).__init__()
         self.nFat  = TagCaracter(nome='nFat', codigo='Y03', tamanho=[1, 60],                        raiz='//CTe/infCte/infCTeNorm/cobr/fat', obrigatorio=False)
@@ -110,6 +112,7 @@ class Fat(XMLNFe):
 
 
 class Cobr(XMLNFe):
+
     def __init__(self):
         super(Cobr, self).__init__()
         self.fat = Fat()
@@ -144,6 +147,7 @@ class Cobr(XMLNFe):
 
 
 class InfQ(XMLNFe):
+
     def __init__(self):
         super(InfQ, self).__init__()
         self.cUnid  = TagCaracter(nome='cUnid', tamanho=[2, 2, 2] ,                     raiz='//infQ', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
@@ -169,6 +173,7 @@ class InfQ(XMLNFe):
 
 
 class InfCarga(XMLNFe):
+
     def __init__(self):
         super(InfCarga, self).__init__()
         self.vCarga  = TagDecimal(nome='vCarga'  , tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//CTe/infCte/infCTeNorm/infCarga', obrigatorio=False)
@@ -207,6 +212,7 @@ class InfCarga(XMLNFe):
 
 
 class InfCTeNorm(XMLNFe):
+
     def __init__(self):
         super(InfCTeNorm, self).__init__()
         self.infCarga = InfCarga()
@@ -263,6 +269,7 @@ class InfCTeNorm(XMLNFe):
 
 
 class TagCSTICMS(TagCaracter):
+
     def __init__(self, *args, **kwargs):
         super(TagCSTICMS, self).__init__(*args, **kwargs)
         self.nome = 'CST'
@@ -380,6 +387,7 @@ class TagCSTICMS(TagCaracter):
 
 
 class ICMS(XMLNFe):
+
     def __init__(self):
         super(ICMS, self).__init__()
         # self.orig     = TagInteiro(nome='orig'     , tamanho=[1,  1, 1],                     raiz='')
@@ -483,6 +491,7 @@ class ICMS(XMLNFe):
 
 
 class Imp(XMLNFe):
+
     def __init__(self):
         super(Imp, self).__init__()
         self.ICMS     = ICMS()
@@ -505,6 +514,7 @@ class Imp(XMLNFe):
 
 
 class VPrest(XMLNFe):
+
     def __init__(self):
         super(VPrest, self).__init__()
         self.vTPrest = TagDecimal(nome='vTPrest', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='//CTe/infCte/vPrest')
@@ -527,6 +537,7 @@ class VPrest(XMLNFe):
 
 
 class LocEnt(XMLNFe):
+
     def __init__(self):
         super(LocEnt, self).__init__()
         self.CNPJ    = TagCaracter(nome='CNPJ'   , codigo='E02', tamanho=[ 0, 14]   , raiz='//CTe/infCte/dest/locEnt', obrigatorio=False)
@@ -580,6 +591,7 @@ class LocEnt(XMLNFe):
 
 
 class EnderDest(XMLNFe):
+
     def __init__(self):
         super(EnderDest, self).__init__()
         self.xLgr    = TagCaracter(nome='xLgr'   , codigo='E06', tamanho=[ 1, 255]  , raiz='//CTe/infCte/dest/enderDest')
@@ -626,6 +638,7 @@ class EnderDest(XMLNFe):
 
 
 class Dest(XMLNFe):
+
     def __init__(self):
         super(Dest, self).__init__()
         self.CNPJ      = TagCaracter(nome='CNPJ' , codigo='E02', tamanho=[ 0, 14], raiz='//CTe/infCte/dest', obrigatorio=False)
@@ -677,6 +690,7 @@ class Dest(XMLNFe):
 
 
 class EnderReceb(XMLNFe):
+
     def __init__(self):
         super(EnderReceb, self).__init__()
         self.xLgr    = TagCaracter(nome='xLgr'   , codigo='E06', tamanho=[ 1, 255]  , raiz='//CTe/infCte/receb/enderReceb')
@@ -723,6 +737,7 @@ class EnderReceb(XMLNFe):
 
 
 class Receb(XMLNFe):
+
     def __init__(self):
         super(Receb, self).__init__()
         self.CNPJ      = TagCaracter(nome='CNPJ' , codigo='E02', tamanho=[ 0, 14], raiz='//CTe/infCte/receb', obrigatorio=False)
@@ -768,6 +783,7 @@ class Receb(XMLNFe):
 
 
 class EnderExped(XMLNFe):
+
     def __init__(self):
         super(EnderExped, self).__init__()
         self.xLgr    = TagCaracter(nome='xLgr'   , codigo='E06', tamanho=[ 1, 255]  , raiz='//CTe/infCte/exped/enderExped')
@@ -814,6 +830,7 @@ class EnderExped(XMLNFe):
 
 
 class Exped(XMLNFe):
+
     def __init__(self):
         super(Exped, self).__init__()
         self.CNPJ      = TagCaracter(nome='CNPJ' , codigo='E02', tamanho=[ 0, 14], raiz='//CTe/infCte/exped', obrigatorio=False)
@@ -859,6 +876,7 @@ class Exped(XMLNFe):
 
 
 class InfOutros(XMLNFe):
+
     def __init__(self):
         super(InfOutros, self).__init__()
         self.tpDoc  = TagCaracter(nome='tpDoc', codigo='B16', tamanho=[ 2,  2]   , raiz='//infOutros', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, valor='99')
@@ -893,6 +911,7 @@ class InfOutros(XMLNFe):
 
 
 class InfNFe(XMLNFe):
+
     def __init__(self):
         super(InfNFe, self).__init__()
         self.chave  = TagCaracter(nome='chave', codigo='B16', tamanho=[44, 44]   , raiz='//infNFe', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
@@ -918,6 +937,7 @@ class InfNFe(XMLNFe):
 
 
 class LocRet(XMLNFe):
+
     def __init__(self):
         super(LocRet, self).__init__()
         self.CNPJ    = TagCaracter(nome='CNPJ'   , codigo='E02', tamanho=[ 0, 14]   , raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, obrigatorio=False)
@@ -971,6 +991,7 @@ class LocRet(XMLNFe):
 
 
 class InfNF(XMLNFe):
+
     def __init__(self):
         super(InfNF, self).__init__()
         self.nRoma  = TagCaracter(nome='nRoma', codigo='B16', tamanho=[ 1, 20]   , raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, obrigatorio=False)
@@ -1038,6 +1059,7 @@ class InfNF(XMLNFe):
 
 
 class EnderReme(XMLNFe):
+
     def __init__(self):
         super(EnderReme, self).__init__()
         self.xLgr    = TagCaracter(nome='xLgr'   , codigo='E06', tamanho=[ 1, 255]  , raiz='//CTe/infCte/rem/enderReme')
@@ -1084,6 +1106,7 @@ class EnderReme(XMLNFe):
 
 
 class Rem(XMLNFe):
+
     def __init__(self):
         super(Rem, self).__init__()
         self.CNPJ      = TagCaracter(nome='CNPJ' , codigo='E02', tamanho=[ 0, 14], raiz='//CTe/infCte/rem', obrigatorio=False)
@@ -1155,6 +1178,7 @@ class Rem(XMLNFe):
 
 
 class EnderEmit(XMLNFe):
+
     def __init__(self):
         super(EnderEmit, self).__init__()
         self.xLgr    = TagCaracter(nome='xLgr'   , codigo='C06', tamanho=[ 2, 60]   , raiz='//CTe/infCte/emit/enderEmit')
@@ -1223,6 +1247,7 @@ class EnderEmit(XMLNFe):
 
 
 class Emit(XMLNFe):
+
     def __init__(self):
         super(Emit, self).__init__()
         self.CNPJ      = TagCaracter(nome='CNPJ' , codigo='C02' , tamanho=[14, 14], raiz='//CTe/infCte/emit', obrigatorio=False)
@@ -1266,6 +1291,7 @@ class Emit(XMLNFe):
 
 
 class ObsFisco(XMLNFe):
+
     def __init__(self):
         super(ObsFisco, self).__init__()
         self.xCampo = TagCaracter(nome='ObsFisco', codigo='Z08', propriedade='xCampo', tamanho=[1, 20], raiz='/', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
@@ -1290,6 +1316,7 @@ class ObsFisco(XMLNFe):
 
 
 class ObsCont(XMLNFe):
+
     def __init__(self):
         super(ObsCont, self).__init__()
         self.xCampo = TagCaracter(nome='ObsCont', propriedade='xCampo', tamanho=[1,  20], raiz='/', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
@@ -1314,6 +1341,7 @@ class ObsCont(XMLNFe):
 
 
 class Entrega(XMLNFe):
+
     def __init__(self):
         super(Entrega, self).__init__()
         #
@@ -1419,6 +1447,7 @@ class Entrega(XMLNFe):
 
 
 class Pass(XMLNFe):
+
     def __init__(self):
         super(Pass, self).__init__()
         self.xPass = TagCaracter(nome='xPass', tamanho=[1,  15], raiz='//pass', obrigatorio=False, namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
@@ -1441,6 +1470,7 @@ class Pass(XMLNFe):
 
 
 class Fluxo(XMLNFe):
+
     def __init__(self):
         super(Fluxo, self).__init__()
         self.xOrig = TagCaracter(nome='xOrig', tamanho=[1,  15], raiz='//CTe/infCte/compl/fluxo', obrigatorio=False)
@@ -1484,6 +1514,7 @@ class Fluxo(XMLNFe):
 
 
 class Compl(XMLNFe):
+
     def __init__(self):
         super(Compl, self).__init__()
         self.xCaracAd = TagCaracter(nome='xCaracAd', tamanho=[ 1, 15], raiz='//CTe/infCte/compl', obrigatorio=False)
@@ -1546,6 +1577,7 @@ class Compl(XMLNFe):
 
 
 class EnderToma(XMLNFe):
+
     def __init__(self):
         super(EnderToma, self).__init__()
         self.xLgr    = TagCaracter(nome='xLgr'   , codigo='E06', tamanho=[ 1, 255]  , raiz='//CTe/infCte/ide/toma4/enderToma')
@@ -1592,6 +1624,7 @@ class EnderToma(XMLNFe):
 
 
 class Tomador(XMLNFe):
+
     def __init__(self):
         super(Tomador, self).__init__()
         self.toma      = TagInteiro(nome='toma'  , tamanho=[1, 1, 1], raiz='//CTe/infCte/ide/toma03', valor=0)
@@ -1655,6 +1688,7 @@ class Tomador(XMLNFe):
 
 
 class Ide(XMLNFe):
+
     def __init__(self):
         super(Ide, self).__init__()
         self.cUF     = TagInteiro(nome='cUF'     , codigo='B02', tamanho=[ 2,  2, 2], raiz='//CTe/infCte/ide')
@@ -1771,6 +1805,7 @@ class Ide(XMLNFe):
 
 
 class InfCTe(XMLNFe):
+
     def __init__(self):
         super(InfCTe, self).__init__()
         self.versao   = TagDecimal(nome='infCte' , codigo='A01', propriedade='versao', raiz='//CTe', namespace=NAMESPACE_CTE, valor='1.04')
@@ -1853,6 +1888,7 @@ class InfCTe(XMLNFe):
 
 
 class CTe(XMLNFe):
+
     def __init__(self):
         super(CTe, self).__init__()
         self.infCte = InfCTe()

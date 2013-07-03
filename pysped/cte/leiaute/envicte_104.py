@@ -52,6 +52,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class EnviCTe(XMLNFe):
+
     def __init__(self):
         super(EnviCTe, self).__init__()
         self.versao  = TagDecimal(nome='enviCTe', codigo='AP02', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
@@ -84,6 +85,7 @@ class EnviCTe(XMLNFe):
 
 
 class InfRec(XMLNFe):
+
     def __init__(self):
         super(InfRec, self).__init__()
         self.nRec     = TagCaracter(nome='nRec'     , codigo='AR08', tamanho=[1, 15, 1], raiz='//retEnviCTe/infRec')
@@ -112,6 +114,7 @@ class InfRec(XMLNFe):
 
 
 class RetEnviCTe(XMLNFe):
+
     def __init__(self):
         super(RetEnviCTe, self).__init__()
         self.versao   = TagDecimal(nome='retEnviCte', codigo='AR02' , propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')

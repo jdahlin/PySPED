@@ -51,6 +51,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class Deduc(XMLNFe):
+
     def __init__(self):
         super(Deduc, self).__init__()
         self.xDed = TagCaracter(nome='xDed', codigo='ZC11', tamanho=[1, 60]                       , raiz='//deduc')
@@ -76,6 +77,7 @@ class Deduc(XMLNFe):
 
 
 class ForDia(XMLNFe):
+
     def __init__(self):
         super(ForDia, self).__init__()
         self.dia  = TagInteiro(nome='dia' , codigo='ZC05', tamanho=[1,  2, 1]                      , raiz='//forDia')
@@ -101,6 +103,7 @@ class ForDia(XMLNFe):
 
 
 class Cana(XMLNFe):
+
     def __init__(self):
         super(Cana, self).__init__()
         self.safra   = TagCaracter(nome='safra' , codigo='ZC02', tamanho=[4,  9]                         , raiz='//NFe/infNFe/cana')
@@ -156,6 +159,7 @@ class Cana(XMLNFe):
 
 
 class ISSQN(nfe_110.ISSQN):
+
     def __init__(self):
         super(ISSQN, self).__init__()
         self.cSitTrib  = TagCaracter(nome='cSitTrib', codigo='U07', tamanho=[1,  1], raiz='//det/imposto/ISSQN')
@@ -204,51 +208,61 @@ class ISSQN(nfe_110.ISSQN):
 
 
 class COFINSST(nfe_110.COFINSST):
+
     def __init__(self):
         super(COFINSST, self).__init__()
 
 
 class TagCSTCOFINS(nfe_110.TagCSTCOFINS):
+
     def __init__(self, *args, **kwargs):
         super(TagCSTCOFINS, self).__init__(*args, **kwargs)
 
 
 class COFINS(nfe_110.COFINS):
+
     def __init__(self):
         super(COFINS, self).__init__()
 
 
 class PISST(nfe_110.PISST):
+
     def __init__(self):
         super(PISST, self).__init__()
 
 
 class TagCSTPIS(nfe_110.TagCSTPIS):
+
     def __init__(self, *args, **kwargs):
         super(TagCSTPIS, self).__init__(*args, **kwargs)
 
 
 class PIS(nfe_110.PIS):
+
     def __init__(self):
         super(PIS, self).__init__()
 
 
 class II(nfe_110.II):
+
     def __init__(self):
         super(II, self).__init__()
 
 
 class TagCSTIPI(nfe_110.TagCSTIPI):
+
     def __init__(self, *args, **kwargs):
         super(TagCSTIPI, self).__init__(*args, **kwargs)
 
 
 class IPI(nfe_110.IPI):
+
     def __init__(self):
         super(IPI, self).__init__()
 
 
 class TagCSOSN(TagCaracter):
+
     def __init__(self, *args, **kwargs):
         super(TagCSOSN, self).__init__(*args, **kwargs)
         self.nome = 'CSOSN'
@@ -406,6 +420,7 @@ class TagCSOSN(TagCaracter):
 
 
 class TagCSTICMS(nfe_110.TagCSTICMS):
+
     def __init__(self, *args, **kwargs):
         super(TagCSTICMS, self).__init__(*args, **kwargs)
         self.nome = 'CST'
@@ -612,6 +627,7 @@ class TagCSTICMS(nfe_110.TagCSTICMS):
 
 
 class ICMS(nfe_110.ICMS):
+
     def __init__(self):
         super(ICMS, self).__init__()
         self.nome_tag = 'ICMSSN102'
@@ -1166,6 +1182,7 @@ class ICMS(nfe_110.ICMS):
 
 
 class Imposto(nfe_110.Imposto):
+
     def __init__(self):
         super(Imposto, self).__init__()
         self.vTotTrib = TagDecimal(nome='vTotTrib', codigo='M02', tamanho=[1, 15, 1], decimais=[1,  2,  2], raiz='//det/imposto', obrigatorio=False)
@@ -1230,11 +1247,13 @@ class Imposto(nfe_110.Imposto):
 
 
 class CIDE(nfe_110.CIDE):
+
     def __init__(self):
         super(CIDE, self).__init__()
 
 
 class Comb(nfe_110.Comb):
+
     def get_xml(self):
         if not self.cProdANP.valor:
             return ''
@@ -1274,16 +1293,19 @@ class Comb(nfe_110.Comb):
 
 
 class Arma(nfe_110.Arma):
+
     def __init__(self):
         super(Arma, self).__init__()
 
 
 class Med(nfe_110.Med):
+
     def __init__(self):
         super(Med, self).__init__()
 
 
 class VeicProd(nfe_110.VeicProd):
+
     def __init__(self):
         super(VeicProd, self).__init__()
         self.cilin        = TagCaracter(nome='cilin'       , codigo='J07', tamanho=[ 1,  4], raiz='//det/prod/veicProd')
@@ -1391,16 +1413,19 @@ class VeicProd(nfe_110.VeicProd):
 
 
 class Adi(nfe_110.Adi):
+
     def __init__(self):
         super(Adi, self).__init__()
 
 
 class DI(nfe_110.DI):
+
     def __init__(self):
         super(DI, self).__init__()
 
 
 class Prod(nfe_110.Prod):
+
     def __init__(self):
         super(Prod, self).__init__()
         self.NCM      = TagCaracter(nome='NCM'     , codigo='I05' , tamanho=[2,  8]                        , raiz='//det/prod')
@@ -1549,6 +1574,7 @@ class Prod(nfe_110.Prod):
 
 
 class Det(nfe_110.Det):
+
     def __init__(self):
         super(Det, self).__init__()
         self.prod      = Prod()
@@ -1566,82 +1592,98 @@ class Det(nfe_110.Det):
 
 
 class Compra(nfe_110.Compra):
+
     def __init__(self):
         super(Compra, self).__init__()
 
 
 class Exporta(nfe_110.Exporta):
+
     def __init__(self):
         super(Exporta, self).__init__()
 
 
 class ProcRef(nfe_110.ProcRef):
+
     def __init__(self):
         super(ProcRef, self).__init__()
 
 
 class ObsFisco(nfe_110.ObsFisco):
+
     def __init__(self):
         super(ObsFisco, self).__init__()
 
 
 class ObsCont(nfe_110.ObsCont):
+
     def __init__(self):
         super(ObsCont, self).__init__()
 
 
 class InfAdic(nfe_110.InfAdic):
+
     def __init__(self):
         super(InfAdic, self).__init__()
         self.infAdFisco = TagCaracter(nome='infAdFisco', codigo='Z02', tamanho=[1, 2000], raiz='//NFe/infNFe/infAdic', obrigatorio=False)
 
 
 class Dup(nfe_110.Dup):
+
     def __init__(self):
         super(Dup, self).__init__()
 
 
 class Fat(nfe_110.Fat):
+
     def __init__(self):
         super(Fat, self).__init__()
 
 
 class Cobr(nfe_110.Cobr):
+
     def __init__(self):
         super(Cobr, self).__init__()
 
 
 class Lacres(nfe_110.Lacres):
+
     def __init__(self):
         super(Lacres, self).__init__()
 
 
 class Vol(nfe_110.Vol):
+
     def __init__(self, xml=None):
         super(Vol, self).__init__()
 
 
 class Reboque(nfe_110.Reboque):
+
     def __init__(self):
         super(Reboque, self).__init__()
 
 
 class VeicTransp(nfe_110.VeicTransp):
+
     def __init__(self):
         super(VeicTransp, self).__init__()
 
 
 class RetTransp(nfe_110.RetTransp):
+
     def __init__(self):
         super(RetTransp, self).__init__()
 
 
 class Transporta(nfe_110.Transporta):
+
     def __init__(self):
         super(Transporta, self).__init__()
 
 
 class Transp(nfe_110.Transp):
+
     def __init__(self):
         super(Transp, self).__init__()
         self.vagao = TagCaracter(nome='vagao', codigo='X25a', tamanho=[1, 20], raiz='//NFe/infNFe/transp', obrigatorio=False)
@@ -1711,16 +1753,19 @@ class Transp(nfe_110.Transp):
 
 
 class RetTrib(nfe_110.RetTrib):
+
     def __init__(self):
         super(RetTrib, self).__init__()
 
 
 class ISSQNTot(nfe_110.ISSQNTot):
+
     def __init__(self):
         super(ISSQNTot, self).__init__()
 
 
 class ICMSTot(nfe_110.ICMSTot):
+
     def __init__(self):
         super(ICMSTot, self).__init__()
         self.vTotTrib = TagDecimal(nome='vTotTrib', codigo='W16a', tamanho=[1, 15, 1], decimais=[1,  2,  2], raiz='//NFe/infNFe/total/ICMSTot', obrigatorio=False)
@@ -1768,11 +1813,13 @@ class ICMSTot(nfe_110.ICMSTot):
 
 
 class Total(nfe_110.Total):
+
     def __init__(self):
         super(Total, self).__init__()
 
 
 class Entrega(nfe_110.Entrega):
+
     def __init__(self):
         super(Entrega, self).__init__()
         self.CNPJ    = TagCaracter(nome='CNPJ'   , codigo='G02' , tamanho=[ 0, 14]   , raiz='//NFe/infNFe/retirada')
@@ -1840,6 +1887,7 @@ class Entrega(nfe_110.Entrega):
 
 
 class Retirada(nfe_110.Retirada):
+
     def __init__(self):
         super(Retirada, self).__init__()
         self.CNPJ    = TagCaracter(nome='CNPJ'   , codigo='F02' , tamanho=[ 0, 14]   , raiz='//NFe/infNFe/retirada')
@@ -1907,12 +1955,14 @@ class Retirada(nfe_110.Retirada):
 
 
 class EnderDest(nfe_110.EnderDest):
+
     def __init__(self):
         super(EnderDest, self).__init__()
         self.fone    = TagInteiro(nome='fone'    , codigo='E16', tamanho=[ 6, 14]   , raiz='//NFe/infNFe/dest/enderDest', obrigatorio=False)
 
 
 class Dest(nfe_110.Dest):
+
     def __init__(self):
         super(Dest, self).__init__()
         self.enderDest = EnderDest()
@@ -1973,18 +2023,21 @@ class Dest(nfe_110.Dest):
 
 
 class Avulsa(nfe_110.Avulsa):
+
     def __init__(self):
         super(Avulsa, self).__init__()
         self.fone    = TagInteiro(nome='fone'    , codigo='D05', tamanho=[ 6, 14], raiz='//NFe/infNFe/avulsa')
 
 
 class EnderEmit(nfe_110.EnderEmit):
+
     def __init__(self):
         super(EnderEmit, self).__init__()
         self.fone    = TagInteiro(nome='fone'    , codigo='C16', tamanho=[ 6, 14]   , raiz='//NFe/infNFe/emit/enderEmit', obrigatorio=False)
 
 
 class Emit(nfe_110.Emit):
+
     def __init__(self):
         super(Emit, self).__init__()
         self.enderEmit = EnderEmit()
@@ -2046,6 +2099,7 @@ class Emit(nfe_110.Emit):
 
 
 class RefECF(XMLNFe):
+
     def __init__(self):
         super(RefECF, self).__init__()
         self.mod   = TagCaracter(nome='mod', codigo='B20l', tamanho=[ 2,  2, 2], raiz='//NFref/refECF')
@@ -2087,6 +2141,7 @@ class RefECF(XMLNFe):
 
 
 class RefNFP(XMLNFe):
+
     def __init__(self):
         super(RefNFP, self).__init__()
         self.cUF   = TagInteiro(nome='cUF'  , codigo='B20b', tamanho=[ 2,  2, 2], raiz='//NFref/refNFP')
@@ -2156,11 +2211,13 @@ class RefNFP(XMLNFe):
 
 
 class RefNF(nfe_110.RefNF):
+
     def __init__(self):
         super(RefNF, self).__init__()
 
 
 class NFRef(nfe_110.NFRef):
+
     def __init__(self):
         super(NFRef, self).__init__()
         # self.refNFe = TagCaracter(nome='refNFe', codigo='B13', tamanho=[44, 44], raiz='//NFRef', obrigatorio=False)
@@ -2221,6 +2278,7 @@ class NFRef(nfe_110.NFRef):
 
 
 class Ide(nfe_110.Ide):
+
     def __init__(self):
         super(Ide, self).__init__()
         self.cNF     = TagCaracter(nome='cNF'    , codigo='B03', tamanho=[ 8,  8, 8], raiz='//NFe/infNFe/ide')
@@ -2328,6 +2386,7 @@ class Ide(nfe_110.Ide):
 
 
 class InfNFe(nfe_110.InfNFe):
+
     def __init__(self):
         super(InfNFe, self).__init__()
         self.versao   = TagDecimal(nome='infNFe' , codigo='A01', propriedade='versao', raiz='//NFe', namespace=NAMESPACE_NFE, valor='2.00')
@@ -2431,6 +2490,7 @@ class InfNFe(nfe_110.InfNFe):
 
 
 class NFe(nfe_110.NFe):
+
     def __init__(self):
         super(NFe, self).__init__()
         self.infNFe = InfNFe()

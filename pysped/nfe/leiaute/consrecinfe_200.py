@@ -52,6 +52,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class ConsReciNFe(consrecinfe_110.ConsReciNFe):
+
     def __init__(self):
         super(ConsReciNFe, self).__init__()
         self.versao  = TagDecimal(nome='consReciNFe', codigo='BP02', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
@@ -60,17 +61,20 @@ class ConsReciNFe(consrecinfe_110.ConsReciNFe):
 
 
 class InfProt(consrecinfe_110.InfProt):
+
     def __init__(self):
         super(InfProt, self).__init__()
 
 
 class ProtNFe(consrecinfe_110.ProtNFe):
+
     def __init__(self):
         super(ProtNFe, self).__init__()
         self.versao  = TagDecimal(nome='protNFe', codigo='PR02' , propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
 
 
 class RetConsReciNFe(consrecinfe_110.RetConsReciNFe):
+
     def __init__(self):
         super(RetConsReciNFe, self).__init__()
         self.versao   = TagDecimal(nome='retConsReciNFe', codigo='BR02' , propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
@@ -120,6 +124,7 @@ class RetConsReciNFe(consrecinfe_110.RetConsReciNFe):
 
 
 class ProcNFe(consrecinfe_110.ProcNFe):
+
     def __init__(self):
         super(ProcNFe, self).__init__()
         self.versao  = TagDecimal(nome='nfeProc', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')

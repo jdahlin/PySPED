@@ -111,6 +111,7 @@ from danfe import DANFE
 
 
 class ProcessoNFe(object):
+
     def __init__(self, webservice=0, envio='', resposta=''):
         self.webservice = webservice
         self.envio = envio
@@ -133,6 +134,7 @@ class ConexaoHTTPS(HTTPSConnection):
     # Bem vindos ao estado do Paraná...
     #
     #
+
     def connect(self):
         "Connect to a host on a given (SSL) port."
 
@@ -152,6 +154,7 @@ class ConexaoHTTPS(HTTPSConnection):
 
 
 class ProcessadorNFe(object):
+
     def __init__(self):
         self.ambiente = 2
         self.estado = 'SP'

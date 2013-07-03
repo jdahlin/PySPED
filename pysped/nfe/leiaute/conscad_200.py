@@ -51,6 +51,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class ConsCad(conscad_101.ConsCad):
+
     def __init__(self):
         super(ConsCad, self).__init__()
         self.versao = TagDecimal(nome='ConsCad', codigo='GP01', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
@@ -59,6 +60,7 @@ class ConsCad(conscad_101.ConsCad):
 
 
 class InfCadRecebido(conscad_101.InfCadRecebido):
+
     def __init__(self):
         super(InfCadRecebido, self).__init__()
         self.indCredNFe = TagInteiro(nome='indCredNFe', codigo='GR12a' , tamanho=[1, 1, 1], raiz='//infCad')
@@ -98,6 +100,7 @@ class InfCadRecebido(conscad_101.InfCadRecebido):
 
 
 class InfConsRecebido(conscad_101.InfConsRecebido):
+
     def __init__(self):
         super(InfConsRecebido, self).__init__()
 
@@ -115,6 +118,7 @@ class InfConsRecebido(conscad_101.InfConsRecebido):
 
 
 class RetConsCad(conscad_101.RetConsCad):
+
     def __init__(self):
         super(RetConsCad, self).__init__()
         self.versao    = TagDecimal(nome='retConsCad', codigo='GR01', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')

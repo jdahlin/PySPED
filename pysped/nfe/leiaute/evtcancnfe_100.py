@@ -55,6 +55,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class DetEventoCancNFe(DetEvento):
+
     def __init__(self):
         super(DetEventoCancNFe, self).__init__()
         self.nProt = TagCaracter(nome='nProt'   , codigo='CP08', tamanho=[15, 15, 15], raiz='//detEvento')
@@ -81,6 +82,7 @@ class DetEventoCancNFe(DetEvento):
 
 
 class InfEventoCancNFe(InfEvento):
+
     def __init__(self):
         super(InfEventoCancNFe, self).__init__()
         self.detEvento  = DetEventoCancNFe()
@@ -88,6 +90,7 @@ class InfEventoCancNFe(InfEvento):
 
 
 class EventoCancNFe(Evento):
+
     def __init__(self):
         super(EventoCancNFe, self).__init__()
         self.infEvento = InfEventoCancNFe()
@@ -96,16 +99,19 @@ class EventoCancNFe(Evento):
 
 
 class InfEventoRecebidoCancNFe(InfEventoRecebido):
+
     def __init__(self):
         super(InfEventoRecebidoCancNFe, self).__init__()
 
 
 class RetEventoCancNFe(RetEvento):
+
     def __init__(self):
         super(RetEventoCancNFe, self).__init__()
 
 
 class ProcEventoCancNFe(ProcEvento):
+
     def __init__(self):
         super(ProcEventoCancNFe, self).__init__()
         self.evento = EventoCancNFe()
@@ -115,6 +121,7 @@ class ProcEventoCancNFe(ProcEvento):
 
 
 class EnvEventoCancNFe(EnvEvento):
+
     def __init__(self):
         super(EnvEventoCancNFe, self).__init__()
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
@@ -133,6 +140,7 @@ class EnvEventoCancNFe(EnvEvento):
 
 
 class RetEnvEventoCancNFe(RetEnvEvento):
+
     def __init__(self):
         super(RetEnvEventoCancNFe, self).__init__()
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')

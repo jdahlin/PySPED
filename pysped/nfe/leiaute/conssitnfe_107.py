@@ -51,6 +51,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class ConsSitNFe(XMLNFe):
+
     def __init__(self):
         super(ConsSitNFe, self).__init__()
         self.versao = TagDecimal(nome='consSitNFe', codigo='EP01', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.07', raiz='/')
@@ -81,6 +82,7 @@ class ConsSitNFe(XMLNFe):
 
 
 class InfProt(XMLNFe):
+
     '''Atenção!!!
 
     Este grupo infProt é DIFERENTE do infProt do retorno do recibo do lote
@@ -93,6 +95,7 @@ class InfProt(XMLNFe):
     procNFe.protNFe.infProt.xml = este_infProt.xml
 
     '''
+
     def __init__(self):
         super(InfProt, self).__init__()
         self.Id        = TagCaracter(nome='infProt' , codigo='ER04' , propriedade='Id'  , raiz='/'        , obrigatorio=False)
@@ -143,6 +146,7 @@ class InfProt(XMLNFe):
 
 
 class RetConsSitNFe(XMLNFe):
+
     def __init__(self):
         super(RetConsSitNFe, self).__init__()
         self.versao    = TagDecimal(nome='retConsSitNFe', codigo='ER01', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.07', raiz='/')

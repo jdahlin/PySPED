@@ -51,6 +51,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class ConsStatServ(consstatserv_107.ConsStatServ):
+
     def __init__(self):
         super(ConsStatServ, self).__init__()
         self.versao = TagDecimal(nome='consStatServ', codigo='FP01', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
@@ -59,6 +60,7 @@ class ConsStatServ(consstatserv_107.ConsStatServ):
 
 
 class RetConsStatServ(consstatserv_107.RetConsStatServ):
+
     def __init__(self):
         super(RetConsStatServ, self).__init__()
         self.versao    = TagDecimal(nome='retConsStatServ', codigo='FR01', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')

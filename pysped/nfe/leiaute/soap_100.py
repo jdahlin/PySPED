@@ -50,6 +50,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class CabecMsg(XMLNFe):
+
     def __init__(self):
         super(CabecMsg, self).__init__()
         self.versao      = TagDecimal(nome='cabecMsg'   , codigo=''   , propriedade='versao', namespace=NAMESPACE_NFE, valor='1.02', raiz='//cabecMsg')
@@ -73,6 +74,7 @@ class CabecMsg(XMLNFe):
 
 
 class NFeCabecMsg(XMLNFe):
+
     def __init__(self):
         super(NFeCabecMsg, self).__init__()
         self.cabec = CabecMsg()
@@ -92,6 +94,7 @@ class NFeCabecMsg(XMLNFe):
 
 
 class NFeDadosMsg(XMLNFe):
+
     def __init__(self):
         super(NFeDadosMsg, self).__init__()
         self.dados = None
@@ -111,6 +114,7 @@ class NFeDadosMsg(XMLNFe):
 
 
 class SOAPEnvio(XMLNFe):
+
     def __init__(self):
         super(SOAPEnvio, self).__init__()
         self.webservice = ''
@@ -152,6 +156,7 @@ class SOAPEnvio(XMLNFe):
 
 
 class SOAPRetorno(XMLNFe):
+
     def __init__(self):
         super(SOAPRetorno, self).__init__()
         self.webservice = ''

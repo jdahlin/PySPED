@@ -53,6 +53,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class Item(XMLNFe):
+
     def __init__(self):
         super(Item, self).__init__()
         self.DiscriminacaoServico = TagCaracter(nome='DiscriminacaoServico', tamanho=[ 1, 80]   , raiz='//Item')
@@ -91,6 +92,7 @@ class Item(XMLNFe):
 
 
 class Deducao(XMLNFe):
+
     def __init__(self):
         super(Deducao, self).__init__()
         self.DeducaoPor           = TagCaracter(nome='DeducaoPor'         , tamanho=[ 1,  20]   , raiz='//Deducao')
@@ -129,6 +131,7 @@ class Deducao(XMLNFe):
 
 
 class RPS(XMLNFe):
+
     def __init__(self):
         super(RPS, self).__init__()
         self.Id = TagCaracter(nome='RPS', propriedade='Id', raiz=u'//', obrigatorio=False)
@@ -473,6 +476,7 @@ class RPS(XMLNFe):
 
 
 class _Lote(XMLNFe):
+
     def __init__(self):
         super(_Lote, self).__init__()
         self.Id = TagCaracter(nome='Lote', propriedade=u'Id', raiz=u'//nfse:ReqEnvioLoteRPS')
@@ -505,6 +509,7 @@ class _Lote(XMLNFe):
 
 
 class _Cabecalho(XMLNFe):
+
     def __init__(self):
         super(_Cabecalho, self).__init__()
         self.CodCidade            = TagInteiro(nome='CodCidade'            , tamanho=[ 1, 10, 1], raiz='//nfse:ReqEnvioLoteRPS/Cabecalho')
@@ -558,6 +563,7 @@ class _Cabecalho(XMLNFe):
 
 
 class ReqEnvioLoteRPS(XMLNFe):
+
     def __init__(self):
         super(ReqEnvioLoteRPS, self).__init__()
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')

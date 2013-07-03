@@ -51,6 +51,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class InfInutEnviado(XMLNFe):
+
     def __init__(self):
         super(InfInutEnviado, self).__init__()
         self.Id     = TagCaracter(nome='infInut', codigo='DP03', tamanho=[41, 41] , raiz='//inutCTe', propriedade='Id')
@@ -99,6 +100,7 @@ class InfInutEnviado(XMLNFe):
 
 
 class InutCTe(XMLNFe):
+
     def __init__(self):
         super(InutCTe, self).__init__()
         self.versao  = TagDecimal(nome='inutCTe', codigo='DP01', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
@@ -153,6 +155,7 @@ class InutCTe(XMLNFe):
 
 
 class InfInutRecebido(XMLNFe):
+
     def __init__(self):
         super(InfInutRecebido, self).__init__()
         self.Id       = TagCaracter(nome='infInut' , codigo='DR03', tamanho=[17, 17]    , raiz='//retInutCTe', propriedade='Id', obrigatorio=False)
@@ -215,6 +218,7 @@ class InfInutRecebido(XMLNFe):
 
 
 class RetInutCTe(XMLNFe):
+
     def __init__(self):
         super(RetInutCTe, self).__init__()
         self.versao = TagDecimal(nome='retInutCTe', codigo='DR01', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
@@ -258,6 +262,7 @@ class RetInutCTe(XMLNFe):
 
 
 class ProcInutCTe(XMLNFe):
+
     def __init__(self):
         super(ProcInutCTe, self).__init__()
         #

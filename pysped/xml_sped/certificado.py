@@ -62,6 +62,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class Certificado(object):
+
     def __init__(self):
         self.arquivo     = ''
         self.senha       = ''

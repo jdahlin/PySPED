@@ -51,6 +51,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class InfCancEnviado(XMLNFe):
+
     def __init__(self):
         super(InfCancEnviado, self).__init__()
         self.Id    = TagCaracter(nome='infCanc', codigo='CP03', tamanho=[46, 46]    , raiz='//cancCTe', propriedade='Id')
@@ -87,6 +88,7 @@ class InfCancEnviado(XMLNFe):
 
 
 class CancCTe(XMLNFe):
+
     def __init__(self):
         super(CancCTe, self).__init__()
         self.versao    = TagDecimal(nome='cancCTe', codigo='CP01', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
@@ -119,6 +121,7 @@ class CancCTe(XMLNFe):
 
 
 class InfCancRecebido(XMLNFe):
+
     def __init__(self):
         super(InfCancRecebido, self).__init__()
         self.Id       = TagCaracter(nome='infCanc' , codigo='CR03' , tamanho=[17, 17]    , raiz='//retCancCTe', propriedade='Id', obrigatorio=False)
@@ -166,6 +169,7 @@ class InfCancRecebido(XMLNFe):
 
 
 class RetCancCTe(XMLNFe):
+
     def __init__(self):
         super(RetCancCTe, self).__init__()
         self.versao = TagDecimal(nome='retCancCTe', codigo='CR01', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
@@ -204,6 +208,7 @@ class RetCancCTe(XMLNFe):
 
 
 class ProcCancCTe(XMLNFe):
+
     def __init__(self):
         super(ProcCancCTe, self).__init__()
         #

@@ -50,6 +50,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class RPSConsulta(XMLNFe):
+
     def __init__(self):
         super(RPSConsulta, self).__init__()
         self.Id = TagCaracter(nome='RPS', propriedade='Id', raiz='//')
@@ -81,6 +82,7 @@ class RPSConsulta(XMLNFe):
 
 
 class NotaConsulta(XMLNFe):
+
     def __init__(self):
         super(NotaConsulta, self).__init__()
         self.Id = TagCaracter(nome='Nota', propriedade='Id', raiz='//')
@@ -112,6 +114,7 @@ class NotaConsulta(XMLNFe):
 
 
 class _Lote(XMLNFe):
+
     def __init__(self):
         super(_Lote, self).__init__()
         self.Id = TagCaracter(nome='Lote', propriedade=u'Id', raiz=u'//nfse:ReqConsultaNFSeRPS')
@@ -163,6 +166,7 @@ class _Lote(XMLNFe):
 
 
 class _Cabecalho(XMLNFe):
+
     def __init__(self):
         super(_Cabecalho, self).__init__()
         self.CodCidade        = TagInteiro(nome='CodCidade'        , tamanho=[ 1, 10, 1], raiz='//nfse:ReqConsultaNFSeRPS/Cabecalho')
@@ -191,6 +195,7 @@ class _Cabecalho(XMLNFe):
 
 
 class ReqConsultaNFSeRPS(XMLNFe):
+
     def __init__(self):
         super(ReqConsultaNFSeRPS, self).__init__()
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')

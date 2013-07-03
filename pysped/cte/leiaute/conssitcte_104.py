@@ -53,6 +53,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class ConsSitCTe(XMLNFe):
+
     def __init__(self):
         super(ConsSitCTe, self).__init__()
         self.versao = TagDecimal(nome='consSitCTe', codigo='EP01', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
@@ -83,6 +84,7 @@ class ConsSitCTe(XMLNFe):
 
 
 class RetConsSitCTe(XMLNFe):
+
     def __init__(self):
         super(RetConsSitCTe, self).__init__()
         self.versao     = TagDecimal(nome='retConsSitCTe', codigo='ER01', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')

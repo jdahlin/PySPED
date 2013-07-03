@@ -58,6 +58,7 @@ CONS_NFE_EMISSAO_SOMENTE_TERCEIROS = '1'
 
 
 class ConsNFeDest(XMLNFe):
+
     def __init__(self):
         super(ConsNFeDest, self).__init__()
         self.versao    = TagDecimal(nome='consNFeDest', codigo='IP01', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.01', raiz='/')
@@ -97,6 +98,7 @@ class ConsNFeDest(XMLNFe):
 
 
 class RetConsNFeDest(XMLNFe):
+
     def __init__(self):
         super(RetConsNFeDest, self).__init__()
         self.versao = TagDecimal(nome='retConsNFeDest', codigo='IR01', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.01', raiz='/')

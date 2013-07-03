@@ -52,6 +52,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class ConsReciCTe(XMLNFe):
+
     def __init__(self):
         super(ConsReciCTe, self).__init__()
         self.versao  = TagDecimal(nome='consReciCTe', codigo='BP02', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
@@ -81,6 +82,7 @@ class ConsReciCTe(XMLNFe):
 
 
 class InfProt(XMLNFe):
+
     def __init__(self):
         super(InfProt, self).__init__()
         self.Id        = TagCaracter(nome='infProt' , codigo='PR04', propriedade='Id'  , raiz='/'        , obrigatorio=False)
@@ -128,6 +130,7 @@ class InfProt(XMLNFe):
 
 
 class ProtCTe(XMLNFe):
+
     def __init__(self):
         super(ProtCTe, self).__init__()
         self.versao  = TagDecimal(nome='protCTe', codigo='PR02' , propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
@@ -169,6 +172,7 @@ class ProtCTe(XMLNFe):
 
 
 class RetConsReciCTe(XMLNFe):
+
     def __init__(self):
         super(RetConsReciCTe, self).__init__()
         self.versao   = TagDecimal(nome='retConsReciCTe', codigo='BR02' , propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
@@ -229,6 +233,7 @@ class RetConsReciCTe(XMLNFe):
 
 
 class ProcCTe(XMLNFe):
+
     def __init__(self):
         super(ProcCTe, self).__init__()
         self.versao  = TagDecimal(nome='cteProc', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')

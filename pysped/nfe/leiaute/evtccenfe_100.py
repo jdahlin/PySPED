@@ -58,6 +58,7 @@ _TEXTO_FIXO = 'A Carta de Correção é disciplinada pelo § 1º-A do art. 7º d
 
 
 class DetEventoCCe(DetEvento):
+
     def __init__(self):
         super(DetEventoCCe, self).__init__()
         self.xCorrecao = TagCaracter(nome='xCorrecao', codigo='', tamanho=[15, 1000, 15], raiz='//detEvento')
@@ -84,6 +85,7 @@ class DetEventoCCe(DetEvento):
 
 
 class InfEventoCCe(InfEvento):
+
     def __init__(self):
         super(InfEventoCCe, self).__init__()
         self.detEvento  = DetEventoCCe()
@@ -91,6 +93,7 @@ class InfEventoCCe(InfEvento):
 
 
 class EventoCCe(Evento):
+
     def __init__(self):
         super(EventoCCe, self).__init__()
         self.infEvento = InfEventoCCe()
@@ -99,16 +102,19 @@ class EventoCCe(Evento):
 
 
 class InfEventoRecebidoCCe(InfEventoRecebido):
+
     def __init__(self):
         super(InfEventoRecebidoCCe, self).__init__()
 
 
 class RetEventoCCe(RetEvento):
+
     def __init__(self):
         super(RetEventoCCe, self).__init__()
 
 
 class ProcEventoCCe(ProcEvento):
+
     def __init__(self):
         super(ProcEventoCCe, self).__init__()
         self.evento = EventoCCe()
@@ -118,6 +124,7 @@ class ProcEventoCCe(ProcEvento):
 
 
 class EnvEventoCCe(EnvEvento):
+
     def __init__(self):
         super(EnvEventoCCe, self).__init__()
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
@@ -136,6 +143,7 @@ class EnvEventoCCe(EnvEvento):
 
 
 class RetEnvEventoCCe(RetEnvEvento):
+
     def __init__(self):
         super(RetEnvEventoCCe, self).__init__()
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')

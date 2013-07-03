@@ -52,6 +52,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class EnviNFe(envinfe_110.EnviNFe):
+
     def __init__(self):
         super(EnviNFe, self).__init__()
         self.versao  = TagDecimal(nome='enviNFe', codigo='AP02', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
@@ -60,6 +61,7 @@ class EnviNFe(envinfe_110.EnviNFe):
 
 
 class InfRec(envinfe_110.InfRec):
+
     def __init__(self):
         super(InfRec, self).__init__()
 
@@ -83,6 +85,7 @@ class InfRec(envinfe_110.InfRec):
 
 
 class RetEnviNFe(envinfe_110.RetEnviNFe):
+
     def __init__(self):
         super(RetEnviNFe, self).__init__()
         self.versao   = TagDecimal(nome='retEnviNFe', codigo='AR02' , propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')

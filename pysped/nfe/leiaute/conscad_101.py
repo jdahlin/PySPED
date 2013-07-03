@@ -52,6 +52,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class InfConsEnviado(XMLNFe):
+
     def __init__(self):
         super(InfConsEnviado, self).__init__()
         self.xServ = TagCaracter(nome='xServ', codigo='GP04', tamanho=[8, 8]  , raiz='//ConsCad', valor='CONS-CAD')
@@ -83,6 +84,7 @@ class InfConsEnviado(XMLNFe):
 
 
 class ConsCad(XMLNFe):
+
     def __init__(self):
         super(ConsCad, self).__init__()
         self.versao = TagDecimal(nome='ConsCad', codigo='GP01', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.01', raiz='/')
@@ -107,6 +109,7 @@ class ConsCad(XMLNFe):
 
 
 class Ender(XMLNFe):
+
     def __init__(self):
         super(Ender, self).__init__()
         self.xLgr    = TagCaracter(nome='xLgr'   , codigo='GR23', tamanho=[1, 255] , raiz='//infCad/ender', obrigatorio=False)
@@ -145,6 +148,7 @@ class Ender(XMLNFe):
 
 
 class InfCadRecebido(XMLNFe):
+
     def __init__(self):
         super(InfCadRecebido, self).__init__()
         self.IE       = TagCaracter(nome='IE'      , codigo='GR08' , tamanho=[2, 14], raiz='//infCad', obrigatorio=False)
@@ -206,6 +210,7 @@ class InfCadRecebido(XMLNFe):
 
 
 class InfConsRecebido(XMLNFe):
+
     def __init__(self):
         super(InfConsRecebido, self).__init__()
         self.verAplic = TagCaracter(nome='verAplic', codigo='GR04' , tamanho=[1, 20]  , raiz='//retConsCad/infCons')
@@ -267,6 +272,7 @@ class InfConsRecebido(XMLNFe):
 
 
 class RetConsCad(XMLNFe):
+
     def __init__(self):
         super(RetConsCad, self).__init__()
         self.versao = TagDecimal(nome='retConsCad', codigo='GR01', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.01', raiz='/')

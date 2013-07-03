@@ -47,6 +47,7 @@ from pysped.nfe.leiaute import ProcEventoCancNFe_100
 
 
 class DANFE(object):
+
     def __init__(self):
         self.imprime_canhoto        = True
         self.imprime_local_retirada = True

@@ -51,6 +51,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class ConsultaNFSe(XMLNFe):
+
     def __init__(self):
         super(ConsultaNFSe, self).__init__()
         self.InscricaoPrestador   = TagCaracter(nome='InscricaoPrestador'  , tamanho=[6,  11]   , raiz='//ConsultaNFSe')
@@ -103,6 +104,7 @@ class ConsultaNFSe(XMLNFe):
 
 
 class _Cabecalho(XMLNFe):
+
     def __init__(self):
         super(_Cabecalho, self).__init__()
         self.CodCidade            = TagInteiro(nome='CodCidade'            , tamanho=[ 1, 10, 1], raiz='//nfse:RetornoConsultaLote/Cabecalho')
@@ -152,6 +154,7 @@ class _Cabecalho(XMLNFe):
 
 
 class RetornoConsultaLote(XMLNFe):
+
     def __init__(self):
         super(RetornoConsultaLote, self).__init__()
         self.caminho_esquema  = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')

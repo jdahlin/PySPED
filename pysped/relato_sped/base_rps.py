@@ -154,6 +154,7 @@ EMIT_DADOS = {'fontName': FONTE_NEGRITO, 'fontSize': FONTE_TAMANHO_8, 'alignment
 
 
 class LabelMargemEsquerda(Label):
+
     def __init__(self):
         super(LabelMargemEsquerda, self).__init__()
         # self.borders_stroke_width = {'top': 0.1, 'right': 0.1, 'bottom': 0.1, 'left': 0.1}
@@ -167,12 +168,14 @@ class LabelMargemEsquerda(Label):
 
 
 class LabelMargemDireita(LabelMargemEsquerda):
+
     def __init__(self):
         super(LabelMargemDireita, self).__init__()
         self.borders = {'top': 0.1, 'right': False, 'bottom': 0.1, 'left': 0.1}
 
 
 class Titulo(Label):
+
     def __init__(self, *args, **kwargs):
         super(Titulo, self).__init__(*args, **kwargs)
         # self.borders = {'top': 0.1, 'right': 0.1, 'bottom': 0.1, 'left': False}
@@ -185,6 +188,7 @@ class Titulo(Label):
 
 
 class Campo(ObjectValue):
+
     def __init__(self, *args, **kwargs):
         super(Campo, self).__init__(*args, **kwargs)
         self.padding_top = 0.1*cm
@@ -196,6 +200,7 @@ class Campo(ObjectValue):
 
 
 class Texto(Label):
+
     def __init__(self, *args, **kwargs):
         super(Texto, self).__init__(*args, **kwargs)
         self.padding_top = 0.1*cm
@@ -207,6 +212,7 @@ class Texto(Label):
 
 
 class Descritivo(Label):
+
     def __init__(self):
         super(Descritivo, self).__init__()
         # self.borders_stroke_width = {'top': 0.1, 'right': 0.1, 'bottom': 0.1, 'left': 0.1}
@@ -220,6 +226,7 @@ class Descritivo(Label):
 
 
 class BandaRPS(ReportBand):
+
     def __init__(self):
         super(BandaRPS, self).__init__()
 

@@ -14,6 +14,7 @@ class _Prestador(object):
 
 
 class RPS(object):
+
     def __init__(self):
         self.caminho          = ''
         self.salvar_arquivo   = True
@@ -119,6 +120,7 @@ from webservices import CIDADE_WS, METODO_WS, WS_NFSE_ENVIO_LOTE
 
 
 class ProcessoNFSe(object):
+
     def __init__(self, webservice=0, envio='', resposta=''):
         self.webservice = webservice
         self.envio = envio
@@ -126,6 +128,7 @@ class ProcessoNFSe(object):
 
 
 class ProcessadorNFSe(object):
+
     def __init__(self):
         self.ambiente = 2
         self.cidade = SIAFI_SOROCABA_SP

@@ -54,6 +54,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class ConsSitNFe(conssitnfe_107.ConsSitNFe):
+
     def __init__(self):
         super(ConsSitNFe, self).__init__()
         self.versao = TagDecimal(nome='consSitNFe', codigo='EP01', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
@@ -62,6 +63,7 @@ class ConsSitNFe(conssitnfe_107.ConsSitNFe):
 
 
 class RetConsSitNFe(conssitnfe_107.RetConsSitNFe):
+
     def __init__(self):
         super(RetConsSitNFe, self).__init__()
         self.versao     = TagDecimal(nome='retConsSitNFe', codigo='ER01', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')

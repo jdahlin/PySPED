@@ -50,6 +50,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class TagChNFe(TagCaracter):
+
     def __init__(self, *args, **kwargs):
         super(TagChNFe, self).__init__(*args, **kwargs)
         self.nome = 'chNFe'
@@ -59,6 +60,7 @@ class TagChNFe(TagCaracter):
 
 
 class DownloadNFe(XMLNFe):
+
     def __init__(self):
         super(DownloadNFe, self).__init__()
         self.versao    = TagDecimal(nome='downloadNFe', codigo='JP01', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.00', raiz='/')
@@ -95,6 +97,7 @@ class DownloadNFe(XMLNFe):
 
 
 class ProcNFeGrupoZip(XMLNFe):
+
     def __init__(self):
         super(ProcNFeGrupoZip, self).__init__()
         self.NFeZip = TagCaracter(nome='NFeZip', codigo='JR13', raiz='//retNFe/procNFeGrupoZip')
@@ -120,6 +123,7 @@ class ProcNFeGrupoZip(XMLNFe):
 
 
 class RetNFe(XMLNFe):
+
     def __init__(self):
         super(RetNFe, self).__init__()
         self.chNFe    = TagCaracter(nome='chNFe'    , codigo='CR09' , tamanho=[44, 44, 44], raiz='//retNFe', obrigatorio=False)
@@ -151,6 +155,7 @@ class RetNFe(XMLNFe):
 
 
 class RetDownloadNFe(XMLNFe):
+
     def __init__(self):
         super(RetDownloadNFe, self).__init__()
         self.versao = TagDecimal(nome='retDownloadNFe', codigo='IR01', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.00', raiz='/')

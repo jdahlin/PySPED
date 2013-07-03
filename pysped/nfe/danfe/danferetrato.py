@@ -85,6 +85,7 @@ from pysped.nfe.manual_401 import Vol_200
 
 
 class DANFERetrato(Report):
+
     def __init__(self, *args, **kargs):
         super(DANFERetrato, self).__init__(*args, **kargs)
         self.title = 'DANFE - Documento Auxiliar da Nota Fiscal Eletrônica'
@@ -161,6 +162,7 @@ class DANFERetrato(Report):
 
 
 class CanhotoRetrato(BandaDANFE):
+
     def __init__(self):
         super(CanhotoRetrato, self).__init__()
         self.elements = []
@@ -189,6 +191,7 @@ class CanhotoRetrato(BandaDANFE):
 
 
 class RemetenteRetrato(BandaDANFE):
+
     def __init__(self):
         super(RemetenteRetrato, self).__init__()
         self.elements = []
@@ -750,6 +753,7 @@ class RemetenteRetrato(BandaDANFE):
 
 
 class DestinatarioRetrato(BandaDANFE):
+
     def __init__(self):
         super(DestinatarioRetrato, self).__init__()
         self.elements = []
@@ -781,6 +785,7 @@ class DestinatarioRetrato(BandaDANFE):
 
 
 class LocalRetiradaRetrato(BandaDANFE):
+
     def __init__(self):
         super(LocalRetiradaRetrato, self).__init__()
         self.elements = []
@@ -794,6 +799,7 @@ class LocalRetiradaRetrato(BandaDANFE):
 
 
 class LocalEntregaRetrato(BandaDANFE):
+
     def __init__(self):
         super(LocalEntregaRetrato, self).__init__()
         self.elements = []
@@ -807,6 +813,7 @@ class LocalEntregaRetrato(BandaDANFE):
 
 
 class FaturaAVistaRetrato(BandaDANFE):
+
     def __init__(self):
         super(FaturaAVistaRetrato, self).__init__()
         self.elements = []
@@ -825,6 +832,7 @@ class FaturaAVistaRetrato(BandaDANFE):
 
 
 class FaturaAPrazoRetrato(BandaDANFE):
+
     def __init__(self):
         super(FaturaAPrazoRetrato, self).__init__()
         self.elements = []
@@ -843,11 +851,13 @@ class FaturaAPrazoRetrato(BandaDANFE):
 
 
 class DuplicatasRetrato(SubReport):
+
     def __init__(self):
         super(DuplicatasRetrato, self).__init__()
         self.get_queryset = lambda self, parent_object: parent_object.NFe.infNFe.cobr.dup or []
 
     class band_header(BandaDANFE):
+
         def __init__(self):
             super(DuplicatasRetrato.band_header, self).__init__()
             self.elements = []
@@ -855,6 +865,7 @@ class DuplicatasRetrato(SubReport):
             self.height = 0.42*cm
 
     class band_detail(BandaDANFE):
+
         def __init__(self):
             super(DuplicatasRetrato.band_detail, self).__init__()
             self.width = 6.4*cm
@@ -870,6 +881,7 @@ class DuplicatasRetrato(SubReport):
 
 
 class CalculoImpostoRetrato(BandaDANFE):
+
     def __init__(self):
         super(CalculoImpostoRetrato, self).__init__()
         self.elements = []
@@ -900,6 +912,7 @@ class CalculoImpostoRetrato(BandaDANFE):
 
 
 class TransporteRetrato(BandaDANFE):
+
     def __init__(self):
         super(TransporteRetrato, self).__init__()
         self.elements = []
@@ -927,11 +940,13 @@ class TransporteRetrato(BandaDANFE):
 
 
 class VolumesRetrato(SubReport):
+
     def __init__(self):
         super(VolumesRetrato, self).__init__()
         self.get_queryset = lambda self, parent_object: parent_object.NFe.infNFe.transp.vol or [Vol_200()]
 
     class band_detail(BandaDANFE):
+
         def __init__(self):
             super(VolumesRetrato.band_detail, self).__init__()
             self.elements = []
@@ -946,6 +961,7 @@ class VolumesRetrato(SubReport):
 
 
 class CabProdutoRetrato(BandaDANFE):
+
     def __init__(self):
         super(CabProdutoRetrato, self).__init__()
         self.elements = []
@@ -992,6 +1008,7 @@ class CabProdutoRetrato(BandaDANFE):
 
 
 class DetProdutoRetrato(BandaDANFE):
+
     def __init__(self):
         super(DetProdutoRetrato, self).__init__()
         self.elements = []
@@ -1034,6 +1051,7 @@ class DetProdutoRetrato(BandaDANFE):
 
 
 class ISSRetrato(BandaDANFE):
+
     def __init__(self):
         super(ISSRetrato, self).__init__()
         self.elements = []
@@ -1059,6 +1077,7 @@ class ISSRetrato(BandaDANFE):
 
 
 class DadosAdicionaisRetrato(BandaDANFE):
+
     def __init__(self):
         super(DadosAdicionaisRetrato, self).__init__()
         self.elements = []
@@ -1077,6 +1096,7 @@ class DadosAdicionaisRetrato(BandaDANFE):
 
 
 class RodapeFinalRetrato(BandaDANFE):
+
     def __init__(self):
         super(RodapeFinalRetrato, self).__init__()
         self.elements = []

@@ -50,6 +50,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class SOAPEnvio(XMLNFe):
+
     def __init__(self):
         super(SOAPEnvio, self).__init__()
         self.metodo = ''
@@ -86,6 +87,7 @@ class SOAPEnvio(XMLNFe):
 
 
 class SOAPRetorno(XMLNFe):
+
     def __init__(self):
         super(SOAPRetorno, self).__init__()
         self.metodo = ''

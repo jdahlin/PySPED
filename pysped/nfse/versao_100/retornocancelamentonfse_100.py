@@ -52,6 +52,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class _Cabecalho(XMLNFe):
+
     def __init__(self):
         super(_Cabecalho, self).__init__()
         self.CodCidade            = TagInteiro(nome='CodCidade'            , tamanho=[ 1, 10, 1], raiz='//nfse:RetornoCancelamentoNFSe/Cabecalho')
@@ -80,6 +81,7 @@ class _Cabecalho(XMLNFe):
 
 
 class RetornoCancelamentoNFSe(XMLNFe):
+
     def __init__(self):
         super(RetornoCancelamentoNFSe, self).__init__()
         self.caminho_esquema  = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')

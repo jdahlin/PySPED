@@ -67,6 +67,7 @@ DESCEVENTO_CONF_RECEBIMENTO = {
 
 
 class DetEventoConfRecebimento(DetEvento):
+
     def __init__(self):
         super(DetEventoConfRecebimento, self).__init__()
         self.xJust = TagCaracter(nome='xJust'  , codigo='HP20', tamanho=[15, 255]   , raiz='//detEvento', obrigatorio=False)
@@ -95,12 +96,14 @@ class DetEventoConfRecebimento(DetEvento):
 
 
 class InfEventoConfRecebimento(InfEvento):
+
     def __init__(self):
         super(InfEventoConfRecebimento, self).__init__()
         self.detEvento  = DetEventoConfRecebimento()
 
 
 class EventoConfRecebimento(Evento):
+
     def __init__(self):
         super(EventoConfRecebimento, self).__init__()
         self.infEvento = InfEventoConfRecebimento()
@@ -109,16 +112,19 @@ class EventoConfRecebimento(Evento):
 
 
 class InfEventoRecebidoConfRecebimento(InfEventoRecebido):
+
     def __init__(self):
         super(InfEventoRecebidoConfRecebimento, self).__init__()
 
 
 class RetEventoConfRecebimento(RetEvento):
+
     def __init__(self):
         super(RetEventoConfRecebimento, self).__init__()
 
 
 class ProcEventoConfRecebimento(ProcEvento):
+
     def __init__(self):
         super(ProcEventoConfRecebimento, self).__init__()
         self.evento = EventoConfRecebimento()
@@ -128,6 +134,7 @@ class ProcEventoConfRecebimento(ProcEvento):
 
 
 class EnvEventoConfRecebimento(EnvEvento):
+
     def __init__(self):
         super(EnvEventoConfRecebimento, self).__init__()
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
@@ -146,6 +153,7 @@ class EnvEventoConfRecebimento(EnvEvento):
 
 
 class RetEnvEventoConfRecebimento(RetEnvEvento):
+
     def __init__(self):
         super(RetEnvEventoConfRecebimento, self).__init__()
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')

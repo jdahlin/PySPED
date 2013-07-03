@@ -50,6 +50,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class NotaCancelamento(XMLNFe):
+
     def __init__(self):
         super(NotaCancelamento, self).__init__()
         self.Id = TagCaracter(nome='Nota', propriedade='Id', raiz='//')
@@ -84,6 +85,7 @@ class NotaCancelamento(XMLNFe):
 
 
 class _Lote(XMLNFe):
+
     def __init__(self):
         super(_Lote, self).__init__()
         self.Id = TagCaracter(nome='Lote', propriedade=u'Id', raiz=u'//nfse:ReqCancelamentoNFSe')
@@ -115,6 +117,7 @@ class _Lote(XMLNFe):
 
 
 class _Cabecalho(XMLNFe):
+
     def __init__(self):
         super(_Cabecalho, self).__init__()
         self.CodCidade        = TagInteiro(nome='CodCidade'        , tamanho=[ 1, 10, 1], raiz='//nfse:ReqCancelamentoNFSe/Cabecalho')
@@ -143,6 +146,7 @@ class _Cabecalho(XMLNFe):
 
 
 class ReqCancelamentoNFSe(XMLNFe):
+
     def __init__(self):
         super(ReqCancelamentoNFSe, self).__init__()
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')

@@ -49,6 +49,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class Signature(XMLNFe):
+
     def __init__(self):
         super(Signature, self).__init__()
         self.URI = u''

@@ -51,11 +51,13 @@ DIRNAME = os.path.dirname(__file__)
 
 
 class InfCancEnviado(cancnfe_107.InfCancEnviado):
+
     def __init__(self):
         super(InfCancEnviado, self).__init__()
 
 
 class CancNFe(cancnfe_107.CancNFe):
+
     def __init__(self):
         super(CancNFe, self).__init__()
         self.versao    = TagDecimal(nome='cancNFe', codigo='CP01', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
@@ -65,11 +67,13 @@ class CancNFe(cancnfe_107.CancNFe):
 
 
 class InfCancRecebido(cancnfe_107.InfCancRecebido):
+
     def __init__(self):
         super(InfCancRecebido, self).__init__()
 
 
 class RetCancNFe(cancnfe_107.RetCancNFe):
+
     def __init__(self):
         super(RetCancNFe, self).__init__()
         self.versao = TagDecimal(nome='retCancNFe', codigo='CR01', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
@@ -79,6 +83,7 @@ class RetCancNFe(cancnfe_107.RetCancNFe):
 
 
 class ProcCancNFe(cancnfe_107.ProcCancNFe):
+
     def __init__(self):
         super(ProcCancNFe, self).__init__()
         #
