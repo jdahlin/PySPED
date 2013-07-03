@@ -232,7 +232,7 @@ class InfCTeNorm(XMLNFe):
         for s in self.seg:
             xml += s.xml
 
-        #xml += self.infModal.xml    
+        #xml += self.infModal.xml
 
         for p in self.peri:
             xml += p.xml
@@ -1501,7 +1501,7 @@ class Compl(XMLNFe):
         self.ObsFisco = []
 
     def get_xml(self):
-        if not (self.xCaracAd.valor or self.xCaracSer.valor or self.xEmi.valor or self.origCalc.valor or self.destCalc.valor or 
+        if not (self.xCaracAd.valor or self.xCaracSer.valor or self.xEmi.valor or self.origCalc.valor or self.destCalc.valor or
             self.xObs.valor or len(self.ObsCont) or len(self.ObsFisco) or self.fluxo is not None or self.Entrega is not None):
             return ''
 
@@ -1647,7 +1647,7 @@ class Tomador(XMLNFe):
             self.enderToma.xml = arquivo
             self.email.xml     = arquivo
 
-            if self._le_noh('//CTe/infCte/ide/toma03/toma') is not None:            
+            if self._le_noh('//CTe/infCte/ide/toma03/toma') is not None:
                 self.toma03.xml = arquivo
                 self.toma.valor = self.toma03.valor
             else:
