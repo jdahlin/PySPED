@@ -376,7 +376,7 @@ class TagBoolean(TagCaracter):
         if isinstance(novo_valor, bool) and self._valida(novo_valor):
             self._valor_boolean = novo_valor
 
-            if novo_valor == None:
+            if novo_valor is None:
                 self._valor_string = ''
             elif novo_valor:
                 self._valor_string = 'true'
@@ -392,7 +392,7 @@ class TagBoolean(TagCaracter):
     valor = property(get_valor, set_valor)
 
     def __unicode__(self):
-        if (not self.obrigatorio) and (self.valor == None):
+        if (not self.obrigatorio) and (self.valor is None):
             texto = ''
         else:
             texto = '<%s' % self.nome
@@ -402,7 +402,7 @@ class TagBoolean(TagCaracter):
 
             if self.propriedade:
                 texto += ' %s="%s">' % (self.propriedade, self._valor_string)
-            elif not self.valor == None:
+            elif not self.valor is None:
                 texto += '>%s</%s>' % (self._valor_string, self.nome)
             else:
                 texto += ' />'
@@ -949,7 +949,7 @@ def _tipo_para_string(valor, tipo, obrigatorio, dec_min):
 
 
 def _string_para_tipo(valor, tipo):
-    if valor == None:
+    if valor is None:
         return valor
 
     if tipo == 'd':
