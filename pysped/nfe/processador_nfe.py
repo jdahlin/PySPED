@@ -208,7 +208,7 @@ class ProcessadorNFe(object):
                 # Testa a opção de um estado, para determinado serviço, usar o WS
                 # de outro estado
                 #
-                if type(webservices_2.ESTADO_WS[self.estado][ambiente][servico]) == dict:
+                if isinstance(webservices_2.ESTADO_WS[self.estado][ambiente][servico], dict):
                     ws_a_usar = webservices_2.ESTADO_WS[self.estado][ambiente][servico]
                 else:
                     ws_a_usar = webservices_2.ESTADO_WS[self.estado]
