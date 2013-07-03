@@ -40,7 +40,7 @@
 # <http://www.gnu.org/licenses/>
 #
 
-#from __future__ import division, print_function, unicode_literals
+# from __future__ import division, print_function, unicode_literals
 
 from M2Crypto import X509
 import os
@@ -67,6 +67,6 @@ if __name__ == '__main__':
             impressao_digital.append(fp)
             os.rename(DIRNAME + 'certificados-candidatos/' + certificado, DIRNAME + 'certificados-candidatos/' + fp + '.pem')
 
-        #fp = ':'.join(fp[pos:pos+2] for pos in xrange(0, len(fp), 2))
+        # fp = ':'.join(fp[pos:pos+2] for pos in xrange(0, len(fp), 2))
         print('\nSHA1 fingerprint:' + fp)
-        #print(fp)
+        # print(fp)

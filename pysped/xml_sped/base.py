@@ -71,10 +71,10 @@ class NohXML(object):
 
         if not isinstance(arquivo, basestring):
             arquivo = etree.tounicode(arquivo)
-            #self._xml = arquivo
-            #return True
+            # self._xml = arquivo
+            # return True
 
-        #elif arquivo is not None:
+        # elif arquivo is not None:
         if arquivo is not None:
             if isinstance(arquivo, basestring):
                 if isinstance(arquivo, str):
@@ -233,17 +233,17 @@ class TagCaracter(NohXML):
     def _testa_obrigatorio(self, valor):
         if self.obrigatorio and (not valor):
             return ErroObrigatorio(self.codigo, self.nome, self.propriedade)
-            #raise ErroObrigatorio(self.codigo, self.nome, self.propriedade)
+            # raise ErroObrigatorio(self.codigo, self.nome, self.propriedade)
 
     def _testa_tamanho_minimo(self, valor):
         if self.tamanho[0] and (len(unicode(valor)) < self.tamanho[0]):
             return TamanhoInvalido(self.codigo, self.nome, valor, tam_min=self.tamanho[0])
-            #raise TamanhoInvalido(self.codigo, self.nome, valor, tam_min=self.tamanho[0])
+            # raise TamanhoInvalido(self.codigo, self.nome, valor, tam_min=self.tamanho[0])
 
     def _testa_tamanho_maximo(self, valor):
         if self.tamanho[1] and (len(unicode(valor)) > self.tamanho[1]):
             return TamanhoInvalido(self.codigo, self.nome, valor, tam_max=self.tamanho[1])
-            #raise TamanhoInvalido(self.codigo, self.nome, valor, tam_max=self.tamanho[1])
+            # raise TamanhoInvalido(self.codigo, self.nome, valor, tam_max=self.tamanho[1])
 
     def _valida(self, valor):
         self.alertas = []
@@ -560,7 +560,7 @@ class TagDataHoraUTC(TagData):
             # Aqui não dá pra usar a função strftime pois em alguns
             # casos a data retornada é 01/01/0001 00:00:00
             # e a função strftime só aceita data com anos a partir de 1900
-            #self._valor_string = '%04d-%02d-%02dT%02d:%02d:%02d' % (self._valor_data.year, self._valor_data.month, self._valor_data.day,
+            # self._valor_string = '%04d-%02d-%02dT%02d:%02d:%02d' % (self._valor_data.year, self._valor_data.month, self._valor_data.day,
             #    self._valor_data.hour, self._valor_data.minute, self._valor_data.second)
 
             self._valor_string = self._valor_data.isoformat()
@@ -715,12 +715,12 @@ class TagDecimal(TagCaracter):
 
     def _testa_decimais_minimo(self, decimal):
         if self.decimais[0] and (len(decimal) < self.decimais[0]):
-            #return TamanhoInvalido(self.codigo, self.nome, decimal, dec_min=self.decimais[0])
+            # return TamanhoInvalido(self.codigo, self.nome, decimal, dec_min=self.decimais[0])
             raise TamanhoInvalido(self.codigo, self.nome, decimal, dec_min=self.decimais[0])
 
     def _testa_decimais_maximo(self, decimal):
         if self.decimais[1] and (len(decimal) > self.decimais[1]):
-            #return TamanhoInvalido(self.codigo, self.nome, decimal, dec_max=self.decimais[1])
+            # return TamanhoInvalido(self.codigo, self.nome, decimal, dec_max=self.decimais[1])
             raise TamanhoInvalido(self.codigo, self.nome, decimal, dec_max=self.decimais[1])
 
     def _valida(self, valor):
@@ -802,7 +802,7 @@ class XMLNFe(NohXML):
         xml = tira_abertura(self.xml).encode('utf-8')
 
         esquema = etree.XMLSchema(etree.parse(arquivo_esquema))
-        #esquema.assertValid(etree.fromstring(xml))
+        # esquema.assertValid(etree.fromstring(xml))
         esquema.validate(etree.fromstring(xml))
 
         return esquema.error_log
@@ -862,7 +862,7 @@ def por_acentos(texto):
     return texto
 
 def tira_abertura(texto):
-    #aberturas = (
+    # aberturas = (
         #'<?xml version="1.0" encoding="utf-8"?>',
         #'<?xml version="1.0" encoding="utf-8" ?>',
         #'<?xml version="1.0" encoding="utf-8" standalone="no"?>',
@@ -892,8 +892,8 @@ def tira_abertura(texto):
         #"<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>",
         #)
 
-    #for a in aberturas:
-        #texto = texto.replace(a,  '')
+    # for a in aberturas:
+        # texto = texto.replace(a,  '')
 
     if '?>' in texto:
         texto = texto.split('?>')[1:]

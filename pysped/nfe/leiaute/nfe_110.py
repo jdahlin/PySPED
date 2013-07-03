@@ -207,15 +207,15 @@ class TagCSTCOFINS(TagCaracter):
             self.grupo_cofins.vBC.obrigatorio       = True
             self.grupo_cofins.pCOFINS.obrigatorio   = True
             self.grupo_cofins.vCOFINS.obrigatorio   = True
-            #self.grupo_cofins.qBCProd.obrigatorio   = True
-            #self.grupo_cofins.vAliqProd.obrigatorio = True
+            # self.grupo_cofins.qBCProd.obrigatorio   = True
+            # self.grupo_cofins.vAliqProd.obrigatorio = True
 
         elif self.valor == '03':
             self.grupo_cofins.nome_tag = 'COFINSQtde'
             self.grupo_cofins.nome_tag_txt = 'S03'
             self.grupo_cofins.raiz_tag = '//det/imposto/COFINS/COFINSQtde'
-            #self.grupo_cofins.vBC.obrigatorio       = True
-            #self.grupo_cofins.pCOFINS.obrigatorio   = True
+            # self.grupo_cofins.vBC.obrigatorio       = True
+            # self.grupo_cofins.pCOFINS.obrigatorio   = True
             self.grupo_cofins.vCOFINS.obrigatorio   = True
             self.grupo_cofins.qBCProd.obrigatorio   = True
             self.grupo_cofins.vAliqProd.obrigatorio = True
@@ -224,11 +224,11 @@ class TagCSTCOFINS(TagCaracter):
             self.grupo_cofins.nome_tag = 'COFINSNT'
             self.grupo_cofins.nome_tag_txt = 'S04'
             self.grupo_cofins.raiz_tag = '//det/imposto/COFINS/COFINSNT'
-            #self.grupo_cofins.vBC.obrigatorio       = True
-            #self.grupo_cofins.pCOFINS.obrigatorio   = True
-            #self.grupo_cofins.vCOFINS.obrigatorio   = True
-            #self.grupo_cofins.qBCProd.obrigatorio   = True
-            #self.grupo_cofins.vAliqProd.obrigatorio = True
+            # self.grupo_cofins.vBC.obrigatorio       = True
+            # self.grupo_cofins.pCOFINS.obrigatorio   = True
+            # self.grupo_cofins.vCOFINS.obrigatorio   = True
+            # self.grupo_cofins.qBCProd.obrigatorio   = True
+            # self.grupo_cofins.vAliqProd.obrigatorio = True
 
         else:
             self.grupo_cofins.nome_tag = 'COFINSOutr'
@@ -486,15 +486,15 @@ class TagCSTPIS(TagCaracter):
             self.grupo_pis.vBC.obrigatorio       = True
             self.grupo_pis.pPIS.obrigatorio      = True
             self.grupo_pis.vPIS.obrigatorio      = True
-            #self.grupo_pis.qBCProd.obrigatorio   = True
-            #self.grupo_pis.vAliqProd.obrigatorio = True
+            # self.grupo_pis.qBCProd.obrigatorio   = True
+            # self.grupo_pis.vAliqProd.obrigatorio = True
 
         elif self.valor == '03':
             self.grupo_pis.nome_tag = 'PISQtde'
             self.grupo_pis.nome_tag_txt = 'Q03'
             self.grupo_pis.raiz_tag = '//det/imposto/PIS/PISQtde'
-            #self.grupo_pis.vBC.obrigatorio       = True
-            #self.grupo_pis.pPIS.obrigatorio      = True
+            # self.grupo_pis.vBC.obrigatorio       = True
+            # self.grupo_pis.pPIS.obrigatorio      = True
             self.grupo_pis.vPIS.obrigatorio      = True
             self.grupo_pis.qBCProd.obrigatorio   = True
             self.grupo_pis.vAliqProd.obrigatorio = True
@@ -503,11 +503,11 @@ class TagCSTPIS(TagCaracter):
             self.grupo_pis.nome_tag = 'PISNT'
             self.grupo_pis.nome_tag_txt = 'Q04'
             self.grupo_pis.raiz_tag = '//det/imposto/PIS/PISNT'
-            #self.grupo_pis.vBC.obrigatorio       = True
-            #self.grupo_pis.pPIS.obrigatorio      = True
-            #self.grupo_pis.vPIS.obrigatorio      = True
-            #self.grupo_pis.qBCProd.obrigatorio   = True
-            #self.grupo_pis.vAliqProd.obrigatorio = True
+            # self.grupo_pis.vBC.obrigatorio       = True
+            # self.grupo_pis.pPIS.obrigatorio      = True
+            # self.grupo_pis.vPIS.obrigatorio      = True
+            # self.grupo_pis.qBCProd.obrigatorio   = True
+            # self.grupo_pis.vAliqProd.obrigatorio = True
 
         else:
             self.grupo_pis.nome_tag = 'PISOutr'
@@ -2098,7 +2098,7 @@ class Prod(XMLNFe):
 class Det(XMLNFe):
     def __init__(self):
         super(Det, self).__init__()
-        self.nItem     = TagInteiro(nome='det'       , codigo='H01', tamanho=[1,   3], propriedade='nItem', raiz='/') #, namespace=NAMESPACE_NFE)
+        self.nItem     = TagInteiro(nome='det'       , codigo='H01', tamanho=[1,   3], propriedade='nItem', raiz='/')  # , namespace=NAMESPACE_NFE)
         self.prod      = Prod()
         self.imposto   = Imposto()
         self.infAdProd = TagCaracter(nome='infAdProd', codigo='V01', tamanho=[1, 500], raiz='//det', obrigatorio=False)
@@ -2594,14 +2594,14 @@ class Vol(XMLNFe):
     def __init__(self, xml=None):
         super(Vol, self).__init__()
         self.qVol   = TagInteiro(nome='qVol'  , codigo='X27', tamanho=[1, 15], raiz='//vol', obrigatorio=False)
-        #self.qVol   = self.TagInteiroVolume(nome='qVol'  , codigo='X27', tamanho=[1, 15], raiz='//vol', obrigatorio=False)
+        # self.qVol   = self.TagInteiroVolume(nome='qVol'  , codigo='X27', tamanho=[1, 15], raiz='//vol', obrigatorio=False)
         self.esp    = TagCaracter(nome='esp'  , codigo='X28', tamanho=[1, 60], raiz='//vol', obrigatorio=False)
         self.marca  = TagCaracter(nome='marca', codigo='X29', tamanho=[1, 60], raiz='//vol', obrigatorio=False)
         self.nVol   = TagCaracter(nome='nVol' , codigo='X30', tamanho=[1, 60], raiz='//vol', obrigatorio=False)
         self.pesoL  = TagDecimal(nome='pesoL' , codiog='X31', tamanho=[1, 15, 1], decimais=[0, 3, 3], raiz='//vol', obrigatorio=False)
         self.pesoB  = TagDecimal(nome='pesoB' , codiog='X32', tamanho=[1, 15, 1], decimais=[0, 3, 3], raiz='//vol', obrigatorio=False)
-        #self.pesoL  = self.TagDecimalVolume(nome='pesoL' , codiog='X31', tamanho=[1, 15, 1], decimais=[0, 3, 3], raiz='//vol', obrigatorio=False)
-        #self.pesoB  = self.TagDecimalVolume(nome='pesoB' , codiog='X32', tamanho=[1, 15, 1], decimais=[0, 3, 3], raiz='//vol', obrigatorio=False)
+        # self.pesoL  = self.TagDecimalVolume(nome='pesoL' , codiog='X31', tamanho=[1, 15, 1], decimais=[0, 3, 3], raiz='//vol', obrigatorio=False)
+        # self.pesoB  = self.TagDecimalVolume(nome='pesoB' , codiog='X32', tamanho=[1, 15, 1], decimais=[0, 3, 3], raiz='//vol', obrigatorio=False)
         self.lacres = []
 
     def get_xml(self):
@@ -3975,7 +3975,7 @@ class NFe(XMLNFe):
         #
         # O código numério é um número aleatório
         #
-        #chave += unicode(random.randint(0, 99999999)).strip().rjust(8, '0')
+        # chave += unicode(random.randint(0, 99999999)).strip().rjust(8, '0')
 
         #
         # Mas, por segurança, é preferível que esse número não seja aleatório de todo

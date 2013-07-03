@@ -42,8 +42,8 @@ class RPS(object):
         #
         # Prepara o queryset para impressão
         #
-        #self.NFe.monta_chave()
-        #self.NFe.monta_dados_contingencia_fsda()
+        # self.NFe.monta_chave()
+        # self.NFe.monta_dados_contingencia_fsda()
         self.dados_rps.site = self.site
         self.dados_rps.prestador = self.prestador
 
@@ -80,27 +80,27 @@ class RPS(object):
         else:
             self.rps.ObsImpressao.expression = self.obs_impressao
 
-        ##
-        ## Quadro do emitente
-        ##
-        ## Personalizado?
-        #if self.dados_prestador:
-            #self.rps.prestador.monta_quadro_prestador(self.dados_prestador)
-        #else:
-            ## Sem logotipo
-            #if not self.logo:
-                #self.danfe.remetente.monta_quadro_emitente(self.danfe.remetente.dados_emitente_sem_logo())
+        # 
+        # Quadro do emitente
+        # 
+        # Personalizado?
+        # if self.dados_prestador:
+            # self.rps.prestador.monta_quadro_prestador(self.dados_prestador)
+        # else:
+            # Sem logotipo
+            # if not self.logo:
+                # self.danfe.remetente.monta_quadro_emitente(self.danfe.remetente.dados_emitente_sem_logo())
 
-            ## Logotipo na vertical
-            #elif self.leiaute_logo_vertical:
-                #self.danfe.remetente.monta_quadro_emitente(self.danfe.remetente.dados_emitente_logo_vertical(self.logo))
+            # Logotipo na vertical
+            # elif self.leiaute_logo_vertical:
+                # self.danfe.remetente.monta_quadro_emitente(self.danfe.remetente.dados_emitente_logo_vertical(self.logo))
 
-            ## Logotipo na horizontal
-            #else:
-                #self.danfe.remetente.monta_quadro_emitente(self.danfe.remetente.dados_emitente_logo_horizontal(self.logo))
+            # Logotipo na horizontal
+            # else:
+                # self.danfe.remetente.monta_quadro_emitente(self.danfe.remetente.dados_emitente_logo_horizontal(self.logo))
 
         if self.salvar_arquivo:
-            #nome_arq = self.caminho + self.NFe.chave + '.pdf'
+            # nome_arq = self.caminho + self.NFe.chave + '.pdf'
             nome_arq = 'rps_teste.pdf'
             self.rps.generate_by(PDFGenerator, filename=nome_arq)
 
@@ -174,9 +174,9 @@ class ProcessadorNFSe(object):
         # Tudo certo!
         if self._soap_retorno.resposta.status == 200:
             self._soap_retorno.xml = self._soap_retorno.resposta.original
-        #except Exception, e:
-            #raise e
-        #else:
+        # except Exception, e:
+            # raise e
+        # else:
         con.close()
 
         print()

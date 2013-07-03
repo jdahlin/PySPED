@@ -134,8 +134,8 @@ class Evento(XMLNFe):
         self.versao    = TagDecimal(nome='evento', codigo='HP04', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.00', raiz='/')
         self.infEvento = InfEvento()
         self.Signature = Signature()
-        #self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
-        #self.arquivo_esquema = 'leiauteSRE_v1.00.xsd'
+        # self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
+        # self.arquivo_esquema = 'leiauteSRE_v1.00.xsd'
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -235,8 +235,8 @@ class RetEvento(XMLNFe):
         self.versao = TagDecimal(nome='retEvento', codigo='HR10', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.00', raiz='/')
         self.infEvento = InfEventoRecebido()
         self.Signature = Signature()
-        #self.caminho_esquema = os.path.join(DIRNAME, 'schema', ESQUEMA_ATUAL + '/')
-        #self.arquivo_esquema = 'leiauteSRE_v1.00.xsd'
+        # self.caminho_esquema = os.path.join(DIRNAME, 'schema', ESQUEMA_ATUAL + '/')
+        # self.arquivo_esquema = 'leiauteSRE_v1.00.xsd'
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)

@@ -118,8 +118,8 @@ from pysped.nfe.leiaute.consstatserv_200 import RetConsStatServ as RetConsStatSe
 #
 # Consulta cadastro
 #
-#from pysped.nfe.leiaute.conscad_101 import ConsCad as ConsCad_101
-#from pysped.nfe.leiaute.conscad_101 import RetConsCad as RetConsCad_101
+# from pysped.nfe.leiaute.conscad_101 import ConsCad as ConsCad_101
+# from pysped.nfe.leiaute.conscad_101 import RetConsCad as RetConsCad_101
 
 #
 # Eventos da NF-e - Carta de Correção Eletrônica

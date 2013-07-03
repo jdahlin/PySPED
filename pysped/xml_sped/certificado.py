@@ -114,7 +114,7 @@ class Certificado(object):
 
     def _get_chave(self):
         try:
-            if self._chave: # != ''
+            if self._chave:  # != ''
                 return self._chave
             else:
                 raise AttributeError("'chave' precisa ser regenerada")
@@ -156,7 +156,7 @@ class Certificado(object):
                 return self.proprietario['CN'].rsplit(':',1)[0]
             else:
                 return self.proprietario['CN']
-        else: # chave CN ainda não disponível
+        else:  # chave CN ainda não disponível
             try:
                 self.prepara_certificado_arquivo_pfx()
                 return self.proprietario['CN'].rsplit(':',1)[0]
@@ -174,7 +174,7 @@ class Certificado(object):
                 return self.proprietario['CN'].rsplit(':',1)[1]
             else:
                 return ''
-        else: #chave CN ainda não disponível
+        else:  # chave CN ainda não disponível
             try:
                 self.prepara_certificado_arquivo_pfx()
                 return self.proprietario['CN'].rsplit(':',1)[1]
@@ -239,8 +239,8 @@ class Certificado(object):
         ''' Desativa as funções criptográficas e de análise XML
         As funções devem ser chamadas na ordem inversa da ativação
         '''
-        #xmlsec.cryptoShutdown()
-        #xmlsec.cryptoAppShutdown()
+        # xmlsec.cryptoShutdown()
+        # xmlsec.cryptoAppShutdown()
         xmlsec.shutdown()
 
         libxml2.cleanupParser()
@@ -289,8 +289,8 @@ class Certificado(object):
             doctype = '<!DOCTYPE cancCTe [<!ATTLIST infCanc Id ID #IMPLIED>]>'
         elif '</inutCTe>' in xml:
             doctype = '<!DOCTYPE inutCTe [<!ATTLIST infInut Id ID #IMPLIED>]>'
-        #elif 'infEvento' in xml:
-            #doctype = '<!DOCTYPE evento [<!ATTLIST infEvento Id ID #IMPLIED>]>'
+        # elif 'infEvento' in xml:
+            # doctype = '<!DOCTYPE evento [<!ATTLIST infEvento Id ID #IMPLIED>]>'
 
         #
         # XML da NFS-e

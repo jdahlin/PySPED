@@ -88,8 +88,8 @@ UF_CODIGO = {
     'SE': 28,
     'SP': 35,
     'TO': 17,
-    'SUFRAMA': 90, # Código especial para eventos
-    'RFB': 91, # Código especial para eventos
+    'SUFRAMA': 90,  # Código especial para eventos
+    'RFB': 91,  # Código especial para eventos
 }
 
 CODIGO_UF = {
@@ -120,6 +120,6 @@ CODIGO_UF = {
     28: 'SE',
     35: 'SP',
     17: 'TO',
-    90: 'SUFRAMA', # Código especial para eventos
-    91: 'RFB', # Código especial para eventos
+    90: 'SUFRAMA',  # Código especial para eventos
+    91: 'RFB',  # Código especial para eventos
 }

@@ -212,9 +212,9 @@ class InfCTeNorm(XMLNFe):
         super(InfCTeNorm, self).__init__()
         self.infCarga = InfCarga()
         self.contQt = []
-        #self.docAnt = DocAnt()
+        # self.docAnt = DocAnt()
         self.seg = []
-        #self.infModal = InfModal()
+        # self.infModal = InfModal()
         self.peri = []
         self.veicNovos = []
         self.cobr = Cobr()
@@ -227,12 +227,12 @@ class InfCTeNorm(XMLNFe):
         for q in self.contQt:
             xml += q.xml
 
-        #xml += self.docAnt.xml
+        # xml += self.docAnt.xml
 
         for s in self.seg:
             xml += s.xml
 
-        #xml += self.infModal.xml
+        # xml += self.infModal.xml
 
         for p in self.peri:
             xml += p.xml
@@ -255,10 +255,10 @@ class InfCTeNorm(XMLNFe):
             # "reenraizadas" (propriedade raiz) para poderem ser
             # lidas corretamente
             #
-            #self.contQt    = self.le_grupo('//CTe/infCte/infCTeNorm/contQt'   , ContQt   , sigla_ns='cte')
-            #self.seg       = self.le_grupo('//CTe/infCte/infCTeNorm/seg'      , Seg      , sigla_ns='cte')
-            #self.peri      = self.le_grupo('//CTe/infCte/infCTeNorm/peri'     , Peri     , sigla_ns='cte')
-            #self.veicNovos = self.le_grupo('//CTe/infCte/infCTeNorm/veicNovos', VeicNovos, sigla_ns='cte')
+            # self.contQt    = self.le_grupo('//CTe/infCte/infCTeNorm/contQt'   , ContQt   , sigla_ns='cte')
+            # self.seg       = self.le_grupo('//CTe/infCte/infCTeNorm/seg'      , Seg      , sigla_ns='cte')
+            # self.peri      = self.le_grupo('//CTe/infCte/infCTeNorm/peri'     , Peri     , sigla_ns='cte')
+            # self.veicNovos = self.le_grupo('//CTe/infCte/infCTeNorm/veicNovos', VeicNovos, sigla_ns='cte')
 
     xml = property(get_xml, set_xml)
 
@@ -281,14 +281,14 @@ class TagCSTICMS(TagCaracter):
         #
         # Definimos todas as tags como não obrigatórias
         #
-        #self.grupo_icms.modBC.obrigatorio    = False
+        # self.grupo_icms.modBC.obrigatorio    = False
         self.grupo_icms.pRedBC.obrigatorio   = False
         self.grupo_icms.vBC.obrigatorio      = False
         self.grupo_icms.pICMS.obrigatorio    = False
         self.grupo_icms.vICMS.obrigatorio    = False
-        #self.grupo_icms.modBCST.obrigatorio  = False
-        #self.grupo_icms.pMVAST.obrigatorio   = False
-        #self.grupo_icms.pRedBCST.obrigatorio = False
+        # self.grupo_icms.modBCST.obrigatorio  = False
+        # self.grupo_icms.pMVAST.obrigatorio   = False
+        # self.grupo_icms.pRedBCST.obrigatorio = False
         self.grupo_icms.vBCSTRet.obrigatorio    = False
         self.grupo_icms.pICMSSTRet.obrigatorio  = False
         self.grupo_icms.vICMSSTRet.obrigatorio  = False
@@ -299,14 +299,14 @@ class TagCSTICMS(TagCaracter):
         # grupo ICMS ao redefinirmos o código da situação
         # tributária
         #
-        #self.grupo_icms.modBC.valor    = 3
+        # self.grupo_icms.modBC.valor    = 3
         self.grupo_icms.pRedBC.valor   = '0.00'
         self.grupo_icms.vBC.valor      = '0.00'
         self.grupo_icms.pICMS.valor    = '0.00'
         self.grupo_icms.vICMS.valor    = '0.00'
-        #self.grupo_icms.modBCST.valor  = 4
-        #self.grupo_icms.pMVAST.valor   = '0.00'
-        #self.grupo_icms.pRedBCST.valor = '0.00'
+        # self.grupo_icms.modBCST.valor  = 4
+        # self.grupo_icms.pMVAST.valor   = '0.00'
+        # self.grupo_icms.pRedBCST.valor = '0.00'
         self.grupo_icms.vBCSTRet.valor    = '0.00'
         self.grupo_icms.pICMSSTRet.valor  = '0.00'
         self.grupo_icms.vICMSSTRet.valor  = '0.00'
@@ -320,7 +320,7 @@ class TagCSTICMS(TagCaracter):
             self.grupo_icms.nome_tag = 'ICMS00'
             self.grupo_icms.nome_tag_txt = 'N02'
             self.grupo_icms.raiz_tag = '//CTe/infCte/imp/ICMS/ICMS00'
-            #self.grupo_icms.modBC.obrigatorio    = True
+            # self.grupo_icms.modBC.obrigatorio    = True
             self.grupo_icms.vBC.obrigatorio      = True
             self.grupo_icms.pICMS.obrigatorio    = True
             self.grupo_icms.vICMS.obrigatorio    = True
@@ -329,7 +329,7 @@ class TagCSTICMS(TagCaracter):
             self.grupo_icms.nome_tag = 'ICMS20'
             self.grupo_icms.nome_tag_txt = 'N04'
             self.grupo_icms.raiz_tag = '//CTe/infCte/imp/ICMS/ICMS20'
-            #self.grupo_icms.modBC.obrigatorio    = True
+            # self.grupo_icms.modBC.obrigatorio    = True
             self.grupo_icms.pRedBC.obrigatorio   = True
             self.grupo_icms.vBC.obrigatorio      = True
             self.grupo_icms.pICMS.obrigatorio    = True
@@ -352,7 +352,7 @@ class TagCSTICMS(TagCaracter):
             self.grupo_icms.nome_tag = 'ICMS90'
             self.grupo_icms.nome_tag_txt = 'N10'
             self.grupo_icms.raiz_tag = '//CTe/infCte/imp/ICMS/ICMS90'
-            #self.grupo_icms.pRedBC.obrigatorio   = True
+            # self.grupo_icms.pRedBC.obrigatorio   = True
             self.grupo_icms.vBC.obrigatorio      = True
             self.grupo_icms.pICMS.obrigatorio    = True
             self.grupo_icms.vICMS.obrigatorio    = True
@@ -360,16 +360,16 @@ class TagCSTICMS(TagCaracter):
         #
         # Redefine a raiz para todas as tags do grupo ICMS
         #
-        #self.grupo_icms.orig.raiz     = self.grupo_icms.raiz_tag
+        # self.grupo_icms.orig.raiz     = self.grupo_icms.raiz_tag
         self.grupo_icms.CST.raiz      = self.grupo_icms.raiz_tag
-        #self.grupo_icms.modBC.raiz    = self.grupo_icms.raiz_tag
+        # self.grupo_icms.modBC.raiz    = self.grupo_icms.raiz_tag
         self.grupo_icms.pRedBC.raiz   = self.grupo_icms.raiz_tag
         self.grupo_icms.vBC.raiz      = self.grupo_icms.raiz_tag
         self.grupo_icms.pICMS.raiz    = self.grupo_icms.raiz_tag
         self.grupo_icms.vICMS.raiz    = self.grupo_icms.raiz_tag
-        #self.grupo_icms.modBCST.raiz  = self.grupo_icms.raiz_tag
-        #self.grupo_icms.pMVAST.raiz   = self.grupo_icms.raiz_tag
-        #self.grupo_icms.pRedBCST.raiz = self.grupo_icms.raiz_tag
+        # self.grupo_icms.modBCST.raiz  = self.grupo_icms.raiz_tag
+        # self.grupo_icms.pMVAST.raiz   = self.grupo_icms.raiz_tag
+        # self.grupo_icms.pRedBCST.raiz = self.grupo_icms.raiz_tag
         self.grupo_icms.vBCSTRet.raiz    = self.grupo_icms.raiz_tag
         self.grupo_icms.pICMSSTRet.raiz  = self.grupo_icms.raiz_tag
         self.grupo_icms.vICMSSTRet.raiz  = self.grupo_icms.raiz_tag
@@ -383,15 +383,15 @@ class TagCSTICMS(TagCaracter):
 class ICMS(XMLNFe):
     def __init__(self):
         super(ICMS, self).__init__()
-        #self.orig     = TagInteiro(nome='orig'     , tamanho=[1,  1, 1],                     raiz='')
-        #self.modBC    = TagInteiro(nome='modBC'    , tamanho=[1,  1, 1],                     raiz='')
+        # self.orig     = TagInteiro(nome='orig'     , tamanho=[1,  1, 1],                     raiz='')
+        # self.modBC    = TagInteiro(nome='modBC'    , tamanho=[1,  1, 1],                     raiz='')
         self.pRedBC   = TagDecimal(nome='pRedBC'    , tamanho=[1,  5, 1], decimais=[0, 2, 2], raiz='')
         self.vBC      = TagDecimal(nome='vBC'       , tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='')
         self.pICMS    = TagDecimal(nome='pICMS'     , tamanho=[1,  5, 1], decimais=[0, 2, 2], raiz='')
         self.vICMS    = TagDecimal(nome='vICMS'     , tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='')
-        #self.modBCST  = TagInteiro(nome='modBCST'  , tamanho=[1,  1, 1],                     raiz='')
-        #self.pMVAST   = TagDecimal(nome='pMVAST'   , tamanho=[1,  5, 1], decimais=[0, 2, 2], raiz='')
-        #self.pRedBCST = TagDecimal(nome='pRedBCST' , tamanho=[1,  5, 1], decimais=[0, 2, 2], raiz='')
+        # self.modBCST  = TagInteiro(nome='modBCST'  , tamanho=[1,  1, 1],                     raiz='')
+        # self.pMVAST   = TagDecimal(nome='pMVAST'   , tamanho=[1,  5, 1], decimais=[0, 2, 2], raiz='')
+        # self.pRedBCST = TagDecimal(nome='pRedBCST' , tamanho=[1,  5, 1], decimais=[0, 2, 2], raiz='')
         self.vBCSTRet   = TagDecimal(nome='vBCSTRet'  , tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='')
         self.pICMSSTRet = TagDecimal(nome='pICMSSTRet', tamanho=[1,  5, 1], decimais=[0, 2, 2], raiz='')
         self.vICMSSTRet = TagDecimal(nome='vICMSSTRet', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='')
@@ -410,17 +410,17 @@ class ICMS(XMLNFe):
         #
         xml = XMLNFe.get_xml(self)
         xml += '<ICMS><' + self.nome_tag + '>'
-        #xml += self.orig.xml
+        # xml += self.orig.xml
         xml += self.CST.xml
 
         if self.CST.valor == '00':
-            #xml += self.modBC.xml
+            # xml += self.modBC.xml
             xml += self.vBC.xml
             xml += self.pICMS.xml
             xml += self.vICMS.xml
 
         elif self.CST.valor == '20':
-            #xml += self.modBC.xml
+            # xml += self.modBC.xml
             xml += self.pRedBC.xml
             xml += self.vBC.xml
             xml += self.pICMS.xml
@@ -435,7 +435,7 @@ class ICMS(XMLNFe):
             xml += self.vICMSSTRet.xml
 
         elif self.CST.valor == '90':
-            #xml += self.modBC.xml
+            # xml += self.modBC.xml
             xml += self.pRedBC.xml
             xml += self.vBC.xml
             xml += self.pICMS.xml
@@ -465,16 +465,16 @@ class ICMS(XMLNFe):
             #
             # Agora podemos ler os valores tranquilamente...
             #
-            #self.orig.xml     = arquivo
+            # self.orig.xml     = arquivo
             self.CST.xml      = arquivo
-            #self.modBC.xml    = arquivo
+            # self.modBC.xml    = arquivo
             self.pRedBC.xml   = arquivo
             self.vBC.xml      = arquivo
             self.pICMS.xml    = arquivo
             self.vICMS.xml    = arquivo
-            #self.modBCST.xml  = arquivo
-            #self.pMVAST.xml   = arquivo
-            #self.pRedBCST.xml = arquivo
+            # self.modBCST.xml  = arquivo
+            # self.pMVAST.xml   = arquivo
+            # self.pRedBCST.xml = arquivo
             self.vBCSTRet.xml    = arquivo
             self.pICMSSTRet.xml  = arquivo
             self.vICMSSTRet.xml  = arquivo
@@ -1166,8 +1166,8 @@ class EnderEmit(XMLNFe):
         self.xMun    = TagCaracter(nome='xMun'   , codigo='C11', tamanho=[ 2, 60]   , raiz='//CTe/infCte/emit/enderEmit')
         self.CEP     = TagCaracter(nome='CEP'    , codigo='C13', tamanho=[ 8,  8, 8], raiz='//CTe/infCte/emit/enderEmit', obrigatorio=False)
         self.UF      = TagCaracter(nome='UF'     , codigo='C12', tamanho=[ 2,  2]   , raiz='//CTe/infCte/emit/enderEmit')
-        #self.cPais   = TagInteiro(nome='cPais'   , codigo='C14', tamanho=[ 4,  4, 4], raiz='//CTe/infCte/emit/enderEmit', obrigatorio=False)
-        #self.xPais   = TagCaracter(nome='xPais'  , codigo='C15', tamanho=[ 1, 60]   , raiz='//CTe/infCte/emit/enderEmit', obrigatorio=False)
+        # self.cPais   = TagInteiro(nome='cPais'   , codigo='C14', tamanho=[ 4,  4, 4], raiz='//CTe/infCte/emit/enderEmit', obrigatorio=False)
+        # self.xPais   = TagCaracter(nome='xPais'  , codigo='C15', tamanho=[ 1, 60]   , raiz='//CTe/infCte/emit/enderEmit', obrigatorio=False)
         self.fone    = TagInteiro(nome='fone'    , codigo='C16', tamanho=[ 1, 12]   , raiz='//CTe/infCte/emit/enderEmit', obrigatorio=False)
 
     def get_xml(self):
@@ -1181,8 +1181,8 @@ class EnderEmit(XMLNFe):
         xml += self.xMun.xml
         xml += self.CEP.xml
         xml += self.UF.xml
-        #xml += self.cPais.xml
-        #xml += self.xPais.xml
+        # xml += self.cPais.xml
+        # xml += self.xPais.xml
         xml += self.fone.xml
         xml += '</enderEmit>'
         return xml
@@ -1197,8 +1197,8 @@ class EnderEmit(XMLNFe):
             self.xMun.xml    = arquivo
             self.CEP.xml     = arquivo
             self.UF.xml      = arquivo
-            #self.cPais.xml   = arquivo
-            #self.xPais.xml   = arquivo
+            # self.cPais.xml   = arquivo
+            # self.xPais.xml   = arquivo
             self.fone.xml    = arquivo
 
     xml = property(get_xml, set_xml)
@@ -1213,8 +1213,8 @@ class EnderEmit(XMLNFe):
         txt += self.xMun.txt + '|'
         txt += self.CEP.txt + '|'
         txt += self.UF.txt + '|'
-        #txt += self.cPais.txt + '|'
-        #txt += self.xPais.txt + '|'
+        # txt += self.cPais.txt + '|'
+        # txt += self.xPais.txt + '|'
         txt += self.fone.txt + '|'
         txt += '\n'
 
@@ -1227,42 +1227,42 @@ class Emit(XMLNFe):
     def __init__(self):
         super(Emit, self).__init__()
         self.CNPJ      = TagCaracter(nome='CNPJ' , codigo='C02' , tamanho=[14, 14], raiz='//CTe/infCte/emit', obrigatorio=False)
-        #self.CPF       = TagCaracter(nome='CPF'  , codigo='C02a', tamanho=[11, 11], raiz='//CTe/infCte/emit', obrigatorio=False)
+        # self.CPF       = TagCaracter(nome='CPF'  , codigo='C02a', tamanho=[11, 11], raiz='//CTe/infCte/emit', obrigatorio=False)
         self.IE        = TagCaracter(nome='IE'   , codigo='C17' , tamanho=[ 2, 14], raiz='//CTe/infCte/emit', obrigatorio=False)
         self.xNome     = TagCaracter(nome='xNome', codigo='C03' , tamanho=[ 2, 60], raiz='//CTe/infCte/emit')
         self.xFant     = TagCaracter(nome='xFant', codigo='C04' , tamanho=[ 1, 60], raiz='//CTe/infCte/emit', obrigatorio=False)
         self.enderEmit = EnderEmit()
-        #self.IEST      = TagCaracter(nome='IEST' , codigo='C18' , tamanho=[ 2, 14], raiz='//CTe/infCte/emit', obrigatorio=False)
-        #self.IM        = TagCaracter(nome='IM'   , codigo='C19' , tamanho=[ 1, 15], raiz='//CTe/infCte/emit', obrigatorio=False)
-        #self.CNAE      = TagCaracter(nome='CNAE' , codigo='C20' , tamanho=[ 7,  7], raiz='//CTe/infCte/emit', obrigatorio=False)
+        # self.IEST      = TagCaracter(nome='IEST' , codigo='C18' , tamanho=[ 2, 14], raiz='//CTe/infCte/emit', obrigatorio=False)
+        # self.IM        = TagCaracter(nome='IM'   , codigo='C19' , tamanho=[ 1, 15], raiz='//CTe/infCte/emit', obrigatorio=False)
+        # self.CNAE      = TagCaracter(nome='CNAE' , codigo='C20' , tamanho=[ 7,  7], raiz='//CTe/infCte/emit', obrigatorio=False)
 
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
         xml += '<emit>'
         xml += self.CNPJ.xml
-        #xml += self.CPF.xml
+        # xml += self.CPF.xml
         xml += self.IE.xml
         xml += self.xNome.xml
         xml += self.xFant.xml
         xml += self.enderEmit.xml
-        #xml += self.IEST.xml
-        #xml += self.IM.xml
-        #xml += self.CNAE.xml
+        # xml += self.IEST.xml
+        # xml += self.IM.xml
+        # xml += self.CNAE.xml
         xml += '</emit>'
         return xml
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
             self.CNPJ.xml      = arquivo
-            #self.CPF.xml       = arquivo
+            # self.CPF.xml       = arquivo
             self.IE.xml        = arquivo
             self.xNome.xml     = arquivo
             self.xFant.xml     = arquivo
             self.enderEmit.xml = arquivo
-            #self.IEST.xml      = arquivo
-            #self.IM.xml        = arquivo
-            #self.CNAE.xml      = arquivo
+            # self.IEST.xml      = arquivo
+            # self.IM.xml        = arquivo
+            # self.CNAE.xml      = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -1788,13 +1788,13 @@ class InfCTe(XMLNFe):
         self.vPrest   = VPrest()
         self.imp      = Imp()
         self.infCTeNorm = InfCTeNorm()
-        #self.det      = []
-        #self.total    = Total()
-        #self.transp   = Transp()
-        #self.cobr     = Cobr()
-        #self.infAdic  = InfAdic()
-        #self.exporta  = Exporta()
-        #self.compra   = Compra()
+        # self.det      = []
+        # self.total    = Total()
+        # self.transp   = Transp()
+        # self.cobr     = Cobr()
+        # self.infAdic  = InfAdic()
+        # self.exporta  = Exporta()
+        # self.compra   = Compra()
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -1810,15 +1810,15 @@ class InfCTe(XMLNFe):
         xml += self.imp.xml
         xml += self.infCTeNorm.xml
 
-        #for d in self.det:
-            #xml += d.xml
+        # for d in self.det:
+            # xml += d.xml
 
-        #xml += self.total.xml
-        #xml += self.transp.xml
-        #xml += self.cobr.xml
-        #xml += self.infAdic.xml
-        #xml += self.exporta.xml
-        #xml += self.compra.xml
+        # xml += self.total.xml
+        # xml += self.transp.xml
+        # xml += self.cobr.xml
+        # xml += self.infAdic.xml
+        # xml += self.exporta.xml
+        # xml += self.compra.xml
         xml += '</infCte>'
         return xml
 
@@ -1843,14 +1843,14 @@ class InfCTe(XMLNFe):
             # "reenraizadas" (propriedade raiz) para poderem ser
             # lidas corretamente
             #
-            #self.det = self.le_grupo('//CTe/infCte/det', Det)
+            # self.det = self.le_grupo('//CTe/infCte/det', Det)
 
-            #self.total.xml    = arquivo
-            #self.transp.xml   = arquivo
-            #self.cobr.xml     = arquivo
-            #self.infAdic.xml  = arquivo
-            #self.exporta.xml  = arquivo
-            #self.compra.xml   = arquivo
+            # self.total.xml    = arquivo
+            # self.transp.xml   = arquivo
+            # self.cobr.xml     = arquivo
+            # self.infAdic.xml  = arquivo
+            # self.exporta.xml  = arquivo
+            # self.compra.xml   = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -1924,7 +1924,7 @@ class CTe(XMLNFe):
         #
         # O código numério é um número aleatório
         #
-        #chave += unicode(random.randint(0, 99999999)).strip().rjust(8, '0')
+        # chave += unicode(random.randint(0, 99999999)).strip().rjust(8, '0')
 
         #
         # Mas, por segurança, é preferível que esse número não seja aleatório de todo
@@ -1944,7 +1944,7 @@ class CTe(XMLNFe):
         #
         # Define na estrutura do XML o campo cCT
         #
-        #self.infCte.ide.cCT.valor = unicode(self.infCte.ide.tpEmis.valor).zfill(1) + codigo
+        # self.infCte.ide.cCT.valor = unicode(self.infCte.ide.tpEmis.valor).zfill(1) + codigo
         self.infCte.ide.cCT.valor = chave[-8:]
 
         #

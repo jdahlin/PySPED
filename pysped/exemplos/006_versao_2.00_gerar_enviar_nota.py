@@ -57,8 +57,8 @@ if __name__ == '__main__':
     p = ProcessadorNFe()
     p.versao              = '2.00'
     p.estado              = 'SP'
-    #p.certificado.arquivo = 'certificado.pfx'
-    #p.certificado.senha   = 'senha'
+    # p.certificado.arquivo = 'certificado.pfx'
+    # p.certificado.senha   = 'senha'
 
     #
     # arquivo 'certificado_caminho.txt' deve conter o caminho para o 'certificado.pfx'
@@ -111,8 +111,8 @@ if __name__ == '__main__':
     n.infNFe.emit.enderEmit.xMun.valor    = 'Sorocaba'
     n.infNFe.emit.enderEmit.UF.valor      = 'SP'
     n.infNFe.emit.enderEmit.CEP.valor     = '18095360'
-    #n.infNFe.emit.enderEmit.cPais.valor   = '1058'
-    #n.infNFe.emit.enderEmit.xPais.valor   = 'Brasil'
+    # n.infNFe.emit.enderEmit.cPais.valor   = '1058'
+    # n.infNFe.emit.enderEmit.xPais.valor   = 'Brasil'
     n.infNFe.emit.enderEmit.fone.valor    = '1534110602'
     n.infNFe.emit.IE.valor = '111111111111'
     #
@@ -133,8 +133,8 @@ if __name__ == '__main__':
     n.infNFe.dest.enderDest.xMun.valor    = 'Sorocaba'
     n.infNFe.dest.enderDest.UF.valor      = 'SP'
     n.infNFe.dest.enderDest.CEP.valor     = '18095360'
-    #n.infNFe.dest.enderDest.cPais.valor   = '1058'
-    #n.infNFe.dest.enderDest.xPais.valor   = 'Brasil'
+    # n.infNFe.dest.enderDest.cPais.valor   = '1058'
+    # n.infNFe.dest.enderDest.xPais.valor   = 'Brasil'
     n.infNFe.dest.enderDest.fone.valor    = '1534110602'
     n.infNFe.dest.IE.valor = '111111111111'
     #

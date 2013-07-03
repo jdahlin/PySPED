@@ -124,8 +124,8 @@ from consstatserv_200 import RetConsStatServ as RetConsStatServ_200
 #
 # Consulta cadastro
 #
-#from conscad_101 import ConsCad as ConsCad_101
-#from conscad_101 import RetConsCad as RetConsCad_101
+# from conscad_101 import ConsCad as ConsCad_101
+# from conscad_101 import RetConsCad as RetConsCad_101
 
 #
 # Eventos da NF-e - classes básicas

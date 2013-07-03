@@ -52,8 +52,8 @@ if __name__ == '__main__':
     p = ProcessadorNFe()
     p.versao              = '2.00'
     p.estado              = 'SP'
-    #p.certificado.arquivo = 'certificado.pfx'
-    #p.certificado.senha   = 'senha'
+    # p.certificado.arquivo = 'certificado.pfx'
+    # p.certificado.senha   = 'senha'
 
     #
     # arquivo 'certificado_caminho.txt' deve conter o caminho para o 'certificado.pfx'
@@ -83,7 +83,7 @@ if __name__ == '__main__':
     #  .resposta.original - o texto do xml (SOAP) recebido do webservice
     #
     processo = p.conhecer_operacao_evento(
-        cnpj='34274233006488', # CNPJ do destinatário/gerador do evento
+        cnpj='34274233006488',  # CNPJ do destinatário/gerador do evento
         chave_nfe='35100411111111111111551010000000271123456789',
         )
 

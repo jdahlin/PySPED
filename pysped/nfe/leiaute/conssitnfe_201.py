@@ -108,9 +108,9 @@ class RetConsSitNFe(conssitnfe_200.RetConsSitNFe):
         grupos = self._le_nohs(raiz_grupo)
 
         if grupos is not None:
-            #tags = [classe_grupo() for g in grupos]
-            #for i in range(len(grupos)):
-                #tags[i].xml = grupos[i]
+            # tags = [classe_grupo() for g in grupos]
+            # for i in range(len(grupos)):
+                # tags[i].xml = grupos[i]
             for g in grupos:
                 tag = ProcEvento_100()
                 tag.xml = g

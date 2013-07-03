@@ -69,7 +69,7 @@ LARGURA_PAISAGEM = PAISAGEM[0] - MARGEM_ESQUERDA - MARGEM_DIREITA
 # Fontes adicionais
 #
 FONTES_ADICIONAIS = {
-    #u'Gentium Book Basic': (
+    # u'Gentium Book Basic': (
         #(u'Gentium Book Basic'            , DIRNAME + u'/fonts/genbkbasr.ttf' , False, False),
         #(u'Gentium Book Basic Bold'       , DIRNAME + u'/fonts/genbkbasb.ttf' , True , False),
         #(u'Gentium Book Basic Italic'     , DIRNAME + u'/fonts/genbkbasi.ttf' , False, True),
@@ -156,7 +156,7 @@ EMIT_DADOS = {'fontName': FONTE_NEGRITO, 'fontSize': FONTE_TAMANHO_8, 'alignment
 class LabelMargemEsquerda(Label):
     def __init__(self):
         super(LabelMargemEsquerda, self).__init__()
-        #self.borders_stroke_width = {'top': 0.1, 'right': 0.1, 'bottom': 0.1, 'left': 0.1}
+        # self.borders_stroke_width = {'top': 0.1, 'right': 0.1, 'bottom': 0.1, 'left': 0.1}
         self.borders = {'top': 0.1, 'right': 0.1, 'bottom': 0.1, 'left': False}
         self.padding_top = 0.08*cm
         self.padding_left = 0.08*cm
@@ -175,7 +175,7 @@ class LabelMargemDireita(LabelMargemEsquerda):
 class Titulo(Label):
     def __init__(self, *args, **kwargs):
         super(Titulo, self).__init__(*args, **kwargs)
-        #self.borders = {'top': 0.1, 'right': 0.1, 'bottom': 0.1, 'left': False}
+        # self.borders = {'top': 0.1, 'right': 0.1, 'bottom': 0.1, 'left': False}
         self.padding_top = 0.1*cm
         self.padding_left = 0.1*cm
         self.padding_bottom = 0.1*cm
@@ -207,11 +207,11 @@ class Texto(Label):
 class Descritivo(Label):
     def __init__(self):
         super(Descritivo, self).__init__()
-        #self.borders_stroke_width = {'top': 0.1, 'right': 0.1, 'bottom': 0.1, 'left': 0.1}
-        #self.borders = {'top': 0.1, 'right': False, 'bottom': 0.1, 'left': False}
+        # self.borders_stroke_width = {'top': 0.1, 'right': 0.1, 'bottom': 0.1, 'left': 0.1}
+        # self.borders = {'top': 0.1, 'right': False, 'bottom': 0.1, 'left': False}
         self.padding_top = 0.03*cm
         self.padding_left = 0.1*cm
-        #self.padding_bottom = 0.05*cm
+        # self.padding_bottom = 0.05*cm
         self.padding_right = 0.1*cm
         self.style = DESCRITIVO_BLOCO
         self.height = 0.42*cm

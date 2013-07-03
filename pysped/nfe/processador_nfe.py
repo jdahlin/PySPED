@@ -224,7 +224,7 @@ class ProcessadorNFe(object):
         self._soap_retorno.metodo     = self._soap_envio.metodo
         self._soap_retorno.resposta   = resposta
 
-        #try:
+        # try:
         self.certificado.prepara_certificado_arquivo_pfx()
 
         #
@@ -245,9 +245,9 @@ class ProcessadorNFe(object):
         arq_tmp.write(self.certificado.certificado)
         arq_tmp.close()
 
-        #con = HTTPSConnection(self._servidor, key_file=nome_arq_chave, cert_file=nome_arq_certificado)
+        # con = HTTPSConnection(self._servidor, key_file=nome_arq_chave, cert_file=nome_arq_certificado)
         con = ConexaoHTTPS(self._servidor, key_file=nome_arq_chave, cert_file=nome_arq_certificado)
-        #con.request('POST', '/' + self._url, self._soap_envio.xml.decode('utf-8'), self._soap_envio.header)
+        # con.request('POST', '/' + self._url, self._soap_envio.xml.decode('utf-8'), self._soap_envio.header)
         #
         # É preciso definir o POST abaixo como bytestring, já que importamos
         # os unicode_literals... Dá um pau com xml com acentos sem isso...
@@ -278,9 +278,9 @@ class ProcessadorNFe(object):
         # Tudo certo!
         if self._soap_retorno.resposta.status == 200:
             self._soap_retorno.xml = self._soap_retorno.resposta.original
-        #except Exception, e:
-            #raise e
-        #else:
+        # except Exception, e:
+            # raise e
+        # else:
         con.close()
 
     def enviar_lote(self, numero_lote=None, lista_nfes=[]):
@@ -292,7 +292,7 @@ class ProcessadorNFe(object):
             envio = EnviNFe_200()
             resposta = RetEnviNFe_200()
 
-            if self.ambiente == 2: # Homologação tem detalhes especificos desde a NT2011_002
+            if self.ambiente == 2:  # Homologação tem detalhes especificos desde a NT2011_002
                 for nfe in lista_nfes:
                     nfe.infNFe.dest.CNPJ.valor = '99999999000191'
                     nfe.infNFe.dest.xNome.valor = 'NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL'
@@ -329,7 +329,7 @@ class ProcessadorNFe(object):
 
         self._conectar_servico(WS_NFE_ENVIO_LOTE, envio, resposta)
 
-        #resposta.validar()
+        # resposta.validar()
         if self.salvar_arquivos:
             nome_arq = self.caminho + unicode(envio.idLote.valor).strip().rjust(15, '0') + '-rec'
 
@@ -369,7 +369,7 @@ class ProcessadorNFe(object):
 
         self._conectar_servico(WS_NFE_CONSULTA_RECIBO, envio, resposta, ambiente)
 
-        #resposta.validar()
+        # resposta.validar()
         if self.salvar_arquivos:
             nome_arq = self.caminho + unicode(envio.nRec.valor).strip().rjust(15, '0') + '-pro-rec'
 
@@ -437,7 +437,7 @@ class ProcessadorNFe(object):
 
         self._conectar_servico(WS_NFE_CANCELAMENTO, envio, resposta, ambiente)
 
-        #resposta.validar()
+        # resposta.validar()
 
         #
         # Se for autorizado, monta o processo de cancelamento
@@ -516,7 +516,7 @@ class ProcessadorNFe(object):
         envio.infInut.cUF.valor    = codigo_estado
         envio.infInut.ano.valor    = ano
         envio.infInut.CNPJ.valor   = cnpj
-        #envio.infInut.mod.valor    = 55
+        # envio.infInut.mod.valor    = 55
         envio.infInut.serie.valor  = serie
         envio.infInut.nNFIni.valor = numero_inicial
         envio.infInut.nNFFin.valor = numero_final
@@ -533,7 +533,7 @@ class ProcessadorNFe(object):
 
         self._conectar_servico(WS_NFE_INUTILIZACAO, envio, resposta, ambiente)
 
-        #resposta.validar()
+        # resposta.validar()
 
         # Se for autorizada, monta o processo de inutilização
         if resposta.infInut.cStat.valor == '102':
@@ -606,7 +606,7 @@ class ProcessadorNFe(object):
 
         self._conectar_servico(WS_NFE_CONSULTA, envio, resposta, ambiente)
 
-        #resposta.validar()
+        # resposta.validar()
         if self.salvar_arquivos:
             nome_arq = self.caminho + unicode(chave_nfe).strip().rjust(44, '0') + '-sit.xml'
             arq = open(nome_arq, 'w')
@@ -651,7 +651,7 @@ class ProcessadorNFe(object):
 
         self._conectar_servico(WS_NFE_SITUACAO, envio, resposta, ambiente)
 
-        #resposta.validar()
+        # resposta.validar()
         if self.salvar_arquivos:
             arq = open(self.caminho + envio.data.strftime('%Y%m%dT%H%M%S') + '-sta.xml', 'w')
             arq.write(resposta.xml.encode('utf-8'))
@@ -916,7 +916,7 @@ class ProcessadorNFe(object):
                 evento.infEvento.cOrgao.valor = UF_CODIGO['RFB']
 
             self.certificado.assina_xmlnfe(evento)
-            #evento.validar()
+            # evento.validar()
 
         envio.evento = lista_eventos
 
@@ -943,7 +943,7 @@ class ProcessadorNFe(object):
 
         self._conectar_servico(WS_NFE_RECEPCAO_EVENTO, envio, resposta, somente_ambiente_nacional=tipo_evento=='confrec')
 
-        #resposta.validar()
+        # resposta.validar()
         if self.salvar_arquivos:
             nome_arq = caminho + unicode(envio.idLote.valor).strip().rjust(15, '0') + '-rec-' + tipo_evento
 
@@ -986,7 +986,7 @@ class ProcessadorNFe(object):
                 # O evento foi aceito, mas não foi vinculado à NF-e
                 #
                 elif ret.infEvento.cStat.valor == '136':
-                    arq = open(nome_arq + '-ret-' + tipo_evento + '-sv.xml', 'w') # -sv = sem vínculo
+                    arq = open(nome_arq + '-ret-' + tipo_evento + '-sv.xml', 'w')  # -sv = sem vínculo
                     arq.write(ret.xml.encode('utf-8'))
                     arq.close
 
@@ -1053,7 +1053,7 @@ class ProcessadorNFe(object):
 
         self._conectar_servico(WS_NFE_CONSULTA_DESTINADAS, envio, resposta, somente_ambiente_nacional=True)
 
-        #resposta.validar()
+        # resposta.validar()
         if self.salvar_arquivos:
             arq = open(self.caminho + unicode(numero_lote).strip().rjust(15, '0') + '-consnfedest-resp.xml', 'w')
             arq.write(resposta.original.encode('utf-8'))
@@ -1081,7 +1081,7 @@ class ProcessadorNFe(object):
 
         self._conectar_servico(WS_NFE_DOWNLOAD, envio, resposta)
 
-        #resposta.validar()
+        # resposta.validar()
         if self.salvar_arquivos:
             arq = open(self.caminho + unicode(numero_lote).strip().rjust(15, '0') + '-downloadnfe-resp.xml', 'w')
             arq.write(resposta.original.encode('utf-8'))
@@ -1093,7 +1093,7 @@ class ProcessadorNFe(object):
         evento = EventoCancNFe_100()
         evento.infEvento.tpAmb.valor = ambiente or self.ambiente
         evento.infEvento.cOrgao.valor = UF_CODIGO[self.estado]
-        evento.infEvento.CNPJ.valor = chave_nfe[6:20] # Extrai o CNPJ da própria chave da NF-e
+        evento.infEvento.CNPJ.valor = chave_nfe[6:20]  # Extrai o CNPJ da própria chave da NF-e
         evento.infEvento.chNFe.valor = chave_nfe
         evento.infEvento.dhEvento.valor = datetime.now()
         evento.infEvento.detEvento.nProt.valor = numero_protocolo
@@ -1106,7 +1106,7 @@ class ProcessadorNFe(object):
         evento = EventoCCe_100()
         evento.infEvento.tpAmb.valor = ambiente or self.ambiente
         evento.infEvento.cOrgao.valor = UF_CODIGO[self.estado]
-        evento.infEvento.CNPJ.valor = chave_nfe[6:20] # Extrai o CNPJ da própria chave da NF-e
+        evento.infEvento.CNPJ.valor = chave_nfe[6:20]  # Extrai o CNPJ da própria chave da NF-e
         evento.infEvento.chNFe.valor = chave_nfe
         evento.infEvento.dhEvento.valor = datetime.now()
         evento.infEvento.detEvento.xCorrecao.valor = correcao
@@ -1204,7 +1204,7 @@ class ProcessadorNFe(object):
         # Consulta de cadastro é sempre feita em ambiente de produção
         self._conectar_servico(WS_NFE_CONSULTA_CADASTRO, envio, resposta, 1)
 
-        #resposta.validar()
+        # resposta.validar()
         if self.salvar_arquivos:
             arq = open(self.caminho + nome + '-cad.xml', 'w')
             arq.write(resposta.xml.encode('utf-8'))

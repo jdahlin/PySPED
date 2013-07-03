@@ -133,7 +133,7 @@ class InutCTe(XMLNFe):
 
     def monta_chave(self):
         chave = unicode(self.infInut.cUF.valor).zfill(2)
-        #chave += self.infInut.ano.valor.zfill(2)
+        # chave += self.infInut.ano.valor.zfill(2)
         chave += self.infInut.CNPJ.valor.zfill(14)
         chave += unicode(self.infInut.mod.valor).zfill(2)
         chave += unicode(self.infInut.serie.valor).zfill(3)
@@ -246,7 +246,7 @@ class RetInutCTe(XMLNFe):
 
     def monta_chave(self):
         chave = unicode(self.infInut.cUF.valor).zfill(2)
-        #chave += self.infInut.ano.valor.zfill(2)
+        # chave += self.infInut.ano.valor.zfill(2)
         chave += self.infInut.CNPJ.valor.zfill(14)
         chave += unicode(self.infInut.mod.valor).zfill(2)
         chave += unicode(self.infInut.serie.valor).zfill(3)

@@ -176,7 +176,7 @@ class SOAPRetorno(XMLNFe):
         if self._le_xml(arquivo):
             resposta = por_acentos(self._le_tag('//*/res:' + self.metodo + 'Result',  ns=('http://www.portalfiscal.inf.br/nfe/wsdl/' + self.webservice)))
             resposta = tira_abertura(resposta)
-            #print resposta
+            # print resposta
             self.resposta.xml = resposta
 
         return self.xml

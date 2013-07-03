@@ -254,14 +254,14 @@ class InfConsRecebido(XMLNFe):
             if self._le_nohs('//retConsCad/infCons/infCad') is not None:
                 self.infCad = self.le_grupo('//retConsCad/infCons/infCad', InfCadRecebido)
 
-            #self.infCad = []
-            #cadastros = self._le_nohs('//retConsCad/infCons/infCad')
+            # self.infCad = []
+            # cadastros = self._le_nohs('//retConsCad/infCons/infCad')
 
-            #if len(cadastros) > 0:
-                #for c in cadastros:
-                    #nc = InfCadRecebido()
-                    #nc.xml = c
-                    #self.infCad.append(nc)
+            # if len(cadastros) > 0:
+                # for c in cadastros:
+                    # nc = InfCadRecebido()
+                    # nc.xml = c
+                    # self.infCad.append(nc)
 
     xml = property(get_xml, set_xml)
 

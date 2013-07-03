@@ -61,10 +61,10 @@ from cte_104 import Pass as Pass_104
 from cte_104 import ObsCont as ObsCont_104
 from cte_104 import ObsFisco as ObsFisco_104
 from cte_104 import InfQ as InfQ_104
-#from cte_104 import ContQt as ContQt_104
-#from cte_104 import Seg as Seg_104
-#from cte_104 import Peri as Peri_104
-#from cte_104 import VeicNovos as VeicNovos_104
+# from cte_104 import ContQt as ContQt_104
+# from cte_104 import Seg as Seg_104
+# from cte_104 import Peri as Peri_104
+# from cte_104 import VeicNovos as VeicNovos_104
 from cte_104 import Dup as Dup_104
 
 #

@@ -316,7 +316,7 @@ UFMT = {
         WS_NFE_INUTILIZACAO     : 'nfews/v2/services/NfeInutilizacao2',
         WS_NFE_CONSULTA         : 'nfews/v2/services/NfeConsulta2',
         WS_NFE_SITUACAO         : 'nfews/v2/services/NfeStatusServico2',
-        #WS_NFE_CONSULTA_CADASTRO: 'nfews/CadConsultaCadastro',
+        # WS_NFE_CONSULTA_CADASTRO: 'nfews/CadConsultaCadastro',
         WS_NFE_RECEPCAO_EVENTO  : 'nfews/v2/services/RecepcaoEvento',
         }
 }
@@ -442,7 +442,7 @@ UFRS = {
         WS_NFE_INUTILIZACAO     : 'ws/nfeinutilizacao/nfeinutilizacao2.asmx',
         WS_NFE_CONSULTA         : 'ws/NfeConsulta/NfeConsulta2.asmx',
         WS_NFE_SITUACAO         : 'ws/NfeStatusServico/NfeStatusServico2.asmx',
-        #WS_NFE_CONSULTA_CADASTRO: 'ws/cadconsultacadastro/cadconsultacadastro2.asmx',
+        # WS_NFE_CONSULTA_CADASTRO: 'ws/cadconsultacadastro/cadconsultacadastro2.asmx',
         WS_NFE_RECEPCAO_EVENTO  : 'ws/recepcaoevento/recepcaoevento.asmx',
     }
 }

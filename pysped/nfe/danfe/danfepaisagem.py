@@ -48,7 +48,7 @@ from geraldo import Line
 from geraldo.generators import PDFGenerator
 
 import os
-#cur_dir = os.path.dirname(os.path.abspath(__file__))
+# cur_dir = os.path.dirname(os.path.abspath(__file__))
 cur_dir = '/home/ari/django/danfe/'
 
 from registrafontes import registra_fontes
@@ -354,7 +354,7 @@ class DetProdutoPaisagem(BandaDANFE):
         self.inclui_texto_numerico_produto(nome='', texto='99,99', top=0*cm, left=18.24*cm, width=0.58*cm)
         self.inclui_texto_numerico_produto(nome='', texto='99,99', top=0*cm, left=18.82*cm, width=0.58*cm, margem_direita=True)
 
-        #self.height = 0.28*cm
+        # self.height = 0.28*cm
         self.auto_expand_height = True
 
 
@@ -392,7 +392,7 @@ if __name__ == '__main__':
     registros = [{'id': 1}, {'id': 1}, {'id': 1}, {'id': 1}, {'id': 1}, {'id': 1}, {'id': 1}, {'id': 1}, {'id': 1}, {'id': 1},]
 
     d = DANFEPaisagem()
-    #d.on_new_page = OnNewPage
+    # d.on_new_page = OnNewPage
 
     d.queryset = registros
     d.band_page_header = CanhotoPaisagem()
@@ -402,12 +402,12 @@ if __name__ == '__main__':
     d.band_page_header.child_bands[0].campo_variavel_normal()
 
     d.band_page_header.child_bands.append(DestinatarioPaisagem())
-    #d.band_page_header.child_bands.append(LocalRetiradaPaisagem())
-    #d.band_page_header.child_bands.append(LocalEntregaPaisagem())
-    #d.band_page_header.child_bands.append(FaturaAVistaPaisagem())
-    #d.band_page_header.child_bands.append(CalculoImpostoPaisagem())
-    #d.band_page_header.child_bands.append(TransportePaisagem())
-    #d.band_page_header.child_bands.append(CabProdutoPaisagem())
+    # d.band_page_header.child_bands.append(LocalRetiradaPaisagem())
+    # d.band_page_header.child_bands.append(LocalEntregaPaisagem())
+    # d.band_page_header.child_bands.append(FaturaAVistaPaisagem())
+    # d.band_page_header.child_bands.append(CalculoImpostoPaisagem())
+    # d.band_page_header.child_bands.append(TransportePaisagem())
+    # d.band_page_header.child_bands.append(CabProdutoPaisagem())
 
     d.band_detail = DetProdutoPaisagem()
 

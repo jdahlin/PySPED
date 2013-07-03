@@ -52,8 +52,8 @@ if __name__ == '__main__':
     p = ProcessadorNFe()
     p.versao              = '1.10'
     p.estado              = 'SP'
-    #p.certificado.arquivo = 'certificado.pfx'
-    #p.certificado.senha   = 'senha'
+    # p.certificado.arquivo = 'certificado.pfx'
+    # p.certificado.senha   = 'senha'
 
     #
     # arquivo 'certificado_caminho.txt' deve conter o caminho para o 'certificado.pfx'

@@ -622,9 +622,9 @@ class ICMS(nfe_110.ICMS):
         # Valores de controle, para gerar corretamente as tags
         # com os novos campos
         #
-        self.regime_tributario = 1 # Simples Nacional
-        self.partilha          = False # Para o grupo ICMSPart
-        self.repasse           = False # Para o grupo ICMSST
+        self.regime_tributario = 1  # Simples Nacional
+        self.partilha          = False  # Para o grupo ICMSPart
+        self.repasse           = False  # Para o grupo ICMSST
 
         #
         # Novos campos para o ICMS
@@ -677,7 +677,7 @@ class ICMS(nfe_110.ICMS):
                 if not self.partilha:
                     xml += self.modBC.xml
                     xml += self.vBC.xml
-                    #xml += self.pRedBC.xml
+                    # xml += self.pRedBC.xml
                     xml += self.pICMS.xml
                     xml += self.vICMS.xml
                     xml += self.modBCST.xml
@@ -972,7 +972,7 @@ class ICMS(nfe_110.ICMS):
                 if not self.partilha:
                     txt += self.modBC.txt + '|'
                     txt += self.vBC.txt + '|'
-                    #txt += self.pRedBC.txt + '|'
+                    # txt += self.pRedBC.txt + '|'
                     txt += self.pICMS.txt + '|'
                     txt += self.vICMS.txt + '|'
                     txt += self.modBCST.txt + '|'
@@ -1423,7 +1423,7 @@ class Prod(nfe_110.Prod):
         xml += self.xProd.xml
         xml += self.NCM.xml
         xml += self.EXTIPI.xml
-        #xml += self.genero.xml
+        # xml += self.genero.xml
         xml += self.CFOP.xml
         xml += self.uCom.xml
         xml += self.qCom.xml
@@ -1463,7 +1463,7 @@ class Prod(nfe_110.Prod):
             self.xProd.xml    = arquivo
             self.NCM.xml      = arquivo
             self.EXTIPI.xml   = arquivo
-            #self.genero.xml   = arquivo
+            # self.genero.xml   = arquivo
             self.CFOP.xml     = arquivo
             self.uCom.xml     = arquivo
             self.qCom.xml     = arquivo
@@ -1511,7 +1511,7 @@ class Prod(nfe_110.Prod):
         txt += self.xProd.txt + '|'
         txt += self.NCM.txt + '|'
         txt += self.EXTIPI.txt + '|'
-        #txt += self.genero.txt + '|'
+        # txt += self.genero.txt + '|'
         txt += self.CFOP.txt + '|'
         txt += self.uCom.txt + '|'
         txt += self.qCom.txt + '|'
@@ -2166,8 +2166,8 @@ class RefNF(nfe_110.RefNF):
 class NFRef(nfe_110.NFRef):
     def __init__(self):
         super(NFRef, self).__init__()
-        #self.refNFe = TagCaracter(nome='refNFe', codigo='B13', tamanho=[44, 44], raiz='//NFRef', obrigatorio=False)
-        #self.refNF  = RefNF()
+        # self.refNFe = TagCaracter(nome='refNFe', codigo='B13', tamanho=[44, 44], raiz='//NFRef', obrigatorio=False)
+        # self.refNF  = RefNF()
         self.refNFP = RefNFP()
         self.refCTe = TagCaracter(nome='refCTe', codigo='B20j', tamanho=[44, 44], raiz='//NFRef', obrigatorio=False)
         self.refECF = RefECF()
@@ -2334,7 +2334,7 @@ class InfNFe(nfe_110.InfNFe):
     def __init__(self):
         super(InfNFe, self).__init__()
         self.versao   = TagDecimal(nome='infNFe' , codigo='A01', propriedade='versao', raiz='//NFe', namespace=NAMESPACE_NFE, valor='2.00')
-        #self.Id       = TagCaracter(nome='infNFe', codigo='A03', propriedade='Id'    , raiz='//NFe', namespace=NAMESPACE_NFE)
+        # self.Id       = TagCaracter(nome='infNFe', codigo='A03', propriedade='Id'    , raiz='//NFe', namespace=NAMESPACE_NFE)
         self.ide      = Ide()
         self.emit     = Emit()
         self.avulsa   = Avulsa()
@@ -2361,7 +2361,7 @@ class InfNFe(nfe_110.InfNFe):
         xml += self.entrega.xml
 
         for d in self.det:
-            #d.imposto.regime_tributario = self.emit.CRT.valor
+            # d.imposto.regime_tributario = self.emit.CRT.valor
             d.imposto.ICMS.regime_tributario = self.emit.CRT.valor
             xml += d.xml
 
@@ -2426,7 +2426,7 @@ class InfNFe(nfe_110.InfNFe):
         txt += self.infAdic.txt
         txt += self.exporta.txt
         txt += self.compra.txt
-        #txt += self.cana.txt
+        # txt += self.cana.txt
 
         return txt
 

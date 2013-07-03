@@ -64,8 +64,8 @@ if __name__ == '__main__':
     p = ProcessadorNFe()
     p.versao              = '2.00'
     p.estado              = 'SP'
-    #p.certificado.arquivo = 'certificado.pfx'
-    #p.certificado.senha   = 'senha'
+    # p.certificado.arquivo = 'certificado.pfx'
+    # p.certificado.senha   = 'senha'
 
     #
     # arquivo 'certificado_caminho.txt' deve conter o caminho para o 'certificado.pfx'
@@ -96,12 +96,12 @@ if __name__ == '__main__':
     #
     processo = p.consultar_notas_destinadas(
         cnpj='34274233006488',
-        #ultimo_nsu='0',
-        #tipo_emissao=CONS_NFE_TODAS,
-        #tipo_emissao=CONS_NFE_SEM_CONFIRMACAO_OPERACAO,
-        #tipo_emissao=CONS_NFE_SEM_CIENCIA_OPERACAO,
-        #tipo_nfe=CONS_NFE_EMISSAO_TODOS_EMITENTES,
-        #tipo_nfe=CONS_NFE_EMISSAO_SOMENTE_TERCEIROS,
+        # ultimo_nsu='0',
+        # tipo_emissao=CONS_NFE_TODAS,
+        # tipo_emissao=CONS_NFE_SEM_CONFIRMACAO_OPERACAO,
+        # tipo_emissao=CONS_NFE_SEM_CIENCIA_OPERACAO,
+        # tipo_nfe=CONS_NFE_EMISSAO_TODOS_EMITENTES,
+        # tipo_nfe=CONS_NFE_EMISSAO_SOMENTE_TERCEIROS,
         )
 
     print(processo)

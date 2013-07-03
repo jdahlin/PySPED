@@ -75,7 +75,7 @@ class InutNFe(inutnfe_107.InutNFe):
         #
         # Mas na versão 2.00 tem
         #
-        #chave = chave[0:2] + chave[4:]
+        # chave = chave[0:2] + chave[4:]
 
         #
         # Define o Id

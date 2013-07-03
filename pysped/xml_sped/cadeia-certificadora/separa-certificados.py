@@ -47,7 +47,7 @@ if __name__ == u'__main__':
     #
     # Prepara a cadeia certificadora, separando individualmente cada um
     #
-    #import pdb; pdb.set_trace()
+    # import pdb; pdb.set_trace()
     arq_tmp1 = open('cadeia-1.pem')
     arq_tmp2 = open('cadeia-2.pem')
     arq_tmp3 = open('cadeia-3.pem')
