@@ -94,7 +94,7 @@ class RPSRetrato(Report):
             # self.band_page_header.child_bands.append(self.cab_item)
 
     def format_date(self, data, formato):
-        return  data.strftime(formato.encode('utf-8')).decode('utf-8')
+        return data.strftime(formato.encode('utf-8')).decode('utf-8')
 
     class ObsImpressao(SystemField):
         name = 'obs_impressao'
