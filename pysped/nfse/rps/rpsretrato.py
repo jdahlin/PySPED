@@ -145,47 +145,35 @@ class CabecalhoRetrato(BandaRPS):
         img.filename = 'logotipo_prefeitura/sp-sorocaba.jpeg'
         self.elements.append(img)
 
-
         # txt = self.inclui_texto_sem_borda(nome='danfe_ext', texto=u'DOCUMENTO AUXILIAR DA NOTA FISCAL ELETRÔNICA', top=0.6*cm, left=8*cm, width=3.4*cm, *cm)height=4*cm)
         # txt.style = DESCRITIVO_DANFE_GERAL
-
         # txt = self.inclui_texto_sem_borda(nome='danfe_entrada', texto=u'0 - ENTRADA', top=1.45*cm, left=8.3*cm, width=3.4*cm, height=4*cm)
         # txt.style = DESCRITIVO_DANFE_ES
-
         # txt = self.inclui_texto_sem_borda(nome='danfe_saida', texto=u'1 - SAÍDA', top=1.85*cm, left=8.3*cm, width=3.4*cm, height=4*cm)
         # txt.style = DESCRITIVO_DANFE_ES
-
         # fld = self.inclui_campo_sem_borda(nome='danfe_entrada_saida', conteudo=u'NFe.infNFe.ide.tpNF.valor', top=1.6*cm, left=10.4*cm, width=0.6*cm, height=0.6*cm)
         # fld.style = DESCRITIVO_NUMERO
         # fld.borders = {'top': 0.1, 'right': 0.1, 'bottom': 0.1, 'left': 0.1}
         # fld.padding_bottom = 0.2*cm
-
         # fld = self.inclui_campo_sem_borda(nome='danfe_numero', conteudo=u'NFe.numero_formatado', top=2.4*cm, left=8*cm, width=3.4*cm, height=0.5*cm)
         # fld.style = DESCRITIVO_NUMERO
-
         # fld = self.inclui_campo_sem_borda(nome='danfe_serie', conteudo=u'NFe.serie_formatada', top=2.85*cm, left=8*cm, width=3.4*cm, height=0.5*cm)
         # fld.style = DESCRITIVO_NUMERO
-
         # fld = SystemField(name='fld_danfe_folha', expression=u'FOLHA %(page_number)02d/%(page_count)02d', top=3.3*cm, left=8*cm, width=3.4*cm, height=0.5*cm)
         # fld.padding_top = 0.1*cm
         # fld.style = DESCRITIVO_NUMERO
         # self.elements.append(fld)
-
         # 
         # No caso dos códigos de barra, altura (height) e largura (width) se referem às barras, não à imagem
         # 
         # self.elements.append(Line(top=0*cm, bottom=0*cm, left=11.4*cm, right=19.4*cm, stroke_width=0.1))
         # self.elements.append(BarCode(type=u'Code128', attribute_name=u'NFe.chave_para_codigo_barras', top=((1.625-0.8)/2.0)*cm, left=11.3*cm, width=0.025*cm, height=0.8*cm))
-
         # lbl, fld = self.inclui_campo(nome='remetente_chave', titulo=u'CHAVE DE ACESSO', conteudo=u'NFe.chave_formatada', top=1.625*cm, left=11.4*cm, width=8*cm, margem_direita=True)
         # fld.style = DADO_CHAVE
-
         # self.inclui_campo(nome='remetente_natureza', titulo=u'NATUREZA DA OPERAÇÃO', conteudo=u'NFe.infNFe.ide.natOp.valor', top=4*cm, left=0*cm, width=11.4*cm)
-
         # self.inclui_campo(nome='remetente_ie', titulo=u'INSCRIÇÃO ESTADUAL', conteudo=u'NFe.infNFe.emit.IE.valor', top=4.70*cm, left=0*cm, width=6.4*cm)
         # self.inclui_campo(nome='remetente_iest', titulo=u'INSCRIÇÃO ESTADUAL DO SUBSTITUTO TRIBUTÁRIO', conteudo=u'NFe.infNFe.emit.IEST.valor', top=4.70*cm, left=6.4*cm, width=6.6*cm)
         # self.inclui_campo(nome='remetente_cnpj', titulo=u'CNPJ', conteudo=u'NFe.cnpj_emitente_formatado', top=4.70*cm, left=13*cm, width=6.4*cm, margem_direita=True)
-
         self.height = 2.3*cm
 
 class PrestadorRetrato(BandaRPS):

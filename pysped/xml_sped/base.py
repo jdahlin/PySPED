@@ -345,7 +345,6 @@ class TagBoolean(TagCaracter):
         if 'valor' in kwargs:
             self.valor = kwargs['valor']
 
-
     def _testa_obrigatorio(self, valor):
         # No caso da tag booleana, False deve ser tratado como preenchido
         if self.obrigatorio and (valor is None):
@@ -745,7 +744,6 @@ class TagDecimal(TagCaracter):
             self.alertas.append(self._testa_decimais_maximo(decimal))
 
         return self.alertas == []
-
 
     def set_valor(self, novo_valor):
         if isinstance(novo_valor, basestring):

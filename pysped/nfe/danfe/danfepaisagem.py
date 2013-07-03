@@ -127,7 +127,6 @@ class RemetentePaisagem(BandaDANFE):
         lbl, fld = self.inclui_texto(nome='remetente_chave', titulo=u'CHAVE DE ACESSO', texto=u'1234 5678 9012 3456 7890 1234 5678 9012 3456 7890 1234', top=1.625*cm, left=11.4*cm, width=8*cm, margem_direita=True)
         fld.style = DADO_CHAVE
 
-
         self.inclui_texto(nome='remetente_natureza', titulo=u'NATUREZA DA OPERAÇÃO', texto=u'VENDA PARA CONSUMIDOR FINAL', top=4*cm, left=0*cm, width=11.4*cm)
 
         self.inclui_texto(nome='remetente_ie', titulo=u'INSCRIÇÃO ESTADUAL', texto=u'', top=4.70*cm, left=0*cm, width=6.4*cm)
@@ -269,7 +268,6 @@ class TransportePaisagem(BandaDANFE):
         txt.margin_right = 0*cm
         txt.borders_stroke_width = {'top': 0.1, 'right': 0.1, 'bottom': 0.1, 'left': 0.1}
         txt.borders = {'top': True, 'right': True, 'bottom': True, 'left': True}
-
 
         self.inclui_texto(nome='trn_placa', titulo=u'CÓDIGO ANTT', texto='', top=0.42*cm, left=11.6*cm, width=1.9*cm)
         self.inclui_texto(nome='trn_placa', titulo=u'PLACA DO VEÍCULO', texto=u'MMM-9999', top=0.42*cm, left=13.5*cm, width=1.9*cm)

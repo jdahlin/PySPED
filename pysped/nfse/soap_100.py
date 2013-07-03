@@ -49,7 +49,6 @@ import os
 DIRNAME = os.path.dirname(__file__)
 
 
-
 class SOAPEnvio(XMLNFe):
     def __init__(self):
         super(SOAPEnvio, self).__init__()

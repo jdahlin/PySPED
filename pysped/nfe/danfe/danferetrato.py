@@ -147,7 +147,6 @@ class DANFERetrato(Report):
     def format_date(self, data, formato):
         return  data.strftime(formato.encode('utf-8')).decode('utf-8')
 
-
     class ObsImpressao(SystemField):
         expression = u'DANFE gerado em %(now:%d/%m/%Y, %H:%M:%S)s'
 

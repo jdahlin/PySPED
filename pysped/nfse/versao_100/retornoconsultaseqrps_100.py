@@ -49,7 +49,6 @@ import os
 DIRNAME = os.path.dirname(__file__)
 
 
-
 class _Cabecalho(XMLNFe):
     def __init__(self):
         super(_Cabecalho, self).__init__()

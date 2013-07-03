@@ -381,5 +381,4 @@ class RetEnvEvento(XMLNFe):
             for ret in self.retEvento:
                 self.dic_retEvento[ret.infEvento.chNFe.valor] = ret
 
-
     xml = property(get_xml, set_xml)

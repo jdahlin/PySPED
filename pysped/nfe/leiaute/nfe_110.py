@@ -159,7 +159,6 @@ class COFINSST(XMLNFe):
     txt = property(get_txt)
 
 
-
 class TagCSTCOFINS(TagCaracter):
     def __init__(self, *args, **kwargs):
         super(TagCSTCOFINS, self).__init__(*args, **kwargs)
@@ -239,7 +238,6 @@ class TagCSTCOFINS(TagCaracter):
             self.grupo_cofins.vCOFINS.obrigatorio   = True
             self.grupo_cofins.qBCProd.obrigatorio   = True
             self.grupo_cofins.vAliqProd.obrigatorio = True
-
 
         #
         # Redefine a raiz para todas as tags do grupo COFINS
@@ -519,7 +517,6 @@ class TagCSTPIS(TagCaracter):
             self.grupo_pis.qBCProd.obrigatorio   = True
             self.grupo_pis.vAliqProd.obrigatorio = True
 
-
         #
         # Redefine a raiz para todas as tags do grupo PIS
         #
@@ -797,7 +794,6 @@ class IPI(XMLNFe):
         self.nome_tag = 'IPINT'
         self.nome_tag_txt = 'O08'
         self.raiz_tag = '//det/imposto/IPI/IPINT'
-
 
     def get_xml(self):
         if not ((self.CST.valor in ('00', '49', '50', '99')) or
@@ -2133,7 +2129,6 @@ class Det(XMLNFe):
 
     txt = property(get_txt)
 
-
     def descricao_produto_formatada(self):
         formatado = self.prod.xProd.valor.replace('|', '<br />')
 
@@ -3152,7 +3147,6 @@ class Entrega(XMLNFe):
         self.xMun    = TagCaracter(nome='xMun'   , codigo='G07', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/entrega')
         self.UF      = TagCaracter(nome='UF'     , codigo='G08', tamanho=[ 2,  2]   , raiz='//NFe/infNFe/entrega')
 
-
     def get_xml(self):
         if not len(self.CNPJ.valor):
             return ''
@@ -3213,7 +3207,6 @@ class Retirada(XMLNFe):
         self.cMun    = TagInteiro(nome='cMun'    , codigo='F06', tamanho=[ 7,  7, 7], raiz='//NFe/infNFe/retirada')
         self.xMun    = TagCaracter(nome='xMun'   , codigo='F07', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/retirada')
         self.UF      = TagCaracter(nome='UF'     , codigo='F08', tamanho=[ 2,  2]   , raiz='//NFe/infNFe/retirada')
-
 
     def get_xml(self):
         if not len(self.CNPJ.valor):
@@ -3546,7 +3539,6 @@ class Emit(XMLNFe):
         self.IM        = TagCaracter(nome='IM'   , codigo='C19' , tamanho=[ 1, 15], raiz='//NFe/infNFe/emit', obrigatorio=False)
         self.CNAE      = TagCaracter(nome='CNAE' , codigo='C20' , tamanho=[ 7,  7], raiz='//NFe/infNFe/emit', obrigatorio=False)
 
-
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
         xml += '<emit>'
@@ -3650,7 +3642,6 @@ class RefNF(XMLNFe):
         return txt
 
     txt = property(get_txt)
-
 
 
 class NFRef(XMLNFe):
@@ -4091,7 +4082,6 @@ class NFe(XMLNFe):
 
     def serie_formatada(self):
         return 'SÉRIE ' + unicode(self.infNFe.ide.serie.valor).zfill(3)
-
 
     def _formata_cpf(self, cpf):
         if not len(cpf.strip()):

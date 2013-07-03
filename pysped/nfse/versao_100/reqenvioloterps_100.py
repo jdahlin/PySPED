@@ -196,7 +196,6 @@ class RPS(XMLNFe):
         self.Informacoes   = TagCaracter(nome='Informacoes' , tamanho=[ 0, 5000])
         self.Informacoes.valor = 'Este Recibo Provisório de Serviços - RPS não é válido como documento fiscal. O prestador do serviço, no prazo de até 5 (cinco) dias corridos da emissão deste RPS, deverá substituí-lo por uma Nota Fiscal de Serviços Eletrônica - NFS-e.'
 
-
     def gera_assinatura(self):
         '''
         Gera o hash sha1 para a tag Assinatura

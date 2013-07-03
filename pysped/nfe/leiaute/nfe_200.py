@@ -1778,7 +1778,6 @@ class Entrega(nfe_110.Entrega):
         self.CNPJ    = TagCaracter(nome='CNPJ'   , codigo='G02' , tamanho=[ 0, 14]   , raiz='//NFe/infNFe/retirada')
         self.CPF     = TagCaracter(nome='CPF'    , codigo='G02a', tamanho=[11, 11]   , raiz='//NFe/infNFe/retirada')
 
-
     def get_xml(self):
         if not (self.CNPJ.valor or self.CPF.valor):
             return ''
@@ -1845,7 +1844,6 @@ class Retirada(nfe_110.Retirada):
         super(Retirada, self).__init__()
         self.CNPJ    = TagCaracter(nome='CNPJ'   , codigo='F02' , tamanho=[ 0, 14]   , raiz='//NFe/infNFe/retirada')
         self.CPF     = TagCaracter(nome='CPF'    , codigo='F02a', tamanho=[11, 11]   , raiz='//NFe/infNFe/retirada')
-
 
     def get_xml(self):
         if not (self.CNPJ.valor or self.CPF.valor):
@@ -1991,7 +1989,6 @@ class Emit(nfe_110.Emit):
         super(Emit, self).__init__()
         self.enderEmit = EnderEmit()
         self.CRT       = TagInteiro(nome='CRT'  , codigo='C21' , tamanho=[ 1,  1], raiz='//NFe/infNFe/emit', valor=1)
-
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)

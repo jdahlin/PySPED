@@ -191,7 +191,6 @@ class RetornoConsultaLote(XMLNFe):
 
             xml += '</ListaNFSe>'
 
-
         xml += '</nfse:RetornoConsultaLote>'
         return xml
 

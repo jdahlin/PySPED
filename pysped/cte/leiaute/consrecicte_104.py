@@ -192,7 +192,6 @@ class RetConsReciCTe(XMLNFe):
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'retConsReciCte_v1.04.xsd'
 
-
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
         xml += self.versao.xml

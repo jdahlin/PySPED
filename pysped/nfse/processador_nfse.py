@@ -105,7 +105,6 @@ class RPS(object):
             self.rps.generate_by(PDFGenerator, filename=nome_arq)
 
 
-
 #
 # Mensagens SOAP
 #

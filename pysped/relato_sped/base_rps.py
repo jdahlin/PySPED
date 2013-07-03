@@ -303,7 +303,6 @@ class BandaRPS(ReportBand):
 
         return lbl, fld
 
-
     def inclui_texto(self, nome, titulo, texto, top, left, width, height=None, margem_direita=False):
         lbl = self._inclui_titulo(nome, titulo, top, left, width, height, margem_direita)
         self.elements.append(lbl)

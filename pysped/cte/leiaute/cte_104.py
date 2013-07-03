@@ -50,7 +50,6 @@ import os
 DIRNAME = os.path.dirname(__file__)
 
 
-
 class Dup(XMLNFe):
     def __init__(self):
         super(Dup, self).__init__()
@@ -1236,7 +1235,6 @@ class Emit(XMLNFe):
         # self.IM        = TagCaracter(nome='IM'   , codigo='C19' , tamanho=[ 1, 15], raiz='//CTe/infCte/emit', obrigatorio=False)
         # self.CNAE      = TagCaracter(nome='CNAE' , codigo='C20' , tamanho=[ 7,  7], raiz='//CTe/infCte/emit', obrigatorio=False)
 
-
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
         xml += '<emit>'
@@ -1339,7 +1337,6 @@ class Entrega(XMLNFe):
         self.tpHorNoInter = TagCaracter(nome='tpHor', tamanho=[1, 1, 1], raiz='//CTe/infCte/compl/Entrega/noInter', obrigatorio=False)
         self.hIni = TagHora(nome='hIni', raiz='//CTe/infCte/compl/Entrega/noInter')
         self.hFim = TagHora(nome='hFim', raiz='//CTe/infCte/compl/Entrega/noInter')
-
 
     def get_xml(self):
         if not (self.tpPer.valor and self.tpHor.valor):
@@ -2041,7 +2038,6 @@ class CTe(XMLNFe):
 
     def serie_formatada(self):
         return 'SÉRIE ' + unicode(self.infCte.ide.serie.valor).zfill(3)
-
 
     def _formata_cpf(self, cpf):
         if not len(cpf.strip()):
