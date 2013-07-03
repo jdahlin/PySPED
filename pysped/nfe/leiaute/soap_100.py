@@ -123,7 +123,7 @@ class SOAPEnvio(XMLNFe):
         self.nfeCabecMsg = NFeCabecMsg()
         self.nfeDadosMsg = NFeDadosMsg()
         self._header = {b'content-type': b'application/soap+xml; charset=utf-8',
-            b'Accept': b'application/soap+xml; charset=utf-8'}
+                        b'Accept': b'application/soap+xml; charset=utf-8'}
 
     def get_xml(self):
         self.nfeDadosMsg.dados = self.envio

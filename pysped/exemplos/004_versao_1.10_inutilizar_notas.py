@@ -109,10 +109,10 @@ if __name__ == '__main__':
     # Inutilizar uma faixa de numeração
     #
     processo = p.inutilizar_nota(cnpj='11111111111111',
-        serie='101',
-        numero_inicial=18,
-        numero_final=28,
-        justificativa='Testando a inutilização de NF-e')
+                                 serie='101',
+                                 numero_inicial=18,
+                                 numero_final=28,
+                                 justificativa='Testando a inutilização de NF-e')
 
     print(processo)
     print()

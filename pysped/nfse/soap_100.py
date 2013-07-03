@@ -56,7 +56,7 @@ class SOAPEnvio(XMLNFe):
         self.metodo = ''
         self.envio = None
         self._header = {'content-type': 'application/soap+xml; charset=utf-8',
-            'Accept': 'application/soap+xml; charset=utf-8'}
+                        'Accept': 'application/soap+xml; charset=utf-8'}
 
     def get_xml(self):
         self._header['SOAPAction'] = self.metodo

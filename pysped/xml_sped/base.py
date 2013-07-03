@@ -510,7 +510,7 @@ class TagDataHora(TagData):
             # casos a data retornada é 01/01/0001 00:00:00
             # e a função strftime só aceita data com anos a partir de 1900
             self._valor_string = '%04d-%02d-%02dT%02d:%02d:%02d' % (self._valor_data.year, self._valor_data.month, self._valor_data.day,
-                self._valor_data.hour, self._valor_data.minute, self._valor_data.second)
+                                                                    self._valor_data.hour, self._valor_data.minute, self._valor_data.second)
         else:
             self._valor_data = None
             self._valor_string = ''
