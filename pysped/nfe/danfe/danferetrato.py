@@ -874,7 +874,7 @@ class DuplicatasRetrato(SubReport):
 
             self.elements = []
             lbl, fld = self.inclui_campo(nome='dup_numero', titulo=u'NÚMERO', conteudo=u'nDup.valor', top=1.12 * cm, left=0 * cm, width=2.8 * cm)
-            lbl, fld = self.inclui_campo(nome='dup_venc'  , titulo=u'VENCIMENTO', conteudo=u'dVenc.formato_danfe', top=1.12 * cm, left=2.8 * cm, width=1.9 * cm)
+            lbl, fld = self.inclui_campo(nome='dup_venc', titulo=u'VENCIMENTO', conteudo=u'dVenc.formato_danfe', top=1.12 * cm, left=2.8 * cm, width=1.9 * cm)
             lbl, fld = self.inclui_campo_numerico(nome='dup_valor', titulo=u'VALOR', conteudo=u'vDup.formato_danfe', top=1.12 * cm, left=4.7 * cm, width=1.7 * cm, margem_direita=True)
 
             self.height = fld.height

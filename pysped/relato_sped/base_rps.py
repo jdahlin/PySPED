@@ -76,10 +76,10 @@ FONTES_ADICIONAIS = {
         #(u'Gentium Book Basic Bold Italic', DIRNAME + u'/fonts/genbkbasbi.ttf', True , True),
     #),
     u'DejaVu Sans': (
-        (u'DejaVu Sans'            , DIRNAME + u'/fonts/DejaVuSans.ttf'            , False, False),
-        (u'DejaVu Sans Bold'       , DIRNAME + u'/fonts/DejaVuSans-Bold.ttf'       , True , False),
-        (u'DejaVu Sans Italic'     , DIRNAME + u'/fonts/DejaVuSans-Oblique.ttf'    , False, True),
-        (u'DejaVu Sans Bold Italic', DIRNAME + u'/fonts/DejaVuSans-BoldOblique.ttf', True , True),
+        (u'DejaVu Sans', DIRNAME + u'/fonts/DejaVuSans.ttf', False, False),
+        (u'DejaVu Sans Bold', DIRNAME + u'/fonts/DejaVuSans-Bold.ttf', True, False),
+        (u'DejaVu Sans Italic', DIRNAME + u'/fonts/DejaVuSans-Oblique.ttf', False, True),
+        (u'DejaVu Sans Bold Italic', DIRNAME + u'/fonts/DejaVuSans-BoldOblique.ttf', True, True),
     ),
 }
 
@@ -110,7 +110,7 @@ CINZA_MARCADAGUA = HexColor(0x939393)
 DESCRITIVO_BLOCO = {'fontName': FONTE_NEGRITO, 'fontSize': FONTE_TAMANHO_9, 'alignment': TA_CENTER, 'leading': FONTE_TAMANHO_11}
 
 DESCRICAO_VALOR_TOTAL = {'fontName': FONTE_NEGRITO, 'fontSize': FONTE_TAMANHO_10, 'alignment': TA_CENTER, 'leading': FONTE_TAMANHO_12}
-VALOR_TOTAL = {'fontName': FONTE_NEGRITO, 'fontSize': FONTE_TAMANHO_10, 'alignment': TA_RIGHT , 'leading': FONTE_TAMANHO_12}
+VALOR_TOTAL = {'fontName': FONTE_NEGRITO, 'fontSize': FONTE_TAMANHO_10, 'alignment': TA_RIGHT, 'leading': FONTE_TAMANHO_12}
 
 
 DESCRITIVO_CAMPO = {'fontName': FONTE_NORMAL, 'fontSize': FONTE_TAMANHO_5}

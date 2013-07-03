@@ -54,17 +54,17 @@ class ConsultaNFSe(XMLNFe):
 
     def __init__(self):
         super(ConsultaNFSe, self).__init__()
-        self.InscricaoPrestador = TagCaracter(nome='InscricaoPrestador'  , tamanho=[6, 11]   , raiz='//ConsultaNFSe')
-        self.NumeroNFe = TagInteiro(nome='NumeroNFe'            , tamanho=[1, 12, 1], raiz='//ConsultaNFSe')
-        self.CodigoVerificacao = TagCaracter(nome='CodigoVerificacao'   , tamanho=[1, 255]   , raiz='//ConsultaNFSe')
-        self.SerieRPS = TagCaracter(nome='SerieRPS'            , tamanho=[2, 2]   , raiz='//ConsultaNFSe')
-        self.NumeroRPS = TagInteiro(nome='NumeroRPS'            , tamanho=[1, 12, 1], raiz='//ConsultaNFSe')
-        self.DataEmissaoRPS = TagDataHora(nome='DataEmissaoRPS'                           , raiz='//ConsultaNFSe')
-        self.RazaoSocialPrestador = TagCaracter(nome='RazaoSocialPrestador', tamanho=[1, 120]   , raiz='//ConsultaNFSe')
-        self.TipoRecolhimento = TagCaracter(nome='TipoRecolhimento'    , tamanho=[1, 1]   , raiz='//ConsultaNFSe')
-        self.ValorDeduzir = TagDecimal(nome='ValorDeduzir'         , tamanho=[1, 15, 1], decimais=[0, 2, 0], raiz='//ConsultaNFSe', obrigatorio=False)
-        self.ValorTotal = TagDecimal(nome='ValorTotal'           , tamanho=[1, 15, 1], decimais=[0, 2, 0], raiz='//ConsultaNFSe')
-        self.Aliquota = TagDecimal(nome='Aliquota'             , tamanho=[1, 6, 1], decimais=[0, 4, 2], raiz='//ConsultaNFSe')
+        self.InscricaoPrestador = TagCaracter(nome='InscricaoPrestador', tamanho=[6, 11], raiz='//ConsultaNFSe')
+        self.NumeroNFe = TagInteiro(nome='NumeroNFe', tamanho=[1, 12, 1], raiz='//ConsultaNFSe')
+        self.CodigoVerificacao = TagCaracter(nome='CodigoVerificacao', tamanho=[1, 255], raiz='//ConsultaNFSe')
+        self.SerieRPS = TagCaracter(nome='SerieRPS', tamanho=[2, 2], raiz='//ConsultaNFSe')
+        self.NumeroRPS = TagInteiro(nome='NumeroRPS', tamanho=[1, 12, 1], raiz='//ConsultaNFSe')
+        self.DataEmissaoRPS = TagDataHora(nome='DataEmissaoRPS', raiz='//ConsultaNFSe')
+        self.RazaoSocialPrestador = TagCaracter(nome='RazaoSocialPrestador', tamanho=[1, 120], raiz='//ConsultaNFSe')
+        self.TipoRecolhimento = TagCaracter(nome='TipoRecolhimento', tamanho=[1, 1], raiz='//ConsultaNFSe')
+        self.ValorDeduzir = TagDecimal(nome='ValorDeduzir', tamanho=[1, 15, 1], decimais=[0, 2, 0], raiz='//ConsultaNFSe', obrigatorio=False)
+        self.ValorTotal = TagDecimal(nome='ValorTotal', tamanho=[1, 15, 1], decimais=[0, 2, 0], raiz='//ConsultaNFSe')
+        self.Aliquota = TagDecimal(nome='Aliquota', tamanho=[1, 6, 1], decimais=[0, 4, 2], raiz='//ConsultaNFSe')
 
     def get_xml(self):
         if self.InscricaoPrestador.valor.strip() == '':
@@ -107,17 +107,17 @@ class _Cabecalho(XMLNFe):
 
     def __init__(self):
         super(_Cabecalho, self).__init__()
-        self.CodCidade = TagInteiro(nome='CodCidade'            , tamanho=[ 1, 10, 1], raiz='//nfse:RetornoConsultaLote/Cabecalho')
-        self.Sucesso = TagBoolean(nome='Sucesso'                                   , raiz='//nfse:RetornoConsultaLote/Cabecalho')
-        self.NumeroLote = TagInteiro(nome='NumeroLote'           , tamanho=[ 1, 12, 1], raiz='//nfse:RetornoConsultaLote/Cabecalho')
-        self.CPFCNPJRemetente = TagCaracter(nome='CPFCNPJRemetente'    , tamanho=[11, 14]   , raiz='//nfse:RetornoConsultaLote/Cabecalho')
-        self.RazaoSocialRemetente = TagCaracter(nome='RazaoSocialRemetente', tamanho=[ 1, 120]  , raiz='//nfse:RetornoConsultaLote/Cabecalho')
-        self.DataEnvioLote = TagDataHora(nome='DataEnvioLote'                            , raiz='//nfse:RetornoConsultaLote/Cabecalho')
-        self.QtdNotasProcessadas = TagInteiro(nome='QtdNotasProcessadas'  , tamanho=[ 1, 10, 1], raiz='//nfse:RetornoConsultaLote/Cabecalho')
-        self.TempoProcessamento = TagInteiro(nome='TempoProcessamento'   , tamanho=[ 1, 15, 1], raiz='//nfse:RetornoConsultaLote/Cabecalho')
-        self.ValorTotalServicos = TagDecimal(nome='ValorTotalServicos'   , tamanho=[ 1, 15, 1], decimais=[0, 2, 2], raiz='//nfse:RetornoConsultaLote/Cabecalho')
-        self.ValorTotalDeducoes = TagDecimal(nome='ValorTotalDeducoes'   , tamanho=[ 1, 15, 1], decimais=[0, 2, 2], raiz='//nfse:RetornoConsultaLote/Cabecalho')
-        self.Versao = TagInteiro(nome='Versao'               , tamanho=[ 1, 3, 1], raiz='//nfse:RetornoConsultaLote/Cabecalho', valor=1)
+        self.CodCidade = TagInteiro(nome='CodCidade', tamanho=[1, 10, 1], raiz='//nfse:RetornoConsultaLote/Cabecalho')
+        self.Sucesso = TagBoolean(nome='Sucesso', raiz='//nfse:RetornoConsultaLote/Cabecalho')
+        self.NumeroLote = TagInteiro(nome='NumeroLote', tamanho=[1, 12, 1], raiz='//nfse:RetornoConsultaLote/Cabecalho')
+        self.CPFCNPJRemetente = TagCaracter(nome='CPFCNPJRemetente', tamanho=[11, 14], raiz='//nfse:RetornoConsultaLote/Cabecalho')
+        self.RazaoSocialRemetente = TagCaracter(nome='RazaoSocialRemetente', tamanho=[1, 120], raiz='//nfse:RetornoConsultaLote/Cabecalho')
+        self.DataEnvioLote = TagDataHora(nome='DataEnvioLote', raiz='//nfse:RetornoConsultaLote/Cabecalho')
+        self.QtdNotasProcessadas = TagInteiro(nome='QtdNotasProcessadas', tamanho=[1, 10, 1], raiz='//nfse:RetornoConsultaLote/Cabecalho')
+        self.TempoProcessamento = TagInteiro(nome='TempoProcessamento', tamanho=[1, 15, 1], raiz='//nfse:RetornoConsultaLote/Cabecalho')
+        self.ValorTotalServicos = TagDecimal(nome='ValorTotalServicos', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//nfse:RetornoConsultaLote/Cabecalho')
+        self.ValorTotalDeducoes = TagDecimal(nome='ValorTotalDeducoes', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//nfse:RetornoConsultaLote/Cabecalho')
+        self.Versao = TagInteiro(nome='Versao', tamanho=[1, 3, 1], raiz='//nfse:RetornoConsultaLote/Cabecalho', valor=1)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)

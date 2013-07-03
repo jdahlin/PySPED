@@ -56,8 +56,8 @@ class ConsReciCTe(XMLNFe):
     def __init__(self):
         super(ConsReciCTe, self).__init__()
         self.versao = TagDecimal(nome='consReciCTe', codigo='BP02', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
-        self.tpAmb = TagInteiro(nome='tpAmb'      , codigo='BP03', tamanho=[1, 1, 1]  , raiz='//consReciCTe')
-        self.nRec = TagCaracter(nome='nRec'      , codigo='BP04', tamanho=[1, 15, 1]   , raiz='//consReciCTe')
+        self.tpAmb = TagInteiro(nome='tpAmb', codigo='BP03', tamanho=[1, 1, 1], raiz='//consReciCTe')
+        self.nRec = TagCaracter(nome='nRec', codigo='BP04', tamanho=[1, 15, 1], raiz='//consReciCTe')
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'consReciCte_v1.04.xsd'
 
@@ -85,15 +85,15 @@ class InfProt(XMLNFe):
 
     def __init__(self):
         super(InfProt, self).__init__()
-        self.Id = TagCaracter(nome='infProt' , codigo='PR04', propriedade='Id'  , raiz='/'        , obrigatorio=False)
-        self.tpAmb = TagInteiro(nome='tpAmb'    , codigo='PR05', tamanho=[1, 1, 1], raiz='//infProt')
-        self.verAplic = TagCaracter(nome='verAplic', codigo='PR06', tamanho=[1, 20]   , raiz='//infProt')
-        self.chCTe = TagCaracter(nome='chCTe'   , codigo='PR07', tamanho=[44, 44]   , raiz='//infProt')
-        self.dhRecbto = TagDataHora(nome='dhRecbto', codigo='PR08'                     , raiz='//infProt')
-        self.nProt = TagCaracter(nome='nProt'   , codigo='PR09', tamanho=[15, 15]   , raiz='//infProt', obrigatorio=False)
-        self.digVal = TagCaracter(nome='digVal'  , codigo='PR10', tamanho=[28, 28]   , raiz='//infProt', obrigatorio=False)
-        self.cStat = TagCaracter(nome='cStat'   , codigo='PR11' , tamanho=[1, 3]  , raiz='//infProt')
-        self.xMotivo = TagCaracter(nome='xMotivo' , codigo='PR12' , tamanho=[1, 255]  , raiz='//infProt')
+        self.Id = TagCaracter(nome='infProt', codigo='PR04', propriedade='Id', raiz='/', obrigatorio=False)
+        self.tpAmb = TagInteiro(nome='tpAmb', codigo='PR05', tamanho=[1, 1, 1], raiz='//infProt')
+        self.verAplic = TagCaracter(nome='verAplic', codigo='PR06', tamanho=[1, 20], raiz='//infProt')
+        self.chCTe = TagCaracter(nome='chCTe', codigo='PR07', tamanho=[44, 44], raiz='//infProt')
+        self.dhRecbto = TagDataHora(nome='dhRecbto', codigo='PR08', raiz='//infProt')
+        self.nProt = TagCaracter(nome='nProt', codigo='PR09', tamanho=[15, 15], raiz='//infProt', obrigatorio=False)
+        self.digVal = TagCaracter(nome='digVal', codigo='PR10', tamanho=[28, 28], raiz='//infProt', obrigatorio=False)
+        self.cStat = TagCaracter(nome='cStat', codigo='PR11', tamanho=[1, 3], raiz='//infProt')
+        self.xMotivo = TagCaracter(nome='xMotivo', codigo='PR12', tamanho=[1, 255], raiz='//infProt')
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -133,7 +133,7 @@ class ProtCTe(XMLNFe):
 
     def __init__(self):
         super(ProtCTe, self).__init__()
-        self.versao = TagDecimal(nome='protCTe', codigo='PR02' , propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
+        self.versao = TagDecimal(nome='protCTe', codigo='PR02', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
         self.infProt = InfProt()
         self.Signature = Signature()
 
@@ -175,13 +175,13 @@ class RetConsReciCTe(XMLNFe):
 
     def __init__(self):
         super(RetConsReciCTe, self).__init__()
-        self.versao = TagDecimal(nome='retConsReciCTe', codigo='BR02' , propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
-        self.tpAmb = TagInteiro(nome='tpAmb'         , codigo='BR03' , tamanho=[1, 1, 1], raiz='//retConsReciCTe')
-        self.verAplic = TagCaracter(nome='verAplic'     , codigo='BR04' , tamanho=[1, 20]   , raiz='//retConsReciCTe')
-        self.nRec = TagCaracter(nome='nRec'         , codigo='BR04a', tamanho=[1, 15, 1] , raiz='//retConsReciCTe')
-        self.cStat = TagCaracter(nome='cStat'        , codigo='BR05' , tamanho=[1, 3]   , raiz='//retConsReciCTe')
-        self.xMotivo = TagCaracter(nome='xMotivo'      , codigo='BR06' , tamanho=[1, 255]   , raiz='//retConsReciCTe')
-        self.cUF = TagCaracter(nome='cUF'          , codigo='BR06a', tamanho=[2, 2, 2], raiz='//retConsReciCTe')
+        self.versao = TagDecimal(nome='retConsReciCTe', codigo='BR02', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
+        self.tpAmb = TagInteiro(nome='tpAmb', codigo='BR03', tamanho=[1, 1, 1], raiz='//retConsReciCTe')
+        self.verAplic = TagCaracter(nome='verAplic', codigo='BR04', tamanho=[1, 20], raiz='//retConsReciCTe')
+        self.nRec = TagCaracter(nome='nRec', codigo='BR04a', tamanho=[1, 15, 1], raiz='//retConsReciCTe')
+        self.cStat = TagCaracter(nome='cStat', codigo='BR05', tamanho=[1, 3], raiz='//retConsReciCTe')
+        self.xMotivo = TagCaracter(nome='xMotivo', codigo='BR06', tamanho=[1, 255], raiz='//retConsReciCTe')
+        self.cUF = TagCaracter(nome='cUF', codigo='BR06a', tamanho=[2, 2, 2], raiz='//retConsReciCTe')
         self.protCTe = []
 
         #

@@ -70,7 +70,7 @@ class DetEventoConfRecebimento(DetEvento):
 
     def __init__(self):
         super(DetEventoConfRecebimento, self).__init__()
-        self.xJust = TagCaracter(nome='xJust'  , codigo='HP20', tamanho=[15, 255]   , raiz='//detEvento', obrigatorio=False)
+        self.xJust = TagCaracter(nome='xJust', codigo='HP20', tamanho=[15, 255], raiz='//detEvento', obrigatorio=False)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)

@@ -62,12 +62,12 @@ class ConsNFeDest(XMLNFe):
     def __init__(self):
         super(ConsNFeDest, self).__init__()
         self.versao = TagDecimal(nome='consNFeDest', codigo='IP01', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.01', raiz='/')
-        self.tpAmb = TagInteiro(nome='tpAmb'   , codigo='IP03', tamanho=[ 1, 1, 1] , raiz='//consNFeDest', valor=2)
-        self.xServ = TagCaracter(nome='xServ'  , codigo='IP04', tamanho=[18, 18]    , raiz='//consNFeDest', valor='CONSULTAR NFE DEST')
-        self.CNPJ = TagCaracter(nome='CNPJ'  , codigo='IP05', tamanho=[14, 14], raiz='//consNFeDest')
-        self.indNFe = TagInteiro(nome='indNFe'   , codigo='IP06', tamanho=[ 1, 1, 1] , raiz='//consNFeDest', valor=CONS_NFE_TODAS)
-        self.indEmi = TagInteiro(nome='indEmi'   , codigo='IP07', tamanho=[ 1, 1, 1] , raiz='//consNFeDest', valor=CONS_NFE_EMISSAO_TODOS_EMITENTES)
-        self.ultNSU = TagCaracter(nome='ultNSU'   , codigo='IP08', tamanho=[1, 15], raiz='//consNFeDest', valor='0')
+        self.tpAmb = TagInteiro(nome='tpAmb', codigo='IP03', tamanho=[1, 1, 1], raiz='//consNFeDest', valor=2)
+        self.xServ = TagCaracter(nome='xServ', codigo='IP04', tamanho=[18, 18], raiz='//consNFeDest', valor='CONSULTAR NFE DEST')
+        self.CNPJ = TagCaracter(nome='CNPJ', codigo='IP05', tamanho=[14, 14], raiz='//consNFeDest')
+        self.indNFe = TagInteiro(nome='indNFe', codigo='IP06', tamanho=[1, 1, 1], raiz='//consNFeDest', valor=CONS_NFE_TODAS)
+        self.indEmi = TagInteiro(nome='indEmi', codigo='IP07', tamanho=[1, 1, 1], raiz='//consNFeDest', valor=CONS_NFE_EMISSAO_TODOS_EMITENTES)
+        self.ultNSU = TagCaracter(nome='ultNSU', codigo='IP08', tamanho=[1, 15], raiz='//consNFeDest', valor='0')
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'consNFeDest_v1.01.xsd'
 
@@ -102,13 +102,13 @@ class RetConsNFeDest(XMLNFe):
     def __init__(self):
         super(RetConsNFeDest, self).__init__()
         self.versao = TagDecimal(nome='retConsNFeDest', codigo='IR01', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.01', raiz='/')
-        self.tpAmb = TagInteiro(nome='tpAmb'         , codigo='IR03', tamanho=[1, 1, 1], raiz='//retConsNFeDest')
-        self.verAplic = TagCaracter(nome='verAplic'     , codigo='IR04', tamanho=[1, 20]   , raiz='//retConsNFeDest')
-        self.cStat = TagCaracter(nome='cStat'        , codigo='IR05', tamanho=[1, 3]   , raiz='//retConsNFeDest')
-        self.xMotivo = TagCaracter(nome='xMotivo'      , codigo='IR06', tamanho=[1, 255]   , raiz='//retConsNFeDest')
-        self.dhResp = TagDataHora(nome='dhResp'       , codigo='IR07', raiz='//retConsNFeDest')
-        self.indCont = TagCaracter(nome='indCont'      , codigo='IR08', tamanho=[1, 1, 1], raiz='//retConsNFeDest', obrigatorio=False)
-        self.ultNSU = TagCaracter(nome='ultNSU'       , codigo='IP09', tamanho=[1, 15]    , raiz='//retConsNFeDest', obrigatorio=False)
+        self.tpAmb = TagInteiro(nome='tpAmb', codigo='IR03', tamanho=[1, 1, 1], raiz='//retConsNFeDest')
+        self.verAplic = TagCaracter(nome='verAplic', codigo='IR04', tamanho=[1, 20], raiz='//retConsNFeDest')
+        self.cStat = TagCaracter(nome='cStat', codigo='IR05', tamanho=[1, 3], raiz='//retConsNFeDest')
+        self.xMotivo = TagCaracter(nome='xMotivo', codigo='IR06', tamanho=[1, 255], raiz='//retConsNFeDest')
+        self.dhResp = TagDataHora(nome='dhResp', codigo='IR07', raiz='//retConsNFeDest')
+        self.indCont = TagCaracter(nome='indCont', codigo='IR08', tamanho=[1, 1, 1], raiz='//retConsNFeDest', obrigatorio=False)
+        self.ultNSU = TagCaracter(nome='ultNSU', codigo='IP09', tamanho=[1, 15], raiz='//retConsNFeDest', obrigatorio=False)
         self.caminho_esquema = os.path.join(DIRNAME, 'schema', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'retConsNFeDest_v1.01.xsd'
 

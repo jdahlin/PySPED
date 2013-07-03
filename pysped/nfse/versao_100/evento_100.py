@@ -51,10 +51,10 @@ class ChaveNFe(XMLNFe):
 
     def __init__(self):
         super(ChaveNFe, self).__init__()
-        self.InscricaoPrestador = TagCaracter(nome='InscricaoPrestador'  , tamanho=[ 6, 11]   , raiz='//*/ChaveNFe')
-        self.NumeroNFe = TagInteiro(nome='NumeroNFe'            , tamanho=[ 1, 12, 1], raiz='//*/ChaveNFe')
-        self.CodigoVerificacao = TagCaracter(nome='CodigoVerificacao'   , tamanho=[ 1, 255]   , raiz='//*/ChaveNFe')
-        self.RazaoSocialPrestador = TagCaracter(nome='RazaoSocialPrestador', tamanho=[ 1, 120]   , raiz='//*/ChaveNFe')
+        self.InscricaoPrestador = TagCaracter(nome='InscricaoPrestador', tamanho=[6, 11], raiz='//*/ChaveNFe')
+        self.NumeroNFe = TagInteiro(nome='NumeroNFe', tamanho=[1, 12, 1], raiz='//*/ChaveNFe')
+        self.CodigoVerificacao = TagCaracter(nome='CodigoVerificacao', tamanho=[1, 255], raiz='//*/ChaveNFe')
+        self.RazaoSocialPrestador = TagCaracter(nome='RazaoSocialPrestador', tamanho=[1, 120], raiz='//*/ChaveNFe')
 
     def get_xml(self):
         if self.InscricaoPrestador.valor.strip() == '':
@@ -83,11 +83,11 @@ class ChaveRPS(XMLNFe):
 
     def __init__(self):
         super(ChaveRPS, self).__init__()
-        self.InscricaoPrestador = TagCaracter(nome='InscricaoPrestador'  , tamanho=[ 6, 11]   , raiz='//*/ChaveRPS')
-        self.SerieRPS = TagCaracter(nome='SerieRPS'            , tamanho=[ 2, 2]   , raiz='//*/ChaveRPS', valor='NF')
-        self.NumeroRPS = TagInteiro(nome='NumeroRPS'            , tamanho=[ 1, 12, 1], raiz='//*/ChaveRPS')
-        self.DataEmissaoRPS = TagDataHora(nome='DataEmissaoRPS'                            , raiz='//*/ChaveRPS')
-        self.RazaoSocialPrestador = TagCaracter(nome='RazaoSocialPrestador', tamanho=[ 1, 120]   , raiz='//*/ChaveRPS')
+        self.InscricaoPrestador = TagCaracter(nome='InscricaoPrestador', tamanho=[6, 11], raiz='//*/ChaveRPS')
+        self.SerieRPS = TagCaracter(nome='SerieRPS', tamanho=[2, 2], raiz='//*/ChaveRPS', valor='NF')
+        self.NumeroRPS = TagInteiro(nome='NumeroRPS', tamanho=[1, 12, 1], raiz='//*/ChaveRPS')
+        self.DataEmissaoRPS = TagDataHora(nome='DataEmissaoRPS', raiz='//*/ChaveRPS')
+        self.RazaoSocialPrestador = TagCaracter(nome='RazaoSocialPrestador', tamanho=[1, 120], raiz='//*/ChaveRPS')
 
     def get_xml(self):
         if self.InscricaoPrestador.valor.strip() == '':
@@ -118,8 +118,8 @@ class Alerta(XMLNFe):
 
     def __init__(self):
         super(Alerta, self).__init__()
-        self.Codigo = TagInteiro(nome='Codigo'    , tamanho=[3, 4, 3], raiz='//Alerta')
-        self.Descricao = TagCaracter(nome='Descricao', tamanho=[0, 300] , raiz='//Alerta')
+        self.Codigo = TagInteiro(nome='Codigo', tamanho=[3, 4, 3], raiz='//Alerta')
+        self.Descricao = TagCaracter(nome='Descricao', tamanho=[0, 300], raiz='//Alerta')
         self.ChaveRPS = ChaveRPS()
         self.ChaveNFe = ChaveNFe()
 
@@ -147,8 +147,8 @@ class Erro(XMLNFe):
 
     def __init__(self):
         super(Erro, self).__init__()
-        self.Codigo = TagInteiro(nome='Codigo'    , tamanho=[3, 4, 3], raiz='//Erro')
-        self.Descricao = TagCaracter(nome='Descricao', tamanho=[0, 300] , raiz='//Erro')
+        self.Codigo = TagInteiro(nome='Codigo', tamanho=[3, 4, 3], raiz='//Erro')
+        self.Descricao = TagCaracter(nome='Descricao', tamanho=[0, 300], raiz='//Erro')
         self.ChaveRPS = ChaveRPS()
         self.ChaveNFe = ChaveNFe()
 

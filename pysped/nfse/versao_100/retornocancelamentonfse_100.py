@@ -55,10 +55,10 @@ class _Cabecalho(XMLNFe):
 
     def __init__(self):
         super(_Cabecalho, self).__init__()
-        self.CodCidade = TagInteiro(nome='CodCidade'            , tamanho=[ 1, 10, 1], raiz='//nfse:RetornoCancelamentoNFSe/Cabecalho')
-        self.Sucesso = TagBoolean(nome='Sucesso'                                   , raiz='//nfse:RetornoCancelamentoNFSe/Cabecalho')
-        self.CPFCNPJRemetente = TagCaracter(nome='CPFCNPJRemetente'    , tamanho=[11, 14]   , raiz='//nfse:RetornoCancelamentoNFSe/Cabecalho')
-        self.Versao = TagInteiro(nome='Versao'               , tamanho=[ 1, 3, 1], raiz='//nfse:RetornoCancelamentoNFSe/Cabecalho', valor=1)
+        self.CodCidade = TagInteiro(nome='CodCidade', tamanho=[1, 10, 1], raiz='//nfse:RetornoCancelamentoNFSe/Cabecalho')
+        self.Sucesso = TagBoolean(nome='Sucesso', raiz='//nfse:RetornoCancelamentoNFSe/Cabecalho')
+        self.CPFCNPJRemetente = TagCaracter(nome='CPFCNPJRemetente', tamanho=[11, 14], raiz='//nfse:RetornoCancelamentoNFSe/Cabecalho')
+        self.Versao = TagInteiro(nome='Versao', tamanho=[1, 3, 1], raiz='//nfse:RetornoCancelamentoNFSe/Cabecalho', valor=1)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)

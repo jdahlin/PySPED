@@ -88,8 +88,8 @@ class RetEnviNFe(envinfe_110.RetEnviNFe):
 
     def __init__(self):
         super(RetEnviNFe, self).__init__()
-        self.versao = TagDecimal(nome='retEnviNFe', codigo='AR02' , propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
-        self.dhRecbto = TagDataHora(nome='dhRecbto' , codigo='AR09'                        , raiz='//retEnviNFe')
+        self.versao = TagDecimal(nome='retEnviNFe', codigo='AR02', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
+        self.dhRecbto = TagDataHora(nome='dhRecbto', codigo='AR09', raiz='//retEnviNFe')
         self.infRec = InfRec()
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'retEnviNFe_v2.00.xsd'

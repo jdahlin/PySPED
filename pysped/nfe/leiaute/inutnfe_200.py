@@ -54,7 +54,7 @@ class InfInutEnviado(inutnfe_107.InfInutEnviado):
 
     def __init__(self):
         super(InfInutEnviado, self).__init__()
-        self.Id = TagCaracter(nome='infInut', codigo='DP03', tamanho=[43, 43] , raiz='//inutNFe', propriedade='Id')
+        self.Id = TagCaracter(nome='infInut', codigo='DP03', tamanho=[43, 43], raiz='//inutNFe', propriedade='Id')
 
 
 class InutNFe(inutnfe_107.InutNFe):

@@ -321,10 +321,10 @@ class RodapeRetrato(BandaRPS):
         fld.style = VALOR_TOTAL
         self.elements.append(fld)
 
-        lbl, fld = self.inclui_campo_numerico(nome='iss_im', titulo='VALOR TOTAL DAS DEDUÇÕES', conteudo='RPS.ValorDeducoes.formato_danfe'    , top=1.5 * cm, left=0 * cm, width=4.85 * cm)
-        lbl, fld = self.inclui_campo_numerico(nome='iss_vr', titulo='BASE DE CÁLCULO DO ISS'  , conteudo='RPS.BaseCalculo.formato_danfe'      , top=1.5 * cm, left=4.85 * cm, width=4.85 * cm)
-        lbl, fld = self.inclui_campo_numerico(nome='iss_bc', titulo='ALÍQUOTA'                , conteudo='RPS.AliquotaAtividade.formato_danfe', top=1.5 * cm, left=9.7 * cm, width=4.85 * cm)
-        lbl, fld = self.inclui_campo_numerico(nome='iss_vr', titulo='VALOR DO ISS'            , conteudo='RPS.ValorISS.formato_danfe'         , top=1.5 * cm, left=14.55 * cm, width=4.85 * cm, margem_direita=True)
+        lbl, fld = self.inclui_campo_numerico(nome='iss_im', titulo='VALOR TOTAL DAS DEDUÇÕES', conteudo='RPS.ValorDeducoes.formato_danfe', top=1.5 * cm, left=0 * cm, width=4.85 * cm)
+        lbl, fld = self.inclui_campo_numerico(nome='iss_vr', titulo='BASE DE CÁLCULO DO ISS', conteudo='RPS.BaseCalculo.formato_danfe', top=1.5 * cm, left=4.85 * cm, width=4.85 * cm)
+        lbl, fld = self.inclui_campo_numerico(nome='iss_bc', titulo='ALÍQUOTA', conteudo='RPS.AliquotaAtividade.formato_danfe', top=1.5 * cm, left=9.7 * cm, width=4.85 * cm)
+        lbl, fld = self.inclui_campo_numerico(nome='iss_vr', titulo='VALOR DO ISS', conteudo='RPS.ValorISS.formato_danfe', top=1.5 * cm, left=14.55 * cm, width=4.85 * cm, margem_direita=True)
 
         self.inclui_descritivo(nome='titulo_discriminacao', titulo='INFORMAÇÕES IMPORTANTES', top=2.2 * cm, left=0 * cm, width=19.4 * cm)
 

@@ -58,8 +58,8 @@ class DetEventoCancNFe(DetEvento):
 
     def __init__(self):
         super(DetEventoCancNFe, self).__init__()
-        self.nProt = TagCaracter(nome='nProt'   , codigo='CP08', tamanho=[15, 15, 15], raiz='//detEvento')
-        self.xJust = TagCaracter(nome='xJust'  , codigo='CP09', tamanho=[15, 255]   , raiz='//detEvento')
+        self.nProt = TagCaracter(nome='nProt', codigo='CP08', tamanho=[15, 15, 15], raiz='//detEvento')
+        self.xJust = TagCaracter(nome='xJust', codigo='CP09', tamanho=[15, 255], raiz='//detEvento')
         self.descEvento.valor = 'Cancelamento'
 
     def get_xml(self):

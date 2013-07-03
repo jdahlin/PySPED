@@ -53,7 +53,7 @@ class CabecMsg(XMLNFe):
 
     def __init__(self):
         super(CabecMsg, self).__init__()
-        self.versao = TagDecimal(nome='cabecMsg'   , codigo=''   , propriedade='versao', namespace=NAMESPACE_NFE, valor='1.02', raiz='//cabecMsg')
+        self.versao = TagDecimal(nome='cabecMsg', codigo='', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.02', raiz='//cabecMsg')
         self.versaoDados = TagDecimal(nome='versaoDados', codigo='A01', raiz='//cabecMsg', tamanho=[1, 4])
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'cabecMsg_v1.02.xsd'

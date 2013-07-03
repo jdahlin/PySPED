@@ -63,8 +63,8 @@ class InfCadRecebido(conscad_101.InfCadRecebido):
 
     def __init__(self):
         super(InfCadRecebido, self).__init__()
-        self.indCredNFe = TagInteiro(nome='indCredNFe', codigo='GR12a' , tamanho=[1, 1, 1], raiz='//infCad')
-        self.indCredCTe = TagInteiro(nome='indCredCTe', codigo='GR12b' , tamanho=[1, 1, 1], raiz='//infCad')
+        self.indCredNFe = TagInteiro(nome='indCredNFe', codigo='GR12a', tamanho=[1, 1, 1], raiz='//infCad')
+        self.indCredCTe = TagInteiro(nome='indCredCTe', codigo='GR12b', tamanho=[1, 1, 1], raiz='//infCad')
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)

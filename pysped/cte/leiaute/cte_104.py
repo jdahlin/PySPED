@@ -55,8 +55,8 @@ class Dup(XMLNFe):
     def __init__(self):
         super(Dup, self).__init__()
         self.nDup = TagCaracter(nome='nDup', codigo='Y08', tamanho=[1, 60], raiz='//dup', obrigatorio=False, namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.dVenc = TagData(nome='dVenc'   , codigo='Y09', raiz='//dup', obrigatorio=False, namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.vDup = TagDecimal(nome='vDup' , codigo='Y10', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//dup', obrigatorio=False, namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.dVenc = TagData(nome='dVenc', codigo='Y09', raiz='//dup', obrigatorio=False, namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.vDup = TagDecimal(nome='vDup', codigo='Y10', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//dup', obrigatorio=False, namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
 
     def get_xml(self):
         if not (self.nDup.valor or self.dVenc.valor or self.vDup.valor):
@@ -86,7 +86,7 @@ class Fat(XMLNFe):
         self.nFat = TagCaracter(nome='nFat', codigo='Y03', tamanho=[1, 60], raiz='//CTe/infCte/infCTeNorm/cobr/fat', obrigatorio=False)
         self.vOrig = TagDecimal(nome='vOrig', codigo='Y04', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='//CTe/infCte/infCTeNorm/cobr/fat', obrigatorio=False)
         self.vDesc = TagDecimal(nome='vDesc', codigo='Y05', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='//CTe/infCte/infCTeNorm/cobr/fat', obrigatorio=False)
-        self.vLiq = TagDecimal(nome='vLiq' , codigo='Y06', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='//CTe/infCte/infCTeNorm/cobr/fat', obrigatorio=False)
+        self.vLiq = TagDecimal(nome='vLiq', codigo='Y06', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='//CTe/infCte/infCTeNorm/cobr/fat', obrigatorio=False)
 
     def get_xml(self):
         if not (self.nFat.valor or self.vOrig.valor or self.vDesc.valor or self.vLiq.valor):
@@ -150,8 +150,8 @@ class InfQ(XMLNFe):
 
     def __init__(self):
         super(InfQ, self).__init__()
-        self.cUnid = TagCaracter(nome='cUnid', tamanho=[2, 2, 2] , raiz='//infQ', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.tpMed = TagCaracter(nome='tpMed', tamanho=[1, 20]   , raiz='//infQ', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.cUnid = TagCaracter(nome='cUnid', tamanho=[2, 2, 2], raiz='//infQ', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.tpMed = TagCaracter(nome='tpMed', tamanho=[1, 20], raiz='//infQ', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
         self.qCarga = TagDecimal(nome='qCarga', tamanho=[1, 11, 1], decimais=[0, 4, 4], raiz='//infQ', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
 
     def get_xml(self):
@@ -176,9 +176,9 @@ class InfCarga(XMLNFe):
 
     def __init__(self):
         super(InfCarga, self).__init__()
-        self.vCarga = TagDecimal(nome='vCarga'  , tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//CTe/infCte/infCTeNorm/infCarga', obrigatorio=False)
-        self.proPred = TagCaracter(nome='proPred', tamanho=[1, 60]   , raiz='//CTe/infCte/infCTeNorm/infCarga')
-        self.xOutCat = TagCaracter(nome='xOutCat', tamanho=[1, 30]   , raiz='//CTe/infCte/infCTeNorm/infCarga', obrigatorio=False)
+        self.vCarga = TagDecimal(nome='vCarga', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//CTe/infCte/infCTeNorm/infCarga', obrigatorio=False)
+        self.proPred = TagCaracter(nome='proPred', tamanho=[1, 60], raiz='//CTe/infCte/infCTeNorm/infCarga')
+        self.xOutCat = TagCaracter(nome='xOutCat', tamanho=[1, 30], raiz='//CTe/infCte/infCTeNorm/infCarga', obrigatorio=False)
         self.infQ = []
 
     def get_xml(self):
@@ -392,17 +392,17 @@ class ICMS(XMLNFe):
         super(ICMS, self).__init__()
         # self.orig     = TagInteiro(nome='orig'     , tamanho=[1,  1, 1],                     raiz='')
         # self.modBC    = TagInteiro(nome='modBC'    , tamanho=[1,  1, 1],                     raiz='')
-        self.pRedBC = TagDecimal(nome='pRedBC'    , tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='')
-        self.vBC = TagDecimal(nome='vBC'       , tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='')
-        self.pICMS = TagDecimal(nome='pICMS'     , tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='')
-        self.vICMS = TagDecimal(nome='vICMS'     , tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='')
+        self.pRedBC = TagDecimal(nome='pRedBC', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='')
+        self.vBC = TagDecimal(nome='vBC', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='')
+        self.pICMS = TagDecimal(nome='pICMS', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='')
+        self.vICMS = TagDecimal(nome='vICMS', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='')
         # self.modBCST  = TagInteiro(nome='modBCST'  , tamanho=[1,  1, 1],                     raiz='')
         # self.pMVAST   = TagDecimal(nome='pMVAST'   , tamanho=[1,  5, 1], decimais=[0, 2, 2], raiz='')
         # self.pRedBCST = TagDecimal(nome='pRedBCST' , tamanho=[1,  5, 1], decimais=[0, 2, 2], raiz='')
-        self.vBCSTRet = TagDecimal(nome='vBCSTRet'  , tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='')
+        self.vBCSTRet = TagDecimal(nome='vBCSTRet', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='')
         self.pICMSSTRet = TagDecimal(nome='pICMSSTRet', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='')
         self.vICMSSTRet = TagDecimal(nome='vICMSSTRet', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='')
-        self.vCred = TagDecimal(nome='vCred'     , tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='')
+        self.vCred = TagDecimal(nome='vCred', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='')
 
         self.CST = TagCSTICMS()
         self.CST.grupo_icms = self
@@ -540,16 +540,16 @@ class LocEnt(XMLNFe):
 
     def __init__(self):
         super(LocEnt, self).__init__()
-        self.CNPJ = TagCaracter(nome='CNPJ'   , codigo='E02', tamanho=[ 0, 14]   , raiz='//CTe/infCte/dest/locEnt', obrigatorio=False)
-        self.CPF = TagCaracter(nome='CPF'    , codigo='E03', tamanho=[11, 11]   , raiz='//CTe/infCte/dest/locEnt', obrigatorio=False)
-        self.xNome = TagCaracter(nome='xNome'  , codigo='E04', tamanho=[ 2, 60]   , raiz='//CTe/infCte/dest/locEnt')
-        self.xLgr = TagCaracter(nome='xLgr'   , codigo='G02', tamanho=[ 2, 60]   , raiz='//CTe/infCte/dest/locEnt')
-        self.nro = TagCaracter(nome='nro'    , codigo='G03', tamanho=[ 1, 60]   , raiz='//CTe/infCte/dest/locEnt')
-        self.xCpl = TagCaracter(nome='xCpl'   , codigo='G04', tamanho=[ 1, 60]   , raiz='//CTe/infCte/dest/locEnt', obrigatorio=False)
-        self.xBairro = TagCaracter(nome='xBairro', codigo='G05', tamanho=[ 2, 60]   , raiz='//CTe/infCte/dest/locEnt')
-        self.cMun = TagInteiro(nome='cMun'    , codigo='G06', tamanho=[ 7, 7, 7], raiz='//CTe/infCte/dest/locEnt')
-        self.xMun = TagCaracter(nome='xMun'   , codigo='G07', tamanho=[ 2, 60]   , raiz='//CTe/infCte/dest/locEnt')
-        self.UF = TagCaracter(nome='UF'     , codigo='G08', tamanho=[ 2, 2]   , raiz='//CTe/infCte/dest/locEnt')
+        self.CNPJ = TagCaracter(nome='CNPJ', codigo='E02', tamanho=[0, 14], raiz='//CTe/infCte/dest/locEnt', obrigatorio=False)
+        self.CPF = TagCaracter(nome='CPF', codigo='E03', tamanho=[11, 11], raiz='//CTe/infCte/dest/locEnt', obrigatorio=False)
+        self.xNome = TagCaracter(nome='xNome', codigo='E04', tamanho=[2, 60], raiz='//CTe/infCte/dest/locEnt')
+        self.xLgr = TagCaracter(nome='xLgr', codigo='G02', tamanho=[2, 60], raiz='//CTe/infCte/dest/locEnt')
+        self.nro = TagCaracter(nome='nro', codigo='G03', tamanho=[1, 60], raiz='//CTe/infCte/dest/locEnt')
+        self.xCpl = TagCaracter(nome='xCpl', codigo='G04', tamanho=[1, 60], raiz='//CTe/infCte/dest/locEnt', obrigatorio=False)
+        self.xBairro = TagCaracter(nome='xBairro', codigo='G05', tamanho=[2, 60], raiz='//CTe/infCte/dest/locEnt')
+        self.cMun = TagInteiro(nome='cMun', codigo='G06', tamanho=[7, 7, 7], raiz='//CTe/infCte/dest/locEnt')
+        self.xMun = TagCaracter(nome='xMun', codigo='G07', tamanho=[2, 60], raiz='//CTe/infCte/dest/locEnt')
+        self.UF = TagCaracter(nome='UF', codigo='G08', tamanho=[2, 2], raiz='//CTe/infCte/dest/locEnt')
 
     def get_xml(self):
         if self.CNPJ.valor == '' and self.CPF.valor == '':
@@ -594,16 +594,16 @@ class EnderDest(XMLNFe):
 
     def __init__(self):
         super(EnderDest, self).__init__()
-        self.xLgr = TagCaracter(nome='xLgr'   , codigo='E06', tamanho=[ 1, 255]  , raiz='//CTe/infCte/dest/enderDest')
-        self.nro = TagCaracter(nome='nro'    , codigo='E07', tamanho=[ 1, 60]   , raiz='//CTe/infCte/dest/enderDest')
-        self.xCpl = TagCaracter(nome='xCpl'   , codigo='E08', tamanho=[ 1, 60]   , raiz='//CTe/infCte/dest/enderDest', obrigatorio=False)
-        self.xBairro = TagCaracter(nome='xBairro', codigo='E09', tamanho=[ 2, 60]   , raiz='//CTe/infCte/dest/enderDest')
-        self.cMun = TagInteiro(nome='cMun'    , codigo='E10', tamanho=[ 7, 7, 7], raiz='//CTe/infCte/dest/enderDest')
-        self.xMun = TagCaracter(nome='xMun'   , codigo='E11', tamanho=[ 2, 60]   , raiz='//CTe/infCte/dest/enderDest')
-        self.CEP = TagCaracter(nome='CEP'    , codigo='E13', tamanho=[ 8, 8, 8], raiz='//CTe/infCte/dest/enderDest', obrigatorio=False)
-        self.UF = TagCaracter(nome='UF'     , codigo='E12', tamanho=[ 2, 2]   , raiz='//CTe/infCte/dest/enderDest')
-        self.cPais = TagInteiro(nome='cPais'   , codigo='E14', tamanho=[ 4, 4, 4], raiz='//CTe/infCte/dest/enderDest', obrigatorio=False)
-        self.xPais = TagCaracter(nome='xPais'  , codigo='E15', tamanho=[ 1, 60]   , raiz='//CTe/infCte/dest/enderDest', obrigatorio=False)
+        self.xLgr = TagCaracter(nome='xLgr', codigo='E06', tamanho=[1, 255], raiz='//CTe/infCte/dest/enderDest')
+        self.nro = TagCaracter(nome='nro', codigo='E07', tamanho=[1, 60], raiz='//CTe/infCte/dest/enderDest')
+        self.xCpl = TagCaracter(nome='xCpl', codigo='E08', tamanho=[1, 60], raiz='//CTe/infCte/dest/enderDest', obrigatorio=False)
+        self.xBairro = TagCaracter(nome='xBairro', codigo='E09', tamanho=[2, 60], raiz='//CTe/infCte/dest/enderDest')
+        self.cMun = TagInteiro(nome='cMun', codigo='E10', tamanho=[7, 7, 7], raiz='//CTe/infCte/dest/enderDest')
+        self.xMun = TagCaracter(nome='xMun', codigo='E11', tamanho=[2, 60], raiz='//CTe/infCte/dest/enderDest')
+        self.CEP = TagCaracter(nome='CEP', codigo='E13', tamanho=[8, 8, 8], raiz='//CTe/infCte/dest/enderDest', obrigatorio=False)
+        self.UF = TagCaracter(nome='UF', codigo='E12', tamanho=[2, 2], raiz='//CTe/infCte/dest/enderDest')
+        self.cPais = TagInteiro(nome='cPais', codigo='E14', tamanho=[4, 4, 4], raiz='//CTe/infCte/dest/enderDest', obrigatorio=False)
+        self.xPais = TagCaracter(nome='xPais', codigo='E15', tamanho=[1, 60], raiz='//CTe/infCte/dest/enderDest', obrigatorio=False)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -641,14 +641,14 @@ class Dest(XMLNFe):
 
     def __init__(self):
         super(Dest, self).__init__()
-        self.CNPJ = TagCaracter(nome='CNPJ' , codigo='E02', tamanho=[ 0, 14], raiz='//CTe/infCte/dest', obrigatorio=False)
-        self.CPF = TagCaracter(nome='CPF'  , codigo='E03', tamanho=[11, 11], raiz='//CTe/infCte/dest', obrigatorio=False)
-        self.IE = TagCaracter(nome='IE'   , codigo='E17', tamanho=[ 2, 14], raiz='//CTe/infCte/dest', obrigatorio=False)
-        self.xNome = TagCaracter(nome='xNome', codigo='E04', tamanho=[ 2, 60], raiz='//CTe/infCte/dest')
-        self.fone = TagInteiro(nome='fone'  , codigo='E16', tamanho=[ 7, 12], raiz='//CTe/infCte/dest', obrigatorio=False)
-        self.ISUF = TagCaracter(nome='ISUF' , codigo='E18', tamanho=[ 9, 9], raiz='//CTe/infCte/dest', obrigatorio=False)
+        self.CNPJ = TagCaracter(nome='CNPJ', codigo='E02', tamanho=[0, 14], raiz='//CTe/infCte/dest', obrigatorio=False)
+        self.CPF = TagCaracter(nome='CPF', codigo='E03', tamanho=[11, 11], raiz='//CTe/infCte/dest', obrigatorio=False)
+        self.IE = TagCaracter(nome='IE', codigo='E17', tamanho=[2, 14], raiz='//CTe/infCte/dest', obrigatorio=False)
+        self.xNome = TagCaracter(nome='xNome', codigo='E04', tamanho=[2, 60], raiz='//CTe/infCte/dest')
+        self.fone = TagInteiro(nome='fone', codigo='E16', tamanho=[7, 12], raiz='//CTe/infCte/dest', obrigatorio=False)
+        self.ISUF = TagCaracter(nome='ISUF', codigo='E18', tamanho=[9, 9], raiz='//CTe/infCte/dest', obrigatorio=False)
         self.enderDest = EnderDest()
-        self.email = TagCaracter(nome='email', codigo='E19', tamanho=[ 1, 60], raiz='//CTe/infCte/dest', obrigatorio=False)
+        self.email = TagCaracter(nome='email', codigo='E19', tamanho=[1, 60], raiz='//CTe/infCte/dest', obrigatorio=False)
         self.locEnt = LocEnt()
 
     def get_xml(self):
@@ -693,16 +693,16 @@ class EnderReceb(XMLNFe):
 
     def __init__(self):
         super(EnderReceb, self).__init__()
-        self.xLgr = TagCaracter(nome='xLgr'   , codigo='E06', tamanho=[ 1, 255]  , raiz='//CTe/infCte/receb/enderReceb')
-        self.nro = TagCaracter(nome='nro'    , codigo='E07', tamanho=[ 1, 60]   , raiz='//CTe/infCte/receb/enderReceb')
-        self.xCpl = TagCaracter(nome='xCpl'   , codigo='E08', tamanho=[ 1, 60]   , raiz='//CTe/infCte/receb/enderReceb', obrigatorio=False)
-        self.xBairro = TagCaracter(nome='xBairro', codigo='E09', tamanho=[ 2, 60]   , raiz='//CTe/infCte/receb/enderReceb')
-        self.cMun = TagInteiro(nome='cMun'    , codigo='E10', tamanho=[ 7, 7, 7], raiz='//CTe/infCte/receb/enderReceb')
-        self.xMun = TagCaracter(nome='xMun'   , codigo='E11', tamanho=[ 2, 60]   , raiz='//CTe/infCte/receb/enderReceb')
-        self.CEP = TagCaracter(nome='CEP'    , codigo='E13', tamanho=[ 8, 8, 8], raiz='//CTe/infCte/receb/enderReceb', obrigatorio=False)
-        self.UF = TagCaracter(nome='UF'     , codigo='E12', tamanho=[ 2, 2]   , raiz='//CTe/infCte/receb/enderReceb')
-        self.cPais = TagInteiro(nome='cPais'   , codigo='E14', tamanho=[ 4, 4, 4], raiz='//CTe/infCte/receb/enderReceb', obrigatorio=False)
-        self.xPais = TagCaracter(nome='xPais'  , codigo='E15', tamanho=[ 1, 60]   , raiz='//CTe/infCte/receb/enderReceb', obrigatorio=False)
+        self.xLgr = TagCaracter(nome='xLgr', codigo='E06', tamanho=[1, 255], raiz='//CTe/infCte/receb/enderReceb')
+        self.nro = TagCaracter(nome='nro', codigo='E07', tamanho=[1, 60], raiz='//CTe/infCte/receb/enderReceb')
+        self.xCpl = TagCaracter(nome='xCpl', codigo='E08', tamanho=[1, 60], raiz='//CTe/infCte/receb/enderReceb', obrigatorio=False)
+        self.xBairro = TagCaracter(nome='xBairro', codigo='E09', tamanho=[2, 60], raiz='//CTe/infCte/receb/enderReceb')
+        self.cMun = TagInteiro(nome='cMun', codigo='E10', tamanho=[7, 7, 7], raiz='//CTe/infCte/receb/enderReceb')
+        self.xMun = TagCaracter(nome='xMun', codigo='E11', tamanho=[2, 60], raiz='//CTe/infCte/receb/enderReceb')
+        self.CEP = TagCaracter(nome='CEP', codigo='E13', tamanho=[8, 8, 8], raiz='//CTe/infCte/receb/enderReceb', obrigatorio=False)
+        self.UF = TagCaracter(nome='UF', codigo='E12', tamanho=[2, 2], raiz='//CTe/infCte/receb/enderReceb')
+        self.cPais = TagInteiro(nome='cPais', codigo='E14', tamanho=[4, 4, 4], raiz='//CTe/infCte/receb/enderReceb', obrigatorio=False)
+        self.xPais = TagCaracter(nome='xPais', codigo='E15', tamanho=[1, 60], raiz='//CTe/infCte/receb/enderReceb', obrigatorio=False)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -740,13 +740,13 @@ class Receb(XMLNFe):
 
     def __init__(self):
         super(Receb, self).__init__()
-        self.CNPJ = TagCaracter(nome='CNPJ' , codigo='E02', tamanho=[ 0, 14], raiz='//CTe/infCte/receb', obrigatorio=False)
-        self.CPF = TagCaracter(nome='CPF'  , codigo='E03', tamanho=[11, 11], raiz='//CTe/infCte/receb', obrigatorio=False)
-        self.IE = TagCaracter(nome='IE'   , codigo='E17', tamanho=[ 2, 14], raiz='//CTe/infCte/receb', obrigatorio=False)
-        self.xNome = TagCaracter(nome='xNome', codigo='E04', tamanho=[ 2, 60], raiz='//CTe/infCte/receb')
-        self.fone = TagInteiro(nome='fone'  , codigo='E16', tamanho=[ 7, 12], raiz='//CTe/infCte/receb', obrigatorio=False)
+        self.CNPJ = TagCaracter(nome='CNPJ', codigo='E02', tamanho=[0, 14], raiz='//CTe/infCte/receb', obrigatorio=False)
+        self.CPF = TagCaracter(nome='CPF', codigo='E03', tamanho=[11, 11], raiz='//CTe/infCte/receb', obrigatorio=False)
+        self.IE = TagCaracter(nome='IE', codigo='E17', tamanho=[2, 14], raiz='//CTe/infCte/receb', obrigatorio=False)
+        self.xNome = TagCaracter(nome='xNome', codigo='E04', tamanho=[2, 60], raiz='//CTe/infCte/receb')
+        self.fone = TagInteiro(nome='fone', codigo='E16', tamanho=[7, 12], raiz='//CTe/infCte/receb', obrigatorio=False)
         self.enderReceb = EnderReceb()
-        self.email = TagCaracter(nome='email', codigo='E19', tamanho=[ 1, 60], raiz='//CTe/infCte/receb', obrigatorio=False)
+        self.email = TagCaracter(nome='email', codigo='E19', tamanho=[1, 60], raiz='//CTe/infCte/receb', obrigatorio=False)
 
     def get_xml(self):
         if self.CNPJ.valor == '' and self.CPF.valor == '':
@@ -786,16 +786,16 @@ class EnderExped(XMLNFe):
 
     def __init__(self):
         super(EnderExped, self).__init__()
-        self.xLgr = TagCaracter(nome='xLgr'   , codigo='E06', tamanho=[ 1, 255]  , raiz='//CTe/infCte/exped/enderExped')
-        self.nro = TagCaracter(nome='nro'    , codigo='E07', tamanho=[ 1, 60]   , raiz='//CTe/infCte/exped/enderExped')
-        self.xCpl = TagCaracter(nome='xCpl'   , codigo='E08', tamanho=[ 1, 60]   , raiz='//CTe/infCte/exped/enderExped', obrigatorio=False)
-        self.xBairro = TagCaracter(nome='xBairro', codigo='E09', tamanho=[ 2, 60]   , raiz='//CTe/infCte/exped/enderExped')
-        self.cMun = TagInteiro(nome='cMun'    , codigo='E10', tamanho=[ 7, 7, 7], raiz='//CTe/infCte/exped/enderExped')
-        self.xMun = TagCaracter(nome='xMun'   , codigo='E11', tamanho=[ 2, 60]   , raiz='//CTe/infCte/exped/enderExped')
-        self.CEP = TagCaracter(nome='CEP'    , codigo='E13', tamanho=[ 8, 8, 8], raiz='//CTe/infCte/exped/enderExped', obrigatorio=False)
-        self.UF = TagCaracter(nome='UF'     , codigo='E12', tamanho=[ 2, 2]   , raiz='//CTe/infCte/exped/enderExped')
-        self.cPais = TagInteiro(nome='cPais'   , codigo='E14', tamanho=[ 4, 4, 4], raiz='//CTe/infCte/exped/enderExped', obrigatorio=False)
-        self.xPais = TagCaracter(nome='xPais'  , codigo='E15', tamanho=[ 1, 60]   , raiz='//CTe/infCte/exped/enderExped', obrigatorio=False)
+        self.xLgr = TagCaracter(nome='xLgr', codigo='E06', tamanho=[1, 255], raiz='//CTe/infCte/exped/enderExped')
+        self.nro = TagCaracter(nome='nro', codigo='E07', tamanho=[1, 60], raiz='//CTe/infCte/exped/enderExped')
+        self.xCpl = TagCaracter(nome='xCpl', codigo='E08', tamanho=[1, 60], raiz='//CTe/infCte/exped/enderExped', obrigatorio=False)
+        self.xBairro = TagCaracter(nome='xBairro', codigo='E09', tamanho=[2, 60], raiz='//CTe/infCte/exped/enderExped')
+        self.cMun = TagInteiro(nome='cMun', codigo='E10', tamanho=[7, 7, 7], raiz='//CTe/infCte/exped/enderExped')
+        self.xMun = TagCaracter(nome='xMun', codigo='E11', tamanho=[2, 60], raiz='//CTe/infCte/exped/enderExped')
+        self.CEP = TagCaracter(nome='CEP', codigo='E13', tamanho=[8, 8, 8], raiz='//CTe/infCte/exped/enderExped', obrigatorio=False)
+        self.UF = TagCaracter(nome='UF', codigo='E12', tamanho=[2, 2], raiz='//CTe/infCte/exped/enderExped')
+        self.cPais = TagInteiro(nome='cPais', codigo='E14', tamanho=[4, 4, 4], raiz='//CTe/infCte/exped/enderExped', obrigatorio=False)
+        self.xPais = TagCaracter(nome='xPais', codigo='E15', tamanho=[1, 60], raiz='//CTe/infCte/exped/enderExped', obrigatorio=False)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -833,13 +833,13 @@ class Exped(XMLNFe):
 
     def __init__(self):
         super(Exped, self).__init__()
-        self.CNPJ = TagCaracter(nome='CNPJ' , codigo='E02', tamanho=[ 0, 14], raiz='//CTe/infCte/exped', obrigatorio=False)
-        self.CPF = TagCaracter(nome='CPF'  , codigo='E03', tamanho=[11, 11], raiz='//CTe/infCte/exped', obrigatorio=False)
-        self.IE = TagCaracter(nome='IE'   , codigo='E17', tamanho=[ 2, 14], raiz='//CTe/infCte/exped', obrigatorio=False)
-        self.xNome = TagCaracter(nome='xNome', codigo='E04', tamanho=[ 2, 60], raiz='//CTe/infCte/exped')
-        self.fone = TagInteiro(nome='fone'  , codigo='E16', tamanho=[ 7, 12], raiz='//CTe/infCte/exped', obrigatorio=False)
+        self.CNPJ = TagCaracter(nome='CNPJ', codigo='E02', tamanho=[0, 14], raiz='//CTe/infCte/exped', obrigatorio=False)
+        self.CPF = TagCaracter(nome='CPF', codigo='E03', tamanho=[11, 11], raiz='//CTe/infCte/exped', obrigatorio=False)
+        self.IE = TagCaracter(nome='IE', codigo='E17', tamanho=[2, 14], raiz='//CTe/infCte/exped', obrigatorio=False)
+        self.xNome = TagCaracter(nome='xNome', codigo='E04', tamanho=[2, 60], raiz='//CTe/infCte/exped')
+        self.fone = TagInteiro(nome='fone', codigo='E16', tamanho=[7, 12], raiz='//CTe/infCte/exped', obrigatorio=False)
         self.enderExped = EnderExped()
-        self.email = TagCaracter(nome='email', codigo='E19', tamanho=[ 1, 60], raiz='//CTe/infCte/exped', obrigatorio=False)
+        self.email = TagCaracter(nome='email', codigo='E19', tamanho=[1, 60], raiz='//CTe/infCte/exped', obrigatorio=False)
 
     def get_xml(self):
         if self.CNPJ.valor == '' and self.CPF.valor == '':
@@ -879,10 +879,10 @@ class InfOutros(XMLNFe):
 
     def __init__(self):
         super(InfOutros, self).__init__()
-        self.tpDoc = TagCaracter(nome='tpDoc', codigo='B16', tamanho=[ 2, 2]   , raiz='//infOutros', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, valor='99')
-        self.descOutros = TagCaracter(nome='descOutros', codigo='B16', tamanho=[ 1, 100], raiz='//infOutros', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, obrigatorio=False)
-        self.nDoc = TagInteiro(nome='nDoc'  , codigo='B20', tamanho=[ 1, 20]   , raiz='//infOutros', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.dEmi = TagData(nome='dEmi'     , codigo='B09', raiz='//infOutros', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.tpDoc = TagCaracter(nome='tpDoc', codigo='B16', tamanho=[2, 2], raiz='//infOutros', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, valor='99')
+        self.descOutros = TagCaracter(nome='descOutros', codigo='B16', tamanho=[1, 100], raiz='//infOutros', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, obrigatorio=False)
+        self.nDoc = TagInteiro(nome='nDoc', codigo='B20', tamanho=[1, 20], raiz='//infOutros', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.dEmi = TagData(nome='dEmi', codigo='B09', raiz='//infOutros', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
         self.vDocFisc = TagDecimal(nome='vDocFisc', codigo='W16', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='//infOutros', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
 
     def get_xml(self):
@@ -914,8 +914,8 @@ class InfNFe(XMLNFe):
 
     def __init__(self):
         super(InfNFe, self).__init__()
-        self.chave = TagCaracter(nome='chave', codigo='B16', tamanho=[44, 44]   , raiz='//infNFe', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.PIN = TagInteiro(nome='PIN'   , codigo='B20', tamanho=[ 2, 9]    , raiz='//infNFe', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, obrigatorio=False)
+        self.chave = TagCaracter(nome='chave', codigo='B16', tamanho=[44, 44], raiz='//infNFe', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.PIN = TagInteiro(nome='PIN', codigo='B20', tamanho=[2, 9], raiz='//infNFe', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, obrigatorio=False)
 
     def get_xml(self):
         if not self.chave.valor:
@@ -940,16 +940,16 @@ class LocRet(XMLNFe):
 
     def __init__(self):
         super(LocRet, self).__init__()
-        self.CNPJ = TagCaracter(nome='CNPJ'   , codigo='E02', tamanho=[ 0, 14]   , raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, obrigatorio=False)
-        self.CPF = TagCaracter(nome='CPF'    , codigo='E03', tamanho=[11, 11]   , raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, obrigatorio=False)
-        self.xNome = TagCaracter(nome='xNome'  , codigo='E04', tamanho=[ 2, 60]   , raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.xLgr = TagCaracter(nome='xLgr'   , codigo='E04', tamanho=[ 1, 255]  , raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.nro = TagCaracter(nome='nro'    , codigo='F03', tamanho=[ 1, 60]   , raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.xCpl = TagCaracter(nome='xCpl'   , codigo='F04', tamanho=[ 1, 60]   , raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, obrigatorio=False)
-        self.xBairro = TagCaracter(nome='xBairro', codigo='F05', tamanho=[ 2, 60]   , raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.cMun = TagInteiro(nome='cMun'    , codigo='F06', tamanho=[ 7, 7, 7], raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.xMun = TagCaracter(nome='xMun'   , codigo='F07', tamanho=[ 2, 60]   , raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.UF = TagCaracter(nome='UF'     , codigo='F08', tamanho=[ 2, 2]   , raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.CNPJ = TagCaracter(nome='CNPJ', codigo='E02', tamanho=[0, 14], raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, obrigatorio=False)
+        self.CPF = TagCaracter(nome='CPF', codigo='E03', tamanho=[11, 11], raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, obrigatorio=False)
+        self.xNome = TagCaracter(nome='xNome', codigo='E04', tamanho=[2, 60], raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.xLgr = TagCaracter(nome='xLgr', codigo='E04', tamanho=[1, 255], raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.nro = TagCaracter(nome='nro', codigo='F03', tamanho=[1, 60], raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.xCpl = TagCaracter(nome='xCpl', codigo='F04', tamanho=[1, 60], raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, obrigatorio=False)
+        self.xBairro = TagCaracter(nome='xBairro', codigo='F05', tamanho=[2, 60], raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.cMun = TagInteiro(nome='cMun', codigo='F06', tamanho=[7, 7, 7], raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.xMun = TagCaracter(nome='xMun', codigo='F07', tamanho=[2, 60], raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.UF = TagCaracter(nome='UF', codigo='F08', tamanho=[2, 2], raiz='//infNF/locRet', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
 
     def get_xml(self):
         if self.CNPJ.valor == '' and self.CPF.valor == '':
@@ -994,21 +994,21 @@ class InfNF(XMLNFe):
 
     def __init__(self):
         super(InfNF, self).__init__()
-        self.nRoma = TagCaracter(nome='nRoma', codigo='B16', tamanho=[ 1, 20]   , raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, obrigatorio=False)
-        self.nPed = TagCaracter(nome='nPed' , codigo='B16', tamanho=[ 1, 20]   , raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, obrigatorio=False)
-        self.mod = TagCaracter(nome='mod'  , codigo='B18', tamanho=[ 2, 2, 2], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.serie = TagInteiro(nome='serie' , codigo='B19', tamanho=[ 1, 3, 1], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.nDoc = TagInteiro(nome='nDoc'  , codigo='B20', tamanho=[ 1, 20]   , raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.dEmi = TagData(nome='dEmi'     , codigo='B09', raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.vBC = TagDecimal(nome='vBC'   , codigo='W03', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.vICMS = TagDecimal(nome='vICMS' , codigo='W04', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.vBCST = TagDecimal(nome='vBCST' , codigo='W05', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.vST = TagDecimal(nome='vST'   , codigo='W06', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.vProd = TagDecimal(nome='vProd' , codigo='W07', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.vNF = TagDecimal(nome='vNF'   , codigo='W16', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.nCFOP = TagInteiro(nome='nCFOP' , codigo='I08', tamanho=[4, 4, 4]                    , raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.nPeso = TagDecimal(nome='nPeso' , codigo='W16', tamanho=[1, 12, 1], decimais=[0, 3, 3], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, obrigatorio=False)
-        self.PIN = TagInteiro(nome='PIN'   , codigo='B20', tamanho=[ 2, 9]    , raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, obrigatorio=False)
+        self.nRoma = TagCaracter(nome='nRoma', codigo='B16', tamanho=[1, 20], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, obrigatorio=False)
+        self.nPed = TagCaracter(nome='nPed', codigo='B16', tamanho=[1, 20], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, obrigatorio=False)
+        self.mod = TagCaracter(nome='mod', codigo='B18', tamanho=[2, 2, 2], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.serie = TagInteiro(nome='serie', codigo='B19', tamanho=[1, 3, 1], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.nDoc = TagInteiro(nome='nDoc', codigo='B20', tamanho=[1, 20], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.dEmi = TagData(nome='dEmi', codigo='B09', raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.vBC = TagDecimal(nome='vBC', codigo='W03', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.vICMS = TagDecimal(nome='vICMS', codigo='W04', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.vBCST = TagDecimal(nome='vBCST', codigo='W05', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.vST = TagDecimal(nome='vST', codigo='W06', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.vProd = TagDecimal(nome='vProd', codigo='W07', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.vNF = TagDecimal(nome='vNF', codigo='W16', tamanho=[1, 13, 1], decimais=[0, 2, 2], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.nCFOP = TagInteiro(nome='nCFOP', codigo='I08', tamanho=[4, 4, 4], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.nPeso = TagDecimal(nome='nPeso', codigo='W16', tamanho=[1, 12, 1], decimais=[0, 3, 3], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, obrigatorio=False)
+        self.PIN = TagInteiro(nome='PIN', codigo='B20', tamanho=[2, 9], raiz='//infNF', namespace=NAMESPACE_CTE, namespace_obrigatorio=False, obrigatorio=False)
         self.locRet = LocRet()
 
     def get_xml(self):
@@ -1062,16 +1062,16 @@ class EnderReme(XMLNFe):
 
     def __init__(self):
         super(EnderReme, self).__init__()
-        self.xLgr = TagCaracter(nome='xLgr'   , codigo='E06', tamanho=[ 1, 255]  , raiz='//CTe/infCte/rem/enderReme')
-        self.nro = TagCaracter(nome='nro'    , codigo='E07', tamanho=[ 1, 60]   , raiz='//CTe/infCte/rem/enderReme')
-        self.xCpl = TagCaracter(nome='xCpl'   , codigo='E08', tamanho=[ 1, 60]   , raiz='//CTe/infCte/rem/enderReme', obrigatorio=False)
-        self.xBairro = TagCaracter(nome='xBairro', codigo='E09', tamanho=[ 2, 60]   , raiz='//CTe/infCte/rem/enderReme')
-        self.cMun = TagInteiro(nome='cMun'    , codigo='E10', tamanho=[ 7, 7, 7], raiz='//CTe/infCte/rem/enderReme')
-        self.xMun = TagCaracter(nome='xMun'   , codigo='E11', tamanho=[ 2, 60]   , raiz='//CTe/infCte/rem/enderReme')
-        self.CEP = TagCaracter(nome='CEP'    , codigo='E13', tamanho=[ 8, 8, 8], raiz='//CTe/infCte/rem/enderReme', obrigatorio=False)
-        self.UF = TagCaracter(nome='UF'     , codigo='E12', tamanho=[ 2, 2]   , raiz='//CTe/infCte/rem/enderReme')
-        self.cPais = TagInteiro(nome='cPais'   , codigo='E14', tamanho=[ 4, 4, 4], raiz='//CTe/infCte/rem/enderReme', obrigatorio=False)
-        self.xPais = TagCaracter(nome='xPais'  , codigo='E15', tamanho=[ 1, 60]   , raiz='//CTe/infCte/rem/enderReme', obrigatorio=False)
+        self.xLgr = TagCaracter(nome='xLgr', codigo='E06', tamanho=[1, 255], raiz='//CTe/infCte/rem/enderReme')
+        self.nro = TagCaracter(nome='nro', codigo='E07', tamanho=[1, 60], raiz='//CTe/infCte/rem/enderReme')
+        self.xCpl = TagCaracter(nome='xCpl', codigo='E08', tamanho=[1, 60], raiz='//CTe/infCte/rem/enderReme', obrigatorio=False)
+        self.xBairro = TagCaracter(nome='xBairro', codigo='E09', tamanho=[2, 60], raiz='//CTe/infCte/rem/enderReme')
+        self.cMun = TagInteiro(nome='cMun', codigo='E10', tamanho=[7, 7, 7], raiz='//CTe/infCte/rem/enderReme')
+        self.xMun = TagCaracter(nome='xMun', codigo='E11', tamanho=[2, 60], raiz='//CTe/infCte/rem/enderReme')
+        self.CEP = TagCaracter(nome='CEP', codigo='E13', tamanho=[8, 8, 8], raiz='//CTe/infCte/rem/enderReme', obrigatorio=False)
+        self.UF = TagCaracter(nome='UF', codigo='E12', tamanho=[2, 2], raiz='//CTe/infCte/rem/enderReme')
+        self.cPais = TagInteiro(nome='cPais', codigo='E14', tamanho=[4, 4, 4], raiz='//CTe/infCte/rem/enderReme', obrigatorio=False)
+        self.xPais = TagCaracter(nome='xPais', codigo='E15', tamanho=[1, 60], raiz='//CTe/infCte/rem/enderReme', obrigatorio=False)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -1109,14 +1109,14 @@ class Rem(XMLNFe):
 
     def __init__(self):
         super(Rem, self).__init__()
-        self.CNPJ = TagCaracter(nome='CNPJ' , codigo='E02', tamanho=[ 0, 14], raiz='//CTe/infCte/rem', obrigatorio=False)
-        self.CPF = TagCaracter(nome='CPF'  , codigo='E03', tamanho=[11, 11], raiz='//CTe/infCte/rem', obrigatorio=False)
-        self.IE = TagCaracter(nome='IE'   , codigo='E17', tamanho=[ 2, 14], raiz='//CTe/infCte/rem', obrigatorio=False)
-        self.xNome = TagCaracter(nome='xNome', codigo='E04', tamanho=[ 2, 60], raiz='//CTe/infCte/rem')
-        self.xFant = TagCaracter(nome='xFant', codigo='E04', tamanho=[ 1, 60], raiz='//CTe/infCte/rem', obrigatorio=False)
-        self.fone = TagInteiro(nome='fone'  , codigo='E16', tamanho=[ 7, 12], raiz='//CTe/infCte/rem', obrigatorio=False)
+        self.CNPJ = TagCaracter(nome='CNPJ', codigo='E02', tamanho=[0, 14], raiz='//CTe/infCte/rem', obrigatorio=False)
+        self.CPF = TagCaracter(nome='CPF', codigo='E03', tamanho=[11, 11], raiz='//CTe/infCte/rem', obrigatorio=False)
+        self.IE = TagCaracter(nome='IE', codigo='E17', tamanho=[2, 14], raiz='//CTe/infCte/rem', obrigatorio=False)
+        self.xNome = TagCaracter(nome='xNome', codigo='E04', tamanho=[2, 60], raiz='//CTe/infCte/rem')
+        self.xFant = TagCaracter(nome='xFant', codigo='E04', tamanho=[1, 60], raiz='//CTe/infCte/rem', obrigatorio=False)
+        self.fone = TagInteiro(nome='fone', codigo='E16', tamanho=[7, 12], raiz='//CTe/infCte/rem', obrigatorio=False)
         self.enderReme = EnderReme()
-        self.email = TagCaracter(nome='email', codigo='E19', tamanho=[ 1, 60], raiz='//CTe/infCte/rem', obrigatorio=False)
+        self.email = TagCaracter(nome='email', codigo='E19', tamanho=[1, 60], raiz='//CTe/infCte/rem', obrigatorio=False)
         self.infNF = []
         self.infNFe = []
         self.infOutros = []
@@ -1181,17 +1181,17 @@ class EnderEmit(XMLNFe):
 
     def __init__(self):
         super(EnderEmit, self).__init__()
-        self.xLgr = TagCaracter(nome='xLgr'   , codigo='C06', tamanho=[ 2, 60]   , raiz='//CTe/infCte/emit/enderEmit')
-        self.nro = TagCaracter(nome='nro'    , codigo='C07', tamanho=[ 1, 60]   , raiz='//CTe/infCte/emit/enderEmit')
-        self.xCpl = TagCaracter(nome='xCpl'   , codigo='C08', tamanho=[ 1, 60]   , raiz='//CTe/infCte/emit/enderEmit', obrigatorio=False)
-        self.xBairro = TagCaracter(nome='xBairro', codigo='C09', tamanho=[ 2, 60]   , raiz='//CTe/infCte/emit/enderEmit')
-        self.cMun = TagInteiro(nome='cMun'    , codigo='C10', tamanho=[ 7, 7, 7], raiz='//CTe/infCte/emit/enderEmit')
-        self.xMun = TagCaracter(nome='xMun'   , codigo='C11', tamanho=[ 2, 60]   , raiz='//CTe/infCte/emit/enderEmit')
-        self.CEP = TagCaracter(nome='CEP'    , codigo='C13', tamanho=[ 8, 8, 8], raiz='//CTe/infCte/emit/enderEmit', obrigatorio=False)
-        self.UF = TagCaracter(nome='UF'     , codigo='C12', tamanho=[ 2, 2]   , raiz='//CTe/infCte/emit/enderEmit')
+        self.xLgr = TagCaracter(nome='xLgr', codigo='C06', tamanho=[2, 60], raiz='//CTe/infCte/emit/enderEmit')
+        self.nro = TagCaracter(nome='nro', codigo='C07', tamanho=[1, 60], raiz='//CTe/infCte/emit/enderEmit')
+        self.xCpl = TagCaracter(nome='xCpl', codigo='C08', tamanho=[1, 60], raiz='//CTe/infCte/emit/enderEmit', obrigatorio=False)
+        self.xBairro = TagCaracter(nome='xBairro', codigo='C09', tamanho=[2, 60], raiz='//CTe/infCte/emit/enderEmit')
+        self.cMun = TagInteiro(nome='cMun', codigo='C10', tamanho=[7, 7, 7], raiz='//CTe/infCte/emit/enderEmit')
+        self.xMun = TagCaracter(nome='xMun', codigo='C11', tamanho=[2, 60], raiz='//CTe/infCte/emit/enderEmit')
+        self.CEP = TagCaracter(nome='CEP', codigo='C13', tamanho=[8, 8, 8], raiz='//CTe/infCte/emit/enderEmit', obrigatorio=False)
+        self.UF = TagCaracter(nome='UF', codigo='C12', tamanho=[2, 2], raiz='//CTe/infCte/emit/enderEmit')
         # self.cPais   = TagInteiro(nome='cPais'   , codigo='C14', tamanho=[ 4,  4, 4], raiz='//CTe/infCte/emit/enderEmit', obrigatorio=False)
         # self.xPais   = TagCaracter(nome='xPais'  , codigo='C15', tamanho=[ 1, 60]   , raiz='//CTe/infCte/emit/enderEmit', obrigatorio=False)
-        self.fone = TagInteiro(nome='fone'    , codigo='C16', tamanho=[ 1, 12]   , raiz='//CTe/infCte/emit/enderEmit', obrigatorio=False)
+        self.fone = TagInteiro(nome='fone', codigo='C16', tamanho=[1, 12], raiz='//CTe/infCte/emit/enderEmit', obrigatorio=False)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -1250,11 +1250,11 @@ class Emit(XMLNFe):
 
     def __init__(self):
         super(Emit, self).__init__()
-        self.CNPJ = TagCaracter(nome='CNPJ' , codigo='C02' , tamanho=[14, 14], raiz='//CTe/infCte/emit', obrigatorio=False)
+        self.CNPJ = TagCaracter(nome='CNPJ', codigo='C02', tamanho=[14, 14], raiz='//CTe/infCte/emit', obrigatorio=False)
         # self.CPF       = TagCaracter(nome='CPF'  , codigo='C02a', tamanho=[11, 11], raiz='//CTe/infCte/emit', obrigatorio=False)
-        self.IE = TagCaracter(nome='IE'   , codigo='C17' , tamanho=[ 2, 14], raiz='//CTe/infCte/emit', obrigatorio=False)
-        self.xNome = TagCaracter(nome='xNome', codigo='C03' , tamanho=[ 2, 60], raiz='//CTe/infCte/emit')
-        self.xFant = TagCaracter(nome='xFant', codigo='C04' , tamanho=[ 1, 60], raiz='//CTe/infCte/emit', obrigatorio=False)
+        self.IE = TagCaracter(nome='IE', codigo='C17', tamanho=[2, 14], raiz='//CTe/infCte/emit', obrigatorio=False)
+        self.xNome = TagCaracter(nome='xNome', codigo='C03', tamanho=[2, 60], raiz='//CTe/infCte/emit')
+        self.xFant = TagCaracter(nome='xFant', codigo='C04', tamanho=[1, 60], raiz='//CTe/infCte/emit', obrigatorio=False)
         self.enderEmit = EnderEmit()
         # self.IEST      = TagCaracter(nome='IEST' , codigo='C18' , tamanho=[ 2, 14], raiz='//CTe/infCte/emit', obrigatorio=False)
         # self.IM        = TagCaracter(nome='IM'   , codigo='C19' , tamanho=[ 1, 15], raiz='//CTe/infCte/emit', obrigatorio=False)
@@ -1517,14 +1517,14 @@ class Compl(XMLNFe):
 
     def __init__(self):
         super(Compl, self).__init__()
-        self.xCaracAd = TagCaracter(nome='xCaracAd', tamanho=[ 1, 15], raiz='//CTe/infCte/compl', obrigatorio=False)
-        self.xCaracSer = TagCaracter(nome='xCaracSer', tamanho=[ 1, 30], raiz='//CTe/infCte/compl', obrigatorio=False)
-        self.xEmi = TagCaracter(nome='xEmi', tamanho=[ 1, 20], raiz='//CTe/infCte/compl', obrigatorio=False)
+        self.xCaracAd = TagCaracter(nome='xCaracAd', tamanho=[1, 15], raiz='//CTe/infCte/compl', obrigatorio=False)
+        self.xCaracSer = TagCaracter(nome='xCaracSer', tamanho=[1, 30], raiz='//CTe/infCte/compl', obrigatorio=False)
+        self.xEmi = TagCaracter(nome='xEmi', tamanho=[1, 20], raiz='//CTe/infCte/compl', obrigatorio=False)
         self.fluxo = Fluxo()
         self.Entrega = Entrega()
-        self.origCalc = TagCaracter(nome='origCalc', tamanho=[ 1, 40], raiz='//CTe/infCte/compl', obrigatorio=False)
-        self.destCalc = TagCaracter(nome='destCalc', tamanho=[ 1, 40], raiz='//CTe/infCte/compl', obrigatorio=False)
-        self.xObs = TagCaracter(nome='xObs', tamanho=[ 1, 2000], raiz='//CTe/infCte/compl', obrigatorio=False)
+        self.origCalc = TagCaracter(nome='origCalc', tamanho=[1, 40], raiz='//CTe/infCte/compl', obrigatorio=False)
+        self.destCalc = TagCaracter(nome='destCalc', tamanho=[1, 40], raiz='//CTe/infCte/compl', obrigatorio=False)
+        self.xObs = TagCaracter(nome='xObs', tamanho=[1, 2000], raiz='//CTe/infCte/compl', obrigatorio=False)
         self.ObsCont = []
         self.ObsFisco = []
 
@@ -1580,16 +1580,16 @@ class EnderToma(XMLNFe):
 
     def __init__(self):
         super(EnderToma, self).__init__()
-        self.xLgr = TagCaracter(nome='xLgr'   , codigo='E06', tamanho=[ 1, 255]  , raiz='//CTe/infCte/ide/toma4/enderToma')
-        self.nro = TagCaracter(nome='nro'    , codigo='E07', tamanho=[ 1, 60]   , raiz='//CTe/infCte/ide/toma4/enderToma')
-        self.xCpl = TagCaracter(nome='xCpl'   , codigo='E08', tamanho=[ 1, 60]   , raiz='//CTe/infCte/ide/toma4/enderToma', obrigatorio=False)
-        self.xBairro = TagCaracter(nome='xBairro', codigo='E09', tamanho=[ 2, 60]   , raiz='//CTe/infCte/ide/toma4/enderToma')
-        self.cMun = TagInteiro(nome='cMun'    , codigo='E10', tamanho=[ 7, 7, 7], raiz='//CTe/infCte/ide/toma4/enderToma')
-        self.xMun = TagCaracter(nome='xMun'   , codigo='E11', tamanho=[ 2, 60]   , raiz='//CTe/infCte/ide/toma4/enderToma')
-        self.CEP = TagCaracter(nome='CEP'    , codigo='E13', tamanho=[ 8, 8, 8], raiz='//CTe/infCte/ide/toma4/enderToma', obrigatorio=False)
-        self.UF = TagCaracter(nome='UF'     , codigo='E12', tamanho=[ 2, 2]   , raiz='//CTe/infCte/ide/toma4/enderToma')
-        self.cPais = TagInteiro(nome='cPais'   , codigo='E14', tamanho=[ 4, 4, 4], raiz='//CTe/infCte/ide/toma4/enderToma', obrigatorio=False)
-        self.xPais = TagCaracter(nome='xPais'  , codigo='E15', tamanho=[ 1, 60]   , raiz='//CTe/infCte/ide/toma4/enderToma', obrigatorio=False)
+        self.xLgr = TagCaracter(nome='xLgr', codigo='E06', tamanho=[1, 255], raiz='//CTe/infCte/ide/toma4/enderToma')
+        self.nro = TagCaracter(nome='nro', codigo='E07', tamanho=[1, 60], raiz='//CTe/infCte/ide/toma4/enderToma')
+        self.xCpl = TagCaracter(nome='xCpl', codigo='E08', tamanho=[1, 60], raiz='//CTe/infCte/ide/toma4/enderToma', obrigatorio=False)
+        self.xBairro = TagCaracter(nome='xBairro', codigo='E09', tamanho=[2, 60], raiz='//CTe/infCte/ide/toma4/enderToma')
+        self.cMun = TagInteiro(nome='cMun', codigo='E10', tamanho=[7, 7, 7], raiz='//CTe/infCte/ide/toma4/enderToma')
+        self.xMun = TagCaracter(nome='xMun', codigo='E11', tamanho=[2, 60], raiz='//CTe/infCte/ide/toma4/enderToma')
+        self.CEP = TagCaracter(nome='CEP', codigo='E13', tamanho=[8, 8, 8], raiz='//CTe/infCte/ide/toma4/enderToma', obrigatorio=False)
+        self.UF = TagCaracter(nome='UF', codigo='E12', tamanho=[2, 2], raiz='//CTe/infCte/ide/toma4/enderToma')
+        self.cPais = TagInteiro(nome='cPais', codigo='E14', tamanho=[4, 4, 4], raiz='//CTe/infCte/ide/toma4/enderToma', obrigatorio=False)
+        self.xPais = TagCaracter(nome='xPais', codigo='E15', tamanho=[1, 60], raiz='//CTe/infCte/ide/toma4/enderToma', obrigatorio=False)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -1627,17 +1627,17 @@ class Tomador(XMLNFe):
 
     def __init__(self):
         super(Tomador, self).__init__()
-        self.toma = TagInteiro(nome='toma'  , tamanho=[1, 1, 1], raiz='//CTe/infCte/ide/toma03', valor=0)
-        self.toma03 = TagInteiro(nome='toma'  , tamanho=[1, 1, 1], raiz='//CTe/infCte/ide/toma03', valor=0)
-        self.toma4 = TagInteiro(nome='toma'  , tamanho=[1, 1, 1], raiz='//CTe/infCte/ide/toma4', valor=4)
-        self.CNPJ = TagCaracter(nome='CNPJ' , tamanho=[ 0, 14], raiz='//CTe/infCte/ide/toma4', obrigatorio=False)
-        self.CPF = TagCaracter(nome='CPF'  , tamanho=[11, 11], raiz='//CTe/infCte/ide/toma4', obrigatorio=False)
-        self.IE = TagCaracter(nome='IE'   , tamanho=[ 2, 14], raiz='//CTe/infCte/ide/toma4', obrigatorio=False)
-        self.xNome = TagCaracter(nome='xNome', tamanho=[ 2, 60], raiz='//CTe/infCte/ide/toma4')
-        self.xFant = TagCaracter(nome='xFant', tamanho=[ 1, 60], raiz='//CTe/infCte/ide/toma4', obrigatorio=False)
-        self.fone = TagInteiro(nome='fone'  , tamanho=[ 7, 12], raiz='//CTe/infCte/ide/toma4', obrigatorio=False)
+        self.toma = TagInteiro(nome='toma', tamanho=[1, 1, 1], raiz='//CTe/infCte/ide/toma03', valor=0)
+        self.toma03 = TagInteiro(nome='toma', tamanho=[1, 1, 1], raiz='//CTe/infCte/ide/toma03', valor=0)
+        self.toma4 = TagInteiro(nome='toma', tamanho=[1, 1, 1], raiz='//CTe/infCte/ide/toma4', valor=4)
+        self.CNPJ = TagCaracter(nome='CNPJ', tamanho=[0, 14], raiz='//CTe/infCte/ide/toma4', obrigatorio=False)
+        self.CPF = TagCaracter(nome='CPF', tamanho=[11, 11], raiz='//CTe/infCte/ide/toma4', obrigatorio=False)
+        self.IE = TagCaracter(nome='IE', tamanho=[2, 14], raiz='//CTe/infCte/ide/toma4', obrigatorio=False)
+        self.xNome = TagCaracter(nome='xNome', tamanho=[2, 60], raiz='//CTe/infCte/ide/toma4')
+        self.xFant = TagCaracter(nome='xFant', tamanho=[1, 60], raiz='//CTe/infCte/ide/toma4', obrigatorio=False)
+        self.fone = TagInteiro(nome='fone', tamanho=[7, 12], raiz='//CTe/infCte/ide/toma4', obrigatorio=False)
         self.enderToma = EnderToma()
-        self.email = TagCaracter(nome='email', tamanho=[ 1, 60], raiz='//CTe/infCte/ide/toma4', obrigatorio=False)
+        self.email = TagCaracter(nome='email', tamanho=[1, 60], raiz='//CTe/infCte/ide/toma4', obrigatorio=False)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -1691,39 +1691,39 @@ class Ide(XMLNFe):
 
     def __init__(self):
         super(Ide, self).__init__()
-        self.cUF = TagInteiro(nome='cUF'     , codigo='B02', tamanho=[ 2, 2, 2], raiz='//CTe/infCte/ide')
-        self.cCT = TagCaracter(nome='cCT'    , codigo='B03', tamanho=[ 8, 8, 8], raiz='//CTe/infCte/ide')
-        self.CFOP = TagInteiro(nome='CFOP'    , codigo='I08', tamanho=[4, 4, 4], raiz='//CTe/infCte/ide')
-        self.natOp = TagCaracter(nome='natOp'  , codigo='B04', tamanho=[ 1, 60]   , raiz='//CTe/infCte/ide')
-        self.forPag = TagInteiro(nome='forPag'  , codigo='B05', tamanho=[ 1, 1, 1], raiz='//CTe/infCte/ide', valor=1)
-        self.mod = TagInteiro(nome='mod'     , codigo='B06', tamanho=[ 2, 2, 2], raiz='//CTe/infCte/ide', valor=57)
-        self.serie = TagInteiro(nome='serie'   , codigo='B07', tamanho=[ 1, 3, 1], raiz='//CTe/infCte/ide')
-        self.nCT = TagInteiro(nome='nCT'     , codigo='B08', tamanho=[ 1, 9, 1], raiz='//CTe/infCte/ide')
-        self.dhEmi = TagDataHora(nome='dhEmi'  , codigo='B09', raiz='//CTe/infCte/ide')
-        self.tpImp = TagInteiro(nome='tpImp'   , codigo='B21', tamanho=[ 1, 1, 1], raiz='//CTe/infCte/ide', valor=1)
-        self.tpEmis = TagInteiro(nome='tpEmis'  , codigo='B22', tamanho=[ 1, 1, 1], raiz='//CTe/infCte/ide', valor=1)
-        self.cDV = TagInteiro(nome='cDV'     , codigo='B23', tamanho=[ 1, 1, 1], raiz='//CTe/infCte/ide')
-        self.tpAmb = TagInteiro(nome='tpAmb'   , codigo='B24', tamanho=[ 1, 1, 1], raiz='//CTe/infCte/ide', valor=2)
-        self.tpCTe = TagInteiro(nome='tpCTe'   , codigo='B11', tamanho=[ 1, 1, 1], raiz='//CTe/infCte/ide', valor=1)
-        self.procEmi = TagInteiro(nome='procEmi' , codigo='B26', tamanho=[ 1, 1, 1], raiz='//CTe/infCte/ide')
-        self.verProc = TagCaracter(nome='verProc', codigo='B27', tamanho=[ 1, 20]   , raiz='//CTe/infCte/ide')
-        self.refCTE = TagCaracter(nome='refCTE' , codigo='B13', tamanho=[44, 44]   , raiz='//CTe/infCte/ide', obrigatorio=False)
-        self.cMunEnv = TagInteiro(nome='cMunEnv' , codigo='B12', tamanho=[ 7, 7, 7], raiz='//CTe/infCte/ide')
-        self.xMunEnv = TagCaracter(nome='xMunEnv', codigo='B12', tamanho=[ 1, 60]   , raiz='//CTe/infCte/ide')
-        self.UFEnv = TagCaracter(nome='UFEnv'  , codigo='B12', tamanho=[ 2, 2, 2], raiz='//CTe/infCte/ide')
-        self.modal = TagCaracter(nome='modal'  , codigo='B12', tamanho=[ 2, 2, 2], raiz='//CTe/infCte/ide', default='01')
-        self.tpServ = TagInteiro(nome='tpServ'  , codigo='B11', tamanho=[ 1, 1, 1], raiz='//CTe/infCte/ide', valor=0)
-        self.cMunIni = TagInteiro(nome='cMunIni' , codigo='B12', tamanho=[ 7, 7, 7], raiz='//CTe/infCte/ide')
-        self.xMunIni = TagCaracter(nome='xMunIni', codigo='B12', tamanho=[ 1, 60]   , raiz='//CTe/infCte/ide')
-        self.UFIni = TagCaracter(nome='UFIni'  , codigo='B12', tamanho=[ 2, 2, 2], raiz='//CTe/infCte/ide')
-        self.cMunFim = TagInteiro(nome='cMunFim' , codigo='B12', tamanho=[ 7, 7, 7], raiz='//CTe/infCte/ide')
-        self.xMunFim = TagCaracter(nome='xMunFim', codigo='B12', tamanho=[ 1, 60]   , raiz='//CTe/infCte/ide')
-        self.UFFim = TagCaracter(nome='UFFim'  , codigo='B12', tamanho=[ 2, 2, 2], raiz='//CTe/infCte/ide')
-        self.retira = TagInteiro(nome='retira'  , codigo='B11', tamanho=[ 1, 1, 1], raiz='//CTe/infCte/ide', valor=0)
-        self.xDetRetira = TagCaracter(nome='xDetRetira', codigo='B11', tamanho=[ 1, 160], raiz='//CTe/infCte/ide', obrigatorio=False)
+        self.cUF = TagInteiro(nome='cUF', codigo='B02', tamanho=[2, 2, 2], raiz='//CTe/infCte/ide')
+        self.cCT = TagCaracter(nome='cCT', codigo='B03', tamanho=[8, 8, 8], raiz='//CTe/infCte/ide')
+        self.CFOP = TagInteiro(nome='CFOP', codigo='I08', tamanho=[4, 4, 4], raiz='//CTe/infCte/ide')
+        self.natOp = TagCaracter(nome='natOp', codigo='B04', tamanho=[1, 60], raiz='//CTe/infCte/ide')
+        self.forPag = TagInteiro(nome='forPag', codigo='B05', tamanho=[1, 1, 1], raiz='//CTe/infCte/ide', valor=1)
+        self.mod = TagInteiro(nome='mod', codigo='B06', tamanho=[2, 2, 2], raiz='//CTe/infCte/ide', valor=57)
+        self.serie = TagInteiro(nome='serie', codigo='B07', tamanho=[1, 3, 1], raiz='//CTe/infCte/ide')
+        self.nCT = TagInteiro(nome='nCT', codigo='B08', tamanho=[1, 9, 1], raiz='//CTe/infCte/ide')
+        self.dhEmi = TagDataHora(nome='dhEmi', codigo='B09', raiz='//CTe/infCte/ide')
+        self.tpImp = TagInteiro(nome='tpImp', codigo='B21', tamanho=[1, 1, 1], raiz='//CTe/infCte/ide', valor=1)
+        self.tpEmis = TagInteiro(nome='tpEmis', codigo='B22', tamanho=[1, 1, 1], raiz='//CTe/infCte/ide', valor=1)
+        self.cDV = TagInteiro(nome='cDV', codigo='B23', tamanho=[1, 1, 1], raiz='//CTe/infCte/ide')
+        self.tpAmb = TagInteiro(nome='tpAmb', codigo='B24', tamanho=[1, 1, 1], raiz='//CTe/infCte/ide', valor=2)
+        self.tpCTe = TagInteiro(nome='tpCTe', codigo='B11', tamanho=[1, 1, 1], raiz='//CTe/infCte/ide', valor=1)
+        self.procEmi = TagInteiro(nome='procEmi', codigo='B26', tamanho=[1, 1, 1], raiz='//CTe/infCte/ide')
+        self.verProc = TagCaracter(nome='verProc', codigo='B27', tamanho=[1, 20], raiz='//CTe/infCte/ide')
+        self.refCTE = TagCaracter(nome='refCTE', codigo='B13', tamanho=[44, 44], raiz='//CTe/infCte/ide', obrigatorio=False)
+        self.cMunEnv = TagInteiro(nome='cMunEnv', codigo='B12', tamanho=[7, 7, 7], raiz='//CTe/infCte/ide')
+        self.xMunEnv = TagCaracter(nome='xMunEnv', codigo='B12', tamanho=[1, 60], raiz='//CTe/infCte/ide')
+        self.UFEnv = TagCaracter(nome='UFEnv', codigo='B12', tamanho=[2, 2, 2], raiz='//CTe/infCte/ide')
+        self.modal = TagCaracter(nome='modal', codigo='B12', tamanho=[2, 2, 2], raiz='//CTe/infCte/ide', default='01')
+        self.tpServ = TagInteiro(nome='tpServ', codigo='B11', tamanho=[1, 1, 1], raiz='//CTe/infCte/ide', valor=0)
+        self.cMunIni = TagInteiro(nome='cMunIni', codigo='B12', tamanho=[7, 7, 7], raiz='//CTe/infCte/ide')
+        self.xMunIni = TagCaracter(nome='xMunIni', codigo='B12', tamanho=[1, 60], raiz='//CTe/infCte/ide')
+        self.UFIni = TagCaracter(nome='UFIni', codigo='B12', tamanho=[2, 2, 2], raiz='//CTe/infCte/ide')
+        self.cMunFim = TagInteiro(nome='cMunFim', codigo='B12', tamanho=[7, 7, 7], raiz='//CTe/infCte/ide')
+        self.xMunFim = TagCaracter(nome='xMunFim', codigo='B12', tamanho=[1, 60], raiz='//CTe/infCte/ide')
+        self.UFFim = TagCaracter(nome='UFFim', codigo='B12', tamanho=[2, 2, 2], raiz='//CTe/infCte/ide')
+        self.retira = TagInteiro(nome='retira', codigo='B11', tamanho=[1, 1, 1], raiz='//CTe/infCte/ide', valor=0)
+        self.xDetRetira = TagCaracter(nome='xDetRetira', codigo='B11', tamanho=[1, 160], raiz='//CTe/infCte/ide', obrigatorio=False)
         self.tomador = Tomador()
         self.dhCont = TagDataHora(nome='dhCont', codigo='B28', raiz='//CTe/infCte/ide', obrigatorio=False)
-        self.xJust = TagCaracter(nome='xJust' , codigo='B29', raiz='//CTe/infCte/ide', obrigatorio=False)
+        self.xJust = TagCaracter(nome='xJust', codigo='B29', raiz='//CTe/infCte/ide', obrigatorio=False)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -1808,8 +1808,8 @@ class InfCTe(XMLNFe):
 
     def __init__(self):
         super(InfCTe, self).__init__()
-        self.versao = TagDecimal(nome='infCte' , codigo='A01', propriedade='versao', raiz='//CTe', namespace=NAMESPACE_CTE, valor='1.04')
-        self.Id = TagCaracter(nome='infCte', codigo='A03', propriedade='Id'    , raiz='//CTe', namespace=NAMESPACE_CTE)
+        self.versao = TagDecimal(nome='infCte', codigo='A01', propriedade='versao', raiz='//CTe', namespace=NAMESPACE_CTE, valor='1.04')
+        self.Id = TagCaracter(nome='infCte', codigo='A03', propriedade='Id', raiz='//CTe', namespace=NAMESPACE_CTE)
         self.ide = Ide()
         self.compl = Compl()
         self.emit = Emit()

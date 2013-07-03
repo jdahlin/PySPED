@@ -54,10 +54,10 @@ class NotaCancelamento(XMLNFe):
     def __init__(self):
         super(NotaCancelamento, self).__init__()
         self.Id = TagCaracter(nome='Nota', propriedade='Id', raiz='//')
-        self.InscricaoMunicipalPrestador = TagCaracter(nome='InscricaoMunicipalPrestador', tamanho=[6, 11]   , raiz='//Nota')
-        self.NumeroNota = TagInteiro(nome='NumeroNota'                  , tamanho=[1, 12, 1], raiz='//Nota')
-        self.CodigoVerificacao = TagCaracter(nome='CodigoVerificacao'          , tamanho=[1, 255]   , raiz='//Nota')
-        self.MotivoCancelamento = TagCaracter(nome='MotivoCancelamento'         , tamanho=[1, 80]   , raiz='//Nota')
+        self.InscricaoMunicipalPrestador = TagCaracter(nome='InscricaoMunicipalPrestador', tamanho=[6, 11], raiz='//Nota')
+        self.NumeroNota = TagInteiro(nome='NumeroNota', tamanho=[1, 12, 1], raiz='//Nota')
+        self.CodigoVerificacao = TagCaracter(nome='CodigoVerificacao', tamanho=[1, 255], raiz='//Nota')
+        self.MotivoCancelamento = TagCaracter(nome='MotivoCancelamento', tamanho=[1, 80], raiz='//Nota')
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -120,10 +120,10 @@ class _Cabecalho(XMLNFe):
 
     def __init__(self):
         super(_Cabecalho, self).__init__()
-        self.CodCidade = TagInteiro(nome='CodCidade'        , tamanho=[ 1, 10, 1], raiz='//nfse:ReqCancelamentoNFSe/Cabecalho')
-        self.CPFCNPJRemetente = TagCaracter(nome='CPFCNPJRemetente', tamanho=[11, 14]   , raiz='//nfse:ReqCancelamentoNFSe/Cabecalho')
-        self.transacao = TagBoolean(nome='transacao'        , raiz='//nfse:ReqCancelamentoNFSe/Cabecalho', valor=True)
-        self.Versao = TagInteiro(nome='Versao'           , tamanho=[ 1, 3, 1], raiz='//nfse:ReqCancelamentoNFSe/Cabecalho', valor=1)
+        self.CodCidade = TagInteiro(nome='CodCidade', tamanho=[1, 10, 1], raiz='//nfse:ReqCancelamentoNFSe/Cabecalho')
+        self.CPFCNPJRemetente = TagCaracter(nome='CPFCNPJRemetente', tamanho=[11, 14], raiz='//nfse:ReqCancelamentoNFSe/Cabecalho')
+        self.transacao = TagBoolean(nome='transacao', raiz='//nfse:ReqCancelamentoNFSe/Cabecalho', valor=True)
+        self.Versao = TagInteiro(nome='Versao', tamanho=[1, 3, 1], raiz='//nfse:ReqCancelamentoNFSe/Cabecalho', valor=1)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)

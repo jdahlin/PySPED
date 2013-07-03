@@ -53,7 +53,7 @@ class CTeCabecMsg(XMLNFe):
     def __init__(self):
         super(CTeCabecMsg, self).__init__()
         self.webservice = ''
-        self.cUF = TagInteiro(nome='cUF'        , codigo='', raiz='//cabecMsg', tamanho=[2, 2], valor=35)
+        self.cUF = TagInteiro(nome='cUF', codigo='', raiz='//cabecMsg', tamanho=[2, 2], valor=35)
         self.versaoDados = TagDecimal(nome='versaoDados', codigo='', raiz='//cabecMsg', tamanho=[1, 4], valor='1.04')
 
     def get_xml(self):

@@ -56,22 +56,22 @@ WS_NFSE_CONSULTA_SEQUENCIA_RPS = 5
 
 METODO_WS = {
     WS_NFSE_ENVIO_LOTE: {
-        'metodo'    : 'enviar',
+        'metodo': 'enviar',
     },
     WS_NFSE_CONSULTA_LOTE: {
-        'metodo'    : 'consultarLote',
+        'metodo': 'consultarLote',
     },
     WS_NFSE_CANCELAMENTO: {
-        'metodo'    : 'cancelar',
+        'metodo': 'cancelar',
     },
     WS_NFSE_CONSULTA_NOTA: {
-        'metodo'    : 'consultarNota',
+        'metodo': 'consultarNota',
     },
     WS_NFSE_CONSULTA_NFSERPS: {
-        'metodo'    : 'consultarNFSeRps',
+        'metodo': 'consultarNFSeRps',
     },
     WS_NFSE_CONSULTA_SEQUENCIA_RPS: {
-        'metodo'    : 'consultarSequencialRps',
+        'metodo': 'consultarSequencialRps',
     }
 }
 
@@ -79,11 +79,11 @@ METODO_WS = {
 CIDADE_SOROCABA_SP = {
     NFSE_AMBIENTE_HOMOLOGACAO: {
         'servidor': 'treinamento.dsfweb.com.br',
-        'url'     : 'WsNFe2/LoteRps.jws'
+        'url': 'WsNFe2/LoteRps.jws'
     },
     NFSE_AMBIENTE_PRODUCAO: {
         'servidor': 'www.issdigitalsod.com.br',
-        'url'     : 'WsNFe2/LoteRps.jws'
+        'url': 'WsNFe2/LoteRps.jws'
     }
 }
 
