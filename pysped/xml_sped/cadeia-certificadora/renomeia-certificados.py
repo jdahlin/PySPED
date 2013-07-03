@@ -70,4 +70,3 @@ if __name__ == '__main__':
         #fp = ':'.join(fp[pos:pos+2] for pos in xrange(0, len(fp), 2))
         print('\nSHA1 fingerprint:' + fp)
         #print(fp)
-

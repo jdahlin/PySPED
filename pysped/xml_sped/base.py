@@ -966,4 +966,3 @@ def somente_ascii(funcao):
         return unicodedata.normalize(b'NFKD', funcao(*args, **kwargs)).encode('ascii', 'ignore')
 
     return converter_para_ascii_puro
-

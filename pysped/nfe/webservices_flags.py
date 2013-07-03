@@ -123,4 +123,3 @@ CODIGO_UF = {
     90: 'SUFRAMA', # Código especial para eventos
     91: 'RFB', # Código especial para eventos
 }
-

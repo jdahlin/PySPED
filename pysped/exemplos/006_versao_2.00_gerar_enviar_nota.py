@@ -264,4 +264,3 @@ if __name__ == '__main__':
             print(processo.resposta.dic_protNFe)
             print()
             print(processo.resposta.dic_procNFe)
-

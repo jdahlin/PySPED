@@ -546,4 +546,3 @@ class Certificado(object):
             return False
             
         return True
-        

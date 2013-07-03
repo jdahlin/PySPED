@@ -115,4 +115,3 @@ class RetConsSitNFe(conssitnfe_107.RetConsSitNFe):
                 self.retCancNFe.xml = arquivo
 
     xml = property(get_xml, set_xml)
-
