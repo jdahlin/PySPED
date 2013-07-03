@@ -227,7 +227,7 @@ class TagCaracter(NohXML):
         for k, v in kwargs.items():
             setattr(self, k, v)
 
-        if kwargs.has_key('valor'):
+        if 'valor' in kwargs:
             self.valor = kwargs['valor']
 
     def _testa_obrigatorio(self, valor):
@@ -342,7 +342,7 @@ class TagBoolean(TagCaracter):
         for k, v in kwargs.items():
             setattr(self, k, v)
 
-        if kwargs.has_key('valor'):
+        if 'valor' in kwargs:
             self.valor = kwargs['valor']
 
 
@@ -414,7 +414,7 @@ class TagData(TagCaracter):
         for k, v in kwargs.items():
             setattr(self, k, v)
 
-        if kwargs.has_key('valor'):
+        if 'valor' in kwargs:
             self.valor = kwargs['valor']
 
     def _valida(self, valor):
@@ -626,7 +626,7 @@ class TagInteiro(TagCaracter):
         for k, v in kwargs.items():
             setattr(self, k, v)
 
-        if kwargs.has_key('valor'):
+        if 'valor' in kwargs:
             self.valor = kwargs['valor']
 
     def set_valor(self, novo_valor):
