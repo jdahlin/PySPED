@@ -83,9 +83,9 @@ class RPS(object):
         else:
             self.rps.ObsImpressao.expression = self.obs_impressao
 
-        # 
+        #
         # Quadro do emitente
-        # 
+        #
         # Personalizado?
         # if self.dados_prestador:
             # self.rps.prestador.monta_quadro_prestador(self.dados_prestador)

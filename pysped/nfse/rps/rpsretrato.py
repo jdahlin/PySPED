@@ -165,9 +165,9 @@ class CabecalhoRetrato(BandaRPS):
         # fld.padding_top = 0.1*cm
         # fld.style = DESCRITIVO_NUMERO
         # self.elements.append(fld)
-        # 
+        #
         # No caso dos códigos de barra, altura (height) e largura (width) se referem às barras, não à imagem
-        # 
+        #
         # self.elements.append(Line(top=0*cm, bottom=0*cm, left=11.4*cm, right=19.4*cm, stroke_width=0.1))
         # self.elements.append(BarCode(type=u'Code128', attribute_name=u'NFe.chave_para_codigo_barras', top=((1.625-0.8)/2.0)*cm, left=11.3*cm, width=0.025*cm, height=0.8*cm))
         # lbl, fld = self.inclui_campo(nome='remetente_chave', titulo=u'CHAVE DE ACESSO', conteudo=u'NFe.chave_formatada', top=1.625*cm, left=11.4*cm, width=8*cm, margem_direita=True)
