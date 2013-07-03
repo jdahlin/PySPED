@@ -38,5 +38,6 @@ setup(
     ],
     tests_require=[
         'pyflakes>=0.6.1',
+        'pep8>=1.4.6',
     ],
 )
