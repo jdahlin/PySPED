@@ -454,8 +454,7 @@ class Certificado(object):
         #
         # Prepara a cadeia certificadora
         #
-        certificados = os.listdir(DIRNAME + '/cadeia-certificadora/certificados')
-        certificados.sort()
+        certificados = sorted(os.listdir(DIRNAME + '/cadeia-certificadora/certificados'))
         for certificado in certificados:
             certificados_confiaveis.certLoad(filename=str(DIRNAME + '/cadeia-certificadora/certificados/' + certificado), format=xmlsec.KeyDataFormatPem, type=xmlsec.KeyDataTypeTrusted)
 

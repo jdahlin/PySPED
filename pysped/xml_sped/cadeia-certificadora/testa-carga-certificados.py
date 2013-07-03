@@ -49,8 +49,7 @@ DIRNAME = os.path.dirname(__file__)
 
 
 if __name__ == u'__main__':
-    certificados = os.listdir(DIRNAME + 'certificados')
-    certificados.sort()  # ?????
+    certificados = sorted(os.listdir(DIRNAME + 'certificados'))
 
     # Ativa as funções da API de criptografia
     xmlsec.init()
