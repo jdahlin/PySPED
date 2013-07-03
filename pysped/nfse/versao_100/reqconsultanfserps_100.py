@@ -54,9 +54,9 @@ class RPSConsulta(XMLNFe):
     def __init__(self):
         super(RPSConsulta, self).__init__()
         self.Id = TagCaracter(nome='RPS', propriedade='Id', raiz='//')
-        self.InscricaoMunicipalPrestador = TagCaracter(nome='InscricaoMunicipalPrestador', tamanho=[ 6,  11]   , raiz='//RPS')
-        self.NumeroRPS                   = TagInteiro(nome='NumeroRPS'                   , tamanho=[ 1,  12, 1], raiz='//RPS')
-        self.SeriePrestacao              = TagCaracter(nome='SeriePrestacao'             , tamanho=[ 2,  2]    , raiz='//RPS', valor='99')
+        self.InscricaoMunicipalPrestador = TagCaracter(nome='InscricaoMunicipalPrestador', tamanho=[ 6, 11]   , raiz='//RPS')
+        self.NumeroRPS                   = TagInteiro(nome='NumeroRPS'                   , tamanho=[ 1, 12, 1], raiz='//RPS')
+        self.SeriePrestacao              = TagCaracter(nome='SeriePrestacao'             , tamanho=[ 2, 2]    , raiz='//RPS', valor='99')
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -86,8 +86,8 @@ class NotaConsulta(XMLNFe):
     def __init__(self):
         super(NotaConsulta, self).__init__()
         self.Id = TagCaracter(nome='Nota', propriedade='Id', raiz='//')
-        self.InscricaoMunicipalPrestador = TagCaracter(nome='InscricaoMunicipalPrestador', tamanho=[ 6,  11]   , raiz='//Nota')
-        self.NumeroNota                  = TagInteiro(nome='NumeroNota'                  , tamanho=[ 1,  12, 1], raiz='//Nota')
+        self.InscricaoMunicipalPrestador = TagCaracter(nome='InscricaoMunicipalPrestador', tamanho=[ 6, 11]   , raiz='//Nota')
+        self.NumeroNota                  = TagInteiro(nome='NumeroNota'                  , tamanho=[ 1, 12, 1], raiz='//Nota')
         self.CodigoVerificacao           = TagCaracter(nome='CodigoVerificacao'          , tamanho=[ 1, 255]   , raiz='//Nota')
 
     def get_xml(self):
@@ -171,8 +171,8 @@ class _Cabecalho(XMLNFe):
         super(_Cabecalho, self).__init__()
         self.CodCidade        = TagInteiro(nome='CodCidade'        , tamanho=[ 1, 10, 1], raiz='//nfse:ReqConsultaNFSeRPS/Cabecalho')
         self.CPFCNPJRemetente = TagCaracter(nome='CPFCNPJRemetente', tamanho=[11, 14]   , raiz='//nfse:ReqConsultaNFSeRPS/Cabecalho')
-        self.transacao        = TagBoolean(nome='transacao'        ,                      raiz='//nfse:ReqConsultaNFSeRPS/Cabecalho', valor=True)
-        self.Versao           = TagInteiro(nome='Versao'           , tamanho=[ 1,  3, 1], raiz='//nfse:ReqConsultaNFSeRPS/Cabecalho', valor=1)
+        self.transacao        = TagBoolean(nome='transacao'        , raiz='//nfse:ReqConsultaNFSeRPS/Cabecalho', valor=True)
+        self.Versao           = TagInteiro(nome='Versao'           , tamanho=[ 1, 3, 1], raiz='//nfse:ReqConsultaNFSeRPS/Cabecalho', valor=1)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)

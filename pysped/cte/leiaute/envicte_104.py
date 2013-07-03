@@ -90,7 +90,7 @@ class InfRec(XMLNFe):
         super(InfRec, self).__init__()
         self.nRec     = TagCaracter(nome='nRec'     , codigo='AR08', tamanho=[1, 15, 1], raiz='//retEnviCTe/infRec')
         self.dhRecbto = TagDataHora(nome='dhRecbto', codigo='AR09'                    , raiz='//retEnviCTe/infRec')
-        self.tMed     = TagInteiro(nome='tMed'     , codigo='AR10', tamanho=[1,  4, 1], raiz='//retEnviCTe/infRec')
+        self.tMed     = TagInteiro(nome='tMed'     , codigo='AR10', tamanho=[1, 4, 1], raiz='//retEnviCTe/infRec')
 
     def get_xml(self):
         if not self.nRec.valor:
@@ -118,10 +118,10 @@ class RetEnviCTe(XMLNFe):
     def __init__(self):
         super(RetEnviCTe, self).__init__()
         self.versao   = TagDecimal(nome='retEnviCte', codigo='AR02' , propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
-        self.tpAmb    = TagInteiro(nome='tpAmb'     , codigo='AR03' , tamanho=[1,   1, 1], raiz='//retEnviCte')
-        self.cUF      = TagCaracter(nome='cUF'      , codigo='AR03a', tamanho=[2,   2, 2], raiz='//retEnviCte')
-        self.verAplic = TagCaracter(nome='verAplic' , codigo='AR04' , tamanho=[1,  20]   , raiz='//retEnviCte')
-        self.cStat    = TagCaracter(nome='cStat'    , codigo='AR05' , tamanho=[1,   3]   , raiz='//retEnviCte')
+        self.tpAmb    = TagInteiro(nome='tpAmb'     , codigo='AR03' , tamanho=[1, 1, 1], raiz='//retEnviCte')
+        self.cUF      = TagCaracter(nome='cUF'      , codigo='AR03a', tamanho=[2, 2, 2], raiz='//retEnviCte')
+        self.verAplic = TagCaracter(nome='verAplic' , codigo='AR04' , tamanho=[1, 20]   , raiz='//retEnviCte')
+        self.cStat    = TagCaracter(nome='cStat'    , codigo='AR05' , tamanho=[1, 3]   , raiz='//retEnviCte')
         self.xMotivo  = TagCaracter(nome='xMotivo'  , codigo='AR06' , tamanho=[1, 255]   , raiz='//retEnviCte')
         self.infRec   = InfRec()
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')

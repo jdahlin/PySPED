@@ -160,9 +160,9 @@ class InfCadRecebido(XMLNFe):
         self.xFant    = TagCaracter(nome='xFant'   , codigo='GR13a', tamanho=[1, 60], raiz='//infCad', obrigatorio=False)
         self.xRegApur = TagCaracter(nome='xRegApur', codigo='GR14' , tamanho=[1, 60], raiz='//infCad', obrigatorio=False)
         self.CNAE     = TagInteiro(nome='CNAE'     , codigo='GR15' , tamanho=[6, 7] , raiz='//infCad', obrigatorio=False)
-        self.dIniAtiv = TagData(nome='dIniAtiv'    , codigo='GR16' ,                  raiz='//infCad', obrigatorio=False)
-        self.dUltSit  = TagData(nome='dUltSit'     , codigo='GR17' ,                  raiz='//infCad', obrigatorio=False)
-        self.dBaixa   = TagData(nome='dBaixa'      , codigo='GR18' ,                  raiz='//infCad', obrigatorio=False)
+        self.dIniAtiv = TagData(nome='dIniAtiv'    , codigo='GR16' , raiz='//infCad', obrigatorio=False)
+        self.dUltSit  = TagData(nome='dUltSit'     , codigo='GR17' , raiz='//infCad', obrigatorio=False)
+        self.dBaixa   = TagData(nome='dBaixa'      , codigo='GR18' , raiz='//infCad', obrigatorio=False)
         self.IEUnica  = TagCaracter(nome='IEUnica' , codigo='GR20' , tamanho=[2, 14], raiz='//infCad', obrigatorio=False)
         self.IEAtual  = TagCaracter(nome='IEAtual' , codigo='GR21' , tamanho=[2, 14], raiz='//infCad', obrigatorio=False)
         self.ender    = Ender()
@@ -220,7 +220,7 @@ class InfConsRecebido(XMLNFe):
         self.IE       = TagCaracter(nome='IE'      , codigo='GR06b', tamanho=[2, 14]  , raiz='//retConsCad/infCons', obrigatorio=False)
         self.CNPJ     = TagCaracter(nome='CNPJ'    , codigo='GR06c', tamanho=[3, 14]  , raiz='//retConsCad/infCons', obrigatorio=False)
         self.CPF      = TagCaracter(nome='CPF'     , codigo='GR06d', tamanho=[3, 11]  , raiz='//retConsCad/infCons', obrigatorio=False)
-        self.dhCons   = TagDataHora(nome='dhCons'  , codigo='GR06e',                    raiz='//retConsCad/infCons')
+        self.dhCons   = TagDataHora(nome='dhCons'  , codigo='GR06e', raiz='//retConsCad/infCons')
         self.cUF      = TagInteiro(nome='cUF'      , codigo='GR06f', tamanho=[2, 2, 2], raiz='//retConsCad/infCons')
         self.infCad   = []
 

@@ -90,7 +90,7 @@ class InfRec(XMLNFe):
         super(InfRec, self).__init__()
         self.nRec     = TagCaracter(nome='nRec'     , codigo='AR08', tamanho=[1, 15, 1], raiz='//retEnviNFe/infRec')
         self.dhRecbto = TagDataHora(nome='dhRecbto', codigo='AR09'                    , raiz='//retEnviNFe/infRec')
-        self.tMed     = TagInteiro(nome='tMed'     , codigo='AR10', tamanho=[1,  4, 1], raiz='//retEnviNFe/infRec')
+        self.tMed     = TagInteiro(nome='tMed'     , codigo='AR10', tamanho=[1, 4, 1], raiz='//retEnviNFe/infRec')
 
     def get_xml(self):
         if not self.nRec.valor:
@@ -118,11 +118,11 @@ class RetEnviNFe(XMLNFe):
     def __init__(self):
         super(RetEnviNFe, self).__init__()
         self.versao   = TagDecimal(nome='retEnviNFe', codigo='AR02' , propriedade='versao', namespace=NAMESPACE_NFE, valor='1.10', raiz='/')
-        self.tpAmb    = TagInteiro(nome='tpAmb'     , codigo='AR03' , tamanho=[1,   1, 1], raiz='//retEnviNFe')
-        self.verAplic = TagCaracter(nome='verAplic' , codigo='AR04' , tamanho=[1,  20]   , raiz='//retEnviNFe')
-        self.cStat    = TagCaracter(nome='cStat'    , codigo='AR05' , tamanho=[1,   3]   , raiz='//retEnviNFe')
+        self.tpAmb    = TagInteiro(nome='tpAmb'     , codigo='AR03' , tamanho=[1, 1, 1], raiz='//retEnviNFe')
+        self.verAplic = TagCaracter(nome='verAplic' , codigo='AR04' , tamanho=[1, 20]   , raiz='//retEnviNFe')
+        self.cStat    = TagCaracter(nome='cStat'    , codigo='AR05' , tamanho=[1, 3]   , raiz='//retEnviNFe')
         self.xMotivo  = TagCaracter(nome='xMotivo'  , codigo='AR06' , tamanho=[1, 255]   , raiz='//retEnviNFe')
-        self.cUF      = TagCaracter(nome='cUF'      , codigo='AR06a', tamanho=[2,   2, 2], raiz='//retEnviNFe')
+        self.cUF      = TagCaracter(nome='cUF'      , codigo='AR06a', tamanho=[2, 2, 2], raiz='//retEnviNFe')
         self.infRec   = InfRec()
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'retEnviNFe_v1.10.xsd'

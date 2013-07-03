@@ -176,7 +176,7 @@ class InfInutRecebido(XMLNFe):
         self.serie    = TagInteiro(nome='serie'    , codigo='DR13', tamanho=[1, 3]      , raiz='//retInutNFe/infInut', obrigatorio=False)
         self.nNFIni   = TagInteiro(nome='nNFIni'   , codigo='DR14', tamanho=[1, 9]      , raiz='//retInutNFe/infInut', obrigatorio=False)
         self.nNFFin   = TagInteiro(nome='nNFFin'   , codigo='DR15', tamanho=[1, 9]      , raiz='//retInutNFe/infInut', obrigatorio=False)
-        self.dhRecbto = TagDataHora(nome='dhRecbto', codigo='DR16',                       raiz='//retInutNFe/infInut', obrigatorio=False)
+        self.dhRecbto = TagDataHora(nome='dhRecbto', codigo='DR16', raiz='//retInutNFe/infInut', obrigatorio=False)
         self.nProt    = TagInteiro(nome='nProt'    , codigo='DR17', tamanho=[15, 15, 15], raiz='//retInutNFe/infInut', obrigatorio=False)
 
     def get_xml(self):

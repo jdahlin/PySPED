@@ -56,8 +56,8 @@ class InfCancEnviado(XMLNFe):
     def __init__(self):
         super(InfCancEnviado, self).__init__()
         self.Id    = TagCaracter(nome='infCanc', codigo='CP03', tamanho=[46, 46]    , raiz='//cancNFe', propriedade='Id')
-        self.tpAmb = TagInteiro(nome='tpAmb'   , codigo='CP05', tamanho=[ 1,  1, 1] , raiz='//cancNFe/infCanc', valor=2)
-        self.xServ = TagCaracter(nome='xServ'  , codigo='CP06', tamanho=[ 8,  8]    , raiz='//cancNFe/infCanc', valor='CANCELAR')
+        self.tpAmb = TagInteiro(nome='tpAmb'   , codigo='CP05', tamanho=[ 1, 1, 1] , raiz='//cancNFe/infCanc', valor=2)
+        self.xServ = TagCaracter(nome='xServ'  , codigo='CP06', tamanho=[ 8, 8]    , raiz='//cancNFe/infCanc', valor='CANCELAR')
         self.chNFe = TagCaracter(nome='chNFe'   , codigo='CP07', tamanho=[44, 44, 44], raiz='//cancNFe/infCanc')
         self.nProt = TagCaracter(nome='nProt'   , codigo='CP08', tamanho=[15, 15, 15], raiz='//cancNFe/infCanc')
         self.xJust = TagCaracter(nome='xJust'  , codigo='CP09', tamanho=[15, 255]   , raiz='//cancNFe/infCanc')
@@ -132,7 +132,7 @@ class InfCancRecebido(XMLNFe):
         self.xMotivo  = TagCaracter(nome='xMotivo' , codigo='CR08' , tamanho=[1, 255]    , raiz='//retCancNFe/infCanc')
         self.cUF      = TagInteiro(nome='cUF'      , codigo='CR08a', tamanho=[2, 2, 2]   , raiz='//retCancNFe/infCanc')
         self.chNFe    = TagCaracter(nome='chNFe'    , codigo='CR09' , tamanho=[44, 44, 44], raiz='//retcancNFe/infCanc', obrigatorio=False)
-        self.dhRecbto = TagDataHora(nome='dhRecbto', codigo='CR10' ,                       raiz='//retCancNFe/infCanc', obrigatorio=False)
+        self.dhRecbto = TagDataHora(nome='dhRecbto', codigo='CR10' , raiz='//retCancNFe/infCanc', obrigatorio=False)
         self.nProt    = TagCaracter(nome='nProt'    , codigo='CR11' , tamanho=[15, 15, 15], raiz='//retCancNFe/infCanc', obrigatorio=False)
 
     def get_xml(self):

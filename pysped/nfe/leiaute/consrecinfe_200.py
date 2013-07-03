@@ -78,7 +78,7 @@ class RetConsReciNFe(consrecinfe_110.RetConsReciNFe):
     def __init__(self):
         super(RetConsReciNFe, self).__init__()
         self.versao   = TagDecimal(nome='retConsReciNFe', codigo='BR02' , propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
-        self.cMsg     = TagCaracter(nome='cMsg'         , codigo='BR06b', tamanho=[4,   4], raiz='//retConsReciNFe', obrigatorio=False)
+        self.cMsg     = TagCaracter(nome='cMsg'         , codigo='BR06b', tamanho=[4, 4], raiz='//retConsReciNFe', obrigatorio=False)
         self.xMsg     = TagCaracter(nome='xMsg'         , codigo='BR06c', tamanho=[1, 200], raiz='//retConsReciNFe', obrigatorio=False)
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'retConsReciNFe_v2.00.xsd'

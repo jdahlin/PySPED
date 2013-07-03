@@ -148,7 +148,7 @@ class NohXML(object):
             return None
 
     def _le_tag(self, tag, propriedade=None, ns=None, ocorrencia=1):
-        noh = self._le_noh(tag,  ns, ocorrencia)
+        noh = self._le_noh(tag, ns, ocorrencia)
 
         if noh is None:
             valor = ''

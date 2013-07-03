@@ -64,7 +64,7 @@ class DownloadNFe(XMLNFe):
     def __init__(self):
         super(DownloadNFe, self).__init__()
         self.versao    = TagDecimal(nome='downloadNFe', codigo='JP01', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.00', raiz='/')
-        self.tpAmb = TagInteiro(nome='tpAmb'   , codigo='JP03', tamanho=[ 1,  1, 1] , raiz='//downloadNFe', valor=2)
+        self.tpAmb = TagInteiro(nome='tpAmb'   , codigo='JP03', tamanho=[ 1, 1, 1] , raiz='//downloadNFe', valor=2)
         self.xServ = TagCaracter(nome='xServ'  , codigo='JP04', tamanho=[12, 12]    , raiz='//downloadNFe', valor='DOWNLOAD NFE')
         self.CNPJ  = TagCaracter(nome='CNPJ'  , codigo='JP05', tamanho=[14, 14], raiz='//downloadNFe')
         self.chNFe = []
@@ -159,11 +159,11 @@ class RetDownloadNFe(XMLNFe):
     def __init__(self):
         super(RetDownloadNFe, self).__init__()
         self.versao = TagDecimal(nome='retDownloadNFe', codigo='IR01', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.00', raiz='/')
-        self.tpAmb    = TagInteiro(nome='tpAmb'         , codigo='IR03', tamanho=[1,   1, 1], raiz='//retDownloadNFe')
-        self.verAplic = TagCaracter(nome='verAplic'     , codigo='IR04', tamanho=[1,  20]   , raiz='//retDownloadNFe')
-        self.cStat    = TagCaracter(nome='cStat'        , codigo='IR05', tamanho=[1,   3]   , raiz='//retDownloadNFe')
+        self.tpAmb    = TagInteiro(nome='tpAmb'         , codigo='IR03', tamanho=[1, 1, 1], raiz='//retDownloadNFe')
+        self.verAplic = TagCaracter(nome='verAplic'     , codigo='IR04', tamanho=[1, 20]   , raiz='//retDownloadNFe')
+        self.cStat    = TagCaracter(nome='cStat'        , codigo='IR05', tamanho=[1, 3]   , raiz='//retDownloadNFe')
         self.xMotivo  = TagCaracter(nome='xMotivo'      , codigo='IR06', tamanho=[1, 255]   , raiz='//retDownloadNFe')
-        self.dhResp   = TagDataHora(nome='dhResp'       , codigo='IR07',                      raiz='//retDownloadNFe')
+        self.dhResp   = TagDataHora(nome='dhResp'       , codigo='IR07', raiz='//retDownloadNFe')
         self.retNFe   = []
         self.caminho_esquema = os.path.join(DIRNAME, 'schema', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'retDownloadNFe_v1.00.xsd'

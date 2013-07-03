@@ -91,9 +91,9 @@ class RetConsStatServCTe(XMLNFe):
         self.cStat     = TagCaracter(nome='cStat'         , codigo='FR05', tamanho=[3, 3, 3], raiz='//retConsStatServCte')
         self.xMotivo   = TagCaracter(nome='xMotivo'       , codigo='FR06', tamanho=[1, 255] , raiz='//retConsStatServCte')
         self.cUF       = TagInteiro(nome='cUF'            , codigo='FR07', tamanho=[2, 2, 2], raiz='//retConsStatServCte')
-        self.dhRecbto  = TagDataHora(nome='dhRecbto'      , codigo='FR08',                    raiz='//retConsStatServCte')
+        self.dhRecbto  = TagDataHora(nome='dhRecbto'      , codigo='FR08', raiz='//retConsStatServCte')
         self.tMed      = TagInteiro(nome='tMed'           , codigo='FR09', tamanho=[1, 4]   , raiz='//retConsStatServCte', obrigatorio=False)
-        self.dhRetorno = TagDataHora(nome='dhRetorno'     , codigo='FR10',                    raiz='//retConsStatServCte', obrigatorio=False)
+        self.dhRetorno = TagDataHora(nome='dhRetorno'     , codigo='FR10', raiz='//retConsStatServCte', obrigatorio=False)
         self.xObs      = TagCaracter(nome='xObs'          , codigo='FR11', tamanho=[1, 255] , raiz='//retConsStatServCte', obrigatorio=False)
         self.caminho_esquema = os.path.join(DIRNAME, 'schema', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'retConsStatServCte_v1.04.xsd'

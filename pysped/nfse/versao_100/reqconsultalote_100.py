@@ -54,7 +54,7 @@ class _Cabecalho(XMLNFe):
         super(_Cabecalho, self).__init__()
         self.CodCidade        = TagInteiro(nome='CodCidade'        , tamanho=[ 1, 10, 1], raiz='//nfse:ReqConsultaLote/Cabecalho')
         self.CPFCNPJRemetente = TagCaracter(nome='CPFCNPJRemetente', tamanho=[11, 14]   , raiz='//nfse:ReqConsultaLote/Cabecalho')
-        self.Versao           = TagInteiro(nome='Versao'           , tamanho=[ 1,  3, 1], raiz='//nfse:ReqConsultaLote/Cabecalho', valor=1)
+        self.Versao           = TagInteiro(nome='Versao'           , tamanho=[ 1, 3, 1], raiz='//nfse:ReqConsultaLote/Cabecalho', valor=1)
         self.NumeroLote       = TagInteiro(nome='NumeroLote'       , tamanho=[ 1, 12, 1], raiz='//nfse:ReqConsultaLote/Cabecalho')
 
     def get_xml(self):

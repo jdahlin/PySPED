@@ -56,9 +56,9 @@ class _Cabecalho(XMLNFe):
         self.CodCid           = TagInteiro(nome='CodCid'           , tamanho=[ 1, 10, 1], raiz='//nfse:RetornoConsultaSeqRps/Cabecalho')
         self.IMPrestador      = TagCaracter(nome='IMPrestador'     , tamanho=[ 6, 11]   , raiz='//nfse:RetornoConsultaSeqRps/Cabecalho')
         self.CPFCNPJRemetente = TagCaracter(nome='CPFCNPJRemetente', tamanho=[11, 14]   , raiz='//nfse:RetornoConsultaSeqRps/Cabecalho')
-        self.SeriePrestacao   = TagCaracter(nome='SeriePrestacao'  , tamanho=[ 2,  2]   , raiz='//nfse:RetornoConsultaSeqRps/Cabecalho', valor='99', obrigatorio=False)
+        self.SeriePrestacao   = TagCaracter(nome='SeriePrestacao'  , tamanho=[ 2, 2]   , raiz='//nfse:RetornoConsultaSeqRps/Cabecalho', valor='99', obrigatorio=False)
         self.NroUltimoRps     = TagInteiro(nome='NroUltimoRps'     , tamanho=[ 1, 12]   , raiz='//nfse:RetornoConsultaSeqRps/Cabecalho')
-        self.Versao           = TagInteiro(nome='Versao'           , tamanho=[ 1,  3, 1], raiz='//nfse:RetornoConsultaSeqRps/Cabecalho', valor=1)
+        self.Versao           = TagInteiro(nome='Versao'           , tamanho=[ 1, 3, 1], raiz='//nfse:RetornoConsultaSeqRps/Cabecalho', valor=1)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
