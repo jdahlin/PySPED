@@ -57,16 +57,16 @@ if __name__ == '__main__':
             x509 = X509.load_cert(DIRNAME + 'certificados-candidatos/' + certificado, X509.FORMAT_PEM)
         except:
             x509 = X509.load_cert(DIRNAME + 'certificados-candidatos/' + certificado, X509.FORMAT_DER)
-                
+
         fp = x509.get_fingerprint('sha512')
-        
+
         if fp in impressao_digital:
             print('repetido: ' + fp)
             os.remove(DIRNAME + 'certificados-candidatos/' + certificado)
         else:
             impressao_digital.append(fp)
             os.rename(DIRNAME + 'certificados-candidatos/' + certificado, DIRNAME + 'certificados-candidatos/' + fp + '.pem')
-            
+
         #fp = ':'.join(fp[pos:pos+2] for pos in xrange(0, len(fp), 2))
         print('\nSHA1 fingerprint:' + fp)
         #print(fp)

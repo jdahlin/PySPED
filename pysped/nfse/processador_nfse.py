@@ -24,7 +24,7 @@ class RPS(object):
         self.site             = ''
         self.logo             = ''
         self.leiaute_logo_vertical = False
-        
+
         self.prestador = _Prestador()
         self.prestador.nome = ''
         self.prestador.cnpj = ''
@@ -32,7 +32,7 @@ class RPS(object):
         self.prestador.endereco = ''
         self.prestador.cidade = ''
         self.prestador.estado = ''
-        
+
         self.dados_prestador  = []
 
     def gerar_rps(self):
@@ -46,13 +46,13 @@ class RPS(object):
         #self.NFe.monta_dados_contingencia_fsda()
         self.dados_rps.site = self.site
         self.dados_rps.prestador = self.prestador
-        
+
         if self.prestador.nome == '':
             self.prestador.nome = self.dados_rps.RazaoSocialPrestador.valor
-            
+
         if self.prestador.im == '':
             self.prestador.im = self.dados_rps.InscricaoMunicipalPrestador.valor
-        
+
         for item in self.dados_rps.Itens:
             item.RPS = self.dados_rps
 
@@ -61,15 +61,15 @@ class RPS(object):
         #
         self.rps = RPSRetrato()
         self.rps.queryset = self.dados_rps.Itens
-        
+
         self.rps.band_page_header = self.rps.cabecalho
         self.rps.band_page_header.child_bands = []
         self.rps.band_page_header.child_bands.append(self.rps.prestador)
         self.rps.band_page_header.child_bands.append(self.rps.tomador)
         self.rps.band_page_header.child_bands.append(self.rps.discriminacao)
-        
+
         self.rps.band_page_footer = self.rps.rodape
-        
+
         self.rps.band_detail = self.rps.detalhe_item
 
         #
@@ -142,7 +142,7 @@ class ProcessadorNFSe(object):
     def _conectar_servico(self, servico, envio, resposta, ambiente=None):
         if ambiente is None:
             ambiente = self.ambiente
-            
+
         self._servidor = CIDADE_WS[self.cidade][ambiente]['servidor']
         self._url = CIDADE_WS[self.cidade][ambiente]['url']
 
@@ -153,14 +153,14 @@ class ProcessadorNFSe(object):
         self._soap_retorno = SOAPRetorno()
         self._soap_retorno.metodo     = METODO_WS[servico]['metodo']
         self._soap_retorno.resposta   = resposta
-        
+
         if (servico == WS_NFSE_ENVIO_LOTE):
             self.certificado.prepara_certificado_arquivo_pfx()
             self.certificado.assina_xmlnfe(envio)
 
         con = HTTPConnection(self._servidor)
         con.set_debuglevel(10)
-        
+
         con.request('POST', '/' + self._url, self._soap_envio.xml, self._soap_envio.header)
         resp = con.getresponse()
 
@@ -178,21 +178,21 @@ class ProcessadorNFSe(object):
             #raise e
         #else:
         con.close()
-        
+
         print()
         print()
         print()
-        
+
         print(self._soap_envio.xml)
-        
+
         print()
         print()
         print()
-        
+
         print(por_acentos(self._soap_retorno.resposta.original))
-        
+
         print()
         print()
         print()
-        
+
         print(resposta.xml)

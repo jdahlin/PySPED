@@ -1724,7 +1724,7 @@ class ICMSTot(nfe_110.ICMSTot):
     def __init__(self):
         super(ICMSTot, self).__init__()
         self.vTotTrib = TagDecimal(nome='vTotTrib', codigo='W16a', tamanho=[1, 15, 1], decimais=[1,  2,  2], raiz='//NFe/infNFe/total/ICMSTot', obrigatorio=False)
-        
+
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
         xml += '<ICMSTot>'

@@ -531,9 +531,9 @@ class Certificado(object):
         pkcs12 = crypto.load_pkcs12(open(self.arquivo, 'rb').read(), self.senha)
 
         assinatura = crypto.sign(pkcs12.get_privatekey(), texto, 'sha1')
-        
+
         return base64.encode(assinatura)
-        
+
     def verifica_assinatura_texto(self, texto, assinatura):
         #
         # Carrega o arquivo do certificado
@@ -544,5 +544,5 @@ class Certificado(object):
             crypto.verify(pkcs12.get_certificate(), assinatura, texto, 'sha1')
         except:
             return False
-            
+
         return True

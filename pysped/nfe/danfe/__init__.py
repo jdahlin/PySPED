@@ -84,7 +84,7 @@ class DANFE(object):
 
         if self.procCancNFe is None:
             self.procCancNFe = ProcCancNFe_200()
-            
+
         if self.procEventoCancNFe is None:
             self.procEventoCancNFe = ProcEventoCancNFe_100()
 
@@ -160,7 +160,7 @@ class DANFE(object):
                 self.danfe.remetente.obs_cancelamento_com_motivo()
             else:
                 self.danfe.remetente.obs_cancelamento()
-                
+
         # A NF-e foi cancelada por um evento de cancelamento, , no DANFE imprimir o "carimbo" de cancelamento
         if self.procEventoCancNFe.retEvento.infEvento.nProt.valor:
             if self.procEventoCancNFe.evento.infEvento.detEvento.xJust.valor:

@@ -144,7 +144,7 @@ class ConexaoHTTPS(HTTPSConnection):
             sock = socket.create_connection((self.host, self.port), self.timeout, self.source_address)
         else:
             sock = socket.create_connection((self.host, self.port), self.timeout)
-            
+
         if self._tunnel_host:
             self.sock = sock
             self._tunnel()
@@ -1183,7 +1183,7 @@ class ProcessadorNFe(object):
             estado = self.estado
 
         envio.infCons.UF.valor = estado
-        
+
         if ie is not None:
             envio.infCons.IE.valor = ie
             nome = 'IE_' + ie
