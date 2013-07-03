@@ -121,7 +121,7 @@ class RetConsCad(conscad_101.RetConsCad):
 
     def __init__(self):
         super(RetConsCad, self).__init__()
-        self.versao    = TagDecimal(nome='retConsCad', codigo='GR01', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
+        self.versao = TagDecimal(nome='retConsCad', codigo='GR01', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
         self.infCons = InfConsRecebido()
         self.caminho_esquema = os.path.join(DIRNAME, 'schema', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'retConsCad_v2.00.xsd'

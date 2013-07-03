@@ -50,8 +50,8 @@ FILE_DIR = abspath(dirname(__file__))
 
 if __name__ == '__main__':
     p = ProcessadorNFe()
-    p.versao              = '2.00'
-    p.estado              = 'SP'
+    p.versao = '2.00'
+    p.estado = 'SP'
     # p.certificado.arquivo = 'certificado.pfx'
     # p.certificado.senha   = 'senha'
 
@@ -63,10 +63,10 @@ if __name__ == '__main__':
     #
     # arquivo 'certificado_senha.txt' deve conter a senha para o 'certificado.pfx'
     #
-    p.certificado.senha   = open(FILE_DIR + '/certificado_senha.txt').read().strip()
+    p.certificado.senha = open(FILE_DIR + '/certificado_senha.txt').read().strip()
 
-    p.salva_arquivos      = True
-    p.contingencia_SCAN   = False
+    p.salva_arquivos = True
+    p.contingencia_SCAN = False
     p.caminho = ''
 
     #

@@ -55,7 +55,7 @@ class ConsReciNFe(consrecinfe_110.ConsReciNFe):
 
     def __init__(self):
         super(ConsReciNFe, self).__init__()
-        self.versao  = TagDecimal(nome='consReciNFe', codigo='BP02', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
+        self.versao = TagDecimal(nome='consReciNFe', codigo='BP02', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'consReciNFe_v2.00.xsd'
 
@@ -70,16 +70,16 @@ class ProtNFe(consrecinfe_110.ProtNFe):
 
     def __init__(self):
         super(ProtNFe, self).__init__()
-        self.versao  = TagDecimal(nome='protNFe', codigo='PR02' , propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
+        self.versao = TagDecimal(nome='protNFe', codigo='PR02' , propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
 
 
 class RetConsReciNFe(consrecinfe_110.RetConsReciNFe):
 
     def __init__(self):
         super(RetConsReciNFe, self).__init__()
-        self.versao   = TagDecimal(nome='retConsReciNFe', codigo='BR02' , propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
-        self.cMsg     = TagCaracter(nome='cMsg'         , codigo='BR06b', tamanho=[4, 4], raiz='//retConsReciNFe', obrigatorio=False)
-        self.xMsg     = TagCaracter(nome='xMsg'         , codigo='BR06c', tamanho=[1, 200], raiz='//retConsReciNFe', obrigatorio=False)
+        self.versao = TagDecimal(nome='retConsReciNFe', codigo='BR02' , propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
+        self.cMsg = TagCaracter(nome='cMsg'         , codigo='BR06b', tamanho=[4, 4], raiz='//retConsReciNFe', obrigatorio=False)
+        self.xMsg = TagCaracter(nome='xMsg'         , codigo='BR06c', tamanho=[1, 200], raiz='//retConsReciNFe', obrigatorio=False)
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'retConsReciNFe_v2.00.xsd'
 
@@ -103,16 +103,16 @@ class RetConsReciNFe(consrecinfe_110.RetConsReciNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.versao.xml   = arquivo
-            self.tpAmb.xml    = arquivo
+            self.versao.xml = arquivo
+            self.tpAmb.xml = arquivo
             self.verAplic.xml = arquivo
-            self.nRec.xml     = arquivo
-            self.cStat.xml    = arquivo
-            self.xMotivo.xml  = arquivo
-            self.cUF.xml      = arquivo
-            self.cMsg.xml     = arquivo
-            self.xMsg.xml     = arquivo
-            self.protNFe      = self.le_grupo('//retConsReciNFe/protNFe', ProtNFe)
+            self.nRec.xml = arquivo
+            self.cStat.xml = arquivo
+            self.xMotivo.xml = arquivo
+            self.cUF.xml = arquivo
+            self.cMsg.xml = arquivo
+            self.xMsg.xml = arquivo
+            self.protNFe = self.le_grupo('//retConsReciNFe/protNFe', ProtNFe)
 
             #
             # Monta o dicionário dos protocolos
@@ -127,8 +127,8 @@ class ProcNFe(consrecinfe_110.ProcNFe):
 
     def __init__(self):
         super(ProcNFe, self).__init__()
-        self.versao  = TagDecimal(nome='nfeProc', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
-        self.NFe     = NFe()
+        self.versao = TagDecimal(nome='nfeProc', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
+        self.NFe = NFe()
         self.protNFe = ProtNFe()
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'procNFe_v2.00.xsd'

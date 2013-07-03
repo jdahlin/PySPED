@@ -55,7 +55,7 @@ class EnviNFe(envinfe_110.EnviNFe):
 
     def __init__(self):
         super(EnviNFe, self).__init__()
-        self.versao  = TagDecimal(nome='enviNFe', codigo='AP02', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
+        self.versao = TagDecimal(nome='enviNFe', codigo='AP02', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'enviNFe_v2.00.xsd'
 
@@ -78,8 +78,8 @@ class InfRec(envinfe_110.InfRec):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.nRec.xml     = arquivo
-            self.tMed.xml     = arquivo
+            self.nRec.xml = arquivo
+            self.tMed.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -88,9 +88,9 @@ class RetEnviNFe(envinfe_110.RetEnviNFe):
 
     def __init__(self):
         super(RetEnviNFe, self).__init__()
-        self.versao   = TagDecimal(nome='retEnviNFe', codigo='AR02' , propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
+        self.versao = TagDecimal(nome='retEnviNFe', codigo='AR02' , propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
         self.dhRecbto = TagDataHora(nome='dhRecbto' , codigo='AR09'                        , raiz='//retEnviNFe')
-        self.infRec   = InfRec()
+        self.infRec = InfRec()
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'retEnviNFe_v2.00.xsd'
 
@@ -109,13 +109,13 @@ class RetEnviNFe(envinfe_110.RetEnviNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.versao.xml   = arquivo
-            self.tpAmb.xml    = arquivo
+            self.versao.xml = arquivo
+            self.tpAmb.xml = arquivo
             self.verAplic.xml = arquivo
-            self.cStat.xml    = arquivo
-            self.xMotivo.xml  = arquivo
-            self.cUF.xml      = arquivo
+            self.cStat.xml = arquivo
+            self.xMotivo.xml = arquivo
+            self.cUF.xml = arquivo
             self.dhRecbto.xml = arquivo
-            self.infRec.xml   = arquivo
+            self.infRec.xml = arquivo
 
     xml = property(get_xml, set_xml)

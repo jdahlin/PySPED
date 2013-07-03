@@ -16,16 +16,16 @@ class _Prestador(object):
 class RPS(object):
 
     def __init__(self):
-        self.caminho          = ''
-        self.salvar_arquivo   = True
+        self.caminho = ''
+        self.salvar_arquivo = True
 
-        self.dados_rps        = None
-        self.rps              = None
+        self.dados_rps = None
+        self.rps = None
 
-        self.obs_impressao    = 'RPS gerado em %(now:%d/%m/%Y, %H:%M:%S)s'
-        self.nome_sistema     = ''
-        self.site             = ''
-        self.logo             = ''
+        self.obs_impressao = 'RPS gerado em %(now:%d/%m/%Y, %H:%M:%S)s'
+        self.nome_sistema = ''
+        self.site = ''
+        self.logo = ''
         self.leiaute_logo_vertical = False
 
         self.prestador = _Prestador()
@@ -36,7 +36,7 @@ class RPS(object):
         self.prestador.cidade = ''
         self.prestador.estado = ''
 
-        self.dados_prestador  = []
+        self.dados_prestador = []
 
     def gerar_rps(self):
         if self.dados_rps is None:
@@ -138,9 +138,9 @@ class ProcessadorNFSe(object):
         self.rps = RPS()
         self.caminho_temporario = ''
 
-        self._servidor     = ''
-        self._url          = ''
-        self._soap_envio   = None
+        self._servidor = ''
+        self._url = ''
+        self._soap_envio = None
         self._soap_retorno = None
 
     def _conectar_servico(self, servico, envio, resposta, ambiente=None):
@@ -150,13 +150,13 @@ class ProcessadorNFSe(object):
         self._servidor = CIDADE_WS[self.cidade][ambiente]['servidor']
         self._url = CIDADE_WS[self.cidade][ambiente]['url']
 
-        self._soap_envio   = SOAPEnvio()
-        self._soap_envio.metodo     = METODO_WS[servico]['metodo']
-        self._soap_envio.envio      = envio
+        self._soap_envio = SOAPEnvio()
+        self._soap_envio.metodo = METODO_WS[servico]['metodo']
+        self._soap_envio.envio = envio
 
         self._soap_retorno = SOAPRetorno()
-        self._soap_retorno.metodo     = METODO_WS[servico]['metodo']
-        self._soap_retorno.resposta   = resposta
+        self._soap_retorno.metodo = METODO_WS[servico]['metodo']
+        self._soap_retorno.resposta = resposta
 
         if (servico == WS_NFSE_ENVIO_LOTE):
             self.certificado.prepara_certificado_arquivo_pfx()
@@ -169,10 +169,10 @@ class ProcessadorNFSe(object):
         resp = con.getresponse()
 
         # Dados da resposta salvos para possível debug
-        self._soap_retorno.resposta.version  = resp.version
-        self._soap_retorno.resposta.status   = resp.status
-        self._soap_retorno.resposta.reason   = unicode(resp.reason.decode('utf-8'))
-        self._soap_retorno.resposta.msg      = resp.msg
+        self._soap_retorno.resposta.version = resp.version
+        self._soap_retorno.resposta.status = resp.status
+        self._soap_retorno.resposta.reason = unicode(resp.reason.decode('utf-8'))
+        self._soap_retorno.resposta.msg = resp.msg
         self._soap_retorno.resposta.original = unicode(resp.read().decode('utf-8'))
 
         # Tudo certo!

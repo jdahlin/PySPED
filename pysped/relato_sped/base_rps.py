@@ -110,7 +110,7 @@ CINZA_MARCADAGUA = HexColor(0x939393)
 DESCRITIVO_BLOCO = {'fontName': FONTE_NEGRITO, 'fontSize': FONTE_TAMANHO_9, 'alignment': TA_CENTER, 'leading': FONTE_TAMANHO_11}
 
 DESCRICAO_VALOR_TOTAL = {'fontName': FONTE_NEGRITO, 'fontSize': FONTE_TAMANHO_10, 'alignment': TA_CENTER, 'leading': FONTE_TAMANHO_12}
-VALOR_TOTAL           = {'fontName': FONTE_NEGRITO, 'fontSize': FONTE_TAMANHO_10, 'alignment': TA_RIGHT , 'leading': FONTE_TAMANHO_12}
+VALOR_TOTAL = {'fontName': FONTE_NEGRITO, 'fontSize': FONTE_TAMANHO_10, 'alignment': TA_RIGHT , 'leading': FONTE_TAMANHO_12}
 
 
 DESCRITIVO_CAMPO = {'fontName': FONTE_NORMAL, 'fontSize': FONTE_TAMANHO_5}
@@ -149,7 +149,7 @@ DADO_VARIAVEL_CANCELAMENTO = {'fontName': FONTE_NORMAL, 'fontSize': FONTE_TAMANH
 
 DADO_IMPRESSAO = {'fontName': FONTE_NORMAL, 'fontSize': FONTE_TAMANHO_5, 'leading': FONTE_TAMANHO_7}
 
-EMIT_NOME  = {'fontName': FONTE_NEGRITO, 'fontSize': FONTE_TAMANHO_12, 'alignment': TA_CENTER, 'leading': FONTE_TAMANHO_14}
+EMIT_NOME = {'fontName': FONTE_NEGRITO, 'fontSize': FONTE_TAMANHO_12, 'alignment': TA_CENTER, 'leading': FONTE_TAMANHO_14}
 EMIT_DADOS = {'fontName': FONTE_NEGRITO, 'fontSize': FONTE_TAMANHO_8, 'alignment': TA_CENTER, 'leading': FONTE_TAMANHO_10}
 
 

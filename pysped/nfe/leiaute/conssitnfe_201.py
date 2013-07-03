@@ -67,14 +67,14 @@ class RetConsSitNFe(conssitnfe_200.RetConsSitNFe):
 
     def __init__(self):
         super(RetConsSitNFe, self).__init__()
-        self.versao     = TagDecimal(nome='retConsSitNFe', codigo='ER01', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.01', raiz='/')
-        self.tpAmb      = TagInteiro(nome='tpAmb'        , codigo='ER03' , tamanho=[1, 1, 1], raiz='//retConsSitNFe')
-        self.verAplic   = TagCaracter(nome='verAplic'    , codigo='ER04' , tamanho=[1, 20]   , raiz='//retConsSitNFe')
-        self.cStat      = TagCaracter(nome='cStat'       , codigo='ER05' , tamanho=[1, 3]   , raiz='//retConsSitNFe')
-        self.xMotivo    = TagCaracter(nome='xMotivo'     , codigo='ER06' , tamanho=[1, 2000]   , raiz='//retConsSitNFe')
-        self.cUF        = TagInteiro(nome='cUF'          , codigo='ER07' , tamanho=[2, 2, 2], raiz='//retConsSitNFe')
-        self.chNFe      = TagCaracter(nome='chNFe'       , codigo='ER07a', tamanho=[44, 44]  , raiz='//retConsSitNFe', obrigatorio=False)
-        self.protNFe    = None
+        self.versao = TagDecimal(nome='retConsSitNFe', codigo='ER01', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.01', raiz='/')
+        self.tpAmb = TagInteiro(nome='tpAmb'        , codigo='ER03' , tamanho=[1, 1, 1], raiz='//retConsSitNFe')
+        self.verAplic = TagCaracter(nome='verAplic'    , codigo='ER04' , tamanho=[1, 20]   , raiz='//retConsSitNFe')
+        self.cStat = TagCaracter(nome='cStat'       , codigo='ER05' , tamanho=[1, 3]   , raiz='//retConsSitNFe')
+        self.xMotivo = TagCaracter(nome='xMotivo'     , codigo='ER06' , tamanho=[1, 2000]   , raiz='//retConsSitNFe')
+        self.cUF = TagInteiro(nome='cUF'          , codigo='ER07' , tamanho=[2, 2, 2], raiz='//retConsSitNFe')
+        self.chNFe = TagCaracter(nome='chNFe'       , codigo='ER07a', tamanho=[44, 44]  , raiz='//retConsSitNFe', obrigatorio=False)
+        self.protNFe = None
         self.retCancNFe = None
         self.procEventoNFe = None
         self.caminho_esquema = os.path.join(DIRNAME, 'schema', ESQUEMA_ATUAL + '/')
@@ -139,13 +139,13 @@ class RetConsSitNFe(conssitnfe_200.RetConsSitNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.versao.xml  = arquivo
-            self.tpAmb.xml     = arquivo
-            self.verAplic.xml  = arquivo
-            self.cStat.xml     = arquivo
-            self.xMotivo.xml   = arquivo
-            self.cUF.xml       = arquivo
-            self.chNFe.xml     = arquivo
+            self.versao.xml = arquivo
+            self.tpAmb.xml = arquivo
+            self.verAplic.xml = arquivo
+            self.cStat.xml = arquivo
+            self.xMotivo.xml = arquivo
+            self.cUF.xml = arquivo
+            self.chNFe.xml = arquivo
 
             if self._le_noh('//retConsSitNFe/protNFe') is not None:
                 self.protNFe = ProtNFe_200()

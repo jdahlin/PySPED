@@ -55,10 +55,10 @@ class _Cabecalho(XMLNFe):
 
     def __init__(self):
         super(_Cabecalho, self).__init__()
-        self.CodCidade            = TagInteiro(nome='CodCidade'            , tamanho=[ 1, 10, 1], raiz='//nfse:RetornoCancelamentoNFSe/Cabecalho')
-        self.Sucesso              = TagBoolean(nome='Sucesso'                                   , raiz='//nfse:RetornoCancelamentoNFSe/Cabecalho')
-        self.CPFCNPJRemetente     = TagCaracter(nome='CPFCNPJRemetente'    , tamanho=[11, 14]   , raiz='//nfse:RetornoCancelamentoNFSe/Cabecalho')
-        self.Versao               = TagInteiro(nome='Versao'               , tamanho=[ 1, 3, 1], raiz='//nfse:RetornoCancelamentoNFSe/Cabecalho', valor=1)
+        self.CodCidade = TagInteiro(nome='CodCidade'            , tamanho=[ 1, 10, 1], raiz='//nfse:RetornoCancelamentoNFSe/Cabecalho')
+        self.Sucesso = TagBoolean(nome='Sucesso'                                   , raiz='//nfse:RetornoCancelamentoNFSe/Cabecalho')
+        self.CPFCNPJRemetente = TagCaracter(nome='CPFCNPJRemetente'    , tamanho=[11, 14]   , raiz='//nfse:RetornoCancelamentoNFSe/Cabecalho')
+        self.Versao = TagInteiro(nome='Versao'               , tamanho=[ 1, 3, 1], raiz='//nfse:RetornoCancelamentoNFSe/Cabecalho', valor=1)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -72,10 +72,10 @@ class _Cabecalho(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.CodCidade.xml            = arquivo
-            self.Sucesso.xml              = arquivo
-            self.CPFCNPJRemetente.xml     = arquivo
-            self.Versao.xml               = arquivo
+            self.CodCidade.xml = arquivo
+            self.Sucesso.xml = arquivo
+            self.CPFCNPJRemetente.xml = arquivo
+            self.Versao.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -84,12 +84,12 @@ class RetornoCancelamentoNFSe(XMLNFe):
 
     def __init__(self):
         super(RetornoCancelamentoNFSe, self).__init__()
-        self.caminho_esquema  = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
-        self.arquivo_esquema  = 'RetornoCancelamentoNFSe.xsd'
+        self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
+        self.arquivo_esquema = 'RetornoCancelamentoNFSe.xsd'
         self.Cabecalho = _Cabecalho()
         self.NotasCanceladas = []
-        self.Alertas   = []
-        self.Erros     = []
+        self.Alertas = []
+        self.Erros = []
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)

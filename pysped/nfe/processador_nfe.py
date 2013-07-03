@@ -167,9 +167,9 @@ class ProcessadorNFe(object):
         self.caminho_temporario = ''
         self.maximo_tentativas_consulta_recibo = 5
 
-        self._servidor     = ''
-        self._url          = ''
-        self._soap_envio   = None
+        self._servidor = ''
+        self._url = ''
+        self._soap_envio = None
         self._soap_retorno = None
 
     def _conectar_servico(self, servico, envio, resposta, ambiente=None, somente_ambiente_nacional=False):
@@ -178,33 +178,33 @@ class ProcessadorNFe(object):
 
         if self.versao == '1.10':
             metodo_ws = webservices_1.METODO_WS
-            self._soap_envio   = SOAPEnvio_110()
+            self._soap_envio = SOAPEnvio_110()
             self._soap_retorno = SOAPRetorno_110()
 
             if self.contingencia_SCAN:
                 self._servidor = webservices_1.SCAN[ambiente]['servidor']
-                self._url      = webservices_1.SCAN[ambiente][servico]
+                self._url = webservices_1.SCAN[ambiente][servico]
             else:
                 self._servidor = webservices_1.ESTADO_WS[self.estado][ambiente]['servidor']
-                self._url      = webservices_1.ESTADO_WS[self.estado][ambiente][servico]
+                self._url = webservices_1.ESTADO_WS[self.estado][ambiente][servico]
 
         elif self.versao == '2.00':
             metodo_ws = webservices_2.METODO_WS
-            self._soap_envio   = SOAPEnvio_200()
+            self._soap_envio = SOAPEnvio_200()
             self._soap_retorno = SOAPRetorno_200()
             self._soap_envio.cUF = UF_CODIGO[self.estado]
 
             if somente_ambiente_nacional:
                 self._servidor = webservices_2.AN[ambiente]['servidor']
-                self._url      = webservices_2.AN[ambiente][servico]
+                self._url = webservices_2.AN[ambiente][servico]
 
             elif servico == WS_NFE_DOWNLOAD:
                 self._servidor = webservices_2.SVAN[ambiente]['servidor']
-                self._url      = webservices_2.SVAN[ambiente][servico]
+                self._url = webservices_2.SVAN[ambiente][servico]
 
             elif self.contingencia_SCAN:
                 self._servidor = webservices_2.SCAN[ambiente]['servidor']
-                self._url      = webservices_2.SCAN[ambiente][servico]
+                self._url = webservices_2.SCAN[ambiente][servico]
 
             else:
                 #
@@ -217,15 +217,15 @@ class ProcessadorNFe(object):
                     ws_a_usar = webservices_2.ESTADO_WS[self.estado]
 
                 self._servidor = ws_a_usar[ambiente]['servidor']
-                self._url      = ws_a_usar[ambiente][servico]
+                self._url = ws_a_usar[ambiente][servico]
 
         self._soap_envio.webservice = metodo_ws[servico]['webservice']
-        self._soap_envio.metodo     = metodo_ws[servico]['metodo']
-        self._soap_envio.envio      = envio
+        self._soap_envio.metodo = metodo_ws[servico]['metodo']
+        self._soap_envio.envio = envio
 
         self._soap_retorno.webservice = self._soap_envio.webservice
-        self._soap_retorno.metodo     = self._soap_envio.metodo
-        self._soap_retorno.resposta   = resposta
+        self._soap_retorno.metodo = self._soap_envio.metodo
+        self._soap_retorno.resposta = resposta
 
         # try:
         self.certificado.prepara_certificado_arquivo_pfx()
@@ -272,10 +272,10 @@ class ProcessadorNFe(object):
         envio.original = self._soap_envio.xml
 
         # Dados da resposta salvos para possível debug
-        self._soap_retorno.resposta.version  = resp.version
-        self._soap_retorno.resposta.status   = resp.status
-        self._soap_retorno.resposta.reason   = unicode(resp.reason.decode('utf-8'))
-        self._soap_retorno.resposta.msg      = resp.msg
+        self._soap_retorno.resposta.version = resp.version
+        self._soap_retorno.resposta.status = resp.status
+        self._soap_retorno.resposta.reason = unicode(resp.reason.decode('utf-8'))
+        self._soap_retorno.resposta.msg = resp.msg
         self._soap_retorno.resposta.original = unicode(resp.read().decode('utf-8'))
 
         # Tudo certo!
@@ -362,7 +362,7 @@ class ProcessadorNFe(object):
             ambiente = self.ambiente
 
         envio.tpAmb.valor = ambiente
-        envio.nRec.valor  = numero_recibo
+        envio.nRec.valor = numero_recibo
 
         envio.validar()
         if self.salvar_arquivos:
@@ -515,15 +515,15 @@ class ProcessadorNFe(object):
 
         self.caminho = self.monta_caminho_inutilizacao(ambiente=ambiente, serie=serie, numero_inicial=numero_inicial, numero_final=numero_final)
 
-        envio.infInut.tpAmb.valor  = ambiente
-        envio.infInut.cUF.valor    = codigo_estado
-        envio.infInut.ano.valor    = ano
-        envio.infInut.CNPJ.valor   = cnpj
+        envio.infInut.tpAmb.valor = ambiente
+        envio.infInut.cUF.valor = codigo_estado
+        envio.infInut.ano.valor = ano
+        envio.infInut.CNPJ.valor = cnpj
         # envio.infInut.mod.valor    = 55
-        envio.infInut.serie.valor  = serie
+        envio.infInut.serie.valor = serie
         envio.infInut.nNFIni.valor = numero_inicial
         envio.infInut.nNFFin.valor = numero_final
-        envio.infInut.xJust.valor  = justificativa
+        envio.infInut.xJust.valor = justificativa
 
         envio.gera_nova_chave()
         self.certificado.assina_xmlnfe(envio)
@@ -643,8 +643,8 @@ class ProcessadorNFe(object):
             codigo_estado = UF_CODIGO[self.estado]
 
         envio.tpAmb.valor = ambiente
-        envio.cUF.valor   = codigo_estado
-        envio.data        = datetime.now()
+        envio.cUF.valor = codigo_estado
+        envio.data = datetime.now()
 
         envio.validar()
         if self.salvar_arquivos:
@@ -792,10 +792,10 @@ class ProcessadorNFe(object):
             elif self.versao == '2.00':
                 processo = ProcNFe_200()
 
-            processo.NFe     = nfe
+            processo.NFe = nfe
             processo.protNFe = protnfe_recibo
 
-            self.danfe.NFe     = nfe
+            self.danfe.NFe = nfe
             self.danfe.protNFe = protnfe_recibo
             self.danfe.salvar_arquivo = False
             self.danfe.gerar_danfe()
@@ -861,9 +861,9 @@ class ProcessadorNFe(object):
 
         caminho = os.path.join(caminho, data.strftime('%Y-%m') + '/')
 
-        serie          = unicode(serie).strip().rjust(3, '0')
+        serie = unicode(serie).strip().rjust(3, '0')
         numero_inicial = unicode(numero_inicial).strip().rjust(9, '0')
-        numero_final   = unicode(numero_final).strip().rjust(9, '0')
+        numero_final = unicode(numero_final).strip().rjust(9, '0')
 
         caminho = os.path.join(caminho, serie + '-' + numero_inicial + '-' + numero_final + '/')
 

@@ -55,7 +55,7 @@ class InfCancEnviado(XMLNFe):
 
     def __init__(self):
         super(InfCancEnviado, self).__init__()
-        self.Id    = TagCaracter(nome='infCanc', codigo='CP03', tamanho=[46, 46]    , raiz='//cancNFe', propriedade='Id')
+        self.Id = TagCaracter(nome='infCanc', codigo='CP03', tamanho=[46, 46]    , raiz='//cancNFe', propriedade='Id')
         self.tpAmb = TagInteiro(nome='tpAmb'   , codigo='CP05', tamanho=[ 1, 1, 1] , raiz='//cancNFe/infCanc', valor=2)
         self.xServ = TagCaracter(nome='xServ'  , codigo='CP06', tamanho=[ 8, 8]    , raiz='//cancNFe/infCanc', valor='CANCELAR')
         self.chNFe = TagCaracter(nome='chNFe'   , codigo='CP07', tamanho=[44, 44, 44], raiz='//cancNFe/infCanc')
@@ -78,7 +78,7 @@ class InfCancEnviado(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.Id.xml    = arquivo
+            self.Id.xml = arquivo
             self.tpAmb.xml = arquivo
             self.xServ.xml = arquivo
             self.chNFe.xml = arquivo
@@ -92,8 +92,8 @@ class CancNFe(XMLNFe):
 
     def __init__(self):
         super(CancNFe, self).__init__()
-        self.versao    = TagDecimal(nome='cancNFe', codigo='CP01', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.07', raiz='/')
-        self.infCanc   = InfCancEnviado()
+        self.versao = TagDecimal(nome='cancNFe', codigo='CP01', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.07', raiz='/')
+        self.infCanc = InfCancEnviado()
         self.Signature = Signature()
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'cancNFe_v1.07.xsd'
@@ -125,15 +125,15 @@ class InfCancRecebido(XMLNFe):
 
     def __init__(self):
         super(InfCancRecebido, self).__init__()
-        self.Id       = TagCaracter(nome='infCanc' , codigo='CR03' , tamanho=[17, 17]    , raiz='//retCancNFe', propriedade='Id', obrigatorio=False)
-        self.tpAmb    = TagInteiro(nome='tpAmb'    , codigo='CR05' , tamanho=[1, 1, 1]   , raiz='//retCancNFe/infCanc', valor=2)
+        self.Id = TagCaracter(nome='infCanc' , codigo='CR03' , tamanho=[17, 17]    , raiz='//retCancNFe', propriedade='Id', obrigatorio=False)
+        self.tpAmb = TagInteiro(nome='tpAmb'    , codigo='CR05' , tamanho=[1, 1, 1]   , raiz='//retCancNFe/infCanc', valor=2)
         self.verAplic = TagCaracter(nome='verAplic', codigo='CR06' , tamanho=[1, 20]     , raiz='//retCancNFe/infCanc')
-        self.cStat    = TagCaracter(nome='cStat'    , codigo='CR07' , tamanho=[3, 3, 3]   , raiz='//retCancNFe/infCanc')
-        self.xMotivo  = TagCaracter(nome='xMotivo' , codigo='CR08' , tamanho=[1, 255]    , raiz='//retCancNFe/infCanc')
-        self.cUF      = TagInteiro(nome='cUF'      , codigo='CR08a', tamanho=[2, 2, 2]   , raiz='//retCancNFe/infCanc')
-        self.chNFe    = TagCaracter(nome='chNFe'    , codigo='CR09' , tamanho=[44, 44, 44], raiz='//retcancNFe/infCanc', obrigatorio=False)
+        self.cStat = TagCaracter(nome='cStat'    , codigo='CR07' , tamanho=[3, 3, 3]   , raiz='//retCancNFe/infCanc')
+        self.xMotivo = TagCaracter(nome='xMotivo' , codigo='CR08' , tamanho=[1, 255]    , raiz='//retCancNFe/infCanc')
+        self.cUF = TagInteiro(nome='cUF'      , codigo='CR08a', tamanho=[2, 2, 2]   , raiz='//retCancNFe/infCanc')
+        self.chNFe = TagCaracter(nome='chNFe'    , codigo='CR09' , tamanho=[44, 44, 44], raiz='//retcancNFe/infCanc', obrigatorio=False)
         self.dhRecbto = TagDataHora(nome='dhRecbto', codigo='CR10' , raiz='//retCancNFe/infCanc', obrigatorio=False)
-        self.nProt    = TagCaracter(nome='nProt'    , codigo='CR11' , tamanho=[15, 15, 15], raiz='//retCancNFe/infCanc', obrigatorio=False)
+        self.nProt = TagCaracter(nome='nProt'    , codigo='CR11' , tamanho=[15, 15, 15], raiz='//retCancNFe/infCanc', obrigatorio=False)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -156,15 +156,15 @@ class InfCancRecebido(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.Id.xml       = arquivo
-            self.tpAmb.xml    = arquivo
+            self.Id.xml = arquivo
+            self.tpAmb.xml = arquivo
             self.verAplic.xml = arquivo
-            self.cStat.xml    = arquivo
-            self.xMotivo.xml  = arquivo
-            self.cUF.xml      = arquivo
-            self.chNFe.xml    = arquivo
+            self.cStat.xml = arquivo
+            self.xMotivo.xml = arquivo
+            self.cUF.xml = arquivo
+            self.chNFe.xml = arquivo
             self.dhRecbto.xml = arquivo
-            self.nProt.xml    = arquivo
+            self.nProt.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -193,7 +193,7 @@ class RetCancNFe(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.infCanc.xml   = arquivo
+            self.infCanc.xml = arquivo
             self.Signature.xml = self._le_noh('//retCancNFe/sig:Signature')
 
     xml = property(get_xml, set_xml)

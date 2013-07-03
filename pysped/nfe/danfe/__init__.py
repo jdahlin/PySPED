@@ -49,30 +49,30 @@ from pysped.nfe.leiaute import ProcEventoCancNFe_100
 class DANFE(object):
 
     def __init__(self):
-        self.imprime_canhoto        = True
+        self.imprime_canhoto = True
         self.imprime_local_retirada = True
-        self.imprime_local_entrega  = True
-        self.imprime_fatura         = True
-        self.imprime_duplicatas     = True
-        self.imprime_issqn          = True
+        self.imprime_local_entrega = True
+        self.imprime_fatura = True
+        self.imprime_duplicatas = True
+        self.imprime_issqn = True
 
-        self.caminho           = ''
-        self.salvar_arquivo    = True
+        self.caminho = ''
+        self.salvar_arquivo = True
 
-        self.NFe         = None
-        self.protNFe     = None
+        self.NFe = None
+        self.protNFe = None
         self.procCancNFe = None
-        self.retCancNFe  = None
+        self.retCancNFe = None
         self.procEventoCancNFe = None
-        self.danfe       = None
+        self.danfe = None
         self.conteudo_pdf = None
 
-        self.obs_impressao    = 'DANFE gerado em %(now:%d/%m/%Y, %H:%M:%S)s'
-        self.nome_sistema     = ''
-        self.site             = ''
-        self.logo             = ''
+        self.obs_impressao = 'DANFE gerado em %(now:%d/%m/%Y, %H:%M:%S)s'
+        self.nome_sistema = ''
+        self.site = ''
+        self.logo = ''
         self.leiaute_logo_vertical = False
-        self.dados_emitente   = []
+        self.dados_emitente = []
 
     def gerar_danfe(self):
         if self.NFe is None:

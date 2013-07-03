@@ -54,14 +54,14 @@ class InfInutEnviado(inutnfe_107.InfInutEnviado):
 
     def __init__(self):
         super(InfInutEnviado, self).__init__()
-        self.Id     = TagCaracter(nome='infInut', codigo='DP03', tamanho=[43, 43] , raiz='//inutNFe', propriedade='Id')
+        self.Id = TagCaracter(nome='infInut', codigo='DP03', tamanho=[43, 43] , raiz='//inutNFe', propriedade='Id')
 
 
 class InutNFe(inutnfe_107.InutNFe):
 
     def __init__(self):
         super(InutNFe, self).__init__()
-        self.versao  = TagDecimal(nome='inutNFe', codigo='DP01', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
+        self.versao = TagDecimal(nome='inutNFe', codigo='DP01', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
         self.infInut = InfInutEnviado()
         self.caminho_esquema = os.path.join(DIRNAME, 'schema', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'inutNFe_v2.00.xsd'

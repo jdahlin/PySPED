@@ -52,10 +52,10 @@ class _Cabecalho(XMLNFe):
 
     def __init__(self):
         super(_Cabecalho, self).__init__()
-        self.CodCidade        = TagInteiro(nome='CodCidade'        , tamanho=[ 1, 10, 1], raiz='//nfse:ReqConsultaLote/Cabecalho')
+        self.CodCidade = TagInteiro(nome='CodCidade'        , tamanho=[ 1, 10, 1], raiz='//nfse:ReqConsultaLote/Cabecalho')
         self.CPFCNPJRemetente = TagCaracter(nome='CPFCNPJRemetente', tamanho=[11, 14]   , raiz='//nfse:ReqConsultaLote/Cabecalho')
-        self.Versao           = TagInteiro(nome='Versao'           , tamanho=[ 1, 3, 1], raiz='//nfse:ReqConsultaLote/Cabecalho', valor=1)
-        self.NumeroLote       = TagInteiro(nome='NumeroLote'       , tamanho=[ 1, 12, 1], raiz='//nfse:ReqConsultaLote/Cabecalho')
+        self.Versao = TagInteiro(nome='Versao'           , tamanho=[ 1, 3, 1], raiz='//nfse:ReqConsultaLote/Cabecalho', valor=1)
+        self.NumeroLote = TagInteiro(nome='NumeroLote'       , tamanho=[ 1, 12, 1], raiz='//nfse:ReqConsultaLote/Cabecalho')
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -69,10 +69,10 @@ class _Cabecalho(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.CodCidade.xml        = arquivo
+            self.CodCidade.xml = arquivo
             self.CPFCNPJRemetente.xml = arquivo
-            self.Versao.xml           = arquivo
-            self.NumeroLote.xml       = arquivo
+            self.Versao.xml = arquivo
+            self.NumeroLote.xml = arquivo
 
     xml = property(get_xml, set_xml)
 

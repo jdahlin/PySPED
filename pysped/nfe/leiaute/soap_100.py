@@ -53,7 +53,7 @@ class CabecMsg(XMLNFe):
 
     def __init__(self):
         super(CabecMsg, self).__init__()
-        self.versao      = TagDecimal(nome='cabecMsg'   , codigo=''   , propriedade='versao', namespace=NAMESPACE_NFE, valor='1.02', raiz='//cabecMsg')
+        self.versao = TagDecimal(nome='cabecMsg'   , codigo=''   , propriedade='versao', namespace=NAMESPACE_NFE, valor='1.02', raiz='//cabecMsg')
         self.versaoDados = TagDecimal(nome='versaoDados', codigo='A01', raiz='//cabecMsg', tamanho=[1, 4])
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'cabecMsg_v1.02.xsd'
@@ -134,12 +134,12 @@ class SOAPEnvio(XMLNFe):
         xml = XMLNFe.get_xml(self)
         xml += ABERTURA
         xml += '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">'
-        xml +=     '<soap:Body>'
-        xml +=         '<' + self.metodo + ' xmlns="http://www.portalfiscal.inf.br/nfe/wsdl/' + self.webservice + '">'
+        xml += '<soap:Body>'
+        xml += '<' + self.metodo + ' xmlns="http://www.portalfiscal.inf.br/nfe/wsdl/' + self.webservice + '">'
         xml += self.nfeCabecMsg.xml
         xml += self.nfeDadosMsg.xml
-        xml +=         '</' + self.metodo + '>'
-        xml +=     '</soap:Body>'
+        xml += '</' + self.metodo + '>'
+        xml += '</soap:Body>'
         xml += '</soap:Envelope>'
         return xml
 
@@ -167,13 +167,13 @@ class SOAPRetorno(XMLNFe):
         xml = XMLNFe.get_xml(self)
         xml += ABERTURA
         xml += '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">'
-        xml +=     '<soap:Body>'
-        xml +=         '<' + self.metodo + 'Response xmlns="http://www.portalfiscal.inf.br/nfe/wsdl/' + self.webservice + '">'
-        xml +=             '<' + self.metodo + 'Result>'
+        xml += '<soap:Body>'
+        xml += '<' + self.metodo + 'Response xmlns="http://www.portalfiscal.inf.br/nfe/wsdl/' + self.webservice + '">'
+        xml += '<' + self.metodo + 'Result>'
         xml += self.resposta.xml
-        xml +=             '</' + self.metodo + 'Result>'
-        xml +=         '</' + self.metodo + 'Response>'
-        xml +=     '</soap:Body>'
+        xml += '</' + self.metodo + 'Result>'
+        xml += '</' + self.metodo + 'Response>'
+        xml += '</soap:Body>'
         xml += '</soap:Envelope>'
         return xml
 

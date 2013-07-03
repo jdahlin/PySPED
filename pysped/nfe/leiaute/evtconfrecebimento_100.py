@@ -99,7 +99,7 @@ class InfEventoConfRecebimento(InfEvento):
 
     def __init__(self):
         super(InfEventoConfRecebimento, self).__init__()
-        self.detEvento  = DetEventoConfRecebimento()
+        self.detEvento = DetEventoConfRecebimento()
 
 
 class EventoConfRecebimento(Evento):
@@ -145,8 +145,8 @@ class EnvEventoConfRecebimento(EnvEvento):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.versao.xml    = arquivo
-            self.idLote.xml    = arquivo
+            self.versao.xml = arquivo
+            self.idLote.xml = arquivo
             self.evento = self.le_grupo('//envEvento/evento', EventoConfRecebimento)
 
     xml = property(get_xml, set_xml)

@@ -52,13 +52,13 @@ class _Cabecalho(XMLNFe):
 
     def __init__(self):
         super(_Cabecalho, self).__init__()
-        self.CodCidade        = TagInteiro(nome='CodCidade'        , tamanho=[ 1, 10, 1], raiz='//nfse:ReqConsultaNotas/Cabecalho')
+        self.CodCidade = TagInteiro(nome='CodCidade'        , tamanho=[ 1, 10, 1], raiz='//nfse:ReqConsultaNotas/Cabecalho')
         self.CPFCNPJRemetente = TagCaracter(nome='CPFCNPJRemetente', tamanho=[11, 14]   , raiz='//nfse:ReqConsultaNotas/Cabecalho')
-        self.InscricaoMunicipalPrestador  = TagCaracter(nome='InscricaoMunicipalPrestador'     , tamanho=[ 6, 11]   , raiz='//nfse:ReqConsultaNotas/Cabecalho')
-        self.dtInicio         = TagData(nome='dtInicio', raiz='//nfse:ReqConsultaNotas/Cabecalho')
-        self.dtFim            = TagData(nome='dtFim', raiz='//nfse:ReqConsultaNotas/Cabecalho')
-        self.NotaInicial      = TagInteiro(nome='NotaInicial'      , tamanho=[ 1, 12, 1], raiz='//nfse:ReqConsultaNotas/Cabecalho', obrigatorio=False)
-        self.Versao           = TagInteiro(nome='Versao'           , tamanho=[ 1, 3, 1], raiz='//nfse:ReqConsultaNotas/Cabecalho', valor=1)
+        self.InscricaoMunicipalPrestador = TagCaracter(nome='InscricaoMunicipalPrestador'     , tamanho=[ 6, 11]   , raiz='//nfse:ReqConsultaNotas/Cabecalho')
+        self.dtInicio = TagData(nome='dtInicio', raiz='//nfse:ReqConsultaNotas/Cabecalho')
+        self.dtFim = TagData(nome='dtFim', raiz='//nfse:ReqConsultaNotas/Cabecalho')
+        self.NotaInicial = TagInteiro(nome='NotaInicial'      , tamanho=[ 1, 12, 1], raiz='//nfse:ReqConsultaNotas/Cabecalho', obrigatorio=False)
+        self.Versao = TagInteiro(nome='Versao'           , tamanho=[ 1, 3, 1], raiz='//nfse:ReqConsultaNotas/Cabecalho', valor=1)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -75,13 +75,13 @@ class _Cabecalho(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.CodCidade.xml        = arquivo
+            self.CodCidade.xml = arquivo
             self.CPFCNPJRemetente.xml = arquivo
             self.InscricaoMunicipalPrestador.xml = arquivo
-            self.dtInicio.xml         = arquivo
-            self.dtFim.xml            = arquivo
-            self.NotaInicial.xml      = arquivo
-            self.Versao.xml           = arquivo
+            self.dtInicio.xml = arquivo
+            self.dtFim.xml = arquivo
+            self.NotaInicial.xml = arquivo
+            self.Versao.xml = arquivo
 
     xml = property(get_xml, set_xml)
 

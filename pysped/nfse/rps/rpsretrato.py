@@ -78,12 +78,12 @@ class RPSRetrato(Report):
         self.margin_right = MARGEM_DIREITA
 
         # Bandas e observações
-        self.cabecalho         = CabecalhoRetrato()
-        self.prestador         = PrestadorRetrato()
-        self.tomador           = TomadorRetrato()
-        self.discriminacao     = DiscriminacaoRetrato()
-        self.detalhe_item      = DetItemRetrato()
-        self.rodape            = RodapeRetrato()
+        self.cabecalho = CabecalhoRetrato()
+        self.prestador = PrestadorRetrato()
+        self.tomador = TomadorRetrato()
+        self.discriminacao = DiscriminacaoRetrato()
+        self.detalhe_item = DetItemRetrato()
+        self.rodape = RodapeRetrato()
 
     # def on_new_page(self, page, page_number, generator):
         # if generator._current_page_number <> 1:

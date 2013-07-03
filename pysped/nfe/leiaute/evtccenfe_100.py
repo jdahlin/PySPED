@@ -88,7 +88,7 @@ class InfEventoCCe(InfEvento):
 
     def __init__(self):
         super(InfEventoCCe, self).__init__()
-        self.detEvento  = DetEventoCCe()
+        self.detEvento = DetEventoCCe()
         self.tpEvento.valor = '110110'
 
 
@@ -135,8 +135,8 @@ class EnvEventoCCe(EnvEvento):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.versao.xml    = arquivo
-            self.idLote.xml    = arquivo
+            self.versao.xml = arquivo
+            self.idLote.xml = arquivo
             self.evento = self.le_grupo('//envEvento/evento', EventoCCe)
 
     xml = property(get_xml, set_xml)

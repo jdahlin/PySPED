@@ -85,7 +85,7 @@ class InfEventoCancNFe(InfEvento):
 
     def __init__(self):
         super(InfEventoCancNFe, self).__init__()
-        self.detEvento  = DetEventoCancNFe()
+        self.detEvento = DetEventoCancNFe()
         self.tpEvento.valor = '110111'
 
 
@@ -132,8 +132,8 @@ class EnvEventoCancNFe(EnvEvento):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.versao.xml    = arquivo
-            self.idLote.xml    = arquivo
+            self.versao.xml = arquivo
+            self.idLote.xml = arquivo
             self.evento = self.le_grupo('//envEvento/evento', EventoCancNFe)
 
     xml = property(get_xml, set_xml)

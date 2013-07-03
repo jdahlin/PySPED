@@ -60,8 +60,8 @@ class CancNFe(cancnfe_107.CancNFe):
 
     def __init__(self):
         super(CancNFe, self).__init__()
-        self.versao    = TagDecimal(nome='cancNFe', codigo='CP01', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
-        self.infCanc   = InfCancEnviado()
+        self.versao = TagDecimal(nome='cancNFe', codigo='CP01', propriedade='versao', namespace=NAMESPACE_NFE, valor='2.00', raiz='/')
+        self.infCanc = InfCancEnviado()
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'cancNFe_v2.00.xsd'
 

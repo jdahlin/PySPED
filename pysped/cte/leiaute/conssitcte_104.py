@@ -57,9 +57,9 @@ class ConsSitCTe(XMLNFe):
     def __init__(self):
         super(ConsSitCTe, self).__init__()
         self.versao = TagDecimal(nome='consSitCTe', codigo='EP01', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
-        self.tpAmb  = TagInteiro(nome='tpAmb'     , codigo='EP03', tamanho=[ 1, 1, 1], raiz='//consSitCTe', valor=2)
-        self.xServ  = TagCaracter(nome='xServ'    , codigo='EP04', tamanho=[ 9, 9]   , raiz='//consSitCTe', valor='CONSULTAR')
-        self.chNFe  = TagCaracter(nome='chCTe'    , codigo='EP05', tamanho=[44, 44]   , raiz='//consSitCTe')
+        self.tpAmb = TagInteiro(nome='tpAmb'     , codigo='EP03', tamanho=[ 1, 1, 1], raiz='//consSitCTe', valor=2)
+        self.xServ = TagCaracter(nome='xServ'    , codigo='EP04', tamanho=[ 9, 9]   , raiz='//consSitCTe', valor='CONSULTAR')
+        self.chNFe = TagCaracter(nome='chCTe'    , codigo='EP05', tamanho=[44, 44]   , raiz='//consSitCTe')
         self.caminho_esquema = os.path.join(DIRNAME, 'schema', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'consSitCte_v1.04.xsd'
 
@@ -76,9 +76,9 @@ class ConsSitCTe(XMLNFe):
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
             self.versao.xml = arquivo
-            self.tpAmb.xml  = arquivo
-            self.xServ.xml  = arquivo
-            self.chNFe.xml  = arquivo
+            self.tpAmb.xml = arquivo
+            self.xServ.xml = arquivo
+            self.chNFe.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -87,13 +87,13 @@ class RetConsSitCTe(XMLNFe):
 
     def __init__(self):
         super(RetConsSitCTe, self).__init__()
-        self.versao     = TagDecimal(nome='retConsSitCTe', codigo='ER01', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
-        self.tpAmb      = TagInteiro(nome='tpAmb'        , codigo='ER03' , tamanho=[1, 1, 1], raiz='//retConsSitCTe')
-        self.verAplic   = TagCaracter(nome='verAplic'    , codigo='ER04' , tamanho=[1, 20]   , raiz='//retConsSitCTe')
-        self.cStat      = TagCaracter(nome='cStat'       , codigo='ER05' , tamanho=[1, 3]   , raiz='//retConsSitCTe')
-        self.xMotivo    = TagCaracter(nome='xMotivo'     , codigo='ER06' , tamanho=[1, 2000]  , raiz='//retConsSitCTe')
-        self.cUF        = TagInteiro(nome='cUF'          , codigo='ER07' , tamanho=[2, 2, 2], raiz='//retConsSitCTe')
-        self.protCTe    = None
+        self.versao = TagDecimal(nome='retConsSitCTe', codigo='ER01', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
+        self.tpAmb = TagInteiro(nome='tpAmb'        , codigo='ER03' , tamanho=[1, 1, 1], raiz='//retConsSitCTe')
+        self.verAplic = TagCaracter(nome='verAplic'    , codigo='ER04' , tamanho=[1, 20]   , raiz='//retConsSitCTe')
+        self.cStat = TagCaracter(nome='cStat'       , codigo='ER05' , tamanho=[1, 3]   , raiz='//retConsSitCTe')
+        self.xMotivo = TagCaracter(nome='xMotivo'     , codigo='ER06' , tamanho=[1, 2000]  , raiz='//retConsSitCTe')
+        self.cUF = TagInteiro(nome='cUF'          , codigo='ER07' , tamanho=[2, 2, 2], raiz='//retConsSitCTe')
+        self.protCTe = None
         self.retCancCTe = None
         self.caminho_esquema = os.path.join(DIRNAME, 'schema', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'retConsSitCte_v1.04.xsd'
@@ -119,12 +119,12 @@ class RetConsSitCTe(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.versao.xml  = arquivo
-            self.tpAmb.xml     = arquivo
-            self.verAplic.xml  = arquivo
-            self.cStat.xml     = arquivo
-            self.xMotivo.xml   = arquivo
-            self.cUF.xml       = arquivo
+            self.versao.xml = arquivo
+            self.tpAmb.xml = arquivo
+            self.verAplic.xml = arquivo
+            self.cStat.xml = arquivo
+            self.xMotivo.xml = arquivo
+            self.cUF.xml = arquivo
 
             if self._le_noh('//retConsSitCTe/protCTe') is not None:
                 self.protCTe = ProtCTe_104()

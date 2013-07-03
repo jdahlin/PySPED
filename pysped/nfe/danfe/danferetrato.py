@@ -99,21 +99,21 @@ class DANFERetrato(Report):
         self.margin_right = MARGEM_DIREITA
 
         # Bandas e observações
-        self.canhoto          = CanhotoRetrato()
-        self.remetente        = RemetenteRetrato()
-        self.destinatario     = DestinatarioRetrato()
-        self.local_retirada   = LocalRetiradaRetrato()
-        self.local_entrega    = LocalEntregaRetrato()
-        self.fatura_a_vista   = FaturaAVistaRetrato()
-        self.fatura_a_prazo   = FaturaAPrazoRetrato()
-        self.duplicatas       = DuplicatasRetrato()
-        self.calculo_imposto  = CalculoImpostoRetrato()
-        self.transporte       = TransporteRetrato()
-        self.cab_produto      = CabProdutoRetrato()
-        self.det_produto      = DetProdutoRetrato()
-        self.iss              = ISSRetrato()
+        self.canhoto = CanhotoRetrato()
+        self.remetente = RemetenteRetrato()
+        self.destinatario = DestinatarioRetrato()
+        self.local_retirada = LocalRetiradaRetrato()
+        self.local_entrega = LocalEntregaRetrato()
+        self.fatura_a_vista = FaturaAVistaRetrato()
+        self.fatura_a_prazo = FaturaAPrazoRetrato()
+        self.duplicatas = DuplicatasRetrato()
+        self.calculo_imposto = CalculoImpostoRetrato()
+        self.transporte = TransporteRetrato()
+        self.cab_produto = CabProdutoRetrato()
+        self.det_produto = DetProdutoRetrato()
+        self.iss = ISSRetrato()
         self.dados_adicionais = DadosAdicionaisRetrato()
-        self.rodape_final     = RodapeFinalRetrato()
+        self.rodape_final = RodapeFinalRetrato()
 
         #
         # Guarda a definição do cabeçalho e rodapé da 1ª página
@@ -301,15 +301,15 @@ class RemetenteRetrato(BandaDANFE):
 
     def obs_cancelamento(self):
         txt = Texto()
-        txt.name   = 'txt_obs_cancelamento'
-        txt.text   = u'cancelada'
+        txt.name = 'txt_obs_cancelamento'
+        txt.text = u'cancelada'
         # txt.top    = -0.1*cm
-        txt.top    = 3.5 * cm
-        txt.left   = 4.7 * cm
-        txt.width  = 10 * cm
+        txt.top = 3.5 * cm
+        txt.left = 4.7 * cm
+        txt.width = 10 * cm
         txt.height = 1.5 * cm
         txt.padding_top = 0.1 * cm
-        txt.style  = OBS_CANCELAMENTO
+        txt.style = OBS_CANCELAMENTO
         self.elements.insert(0, txt)
 
         lbl = LabelMargemEsquerda()
@@ -325,7 +325,7 @@ class RemetenteRetrato(BandaDANFE):
         fld = Campo()
         fld.name = 'fld_prot_cancelamento'
         fld.attribute_name = u'retCancNFe.protocolo_formatado'
-        fld.top  = 5.15 * cm
+        fld.top = 5.15 * cm
         fld.left = 7.5 * cm
         fld.width = 6.3 * cm
         fld.padding_top = 0.25 * cm
@@ -334,15 +334,15 @@ class RemetenteRetrato(BandaDANFE):
 
     def obs_cancelamento_evento(self):
         txt = Texto()
-        txt.name   = 'txt_obs_cancelamento'
-        txt.text   = u'cancelada'
+        txt.name = 'txt_obs_cancelamento'
+        txt.text = u'cancelada'
         # txt.top    = -0.1*cm
-        txt.top    = 3.5 * cm
-        txt.left   = 4.7 * cm
-        txt.width  = 10 * cm
+        txt.top = 3.5 * cm
+        txt.left = 4.7 * cm
+        txt.width = 10 * cm
         txt.height = 1.5 * cm
         txt.padding_top = 0.1 * cm
-        txt.style  = OBS_CANCELAMENTO
+        txt.style = OBS_CANCELAMENTO
         self.elements.insert(0, txt)
 
         lbl = LabelMargemEsquerda()
@@ -358,7 +358,7 @@ class RemetenteRetrato(BandaDANFE):
         fld = Campo()
         fld.name = 'fld_prot_cancelamento'
         fld.attribute_name = u'procEventoCancNFe.retEvento.protocolo_formatado'
-        fld.top  = 5.15 * cm
+        fld.top = 5.15 * cm
         fld.left = 6.85 * cm
         fld.width = 6.3 * cm
         fld.padding_top = 0.25 * cm
@@ -367,20 +367,20 @@ class RemetenteRetrato(BandaDANFE):
 
     def obs_cancelamento_com_motivo(self):
         txt = Texto()
-        txt.name   = 'txt_obs_cancelamento'
-        txt.text   = u'cancelada'
-        txt.top    = 3.5 * cm
-        txt.left   = 4.7 * cm
-        txt.width  = 10 * cm
+        txt.name = 'txt_obs_cancelamento'
+        txt.text = u'cancelada'
+        txt.top = 3.5 * cm
+        txt.left = 4.7 * cm
+        txt.width = 10 * cm
         txt.height = 1.5 * cm
         txt.padding_top = 0.1 * cm
-        txt.style  = OBS_DENEGACAO
+        txt.style = OBS_DENEGACAO
         self.elements.insert(0, txt)
 
         fld = Campo()
         fld.name = 'fld_motivo_cancelamento'
         fld.attribute_name = u'procCancNFe.cancNFe.infCanc.xJust'
-        fld.top  = 5.15 * cm
+        fld.top = 5.15 * cm
         fld.left = 4.7 * cm
         fld.width = 10 * cm
         fld.padding_top = 0.25 * cm
@@ -400,7 +400,7 @@ class RemetenteRetrato(BandaDANFE):
         fld = Campo()
         fld.name = 'fld_prot_cancelamento'
         fld.attribute_name = u'retCancNFe.protocolo_formatado'
-        fld.top  = 5.52 * cm
+        fld.top = 5.52 * cm
         fld.left = 7.5 * cm
         fld.width = 6.3 * cm
         fld.padding_top = 0.25 * cm
@@ -409,20 +409,20 @@ class RemetenteRetrato(BandaDANFE):
 
     def obs_cancelamento_com_motivo_evento(self):
         txt = Texto()
-        txt.name   = 'txt_obs_cancelamento'
-        txt.text   = u'cancelada'
-        txt.top    = 3.5 * cm
-        txt.left   = 4.7 * cm
-        txt.width  = 10 * cm
+        txt.name = 'txt_obs_cancelamento'
+        txt.text = u'cancelada'
+        txt.top = 3.5 * cm
+        txt.left = 4.7 * cm
+        txt.width = 10 * cm
         txt.height = 1.5 * cm
         txt.padding_top = 0.1 * cm
-        txt.style  = OBS_DENEGACAO
+        txt.style = OBS_DENEGACAO
         self.elements.insert(0, txt)
 
         fld = Campo()
         fld.name = 'fld_motivo_cancelamento'
         fld.attribute_name = u'procEventoCancNFe.evento.infEvento.detEvento.xJust'
-        fld.top  = 5.15 * cm
+        fld.top = 5.15 * cm
         fld.left = 4.7 * cm
         fld.width = 10 * cm
         fld.padding_top = 0.25 * cm
@@ -442,7 +442,7 @@ class RemetenteRetrato(BandaDANFE):
         fld = Campo()
         fld.name = 'fld_prot_cancelamento'
         fld.attribute_name = u'procEventoCancNFe.retEvento.protocolo_formatado'
-        fld.top  = 5.52 * cm
+        fld.top = 5.52 * cm
         fld.left = 6.85 * cm
         fld.width = 7.5 * cm
         fld.padding_top = 0.25 * cm
@@ -451,21 +451,21 @@ class RemetenteRetrato(BandaDANFE):
 
     def obs_denegacao(self):
         txt = Texto()
-        txt.name   = 'txt_obs_denegacao'
-        txt.text   = u'denegada'
+        txt.name = 'txt_obs_denegacao'
+        txt.text = u'denegada'
         # txt.top    = -0.1*cm
-        txt.top    = 3.5 * cm
-        txt.left   = 4.7 * cm
-        txt.width  = 10 * cm
+        txt.top = 3.5 * cm
+        txt.left = 4.7 * cm
+        txt.width = 10 * cm
         txt.height = 1.5 * cm
         txt.padding_top = 0.1 * cm
-        txt.style  = OBS_DENEGACAO
+        txt.style = OBS_DENEGACAO
         self.elements.insert(0, txt)
 
         fld = Campo()
         fld.name = 'fld_motivo_denegacao'
         fld.attribute_name = u'protNFe.infProt.xMotivo'
-        fld.top  = 5.15 * cm
+        fld.top = 5.15 * cm
         fld.left = 4.7 * cm
         fld.width = 10 * cm
         fld.padding_top = 0.25 * cm
@@ -485,7 +485,7 @@ class RemetenteRetrato(BandaDANFE):
         fld = Campo()
         fld.name = 'fld_prot_denegacao'
         fld.attribute_name = u'protNFe.protocolo_formatado'
-        fld.top  = 5.52 * cm
+        fld.top = 5.52 * cm
         fld.left = 7.5 * cm
         fld.width = 6.3 * cm
         fld.padding_top = 0.25 * cm
@@ -494,10 +494,10 @@ class RemetenteRetrato(BandaDANFE):
 
     def obs_contingencia_normal_scan(self):
         lbl = Texto()
-        lbl.name  = 'txt_obs_contingencia'
-        lbl.text  = u'DANFE em contingência<br /><br />impresso em decorrência de problemas técnicos'
-        lbl.top   = 6.6 * cm
-        lbl.left  = 0 * cm
+        lbl.name = 'txt_obs_contingencia'
+        lbl.text = u'DANFE em contingência<br /><br />impresso em decorrência de problemas técnicos'
+        lbl.top = 6.6 * cm
+        lbl.left = 0 * cm
         lbl.width = 19.4 * cm
         lbl.padding_top = 0.1 * cm
         lbl.style = OBS_CONTINGENCIA
@@ -505,10 +505,10 @@ class RemetenteRetrato(BandaDANFE):
 
     def obs_contingencia_dpec(self):
         lbl = Texto()
-        lbl.name  = 'txt_obs_contingencia'
-        lbl.text  = u'DANFE em contingência<br /><br />DPEC regularmente recebida pela Receita Federal do Brasil'
-        lbl.top   = 6.6 * cm
-        lbl.left  = 0 * cm
+        lbl.name = 'txt_obs_contingencia'
+        lbl.text = u'DANFE em contingência<br /><br />DPEC regularmente recebida pela Receita Federal do Brasil'
+        lbl.top = 6.6 * cm
+        lbl.left = 0 * cm
         lbl.width = 19.4 * cm
         lbl.padding_top = 0.1 * cm
         lbl.style = OBS_CONTINGENCIA
@@ -516,10 +516,10 @@ class RemetenteRetrato(BandaDANFE):
 
     def obs_sem_valor_fiscal(self):
         lbl = Texto()
-        lbl.name  = 'txt_obs_homologacao'
-        lbl.text  = u'sem valor fiscal'
-        lbl.top   = 9 * cm
-        lbl.left  = 0 * cm
+        lbl.name = 'txt_obs_homologacao'
+        lbl.text = u'sem valor fiscal'
+        lbl.top = 9 * cm
+        lbl.left = 0 * cm
         lbl.width = 19.4 * cm
         lbl.padding_top = 0.1 * cm
         lbl.style = OBS_HOMOLOGACAO
@@ -536,54 +536,54 @@ class RemetenteRetrato(BandaDANFE):
         # Dados do remetente
         #
         fld = Campo()
-        fld.nome  = 'fld_rem_nome'
+        fld.nome = 'fld_rem_nome'
         fld.attribute_name = u'NFe.infNFe.emit.xNome.valor'
-        fld.top   = 0.2 * cm
+        fld.top = 0.2 * cm
         fld.width = 8 * cm
         fld.height = 1.5 * cm
         fld.style = EMIT_NOME
         elements.append(fld)
 
         fld = Campo()
-        fld.nome  = 'fld_rem_endereco_1'
+        fld.nome = 'fld_rem_endereco_1'
         fld.attribute_name = u'NFe.endereco_emitente_formatado_linha_1'
-        fld.top   = 1.4 * cm
+        fld.top = 1.4 * cm
         fld.width = 8 * cm
         fld.height = 0.7 * cm
         fld.style = EMIT_DADOS
         elements.append(fld)
 
         fld = Campo()
-        fld.nome  = 'fld_rem_endereco_2'
+        fld.nome = 'fld_rem_endereco_2'
         fld.attribute_name = u'NFe.endereco_emitente_formatado_linha_2'
-        fld.top   = 2.2 * cm
+        fld.top = 2.2 * cm
         fld.width = 8 * cm
         fld.height = 0.7 * cm
         fld.style = EMIT_DADOS
         elements.append(fld)
 
         fld = Campo()
-        fld.nome  = 'fld_rem_endereco_3'
+        fld.nome = 'fld_rem_endereco_3'
         fld.attribute_name = u'NFe.endereco_emitente_formatado_linha_3'
-        fld.top   = 3 * cm
+        fld.top = 3 * cm
         fld.width = 8 * cm
         fld.height = 0.45 * cm
         fld.style = EMIT_DADOS
         elements.append(fld)
 
         fld = Campo()
-        fld.nome  = 'fld_rem_endereco_4'
+        fld.nome = 'fld_rem_endereco_4'
         fld.attribute_name = u'NFe.endereco_emitente_formatado_linha_4'
-        fld.top   = 3.4 * cm
+        fld.top = 3.4 * cm
         fld.width = 8 * cm
         fld.height = 0.45 * cm
         fld.style = EMIT_DADOS
         elements.append(fld)
 
         fld = Campo()
-        fld.nome  = 'fld_regime_tributario'
+        fld.nome = 'fld_regime_tributario'
         fld.attribute_name = 'NFe.crt_descricao'
-        fld.top   = 3.6 * cm
+        fld.top = 3.6 * cm
         fld.width = 8 * cm
         fld.height = 0.4 * cm
         fld.style = DADO_PRODUTO_CENTRALIZADO
@@ -610,60 +610,60 @@ class RemetenteRetrato(BandaDANFE):
         elements.append(img)
 
         fld = Campo()
-        fld.nome  = 'fld_rem_nome'
+        fld.nome = 'fld_rem_nome'
         fld.attribute_name = u'NFe.infNFe.emit.xNome.valor'
-        fld.top   = 0.2 * cm
-        fld.left  = 2.5 * cm
+        fld.top = 0.2 * cm
+        fld.left = 2.5 * cm
         fld.width = 5.5 * cm
         fld.height = 1.5 * cm
         fld.style = EMIT_NOME
         elements.append(fld)
 
         fld = Campo()
-        fld.nome  = 'fld_rem_endereco_1'
+        fld.nome = 'fld_rem_endereco_1'
         fld.attribute_name = u'NFe.endereco_emitente_formatado_linha_1'
-        fld.top   = 1.4 * cm
-        fld.left  = 2.5 * cm
+        fld.top = 1.4 * cm
+        fld.left = 2.5 * cm
         fld.width = 5.5 * cm
         fld.height = 0.7 * cm
         fld.style = EMIT_DADOS
         elements.append(fld)
 
         fld = Campo()
-        fld.nome  = 'fld_rem_endereco_2'
+        fld.nome = 'fld_rem_endereco_2'
         fld.attribute_name = u'NFe.endereco_emitente_formatado_linha_2'
-        fld.top   = 2.2 * cm
-        fld.left  = 2.5 * cm
+        fld.top = 2.2 * cm
+        fld.left = 2.5 * cm
         fld.width = 5.5 * cm
         fld.height = 0.7 * cm
         fld.style = EMIT_DADOS
         elements.append(fld)
 
         fld = Campo()
-        fld.nome  = 'fld_rem_endereco_3'
+        fld.nome = 'fld_rem_endereco_3'
         fld.attribute_name = u'NFe.endereco_emitente_formatado_linha_3'
-        fld.top   = 3 * cm
-        fld.left  = 2.5 * cm
+        fld.top = 3 * cm
+        fld.left = 2.5 * cm
         fld.width = 5.5 * cm
         fld.height = 0.45 * cm
         fld.style = EMIT_DADOS
         elements.append(fld)
 
         fld = Campo()
-        fld.nome  = 'fld_rem_endereco_4'
+        fld.nome = 'fld_rem_endereco_4'
         fld.attribute_name = u'NFe.endereco_emitente_formatado_linha_4'
-        fld.top   = 3.4 * cm
-        fld.left  = 2.5 * cm
+        fld.top = 3.4 * cm
+        fld.left = 2.5 * cm
         fld.width = 5.5 * cm
         fld.height = 0.45 * cm
         fld.style = EMIT_DADOS
         elements.append(fld)
 
         fld = Campo()
-        fld.nome  = 'fld_regime_tributario'
+        fld.nome = 'fld_regime_tributario'
         fld.attribute_name = 'NFe.crt_descricao'
-        fld.top   = 3.6 * cm
-        fld.left  = 2.5 * cm
+        fld.top = 3.6 * cm
+        fld.left = 2.5 * cm
         fld.width = 5.5 * cm
         fld.height = 0.4 * cm
         fld.style = DADO_PRODUTO_CENTRALIZADO
@@ -690,20 +690,20 @@ class RemetenteRetrato(BandaDANFE):
         elements.append(img)
 
         fld = Campo()
-        fld.nome  = 'fld_rem_nome'
+        fld.nome = 'fld_rem_nome'
         fld.attribute_name = u'NFe.infNFe.emit.xNome.valor'
-        fld.top   = 0.2 * cm
-        fld.left  = 4 * cm
+        fld.top = 0.2 * cm
+        fld.left = 4 * cm
         fld.width = 4 * cm
         fld.height = 1.4 * cm
         fld.style = EMIT_NOME
         elements.append(fld)
 
         fld = Campo()
-        fld.nome  = 'fld_rem_endereco_3'
+        fld.nome = 'fld_rem_endereco_3'
         fld.attribute_name = u'NFe.endereco_emitente_formatado_linha_3'
-        fld.top   = 2.05 * cm
-        fld.left  = 4 * cm
+        fld.top = 2.05 * cm
+        fld.left = 4 * cm
         fld.width = 4 * cm
         fld.height = 0.45 * cm
         fld.style = EMIT_DADOS
@@ -720,30 +720,30 @@ class RemetenteRetrato(BandaDANFE):
 #        elements.append(fld)
 
         fld = Campo()
-        fld.nome  = 'fld_rem_endereco_1'
+        fld.nome = 'fld_rem_endereco_1'
         fld.attribute_name = u'NFe.endereco_emitente_formatado_linha_1'
-        fld.top   = 2.5 * cm
-        fld.left  = 0 * cm
+        fld.top = 2.5 * cm
+        fld.left = 0 * cm
         fld.width = 8 * cm
         fld.height = 0.7 * cm
         fld.style = EMIT_DADOS
         elements.append(fld)
 
         fld = Campo()
-        fld.nome  = 'fld_rem_endereco_2'
+        fld.nome = 'fld_rem_endereco_2'
         fld.attribute_name = u'NFe.endereco_emitente_formatado_linha_2'
-        fld.top   = 3.2 * cm
-        fld.left  = 0 * cm
+        fld.top = 3.2 * cm
+        fld.left = 0 * cm
         fld.width = 8 * cm
         fld.height = 0.7 * cm
         fld.style = EMIT_DADOS
         elements.append(fld)
 
         fld = Campo()
-        fld.nome  = 'fld_regime_tributario'
+        fld.nome = 'fld_regime_tributario'
         fld.attribute_name = 'NFe.crt_descricao'
-        fld.top   = 3.6 * cm
-        fld.left  = 0 * cm
+        fld.top = 3.6 * cm
+        fld.left = 0 * cm
         fld.width = 8 * cm
         fld.height = 0.4 * cm
         fld.style = DADO_PRODUTO_CENTRALIZADO

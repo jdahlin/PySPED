@@ -56,7 +56,7 @@ class DetEvento(XMLNFe):
 
     def __init__(self):
         super(DetEvento, self).__init__()
-        self.versao     = TagDecimal(nome='detEvento'  , codigo='HP18', propriedade='versao', valor='1.00', raiz='/')
+        self.versao = TagDecimal(nome='detEvento'  , codigo='HP18', propriedade='versao', valor='1.00', raiz='/')
         self.descEvento = TagCaracter(nome='descEvento', codigo='HP19', tamanho=[ 5, 60, 5], raiz='//detEvento')
 
     def get_xml(self):
@@ -78,17 +78,17 @@ class InfEvento(XMLNFe):
 
     def __init__(self):
         super(InfEvento, self).__init__()
-        self.Id         = TagCaracter(nome='infEvento', codigo='HP07', tamanho=[54, 54]    , raiz='//evento', propriedade='Id')
-        self.cOrgao     = TagInteiro(nome='cOrgao'    , codigo='HP08', tamanho=[ 2, 2, 2] , raiz='//evento/infEvento')
-        self.tpAmb      = TagInteiro(nome='tpAmb'     , codigo='HP09', tamanho=[ 1, 1, 1] , raiz='//evento/infEvento', valor=2)
-        self.CNPJ       = TagCaracter(nome='CNPJ'     , codigo='HP10', tamanho=[14, 14]    , raiz='//evento/infEvento')
-        self.CPF        = TagCaracter(nome='CPF'      , codigo='HP11', tamanho=[11, 11]    , raiz='//evento/infEvento')
-        self.chNFe      = TagCaracter(nome='chNFe'    , codigo='HP12', tamanho=[44, 44, 44], raiz='//evento/infEvento')
-        self.dhEvento   = TagDataHoraUTC(nome='dhEvento' , codigo='HP13', raiz='//evento/infEvento')
-        self.tpEvento   = TagCaracter(nome='tpEvento' , codigo='HP14', tamanho=[ 6, 6, 6], raiz='//evento/infEvento')
+        self.Id = TagCaracter(nome='infEvento', codigo='HP07', tamanho=[54, 54]    , raiz='//evento', propriedade='Id')
+        self.cOrgao = TagInteiro(nome='cOrgao'    , codigo='HP08', tamanho=[ 2, 2, 2] , raiz='//evento/infEvento')
+        self.tpAmb = TagInteiro(nome='tpAmb'     , codigo='HP09', tamanho=[ 1, 1, 1] , raiz='//evento/infEvento', valor=2)
+        self.CNPJ = TagCaracter(nome='CNPJ'     , codigo='HP10', tamanho=[14, 14]    , raiz='//evento/infEvento')
+        self.CPF = TagCaracter(nome='CPF'      , codigo='HP11', tamanho=[11, 11]    , raiz='//evento/infEvento')
+        self.chNFe = TagCaracter(nome='chNFe'    , codigo='HP12', tamanho=[44, 44, 44], raiz='//evento/infEvento')
+        self.dhEvento = TagDataHoraUTC(nome='dhEvento' , codigo='HP13', raiz='//evento/infEvento')
+        self.tpEvento = TagCaracter(nome='tpEvento' , codigo='HP14', tamanho=[ 6, 6, 6], raiz='//evento/infEvento')
         self.nSeqEvento = TagInteiro(nome='nSeqEvento', codigo='HP15', tamanho=[ 1, 2, 1] , raiz='//evento/infEvento', valor=1)
-        self.verEvento  = TagDecimal(nome='verEvento' , codigo='HP16', raiz='//evento/infEvento', valor='1.00')
-        self.detEvento  = DetEvento()
+        self.verEvento = TagDecimal(nome='verEvento' , codigo='HP16', raiz='//evento/infEvento', valor='1.00')
+        self.detEvento = DetEvento()
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -115,7 +115,7 @@ class InfEvento(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.Id.xml    = arquivo
+            self.Id.xml = arquivo
             self.cOrgao.xml = arquivo
             self.tpAmb.xml = arquivo
             self.CNPJ.xml = arquivo
@@ -134,7 +134,7 @@ class Evento(XMLNFe):
 
     def __init__(self):
         super(Evento, self).__init__()
-        self.versao    = TagDecimal(nome='evento', codigo='HP04', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.00', raiz='/')
+        self.versao = TagDecimal(nome='evento', codigo='HP04', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.00', raiz='/')
         self.infEvento = InfEvento()
         self.Signature = Signature()
         # self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
@@ -167,21 +167,21 @@ class InfEventoRecebido(XMLNFe):
 
     def __init__(self):
         super(InfEventoRecebido, self).__init__()
-        self.Id          = TagCaracter(nome='infEvento'  , codigo='HR12', tamanho=[15, 15]    , raiz='//retEvento', propriedade='Id', obrigatorio=False)
-        self.tpAmb       = TagInteiro(nome='tpAmb'       , codigo='HR13', tamanho=[1, 1, 1]   , raiz='//retEvento/infEvento', valor=2)
-        self.verAplic    = TagCaracter(nome='verAplic'   , codigo='HR14', tamanho=[1, 20]     , raiz='//retEvento/infEvento')
-        self.cOrgao      = TagInteiro(nome='cOrgao'      , codigo='HR15', tamanho=[ 2, 2, 2] , raiz='//retEvento/infEvento')
-        self.cStat       = TagCaracter(nome='cStat'      , codigo='HR16', tamanho=[3, 3, 3]   , raiz='//retEvento/infEvento')
-        self.xMotivo     = TagCaracter(nome='xMotivo'    , codigo='HR17', tamanho=[1, 255]    , raiz='//retEvento/infEvento')
-        self.chNFe       = TagCaracter(nome='chNFe'      , codigo='HR18', tamanho=[44, 44, 44], raiz='//retEvento/infEvento', obrigatorio=False)
-        self.tpEvento    = TagCaracter(nome='tpEvento'   , codigo='HR19', tamanho=[ 6, 6, 6], raiz='//retEvento/infEvento', obrigatorio=False)
-        self.xEvento     = TagCaracter(nome='xEvento'    , codigo='HR20', tamanho=[ 5, 60, 5], raiz='//retEvento/infEvento', obrigatorio=False)
-        self.nSeqEvento  = TagInteiro(nome='nSeqEvento'  , codigo='HR21', tamanho=[ 1, 2, 1] , raiz='//retEvento/infEvento', obrigatorio=False)
-        self.CNPJDest    = TagCaracter(nome='CNPJDest'   , codigo='HR22', tamanho=[14, 14]    , raiz='//retEvento/infEvento', obrigatorio=False)
-        self.CPFDest     = TagCaracter(nome='CPFDest'    , codigo='HR23', tamanho=[11, 11]    , raiz='//retEvento/infEvento', obrigatorio=False)
-        self.emailDest   = TagCaracter(nome='emailDest'  , codigo='HR24', tamanho=[1, 60]     , raiz='//retEvento/infEvento', obrigatorio=False)
+        self.Id = TagCaracter(nome='infEvento'  , codigo='HR12', tamanho=[15, 15]    , raiz='//retEvento', propriedade='Id', obrigatorio=False)
+        self.tpAmb = TagInteiro(nome='tpAmb'       , codigo='HR13', tamanho=[1, 1, 1]   , raiz='//retEvento/infEvento', valor=2)
+        self.verAplic = TagCaracter(nome='verAplic'   , codigo='HR14', tamanho=[1, 20]     , raiz='//retEvento/infEvento')
+        self.cOrgao = TagInteiro(nome='cOrgao'      , codigo='HR15', tamanho=[ 2, 2, 2] , raiz='//retEvento/infEvento')
+        self.cStat = TagCaracter(nome='cStat'      , codigo='HR16', tamanho=[3, 3, 3]   , raiz='//retEvento/infEvento')
+        self.xMotivo = TagCaracter(nome='xMotivo'    , codigo='HR17', tamanho=[1, 255]    , raiz='//retEvento/infEvento')
+        self.chNFe = TagCaracter(nome='chNFe'      , codigo='HR18', tamanho=[44, 44, 44], raiz='//retEvento/infEvento', obrigatorio=False)
+        self.tpEvento = TagCaracter(nome='tpEvento'   , codigo='HR19', tamanho=[ 6, 6, 6], raiz='//retEvento/infEvento', obrigatorio=False)
+        self.xEvento = TagCaracter(nome='xEvento'    , codigo='HR20', tamanho=[ 5, 60, 5], raiz='//retEvento/infEvento', obrigatorio=False)
+        self.nSeqEvento = TagInteiro(nome='nSeqEvento'  , codigo='HR21', tamanho=[ 1, 2, 1] , raiz='//retEvento/infEvento', obrigatorio=False)
+        self.CNPJDest = TagCaracter(nome='CNPJDest'   , codigo='HR22', tamanho=[14, 14]    , raiz='//retEvento/infEvento', obrigatorio=False)
+        self.CPFDest = TagCaracter(nome='CPFDest'    , codigo='HR23', tamanho=[11, 11]    , raiz='//retEvento/infEvento', obrigatorio=False)
+        self.emailDest = TagCaracter(nome='emailDest'  , codigo='HR24', tamanho=[1, 60]     , raiz='//retEvento/infEvento', obrigatorio=False)
         self.dhRegEvento = TagDataHoraUTC(nome='dhRegEvento', codigo='HR25', raiz='//retEvento/infEvento', obrigatorio=False)
-        self.nProt       = TagCaracter(nome='nProt'      , codigo='HR26', tamanho=[15, 15, 15], raiz='//retEvento/infEvento', obrigatorio=False)
+        self.nProt = TagCaracter(nome='nProt'      , codigo='HR26', tamanho=[15, 15, 15], raiz='//retEvento/infEvento', obrigatorio=False)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -214,21 +214,21 @@ class InfEventoRecebido(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.Id.xml          = arquivo
-            self.tpAmb.xml       = arquivo
-            self.verAplic.xml    = arquivo
-            self.cOrgao.xml      = arquivo
-            self.cStat.xml       = arquivo
-            self.xMotivo.xml     = arquivo
-            self.chNFe.xml       = arquivo
-            self.tpEvento.xml    = arquivo
-            self.xEvento.xml     = arquivo
-            self.nSeqEvento.xml  = arquivo
-            self.CNPJDest.xml    = arquivo
-            self.CPFDest.xml     = arquivo
-            self.emailDest.xml   = arquivo
+            self.Id.xml = arquivo
+            self.tpAmb.xml = arquivo
+            self.verAplic.xml = arquivo
+            self.cOrgao.xml = arquivo
+            self.cStat.xml = arquivo
+            self.xMotivo.xml = arquivo
+            self.chNFe.xml = arquivo
+            self.tpEvento.xml = arquivo
+            self.xEvento.xml = arquivo
+            self.nSeqEvento.xml = arquivo
+            self.CNPJDest.xml = arquivo
+            self.CPFDest.xml = arquivo
+            self.emailDest.xml = arquivo
             self.dhRegEvento.xml = arquivo
-            self.nProt.xml       = arquivo
+            self.nProt.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -257,7 +257,7 @@ class RetEvento(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.infEvento.xml   = arquivo
+            self.infEvento.xml = arquivo
             self.Signature.xml = self._le_noh('//retEvento/sig:Signature')
 
     xml = property(get_xml, set_xml)
@@ -323,8 +323,8 @@ class EnvEvento(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.versao.xml    = arquivo
-            self.idLote.xml    = arquivo
+            self.versao.xml = arquivo
+            self.idLote.xml = arquivo
             self.evento = self.le_grupo('//envEvento/evento', Evento)
 
     xml = property(get_xml, set_xml)
@@ -334,13 +334,13 @@ class RetEnvEvento(XMLNFe):
 
     def __init__(self):
         super(RetEnvEvento, self).__init__()
-        self.versao    = TagDecimal(nome='retEnvEvento', codigo='HR02', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.00', raiz='/')
-        self.idLote    = TagInteiro(nome='idLote'     , codigo='HR03', tamanho=[1, 15, 1], raiz='//retEnvEvento')
-        self.tpAmb     = TagInteiro(nome='tpAmb'       , codigo='HR04', tamanho=[1, 1, 1]   , raiz='//retEnvEvento', valor=2)
-        self.verAplic  = TagCaracter(nome='verAplic'   , codigo='HR05', tamanho=[1, 20]     , raiz='//retEnvEvento')
-        self.cOrgao    = TagInteiro(nome='cOrgao'      , codigo='HR06', tamanho=[ 2, 2, 2] , raiz='//retEnvEvento')
-        self.cStat     = TagCaracter(nome='cStat'      , codigo='HR07', tamanho=[3, 3, 3]   , raiz='//retEnvEvento')
-        self.xMotivo   = TagCaracter(nome='xMotivo'    , codigo='HR08', tamanho=[1, 255]    , raiz='//retEnvEvento')
+        self.versao = TagDecimal(nome='retEnvEvento', codigo='HR02', propriedade='versao', namespace=NAMESPACE_NFE, valor='1.00', raiz='/')
+        self.idLote = TagInteiro(nome='idLote'     , codigo='HR03', tamanho=[1, 15, 1], raiz='//retEnvEvento')
+        self.tpAmb = TagInteiro(nome='tpAmb'       , codigo='HR04', tamanho=[1, 1, 1]   , raiz='//retEnvEvento', valor=2)
+        self.verAplic = TagCaracter(nome='verAplic'   , codigo='HR05', tamanho=[1, 20]     , raiz='//retEnvEvento')
+        self.cOrgao = TagInteiro(nome='cOrgao'      , codigo='HR06', tamanho=[ 2, 2, 2] , raiz='//retEnvEvento')
+        self.cStat = TagCaracter(nome='cStat'      , codigo='HR07', tamanho=[3, 3, 3]   , raiz='//retEnvEvento')
+        self.xMotivo = TagCaracter(nome='xMotivo'    , codigo='HR08', tamanho=[1, 255]    , raiz='//retEnvEvento')
         self.retEvento = []
 
         #
@@ -374,13 +374,13 @@ class RetEnvEvento(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.versao.xml    = arquivo
-            self.idLote.xml    = arquivo
-            self.tpAmb.xml       = arquivo
-            self.verAplic.xml    = arquivo
-            self.cOrgao.xml      = arquivo
-            self.cStat.xml       = arquivo
-            self.xMotivo.xml     = arquivo
+            self.versao.xml = arquivo
+            self.idLote.xml = arquivo
+            self.tpAmb.xml = arquivo
+            self.verAplic.xml = arquivo
+            self.cOrgao.xml = arquivo
+            self.cStat.xml = arquivo
+            self.xMotivo.xml = arquivo
             self.retEvento = self.le_grupo('//retEnvEvento/retEvento', RetEvento)
 
             #

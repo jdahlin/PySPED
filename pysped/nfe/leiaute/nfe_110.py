@@ -53,10 +53,10 @@ class ISSQN(XMLNFe):
 
     def __init__(self):
         super(ISSQN, self).__init__()
-        self.vBC       = TagDecimal(nome='vBC'      , codigo='U02', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/imposto/ISSQN')
-        self.vAliq     = TagDecimal(nome='vAliq'    , codigo='U03', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='//det/imposto/ISSQN')
-        self.vISSQN    = TagDecimal(nome='vISSQN'   , codigo='U04', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/imposto/ISSQN')
-        self.cMunFG    = TagInteiro(nome='cMunFG'   , codigo='U05', tamanho=[7, 7, 7], raiz='//det/imposto/ISSQN')
+        self.vBC = TagDecimal(nome='vBC'      , codigo='U02', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/imposto/ISSQN')
+        self.vAliq = TagDecimal(nome='vAliq'    , codigo='U03', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='//det/imposto/ISSQN')
+        self.vISSQN = TagDecimal(nome='vISSQN'   , codigo='U04', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/imposto/ISSQN')
+        self.cMunFG = TagInteiro(nome='cMunFG'   , codigo='U05', tamanho=[7, 7, 7], raiz='//det/imposto/ISSQN')
         self.cListServ = TagInteiro(nome='cListServ', codigo='U06', tamanho=[3, 4]   , raiz='//det/imposto/ISSQN')
 
     def get_xml(self):
@@ -75,10 +75,10 @@ class ISSQN(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.vBC.xml       = arquivo
-            self.vAliq.xml     = arquivo
-            self.vISSQN.xml    = arquivo
-            self.cMunFG.xml    = arquivo
+            self.vBC.xml = arquivo
+            self.vAliq.xml = arquivo
+            self.vISSQN.xml = arquivo
+            self.cMunFG.xml = arquivo
             self.cListServ.xml = arquivo
 
     xml = property(get_xml, set_xml)
@@ -103,11 +103,11 @@ class COFINSST(XMLNFe):
 
     def __init__(self):
         super(COFINSST, self).__init__()
-        self.vBC       = TagDecimal(nome='vBC'      , codigo='T02', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/imposto/COFINS/COFINSST')
-        self.pCOFINS   = TagDecimal(nome='pCOFINS'  , codigo='T03', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='//det/imposto/COFINS/COFINSST')
-        self.qBCProd   = TagDecimal(nome='qBCProd'  , codigo='T04', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='//det/imposto/COFINS/COFINSST')
+        self.vBC = TagDecimal(nome='vBC'      , codigo='T02', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/imposto/COFINS/COFINSST')
+        self.pCOFINS = TagDecimal(nome='pCOFINS'  , codigo='T03', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='//det/imposto/COFINS/COFINSST')
+        self.qBCProd = TagDecimal(nome='qBCProd'  , codigo='T04', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='//det/imposto/COFINS/COFINSST')
         self.vAliqProd = TagDecimal(nome='vAliqProd', codigo='T05', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='//det/imposto/COFINS/COFINSST')
-        self.vCOFINS   = TagDecimal(nome='vCOFINS'  , codigo='T06', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/imposto/COFINS/COFINSST')
+        self.vCOFINS = TagDecimal(nome='vCOFINS'  , codigo='T06', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/imposto/COFINS/COFINSST')
 
     def get_xml(self):
         if not (self.vBC.valor or self.pCOFINS.valor or self.qBCProd.valor or self.vAliqProd.valor or self.vCOFINS.valor):
@@ -129,11 +129,11 @@ class COFINSST(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.vBC.xml       = arquivo
-            self.pCOFINS.xml   = arquivo
-            self.qBCProd.xml   = arquivo
+            self.vBC.xml = arquivo
+            self.pCOFINS.xml = arquivo
+            self.qBCProd.xml = arquivo
             self.vAliqProd.xml = arquivo
-            self.vCOFINS.xml   = arquivo
+            self.vCOFINS.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -180,10 +180,10 @@ class TagCSTCOFINS(TagCaracter):
         #
         # Definimos todas as tags como não obrigatórias
         #
-        self.grupo_cofins.vBC.obrigatorio       = False
-        self.grupo_cofins.pCOFINS.obrigatorio   = False
-        self.grupo_cofins.vCOFINS.obrigatorio   = False
-        self.grupo_cofins.qBCProd.obrigatorio   = False
+        self.grupo_cofins.vBC.obrigatorio = False
+        self.grupo_cofins.pCOFINS.obrigatorio = False
+        self.grupo_cofins.vCOFINS.obrigatorio = False
+        self.grupo_cofins.qBCProd.obrigatorio = False
         self.grupo_cofins.vAliqProd.obrigatorio = False
 
         #
@@ -191,10 +191,10 @@ class TagCSTCOFINS(TagCaracter):
         # grupo COFINS ao redefinirmos o código da situação
         # tributária
         #
-        self.grupo_cofins.vBC.valor       = '0.00'
-        self.grupo_cofins.pCOFINS.valor   = '0.00'
-        self.grupo_cofins.vCOFINS.valor   = '0.00'
-        self.grupo_cofins.qBCProd.valor   = '0.00'
+        self.grupo_cofins.vBC.valor = '0.00'
+        self.grupo_cofins.pCOFINS.valor = '0.00'
+        self.grupo_cofins.vCOFINS.valor = '0.00'
+        self.grupo_cofins.qBCProd.valor = '0.00'
         self.grupo_cofins.vAliqProd.valor = '0.00'
 
         #
@@ -206,9 +206,9 @@ class TagCSTCOFINS(TagCaracter):
             self.grupo_cofins.nome_tag = 'COFINSAliq'
             self.grupo_cofins.nome_tag_txt = 'S02'
             self.grupo_cofins.raiz_tag = '//det/imposto/COFINS/COFINSAliq'
-            self.grupo_cofins.vBC.obrigatorio       = True
-            self.grupo_cofins.pCOFINS.obrigatorio   = True
-            self.grupo_cofins.vCOFINS.obrigatorio   = True
+            self.grupo_cofins.vBC.obrigatorio = True
+            self.grupo_cofins.pCOFINS.obrigatorio = True
+            self.grupo_cofins.vCOFINS.obrigatorio = True
             # self.grupo_cofins.qBCProd.obrigatorio   = True
             # self.grupo_cofins.vAliqProd.obrigatorio = True
 
@@ -218,8 +218,8 @@ class TagCSTCOFINS(TagCaracter):
             self.grupo_cofins.raiz_tag = '//det/imposto/COFINS/COFINSQtde'
             # self.grupo_cofins.vBC.obrigatorio       = True
             # self.grupo_cofins.pCOFINS.obrigatorio   = True
-            self.grupo_cofins.vCOFINS.obrigatorio   = True
-            self.grupo_cofins.qBCProd.obrigatorio   = True
+            self.grupo_cofins.vCOFINS.obrigatorio = True
+            self.grupo_cofins.qBCProd.obrigatorio = True
             self.grupo_cofins.vAliqProd.obrigatorio = True
 
         elif self.valor in ('04', '06', '07', '08', '09'):
@@ -236,20 +236,20 @@ class TagCSTCOFINS(TagCaracter):
             self.grupo_cofins.nome_tag = 'COFINSOutr'
             self.grupo_cofins.nome_tag_txt = 'S05'
             self.grupo_cofins.raiz_tag = '//det/imposto/COFINS/COFINSOutr'
-            self.grupo_cofins.vBC.obrigatorio       = True
-            self.grupo_cofins.pCOFINS.obrigatorio   = True
-            self.grupo_cofins.vCOFINS.obrigatorio   = True
-            self.grupo_cofins.qBCProd.obrigatorio   = True
+            self.grupo_cofins.vBC.obrigatorio = True
+            self.grupo_cofins.pCOFINS.obrigatorio = True
+            self.grupo_cofins.vCOFINS.obrigatorio = True
+            self.grupo_cofins.qBCProd.obrigatorio = True
             self.grupo_cofins.vAliqProd.obrigatorio = True
 
         #
         # Redefine a raiz para todas as tags do grupo COFINS
         #
-        self.grupo_cofins.CST.raiz       = self.grupo_cofins.raiz_tag
-        self.grupo_cofins.vBC.raiz       = self.grupo_cofins.raiz_tag
-        self.grupo_cofins.pCOFINS.raiz   = self.grupo_cofins.raiz_tag
-        self.grupo_cofins.vCOFINS.raiz   = self.grupo_cofins.raiz_tag
-        self.grupo_cofins.qBCProd.raiz   = self.grupo_cofins.raiz_tag
+        self.grupo_cofins.CST.raiz = self.grupo_cofins.raiz_tag
+        self.grupo_cofins.vBC.raiz = self.grupo_cofins.raiz_tag
+        self.grupo_cofins.pCOFINS.raiz = self.grupo_cofins.raiz_tag
+        self.grupo_cofins.vCOFINS.raiz = self.grupo_cofins.raiz_tag
+        self.grupo_cofins.qBCProd.raiz = self.grupo_cofins.raiz_tag
         self.grupo_cofins.vAliqProd.raiz = self.grupo_cofins.raiz_tag
 
     def get_valor(self):
@@ -262,13 +262,13 @@ class COFINS(XMLNFe):
 
     def __init__(self):
         super(COFINS, self).__init__()
-        self.vBC       = TagDecimal(nome='vBC'      , codigo='S07', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='')
-        self.pCOFINS   = TagDecimal(nome='pCOFINS'  , codigo='S08', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='')
-        self.vCOFINS   = TagDecimal(nome='vCOFINS'  , codigo='S11', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='')
-        self.qBCProd   = TagDecimal(nome='qBCProd'  , codigo='S09', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='')
+        self.vBC = TagDecimal(nome='vBC'      , codigo='S07', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='')
+        self.pCOFINS = TagDecimal(nome='pCOFINS'  , codigo='S08', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='')
+        self.vCOFINS = TagDecimal(nome='vCOFINS'  , codigo='S11', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='')
+        self.qBCProd = TagDecimal(nome='qBCProd'  , codigo='S09', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='')
         self.vAliqProd = TagDecimal(nome='vAliqProd', codigo='S10', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='')
 
-        self.CST      = TagCSTCOFINS()
+        self.CST = TagCSTCOFINS()
         self.CST.grupo_cofins = self
         self.CST.valor = '07'
         self.nome_tag = 'COFINSNT'
@@ -327,11 +327,11 @@ class COFINS(XMLNFe):
             #
             # Agora podemos ler os valores tranquilamente...
             #
-            self.CST.xml       = arquivo
-            self.vBC.xml       = arquivo
-            self.pCOFINS.xml   = arquivo
-            self.vCOFINS.xml   = arquivo
-            self.qBCProd.xml   = arquivo
+            self.CST.xml = arquivo
+            self.vBC.xml = arquivo
+            self.pCOFINS.xml = arquivo
+            self.vCOFINS.xml = arquivo
+            self.qBCProd.xml = arquivo
             self.vAliqProd.xml = arquivo
 
     xml = property(get_xml, set_xml)
@@ -384,11 +384,11 @@ class PISST(XMLNFe):
 
     def __init__(self):
         super(PISST, self).__init__()
-        self.vBC       = TagDecimal(nome='vBC'      , codigo='R02', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/imposto/PIS/PISST')
-        self.pPIS      = TagDecimal(nome='pPIS'     , codigo='R03', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='//det/imposto/PIS/PISST')
-        self.qBCProd   = TagDecimal(nome='qBCProd'  , codigo='R04', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='//det/imposto/PIS/PISST')
+        self.vBC = TagDecimal(nome='vBC'      , codigo='R02', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/imposto/PIS/PISST')
+        self.pPIS = TagDecimal(nome='pPIS'     , codigo='R03', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='//det/imposto/PIS/PISST')
+        self.qBCProd = TagDecimal(nome='qBCProd'  , codigo='R04', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='//det/imposto/PIS/PISST')
         self.vAliqProd = TagDecimal(nome='vAliqProd', codigo='R05', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='//det/imposto/PIS/PISST')
-        self.vPIS      = TagDecimal(nome='vPIS'     , codigo='R06', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/imposto/PIS/PISST')
+        self.vPIS = TagDecimal(nome='vPIS'     , codigo='R06', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/imposto/PIS/PISST')
 
     def get_xml(self):
         if not (self.vBC.valor or self.pPIS.valor or self.qBCProd.valor or self.vAliqProd.valor or self.vPIS.valor):
@@ -410,11 +410,11 @@ class PISST(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.vBC.xml       = arquivo
-            self.pPIS.xml      = arquivo
-            self.qBCProd.xml   = arquivo
+            self.vBC.xml = arquivo
+            self.pPIS.xml = arquivo
+            self.qBCProd.xml = arquivo
             self.vAliqProd.xml = arquivo
-            self.vPIS.xml      = arquivo
+            self.vPIS.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -461,10 +461,10 @@ class TagCSTPIS(TagCaracter):
         #
         # Definimos todas as tags como não obrigatórias
         #
-        self.grupo_pis.vBC.obrigatorio       = False
-        self.grupo_pis.pPIS.obrigatorio      = False
-        self.grupo_pis.vPIS.obrigatorio      = False
-        self.grupo_pis.qBCProd.obrigatorio   = False
+        self.grupo_pis.vBC.obrigatorio = False
+        self.grupo_pis.pPIS.obrigatorio = False
+        self.grupo_pis.vPIS.obrigatorio = False
+        self.grupo_pis.qBCProd.obrigatorio = False
         self.grupo_pis.vAliqProd.obrigatorio = False
 
         #
@@ -472,10 +472,10 @@ class TagCSTPIS(TagCaracter):
         # grupo PIS ao redefinirmos o código da situação
         # tributária
         #
-        self.grupo_pis.vBC.valor       = '0.00'
-        self.grupo_pis.pPIS.valor      = '0.00'
-        self.grupo_pis.vPIS.valor      = '0.00'
-        self.grupo_pis.qBCProd.valor   = '0.00'
+        self.grupo_pis.vBC.valor = '0.00'
+        self.grupo_pis.pPIS.valor = '0.00'
+        self.grupo_pis.vPIS.valor = '0.00'
+        self.grupo_pis.qBCProd.valor = '0.00'
         self.grupo_pis.vAliqProd.valor = '0.00'
 
         #
@@ -487,9 +487,9 @@ class TagCSTPIS(TagCaracter):
             self.grupo_pis.nome_tag = 'PISAliq'
             self.grupo_pis.nome_tag_txt = 'Q02'
             self.grupo_pis.raiz_tag = '//det/imposto/PIS/PISAliq'
-            self.grupo_pis.vBC.obrigatorio       = True
-            self.grupo_pis.pPIS.obrigatorio      = True
-            self.grupo_pis.vPIS.obrigatorio      = True
+            self.grupo_pis.vBC.obrigatorio = True
+            self.grupo_pis.pPIS.obrigatorio = True
+            self.grupo_pis.vPIS.obrigatorio = True
             # self.grupo_pis.qBCProd.obrigatorio   = True
             # self.grupo_pis.vAliqProd.obrigatorio = True
 
@@ -499,8 +499,8 @@ class TagCSTPIS(TagCaracter):
             self.grupo_pis.raiz_tag = '//det/imposto/PIS/PISQtde'
             # self.grupo_pis.vBC.obrigatorio       = True
             # self.grupo_pis.pPIS.obrigatorio      = True
-            self.grupo_pis.vPIS.obrigatorio      = True
-            self.grupo_pis.qBCProd.obrigatorio   = True
+            self.grupo_pis.vPIS.obrigatorio = True
+            self.grupo_pis.qBCProd.obrigatorio = True
             self.grupo_pis.vAliqProd.obrigatorio = True
 
         elif self.valor in ('04', '06', '07', '08', '09'):
@@ -517,20 +517,20 @@ class TagCSTPIS(TagCaracter):
             self.grupo_pis.nome_tag = 'PISOutr'
             self.grupo_pis.nome_tag_txt = 'Q05'
             self.grupo_pis.raiz_tag = '//det/imposto/PIS/PISOutr'
-            self.grupo_pis.vBC.obrigatorio       = True
-            self.grupo_pis.pPIS.obrigatorio      = True
-            self.grupo_pis.vPIS.obrigatorio      = True
-            self.grupo_pis.qBCProd.obrigatorio   = True
+            self.grupo_pis.vBC.obrigatorio = True
+            self.grupo_pis.pPIS.obrigatorio = True
+            self.grupo_pis.vPIS.obrigatorio = True
+            self.grupo_pis.qBCProd.obrigatorio = True
             self.grupo_pis.vAliqProd.obrigatorio = True
 
         #
         # Redefine a raiz para todas as tags do grupo PIS
         #
-        self.grupo_pis.CST.raiz       = self.grupo_pis.raiz_tag
-        self.grupo_pis.vBC.raiz       = self.grupo_pis.raiz_tag
-        self.grupo_pis.pPIS.raiz      = self.grupo_pis.raiz_tag
-        self.grupo_pis.vPIS.raiz      = self.grupo_pis.raiz_tag
-        self.grupo_pis.qBCProd.raiz   = self.grupo_pis.raiz_tag
+        self.grupo_pis.CST.raiz = self.grupo_pis.raiz_tag
+        self.grupo_pis.vBC.raiz = self.grupo_pis.raiz_tag
+        self.grupo_pis.pPIS.raiz = self.grupo_pis.raiz_tag
+        self.grupo_pis.vPIS.raiz = self.grupo_pis.raiz_tag
+        self.grupo_pis.qBCProd.raiz = self.grupo_pis.raiz_tag
         self.grupo_pis.vAliqProd.raiz = self.grupo_pis.raiz_tag
 
     def get_valor(self):
@@ -543,13 +543,13 @@ class PIS(XMLNFe):
 
     def __init__(self):
         super(PIS, self).__init__()
-        self.vBC       = TagDecimal(nome='vBC'      , codigo='Q07', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='')
-        self.pPIS      = TagDecimal(nome='pPIS'     , codigo='Q08', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='')
-        self.vPIS      = TagDecimal(nome='vPIS'     , codigo='Q09', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='')
-        self.qBCProd   = TagDecimal(nome='qBCProd'  , codigo='Q10', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='')
+        self.vBC = TagDecimal(nome='vBC'      , codigo='Q07', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='')
+        self.pPIS = TagDecimal(nome='pPIS'     , codigo='Q08', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='')
+        self.vPIS = TagDecimal(nome='vPIS'     , codigo='Q09', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='')
+        self.qBCProd = TagDecimal(nome='qBCProd'  , codigo='Q10', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='')
         self.vAliqProd = TagDecimal(nome='vAliqProd', codigo='Q11', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='')
 
-        self.CST      = TagCSTPIS()
+        self.CST = TagCSTPIS()
         self.CST.grupo_pis = self
         self.CST.valor = '07'
         self.nome_tag = 'PISNT'
@@ -608,11 +608,11 @@ class PIS(XMLNFe):
             #
             # Agora podemos ler os valores tranquilamente...
             #
-            self.CST.xml       = arquivo
-            self.vBC.xml       = arquivo
-            self.pPIS.xml      = arquivo
-            self.vPIS.xml      = arquivo
-            self.qBCProd.xml   = arquivo
+            self.CST.xml = arquivo
+            self.vBC.xml = arquivo
+            self.pPIS.xml = arquivo
+            self.vPIS.xml = arquivo
+            self.qBCProd.xml = arquivo
             self.vAliqProd.xml = arquivo
 
     xml = property(get_xml, set_xml)
@@ -665,10 +665,10 @@ class II(XMLNFe):
 
     def __init__(self):
         super(II, self).__init__()
-        self.vBC      = TagDecimal(nome='vBC'     , codigo='P02', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/imposto/II')
+        self.vBC = TagDecimal(nome='vBC'     , codigo='P02', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/imposto/II')
         self.vDespAdu = TagDecimal(nome='vDespAd', codigo='P03', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/imposto/II')
-        self.vII      = TagDecimal(nome='vII'     , codigo='P04', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/imposto/II')
-        self.vIOF     = TagDecimal(nome='vIOF'    , codigo='P05', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/imposto/II')
+        self.vII = TagDecimal(nome='vII'     , codigo='P04', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/imposto/II')
+        self.vIOF = TagDecimal(nome='vIOF'    , codigo='P05', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/imposto/II')
 
     def get_xml(self):
         if not (self.vBC.valor or self.vDespAdu.valor or self.vII.valor or self.vIOF.valor):
@@ -688,10 +688,10 @@ class II(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.vBC.xml      = arquivo
+            self.vBC.xml = arquivo
             self.vDespAdu.xml = arquivo
-            self.vII.xml      = arquivo
-            self.vIOF.xml     = arquivo
+            self.vII.xml = arquivo
+            self.vIOF.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -729,22 +729,22 @@ class TagCSTIPI(TagCaracter):
         #
         # Definimos todas as tags como não obrigatórias
         #
-        self.grupo_ipi.vBC.obrigatorio   = False
+        self.grupo_ipi.vBC.obrigatorio = False
         self.grupo_ipi.qUnid.obrigatorio = False
         self.grupo_ipi.vUnid.obrigatorio = False
-        self.grupo_ipi.pIPI.obrigatorio  = False
-        self.grupo_ipi.vIPI.obrigatorio  = False
+        self.grupo_ipi.pIPI.obrigatorio = False
+        self.grupo_ipi.vIPI.obrigatorio = False
 
         #
         # Por segurança, zeramos os valores das tags do
         # grupo IPI ao redefinirmos o código da situação
         # tributária
         #
-        self.grupo_ipi.vBC.valor   = '0.00'
+        self.grupo_ipi.vBC.valor = '0.00'
         self.grupo_ipi.qUnid.valor = '0.00'
         self.grupo_ipi.vUnid.valor = '0.00'
-        self.grupo_ipi.pIPI.valor  = '0.00'
-        self.grupo_ipi.vIPI.valor  = '0.00'
+        self.grupo_ipi.pIPI.valor = '0.00'
+        self.grupo_ipi.vIPI.valor = '0.00'
 
         #
         # Para cada código de situação tributária,
@@ -755,11 +755,11 @@ class TagCSTIPI(TagCaracter):
             self.grupo_ipi.nome_tag = 'IPITrib'
             self.grupo_ipi.nome_tag_txt = 'O07'
             self.grupo_ipi.raiz_tag = '//det/imposto/IPI/IPITrib'
-            self.grupo_ipi.vBC.obrigatorio   = True
+            self.grupo_ipi.vBC.obrigatorio = True
             self.grupo_ipi.qUnid.obrigatorio = True
             self.grupo_ipi.vUnid.obrigatorio = True
-            self.grupo_ipi.pIPI.obrigatorio  = True
-            self.grupo_ipi.vIPI.obrigatorio  = True
+            self.grupo_ipi.pIPI.obrigatorio = True
+            self.grupo_ipi.vIPI.obrigatorio = True
 
         else:
             self.grupo_ipi.nome_tag = 'IPINT'
@@ -769,12 +769,12 @@ class TagCSTIPI(TagCaracter):
         #
         # Redefine a raiz para todas as tags do grupo IPI
         #
-        self.grupo_ipi.CST.raiz   = self.grupo_ipi.raiz_tag
-        self.grupo_ipi.vBC.raiz   = self.grupo_ipi.raiz_tag
+        self.grupo_ipi.CST.raiz = self.grupo_ipi.raiz_tag
+        self.grupo_ipi.vBC.raiz = self.grupo_ipi.raiz_tag
         self.grupo_ipi.qUnid.raiz = self.grupo_ipi.raiz_tag
         self.grupo_ipi.vUnid.raiz = self.grupo_ipi.raiz_tag
-        self.grupo_ipi.pIPI.raiz  = self.grupo_ipi.raiz_tag
-        self.grupo_ipi.vIPI.raiz  = self.grupo_ipi.raiz_tag
+        self.grupo_ipi.pIPI.raiz = self.grupo_ipi.raiz_tag
+        self.grupo_ipi.vIPI.raiz = self.grupo_ipi.raiz_tag
 
     def get_valor(self):
         return self._valor_string
@@ -786,19 +786,19 @@ class IPI(XMLNFe):
 
     def __init__(self):
         super(IPI, self).__init__()
-        self.clEnq    = TagCaracter(nome='clEnq'   , codigo='O02', tamanho=[ 5, 5], raiz='//det/imposto/IPI', obrigatorio=False)
+        self.clEnq = TagCaracter(nome='clEnq'   , codigo='O02', tamanho=[ 5, 5], raiz='//det/imposto/IPI', obrigatorio=False)
         self.CNPJProd = TagCaracter(nome='CNPJProd', codigo='O03', tamanho=[14, 14], raiz='//det/imposto/IPI', obrigatorio=False)
-        self.cSelo    = TagCaracter(nome='cSelo'   , codigo='O04', tamanho=[ 1, 60], raiz='//det/imposto/IPI', obrigatorio=False)
-        self.qSelo    = TagInteiro(nome='qSelo'    , codigo='O05', tamanho=[ 1, 12], raiz='//det/imposto/IPI', obrigatorio=False)
-        self.cEnq     = TagCaracter(nome='cEnq'    , codigo='O06', tamanho=[ 3, 3], raiz='//det/imposto/IPI', valor='999')
+        self.cSelo = TagCaracter(nome='cSelo'   , codigo='O04', tamanho=[ 1, 60], raiz='//det/imposto/IPI', obrigatorio=False)
+        self.qSelo = TagInteiro(nome='qSelo'    , codigo='O05', tamanho=[ 1, 12], raiz='//det/imposto/IPI', obrigatorio=False)
+        self.cEnq = TagCaracter(nome='cEnq'    , codigo='O06', tamanho=[ 3, 3], raiz='//det/imposto/IPI', valor='999')
 
-        self.vBC      = TagDecimal(nome='vBC'      , codigo='O10', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='')
-        self.qUnid    = TagDecimal(nome='qUnid'    , codigo='O11', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='')
-        self.vUnid    = TagDecimal(nome='vUnid'    , codigo='O12', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='')
-        self.pIPI     = TagDecimal(nome='pIPI'     , codigo='O13', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='')
-        self.vIPI     = TagDecimal(nome='vIPI'     , codigo='O13', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='')
+        self.vBC = TagDecimal(nome='vBC'      , codigo='O10', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='')
+        self.qUnid = TagDecimal(nome='qUnid'    , codigo='O11', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='')
+        self.vUnid = TagDecimal(nome='vUnid'    , codigo='O12', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='')
+        self.pIPI = TagDecimal(nome='pIPI'     , codigo='O13', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='')
+        self.vIPI = TagDecimal(nome='vIPI'     , codigo='O13', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='')
 
-        self.CST      = TagCSTIPI()
+        self.CST = TagCSTIPI()
         self.CST.grupo_ipi = self
         self.CST.valor = '52'
         self.nome_tag = 'IPINT'
@@ -850,17 +850,17 @@ class IPI(XMLNFe):
             #
             # Agora podemos ler os valores tranquilamente...
             #
-            self.CST.xml      = arquivo
-            self.clEnq.xml    = arquivo
+            self.CST.xml = arquivo
+            self.clEnq.xml = arquivo
             self.CNPJProd.xml = arquivo
-            self.cSelo.xml    = arquivo
-            self.qSelo.xml    = arquivo
-            self.cEnq.xml     = arquivo
-            self.vBC.xml      = arquivo
-            self.qUnid.xml    = arquivo
-            self.vUnid.xml    = arquivo
-            self.pIPI.xml     = arquivo
-            self.vIPI.xml     = arquivo
+            self.cSelo.xml = arquivo
+            self.qSelo.xml = arquivo
+            self.cEnq.xml = arquivo
+            self.vBC.xml = arquivo
+            self.qUnid.xml = arquivo
+            self.vUnid.xml = arquivo
+            self.pIPI.xml = arquivo
+            self.vIPI.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -928,34 +928,34 @@ class TagCSTICMS(TagCaracter):
         #
         # Definimos todas as tags como não obrigatórias
         #
-        self.grupo_icms.modBC.obrigatorio    = False
-        self.grupo_icms.vBC.obrigatorio      = False
-        self.grupo_icms.pRedBC.obrigatorio   = False
-        self.grupo_icms.pICMS.obrigatorio    = False
-        self.grupo_icms.vICMS.obrigatorio    = False
-        self.grupo_icms.modBCST.obrigatorio  = False
-        self.grupo_icms.pMVAST.obrigatorio   = False
+        self.grupo_icms.modBC.obrigatorio = False
+        self.grupo_icms.vBC.obrigatorio = False
+        self.grupo_icms.pRedBC.obrigatorio = False
+        self.grupo_icms.pICMS.obrigatorio = False
+        self.grupo_icms.vICMS.obrigatorio = False
+        self.grupo_icms.modBCST.obrigatorio = False
+        self.grupo_icms.pMVAST.obrigatorio = False
         self.grupo_icms.pRedBCST.obrigatorio = False
-        self.grupo_icms.vBCST.obrigatorio    = False
-        self.grupo_icms.pICMSST.obrigatorio  = False
-        self.grupo_icms.vICMSST.obrigatorio  = False
+        self.grupo_icms.vBCST.obrigatorio = False
+        self.grupo_icms.pICMSST.obrigatorio = False
+        self.grupo_icms.vICMSST.obrigatorio = False
 
         #
         # Por segurança, zeramos os valores das tags do
         # grupo ICMS ao redefinirmos o código da situação
         # tributária
         #
-        self.grupo_icms.modBC.valor    = 3
-        self.grupo_icms.vBC.valor      = '0.00'
-        self.grupo_icms.pRedBC.valor   = '0.00'
-        self.grupo_icms.pICMS.valor    = '0.00'
-        self.grupo_icms.vICMS.valor    = '0.00'
-        self.grupo_icms.modBCST.valor  = 4
-        self.grupo_icms.pMVAST.valor   = '0.00'
+        self.grupo_icms.modBC.valor = 3
+        self.grupo_icms.vBC.valor = '0.00'
+        self.grupo_icms.pRedBC.valor = '0.00'
+        self.grupo_icms.pICMS.valor = '0.00'
+        self.grupo_icms.vICMS.valor = '0.00'
+        self.grupo_icms.modBCST.valor = 4
+        self.grupo_icms.pMVAST.valor = '0.00'
         self.grupo_icms.pRedBCST.valor = '0.00'
-        self.grupo_icms.vBCST.valor    = '0.00'
-        self.grupo_icms.pICMSST.valor  = '0.00'
-        self.grupo_icms.vICMSST.valor  = '0.00'
+        self.grupo_icms.vBCST.valor = '0.00'
+        self.grupo_icms.pICMSST.valor = '0.00'
+        self.grupo_icms.vICMSST.valor = '0.00'
 
         #
         # Para cada código de situação tributária,
@@ -966,42 +966,42 @@ class TagCSTICMS(TagCaracter):
             self.grupo_icms.nome_tag = 'ICMS00'
             self.grupo_icms.nome_tag_txt = 'N02'
             self.grupo_icms.raiz_tag = '//det/imposto/ICMS/ICMS00'
-            self.grupo_icms.modBC.obrigatorio    = True
-            self.grupo_icms.vBC.obrigatorio      = True
-            self.grupo_icms.pICMS.obrigatorio    = True
-            self.grupo_icms.vICMS.obrigatorio    = True
+            self.grupo_icms.modBC.obrigatorio = True
+            self.grupo_icms.vBC.obrigatorio = True
+            self.grupo_icms.pICMS.obrigatorio = True
+            self.grupo_icms.vICMS.obrigatorio = True
 
         elif self.valor == '10':
             self.grupo_icms.nome_tag = 'ICMS10'
             self.grupo_icms.nome_tag_txt = 'N03'
             self.grupo_icms.raiz_tag = '//det/imposto/ICMS/ICMS10'
-            self.grupo_icms.modBC.obrigatorio    = True
-            self.grupo_icms.vBC.obrigatorio      = True
-            self.grupo_icms.pICMS.obrigatorio    = True
-            self.grupo_icms.vICMS.obrigatorio    = True
-            self.grupo_icms.modBCST.obrigatorio  = True
-            self.grupo_icms.vBCST.obrigatorio    = True
-            self.grupo_icms.pICMSST.obrigatorio  = True
-            self.grupo_icms.vICMSST.obrigatorio  = True
+            self.grupo_icms.modBC.obrigatorio = True
+            self.grupo_icms.vBC.obrigatorio = True
+            self.grupo_icms.pICMS.obrigatorio = True
+            self.grupo_icms.vICMS.obrigatorio = True
+            self.grupo_icms.modBCST.obrigatorio = True
+            self.grupo_icms.vBCST.obrigatorio = True
+            self.grupo_icms.pICMSST.obrigatorio = True
+            self.grupo_icms.vICMSST.obrigatorio = True
 
         elif self.valor == '20':
             self.grupo_icms.nome_tag = 'ICMS20'
             self.grupo_icms.nome_tag_txt = 'N04'
             self.grupo_icms.raiz_tag = '//det/imposto/ICMS/ICMS20'
-            self.grupo_icms.modBC.obrigatorio    = True
-            self.grupo_icms.vBC.obrigatorio      = True
-            self.grupo_icms.pRedBC.obrigatorio   = True
-            self.grupo_icms.pICMS.obrigatorio    = True
-            self.grupo_icms.vICMS.obrigatorio    = True
+            self.grupo_icms.modBC.obrigatorio = True
+            self.grupo_icms.vBC.obrigatorio = True
+            self.grupo_icms.pRedBC.obrigatorio = True
+            self.grupo_icms.pICMS.obrigatorio = True
+            self.grupo_icms.vICMS.obrigatorio = True
 
         elif self.valor == '30':
             self.grupo_icms.nome_tag = 'ICMS30'
             self.grupo_icms.nome_tag_txt = 'N05'
             self.grupo_icms.raiz_tag = '//det/imposto/ICMS/ICMS30'
-            self.grupo_icms.modBCST.obrigatorio  = True
-            self.grupo_icms.vBCST.obrigatorio    = True
-            self.grupo_icms.pICMSST.obrigatorio  = True
-            self.grupo_icms.vICMSST.obrigatorio  = True
+            self.grupo_icms.modBCST.obrigatorio = True
+            self.grupo_icms.vBCST.obrigatorio = True
+            self.grupo_icms.pICMSST.obrigatorio = True
+            self.grupo_icms.vICMSST.obrigatorio = True
 
         elif self.valor in ('40', '41', '50'):
             self.grupo_icms.nome_tag = 'ICMS40'
@@ -1017,52 +1017,52 @@ class TagCSTICMS(TagCaracter):
             self.grupo_icms.nome_tag = 'ICMS60'
             self.grupo_icms.nome_tag_txt = 'N08'
             self.grupo_icms.raiz_tag = '//det/imposto/ICMS/ICMS60'
-            self.grupo_icms.vBCST.obrigatorio    = True
-            self.grupo_icms.vICMSST.obrigatorio  = True
+            self.grupo_icms.vBCST.obrigatorio = True
+            self.grupo_icms.vICMSST.obrigatorio = True
 
         elif self.valor == '70':
             self.grupo_icms.nome_tag = 'ICMS70'
             self.grupo_icms.nome_tag_txt = 'N09'
             self.grupo_icms.raiz_tag = '//det/imposto/ICMS/ICMS70'
-            self.grupo_icms.modBC.obrigatorio    = True
-            self.grupo_icms.vBC.obrigatorio      = True
-            self.grupo_icms.pRedBC.obrigatorio   = True
-            self.grupo_icms.pICMS.obrigatorio    = True
-            self.grupo_icms.vICMS.obrigatorio    = True
-            self.grupo_icms.modBCST.obrigatorio  = True
-            self.grupo_icms.vBCST.obrigatorio    = True
-            self.grupo_icms.pICMSST.obrigatorio  = True
-            self.grupo_icms.vICMSST.obrigatorio  = True
+            self.grupo_icms.modBC.obrigatorio = True
+            self.grupo_icms.vBC.obrigatorio = True
+            self.grupo_icms.pRedBC.obrigatorio = True
+            self.grupo_icms.pICMS.obrigatorio = True
+            self.grupo_icms.vICMS.obrigatorio = True
+            self.grupo_icms.modBCST.obrigatorio = True
+            self.grupo_icms.vBCST.obrigatorio = True
+            self.grupo_icms.pICMSST.obrigatorio = True
+            self.grupo_icms.vICMSST.obrigatorio = True
 
         elif self.valor == '90':
             self.grupo_icms.nome_tag = 'ICMS90'
             self.grupo_icms.nome_tag_txt = 'N10'
             self.grupo_icms.raiz_tag = '//det/imposto/ICMS/ICMS90'
-            self.grupo_icms.modBC.obrigatorio    = True
-            self.grupo_icms.vBC.obrigatorio      = True
-            self.grupo_icms.pICMS.obrigatorio    = True
-            self.grupo_icms.vICMS.obrigatorio    = True
-            self.grupo_icms.modBCST.obrigatorio  = True
-            self.grupo_icms.vBCST.obrigatorio    = True
-            self.grupo_icms.pICMSST.obrigatorio  = True
-            self.grupo_icms.vICMSST.obrigatorio  = True
+            self.grupo_icms.modBC.obrigatorio = True
+            self.grupo_icms.vBC.obrigatorio = True
+            self.grupo_icms.pICMS.obrigatorio = True
+            self.grupo_icms.vICMS.obrigatorio = True
+            self.grupo_icms.modBCST.obrigatorio = True
+            self.grupo_icms.vBCST.obrigatorio = True
+            self.grupo_icms.pICMSST.obrigatorio = True
+            self.grupo_icms.vICMSST.obrigatorio = True
 
         #
         # Redefine a raiz para todas as tags do grupo ICMS
         #
-        self.grupo_icms.orig.raiz     = self.grupo_icms.raiz_tag
-        self.grupo_icms.CST.raiz      = self.grupo_icms.raiz_tag
-        self.grupo_icms.modBC.raiz    = self.grupo_icms.raiz_tag
-        self.grupo_icms.vBC.raiz      = self.grupo_icms.raiz_tag
-        self.grupo_icms.pRedBC.raiz   = self.grupo_icms.raiz_tag
-        self.grupo_icms.pICMS.raiz    = self.grupo_icms.raiz_tag
-        self.grupo_icms.vICMS.raiz    = self.grupo_icms.raiz_tag
-        self.grupo_icms.modBCST.raiz  = self.grupo_icms.raiz_tag
-        self.grupo_icms.pMVAST.raiz   = self.grupo_icms.raiz_tag
+        self.grupo_icms.orig.raiz = self.grupo_icms.raiz_tag
+        self.grupo_icms.CST.raiz = self.grupo_icms.raiz_tag
+        self.grupo_icms.modBC.raiz = self.grupo_icms.raiz_tag
+        self.grupo_icms.vBC.raiz = self.grupo_icms.raiz_tag
+        self.grupo_icms.pRedBC.raiz = self.grupo_icms.raiz_tag
+        self.grupo_icms.pICMS.raiz = self.grupo_icms.raiz_tag
+        self.grupo_icms.vICMS.raiz = self.grupo_icms.raiz_tag
+        self.grupo_icms.modBCST.raiz = self.grupo_icms.raiz_tag
+        self.grupo_icms.pMVAST.raiz = self.grupo_icms.raiz_tag
         self.grupo_icms.pRedBCST.raiz = self.grupo_icms.raiz_tag
-        self.grupo_icms.vBCST.raiz    = self.grupo_icms.raiz_tag
-        self.grupo_icms.pICMSST.raiz  = self.grupo_icms.raiz_tag
-        self.grupo_icms.vICMSST.raiz  = self.grupo_icms.raiz_tag
+        self.grupo_icms.vBCST.raiz = self.grupo_icms.raiz_tag
+        self.grupo_icms.pICMSST.raiz = self.grupo_icms.raiz_tag
+        self.grupo_icms.vICMSST.raiz = self.grupo_icms.raiz_tag
 
     def get_valor(self):
         return self._valor_string
@@ -1074,21 +1074,21 @@ class ICMS(XMLNFe):
 
     def __init__(self):
         super(ICMS, self).__init__()
-        self.orig     = TagInteiro(nome='orig'    , codigo='N11', tamanho=[1, 1, 1], raiz='')
+        self.orig = TagInteiro(nome='orig'    , codigo='N11', tamanho=[1, 1, 1], raiz='')
         #                                            codigo='N12' é o campo CST
-        self.modBC    = TagInteiro(nome='modBC'   , codigo='N13', tamanho=[1, 1, 1], raiz='')
-        self.pRedBC   = TagDecimal(nome='pRedBC'  , codigo='N14', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='')
-        self.vBC      = TagDecimal(nome='vBC'     , codigo='N15', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='')
-        self.pICMS    = TagDecimal(nome='pICMS'   , codigo='N16', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='')
-        self.vICMS    = TagDecimal(nome='vICMS'   , codigo='N17', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='')
-        self.modBCST  = TagInteiro(nome='modBCST' , codigo='N18', tamanho=[1, 1, 1], raiz='')
-        self.pMVAST   = TagDecimal(nome='pMVAST'  , codigo='N19', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='')
+        self.modBC = TagInteiro(nome='modBC'   , codigo='N13', tamanho=[1, 1, 1], raiz='')
+        self.pRedBC = TagDecimal(nome='pRedBC'  , codigo='N14', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='')
+        self.vBC = TagDecimal(nome='vBC'     , codigo='N15', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='')
+        self.pICMS = TagDecimal(nome='pICMS'   , codigo='N16', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='')
+        self.vICMS = TagDecimal(nome='vICMS'   , codigo='N17', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='')
+        self.modBCST = TagInteiro(nome='modBCST' , codigo='N18', tamanho=[1, 1, 1], raiz='')
+        self.pMVAST = TagDecimal(nome='pMVAST'  , codigo='N19', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='')
         self.pRedBCST = TagDecimal(nome='pRedBCST', codigo='N20', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='')
-        self.vBCST    = TagDecimal(nome='vBCST'   , codigo='N21', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='')
-        self.pICMSST  = TagDecimal(nome='pICMSST' , codigo='N22', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='')
-        self.vICMSST  = TagDecimal(nome='vICMSST' , codigo='N23', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='')
+        self.vBCST = TagDecimal(nome='vBCST'   , codigo='N21', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='')
+        self.pICMSST = TagDecimal(nome='pICMSST' , codigo='N22', tamanho=[1, 5, 1], decimais=[0, 2, 2], raiz='')
+        self.vICMSST = TagDecimal(nome='vICMSST' , codigo='N23', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='')
 
-        self.CST      = TagCSTICMS()
+        self.CST = TagCSTICMS()
         self.CST.grupo_icms = self
         self.CST.valor = '40'
         self.nome_tag = 'ICMS40'
@@ -1224,19 +1224,19 @@ class ICMS(XMLNFe):
             #
             # Agora podemos ler os valores tranquilamente...
             #
-            self.orig.xml     = arquivo
-            self.CST.xml      = arquivo
-            self.modBC.xml    = arquivo
-            self.vBC.xml      = arquivo
-            self.pRedBC.xml   = arquivo
-            self.pICMS.xml    = arquivo
-            self.vICMS.xml    = arquivo
-            self.modBCST.xml  = arquivo
-            self.pMVAST.xml   = arquivo
+            self.orig.xml = arquivo
+            self.CST.xml = arquivo
+            self.modBC.xml = arquivo
+            self.vBC.xml = arquivo
+            self.pRedBC.xml = arquivo
+            self.pICMS.xml = arquivo
+            self.vICMS.xml = arquivo
+            self.modBCST.xml = arquivo
+            self.pMVAST.xml = arquivo
             self.pRedBCST.xml = arquivo
-            self.vBCST.xml    = arquivo
-            self.pICMSST.xml  = arquivo
-            self.vICMSST.xml  = arquivo
+            self.vBCST.xml = arquivo
+            self.pICMSST.xml = arquivo
+            self.vICMSST.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -1356,14 +1356,14 @@ class Imposto(XMLNFe):
 
     def __init__(self):
         super(Imposto, self).__init__()
-        self.ICMS     = ICMS()
-        self.IPI      = IPI()
-        self.II       = II()
-        self.PIS      = PIS()
-        self.PISST    = PISST()
-        self.COFINS   = COFINS()
+        self.ICMS = ICMS()
+        self.IPI = IPI()
+        self.II = II()
+        self.PIS = PIS()
+        self.PISST = PISST()
+        self.COFINS = COFINS()
         self.COFINSST = COFINSST()
-        self.ISSQN    = ISSQN()
+        self.ISSQN = ISSQN()
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -1381,14 +1381,14 @@ class Imposto(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.ICMS.xml     = arquivo
-            self.IPI.xml      = arquivo
-            self.II.xml       = arquivo
-            self.PIS.xml      = arquivo
-            self.PISST.xml    = arquivo
-            self.COFINS.xml   = arquivo
+            self.ICMS.xml = arquivo
+            self.IPI.xml = arquivo
+            self.II.xml = arquivo
+            self.PIS.xml = arquivo
+            self.PISST.xml = arquivo
+            self.COFINS.xml = arquivo
             self.COFINSST.xml = arquivo
-            self.ISSQN.xml    = arquivo
+            self.ISSQN.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -1412,8 +1412,8 @@ class ICMSCons(XMLNFe):
     def __init__(self):
         super(ICMSCons, self).__init__()
         self.vBCICMSSTCons = TagDecimal(nome='vBCICMSSTCons', codigo='L118', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod/comb/ICMSCons')
-        self.vICMSSTCons   = TagDecimal(nome='vICMSSTCons'  , codigo='L119', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod/comb/ICMSCons')
-        self.UFcons        = TagCaracter(nome='UFcons'      , codigo='L120', tamanho=[2, 2], raiz='//det/prod/comb/ICMSCons')
+        self.vICMSSTCons = TagDecimal(nome='vICMSSTCons'  , codigo='L119', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod/comb/ICMSCons')
+        self.UFcons = TagCaracter(nome='UFcons'      , codigo='L120', tamanho=[2, 2], raiz='//det/prod/comb/ICMSCons')
 
     def get_xml(self):
         if not (self.vBCICMSSTCons.valor or self.vICMSSTCons.valor):
@@ -1430,8 +1430,8 @@ class ICMSCons(XMLNFe):
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
             self.vBCICMSSTCons.xml = arquivo
-            self.vICMSSTCons.xml   = arquivo
-            self.UFcons.xml        = arquivo
+            self.vICMSSTCons.xml = arquivo
+            self.UFcons.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -1454,7 +1454,7 @@ class ICMSInter(XMLNFe):
     def __init__(self):
         super(ICMSInter, self).__init__()
         self.vBCICMSSTDest = TagDecimal(nome='vBCICMSSTDest', codigo='L115', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod/comb/ICMSInter')
-        self.vICMSSTDest   = TagDecimal(nome='vICMSSTDest'  , codigo='L116', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod/comb/ICMSInter')
+        self.vICMSSTDest = TagDecimal(nome='vICMSSTDest'  , codigo='L116', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod/comb/ICMSInter')
 
     def get_xml(self):
         if not (self.vBCICMSSTDest.valor or self.vICMSSTDest.valor):
@@ -1470,7 +1470,7 @@ class ICMSInter(XMLNFe):
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
             self.vBCICMSSTDest.xml = arquivo
-            self.vICMSSTDest.xml   = arquivo
+            self.vICMSSTDest.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -1491,10 +1491,10 @@ class ICMSComb(XMLNFe):
 
     def __init__(self):
         super(ICMSComb, self).__init__()
-        self.vBCICMS   = TagDecimal(nome='vBCICMS'  , codigo='L110', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod/comb/ICMSComb')
-        self.vICMS     = TagDecimal(nome='vICMS'    , codigo='L111', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod/comb/ICMSComb')
+        self.vBCICMS = TagDecimal(nome='vBCICMS'  , codigo='L110', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod/comb/ICMSComb')
+        self.vICMS = TagDecimal(nome='vICMS'    , codigo='L111', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod/comb/ICMSComb')
         self.vBCICMSST = TagDecimal(nome='vBCICMSST', codigo='L112', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod/comb/ICMSComb')
-        self.vICMSST   = TagDecimal(nome='vICMSST'  , codigo='L113', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod/comb/ICMSComb')
+        self.vICMSST = TagDecimal(nome='vICMSST'  , codigo='L113', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod/comb/ICMSComb')
 
     def get_xml(self):
         if not (self.vBCICMS.valor or self.vICMS.valor or self.vBCICMSST.valor or self.vICMSST.valor):
@@ -1511,10 +1511,10 @@ class ICMSComb(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.vBCICMS.xml   = arquivo
-            self.vICMS.xml     = arquivo
+            self.vBCICMS.xml = arquivo
+            self.vICMS.xml = arquivo
             self.vBCICMSST.xml = arquivo
-            self.vICMSST.xml   = arquivo
+            self.vICMSST.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -1537,9 +1537,9 @@ class CIDE(XMLNFe):
 
     def __init__(self):
         super(CIDE, self).__init__()
-        self.qBCProd   = TagDecimal(nome='qBCProd'  , codigo='L106', tamanho=[1, 16]  , decimais=[0, 4, 4], raiz='//det/prod/comb/CIDE')
+        self.qBCProd = TagDecimal(nome='qBCProd'  , codigo='L106', tamanho=[1, 16]  , decimais=[0, 4, 4], raiz='//det/prod/comb/CIDE')
         self.vAliqProd = TagDecimal(nome='vAliqProd', codigo='L107', tamanho=[1, 15]  , decimais=[0, 4, 4], raiz='//det/prod/comb/CIDE')
-        self.vCIDE     = TagDecimal(nome='vCIDE'    , codigo='L108', tamanho=[1, 15]  , decimais=[0, 2, 2], raiz='//det/prod/comb/CIDE')
+        self.vCIDE = TagDecimal(nome='vCIDE'    , codigo='L108', tamanho=[1, 15]  , decimais=[0, 2, 2], raiz='//det/prod/comb/CIDE')
 
     def get_xml(self):
         if not (self.qBCProd.valor or self.vAliqProd.valor or self.vCIDE.valor):
@@ -1555,9 +1555,9 @@ class CIDE(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.qBCProd.xml   = arquivo
+            self.qBCProd.xml = arquivo
             self.vAliqProd.xml = arquivo
-            self.vCIDE.xml     = arquivo
+            self.vCIDE.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -1579,13 +1579,13 @@ class Comb(XMLNFe):
 
     def __init__(self):
         super(Comb, self).__init__()
-        self.cProdANP  = TagInteiro(nome='cProdANP', codigo='L102', tamanho=[9, 9, 9], raiz='//det/prod/comb')
-        self.CODIF     = TagInteiro(nome='CODIF'   , codigo='L103', tamanho=[0, 21]   , raiz='//det/prod/comb', obrigatorio=False)
-        self.qTemp     = TagDecimal(nome='qTemp'   , codigo='L104', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='//det/prod/comb', obrigatorio=False)
-        self.CIDE      = CIDE()
-        self.ICMSComb  = ICMSComb()
+        self.cProdANP = TagInteiro(nome='cProdANP', codigo='L102', tamanho=[9, 9, 9], raiz='//det/prod/comb')
+        self.CODIF = TagInteiro(nome='CODIF'   , codigo='L103', tamanho=[0, 21]   , raiz='//det/prod/comb', obrigatorio=False)
+        self.qTemp = TagDecimal(nome='qTemp'   , codigo='L104', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='//det/prod/comb', obrigatorio=False)
+        self.CIDE = CIDE()
+        self.ICMSComb = ICMSComb()
         self.ICMSInter = ICMSInter()
-        self.ICMSCons  = ICMSCons()
+        self.ICMSCons = ICMSCons()
 
     def get_xml(self):
         if not self.cProdANP.valor:
@@ -1605,13 +1605,13 @@ class Comb(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.cProdANP.xml  = arquivo
-            self.CODIF.xml     = arquivo
-            self.qTemp.xml     = arquivo
-            self.CIDE.xml      = arquivo
-            self.ICMSComb.xml  = arquivo
+            self.cProdANP.xml = arquivo
+            self.CODIF.xml = arquivo
+            self.qTemp.xml = arquivo
+            self.CIDE.xml = arquivo
+            self.ICMSComb.xml = arquivo
             self.ICMSInter.xml = arquivo
-            self.ICMSCons.xml  = arquivo
+            self.ICMSCons.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -1641,8 +1641,8 @@ class Arma(XMLNFe):
         super(Arma, self).__init__()
         self.tpArma = TagInteiro(nome='tpArma', codigo='L02', tamanho=[1, 1], raiz='//arma')
         self.nSerie = TagInteiro(nome='nSerie', codigo='L03', tamanho=[1, 9], raiz='//arma')
-        self.nCano  = TagInteiro(nome='nCano', codigo='L04', tamanho=[1, 9], raiz='//arma')
-        self.descr  = TagCaracter(nome='descr', codigo='L05', tamanho=[1, 256], raiz='//arma')
+        self.nCano = TagInteiro(nome='nCano', codigo='L04', tamanho=[1, 9], raiz='//arma')
+        self.descr = TagCaracter(nome='descr', codigo='L05', tamanho=[1, 256], raiz='//arma')
 
     def get_xml(self):
         if not self.nSerie:
@@ -1661,8 +1661,8 @@ class Arma(XMLNFe):
         if self._le_xml(arquivo):
             self.tpArma.xml = arquivo
             self.nSerie.xml = arquivo
-            self.nCano.xml  = arquivo
-            self.descr.xml  = arquivo
+            self.nCano.xml = arquivo
+            self.descr.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -1687,9 +1687,9 @@ class Med(XMLNFe):
         super(Med, self).__init__()
         self.nLote = TagCaracter(nome='nLote', codigo='K02', tamanho=[1, 20]                    , raiz='//med')
         self.qLote = TagDecimal(nome='qLote' , codigo='K03', tamanho=[1, 11], decimais=[0, 3, 3], raiz='//med')
-        self.dFab  = TagData(nome='dFab'     , codigo='K04'                                     , raiz='//med')
-        self.dVal  = TagData(nome='dVal'     , codigo='K05'                                     , raiz='//med')
-        self.vPMC  = TagDecimal(nome='vPMC'  , codigo='K06', tamanho=[1, 15], decimais=[0, 2, 2], raiz='//med')
+        self.dFab = TagData(nome='dFab'     , codigo='K04'                                     , raiz='//med')
+        self.dVal = TagData(nome='dVal'     , codigo='K05'                                     , raiz='//med')
+        self.vPMC = TagDecimal(nome='vPMC'  , codigo='K06', tamanho=[1, 15], decimais=[0, 2, 2], raiz='//med')
 
     def get_xml(self):
         if not self.nLote.valor:
@@ -1709,9 +1709,9 @@ class Med(XMLNFe):
         if self._le_xml(arquivo):
             self.nLote.xml = arquivo
             self.qLote.xml = arquivo
-            self.dFab.xml  = arquivo
-            self.dVal.xml  = arquivo
-            self.vPMC.xml  = arquivo
+            self.dFab.xml = arquivo
+            self.dVal.xml = arquivo
+            self.vPMC.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -1735,28 +1735,28 @@ class VeicProd(XMLNFe):
 
     def __init__(self):
         super(VeicProd, self).__init__()
-        self.tpOp     = TagInteiro(nome='tpOp'    , codigo='J02', tamanho=[ 1, 1, 1], raiz='//det/prod/veicProd')
-        self.chassi   = TagCaracter(nome='chassi' , codigo='J03', tamanho=[ 1, 17]   , raiz='//det/prod/veicProd')
-        self.cCor     = TagCaracter(nome='cCor'   , codigo='J04', tamanho=[ 1, 4]   , raiz='//det/prod/veicProd')
-        self.xCor     = TagCaracter(nome='xCor'   , codigo='J05', tamanho=[ 1, 40]   , raiz='//det/prod/veicProd')
-        self.pot      = TagCaracter(nome='pot'    , codigo='J06', tamanho=[ 1, 4]   , raiz='//det/prod/veicProd')
-        self.CM3      = TagCaracter(nome='CM3'    , codigo='J07', tamanho=[ 1, 4]   , raiz='//det/prod/veicProd')
-        self.pesoL    = TagCaracter(nome='pesoL'  , codigo='J08', tamanho=[ 1, 9]   , raiz='//det/prod/veicProd')
-        self.pesoB    = TagCaracter(nome='pesoB'  , codigo='J09', tamanho=[ 1, 9]   , raiz='//det/prod/veicProd')
-        self.nSerie   = TagCaracter(nome='nSerie' , codigo='J10', tamanho=[ 1, 9]   , raiz='//det/prod/veicProd')
-        self.tpComb   = TagCaracter(nome='tpComb' , codigo='J11', tamanho=[ 1, 8]   , raiz='//det/prod/veicProd')
-        self.nMotor   = TagCaracter(nome='nMotor' , codigo='J12', tamanho=[ 1, 21]   , raiz='//det/prod/veicProd')
-        self.CMKG     = TagCaracter(nome='CMKG'   , codigo='J13', tamanho=[ 1, 9]   , raiz='//det/prod/veicProd')
-        self.dist     = TagCaracter(nome='dist'   , codigo='J14', tamanho=[ 1, 4]   , raiz='//det/prod/veicProd')
-        self.RENAVAM  = TagCaracter(nome='RENAVAM', codigo='J15', tamanho=[ 1, 9]   , raiz='//det/prod/veicProd', obrigatorio=False)
-        self.anoMod   = TagInteiro(nome='anoMod'  , codigo='J16', tamanho=[ 4, 4, 4], raiz='//det/prod/veicProd')
-        self.anoFab   = TagInteiro(nome='anoFab'  , codigo='J17', tamanho=[ 4, 4, 4], raiz='//det/prod/veicProd')
-        self.tpPint   = TagCaracter(nome='tpPint' , codigo='J18', tamanho=[ 1, 1]   , raiz='//det/prod/veicProd')
-        self.tpVeic   = TagInteiro(nome='tpVeic'  , codigo='J19', tamanho=[ 2, 2, 2], raiz='//det/prod/veicProd')
-        self.espVeic  = TagInteiro(nome='espVeic' , codigo='J20', tamanho=[ 1, 1]   , raiz='//det/prod/veicProd')
-        self.VIN      = TagCaracter(nome='VIN'    , codigo='J21', tamanho=[ 1, 1]   , raiz='//det/prod/veicProd')
+        self.tpOp = TagInteiro(nome='tpOp'    , codigo='J02', tamanho=[ 1, 1, 1], raiz='//det/prod/veicProd')
+        self.chassi = TagCaracter(nome='chassi' , codigo='J03', tamanho=[ 1, 17]   , raiz='//det/prod/veicProd')
+        self.cCor = TagCaracter(nome='cCor'   , codigo='J04', tamanho=[ 1, 4]   , raiz='//det/prod/veicProd')
+        self.xCor = TagCaracter(nome='xCor'   , codigo='J05', tamanho=[ 1, 40]   , raiz='//det/prod/veicProd')
+        self.pot = TagCaracter(nome='pot'    , codigo='J06', tamanho=[ 1, 4]   , raiz='//det/prod/veicProd')
+        self.CM3 = TagCaracter(nome='CM3'    , codigo='J07', tamanho=[ 1, 4]   , raiz='//det/prod/veicProd')
+        self.pesoL = TagCaracter(nome='pesoL'  , codigo='J08', tamanho=[ 1, 9]   , raiz='//det/prod/veicProd')
+        self.pesoB = TagCaracter(nome='pesoB'  , codigo='J09', tamanho=[ 1, 9]   , raiz='//det/prod/veicProd')
+        self.nSerie = TagCaracter(nome='nSerie' , codigo='J10', tamanho=[ 1, 9]   , raiz='//det/prod/veicProd')
+        self.tpComb = TagCaracter(nome='tpComb' , codigo='J11', tamanho=[ 1, 8]   , raiz='//det/prod/veicProd')
+        self.nMotor = TagCaracter(nome='nMotor' , codigo='J12', tamanho=[ 1, 21]   , raiz='//det/prod/veicProd')
+        self.CMKG = TagCaracter(nome='CMKG'   , codigo='J13', tamanho=[ 1, 9]   , raiz='//det/prod/veicProd')
+        self.dist = TagCaracter(nome='dist'   , codigo='J14', tamanho=[ 1, 4]   , raiz='//det/prod/veicProd')
+        self.RENAVAM = TagCaracter(nome='RENAVAM', codigo='J15', tamanho=[ 1, 9]   , raiz='//det/prod/veicProd', obrigatorio=False)
+        self.anoMod = TagInteiro(nome='anoMod'  , codigo='J16', tamanho=[ 4, 4, 4], raiz='//det/prod/veicProd')
+        self.anoFab = TagInteiro(nome='anoFab'  , codigo='J17', tamanho=[ 4, 4, 4], raiz='//det/prod/veicProd')
+        self.tpPint = TagCaracter(nome='tpPint' , codigo='J18', tamanho=[ 1, 1]   , raiz='//det/prod/veicProd')
+        self.tpVeic = TagInteiro(nome='tpVeic'  , codigo='J19', tamanho=[ 2, 2, 2], raiz='//det/prod/veicProd')
+        self.espVeic = TagInteiro(nome='espVeic' , codigo='J20', tamanho=[ 1, 1]   , raiz='//det/prod/veicProd')
+        self.VIN = TagCaracter(nome='VIN'    , codigo='J21', tamanho=[ 1, 1]   , raiz='//det/prod/veicProd')
         self.condVeic = TagInteiro(nome='condVeic', codigo='J22', tamanho=[ 1, 1]   , raiz='//det/prod/veicProd')
-        self.cMod     = TagInteiro(nome='cMod'    , codigo='J23', tamanho=[ 6, 6, 6], raiz='//det/prod/veicProd')
+        self.cMod = TagInteiro(nome='cMod'    , codigo='J23', tamanho=[ 6, 6, 6], raiz='//det/prod/veicProd')
 
     def get_xml(self):
         if not self.chassi.valor:
@@ -1791,28 +1791,28 @@ class VeicProd(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.tpOp.xml     = arquivo
-            self.chassi.xml   = arquivo
-            self.cCor.xml     = arquivo
-            self.xCor.xml     = arquivo
-            self.pot.xml      = arquivo
-            self.CM3.xml      = arquivo
-            self.pesoL.xml    = arquivo
-            self.pesoB.xml    = arquivo
-            self.nSerie.xml   = arquivo
-            self.tpComb.xml   = arquivo
-            self.nMotor.xml   = arquivo
-            self.CMKG.xml     = arquivo
-            self.dist.xml     = arquivo
-            self.RENAVAM.xml  = arquivo
-            self.anoMod.xml   = arquivo
-            self.anoFab.xml   = arquivo
-            self.tpPint.xml   = arquivo
-            self.tpVeic.xml   = arquivo
-            self.espVeic.xml  = arquivo
-            self.VIN.xml      = arquivo
+            self.tpOp.xml = arquivo
+            self.chassi.xml = arquivo
+            self.cCor.xml = arquivo
+            self.xCor.xml = arquivo
+            self.pot.xml = arquivo
+            self.CM3.xml = arquivo
+            self.pesoL.xml = arquivo
+            self.pesoB.xml = arquivo
+            self.nSerie.xml = arquivo
+            self.tpComb.xml = arquivo
+            self.nMotor.xml = arquivo
+            self.CMKG.xml = arquivo
+            self.dist.xml = arquivo
+            self.RENAVAM.xml = arquivo
+            self.anoMod.xml = arquivo
+            self.anoFab.xml = arquivo
+            self.tpPint.xml = arquivo
+            self.tpVeic.xml = arquivo
+            self.espVeic.xml = arquivo
+            self.VIN.xml = arquivo
             self.condVeic.xml = arquivo
-            self.cMod.xml     = arquivo
+            self.cMod.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -1853,10 +1853,10 @@ class Adi(XMLNFe):
 
     def __init__(self):
         super(Adi, self).__init__()
-        self.nAdicao     = TagInteiro(nome='nAdicao'     , codigo='I26', tamanho=[1, 3], raiz='//adi')
-        self.nSeqAdic    = TagInteiro(nome='nSeqAdic'    , codigo='I27', tamanho=[1, 3], raiz='//adi')
+        self.nAdicao = TagInteiro(nome='nAdicao'     , codigo='I26', tamanho=[1, 3], raiz='//adi')
+        self.nSeqAdic = TagInteiro(nome='nSeqAdic'    , codigo='I27', tamanho=[1, 3], raiz='//adi')
         self.cFabricante = TagCaracter(nome='cFabricante', codigo='I28', tamanho=[1, 60], raiz='//adi')
-        self.vDescDI     = TagDecimal(nome='vDescDI'     , codigo='I29', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//adi', obrigatorio=False)
+        self.vDescDI = TagDecimal(nome='vDescDI'     , codigo='I29', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//adi', obrigatorio=False)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -1870,10 +1870,10 @@ class Adi(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.nAdicao.xml     = arquivo
-            self.nSeqAdic.xml    = arquivo
+            self.nAdicao.xml = arquivo
+            self.nSeqAdic.xml = arquivo
             self.cFabricante.xml = arquivo
-            self.vDescDI.xml     = arquivo
+            self.vDescDI.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -1893,13 +1893,13 @@ class DI(XMLNFe):
 
     def __init__(self):
         super(DI, self).__init__()
-        self.nDI         = TagCaracter(nome='nDI'        , codigo='I19', tamanho=[1, 10], raiz='//DI')
-        self.dDI         = TagData(nome='dDI'            , codigo='I20', raiz='//DI')
-        self.xLocDesemb  = TagCaracter(nome='xLocDesemb' , codigo='I21', tamanho=[1, 60], raiz='//DI')
-        self.UFDesemb    = TagCaracter(nome='UFDesemb'   , codigo='I22', tamanho=[2, 2], raiz='//DI')
-        self.dDesemb     = TagData(nome='dDesemb'        , codigo='I23', raiz='//DI')
+        self.nDI = TagCaracter(nome='nDI'        , codigo='I19', tamanho=[1, 10], raiz='//DI')
+        self.dDI = TagData(nome='dDI'            , codigo='I20', raiz='//DI')
+        self.xLocDesemb = TagCaracter(nome='xLocDesemb' , codigo='I21', tamanho=[1, 60], raiz='//DI')
+        self.UFDesemb = TagCaracter(nome='UFDesemb'   , codigo='I22', tamanho=[2, 2], raiz='//DI')
+        self.dDesemb = TagData(nome='dDesemb'        , codigo='I23', raiz='//DI')
         self.cExportador = TagCaracter(nome='cExportador', codigo='I24', tamanho=[1, 60], raiz='//DI')
-        self.adi         = [Adi()]
+        self.adi = [Adi()]
 
     def get_xml(self):
         if not self.nDI:
@@ -1922,11 +1922,11 @@ class DI(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.nDI.xml         = arquivo
-            self.dDI.xml         = arquivo
-            self.xLocDesemb.xml  = arquivo
-            self.UFDesemb.xml    = arquivo
-            self.dDesemb.xml     = arquivo
+            self.nDI.xml = arquivo
+            self.dDI.xml = arquivo
+            self.xLocDesemb.xml = arquivo
+            self.UFDesemb.xml = arquivo
+            self.dDesemb.xml = arquivo
             self.cExportador.xml = arquivo
 
             #
@@ -1969,30 +1969,30 @@ class Prod(XMLNFe):
 
     def __init__(self):
         super(Prod, self).__init__()
-        self.cProd    = TagCaracter(nome='cProd'   , codigo='I02' , tamanho=[1, 60]                       , raiz='//det/prod')
-        self.cEAN     = TagCaracter(nome='cEAN'    , codigo='I03' , tamanho=[0, 14]                       , raiz='//det/prod')
-        self.xProd    = TagCaracter(nome='xProd'   , codigo='I04' , tamanho=[1, 120]                       , raiz='//det/prod')
-        self.NCM      = TagCaracter(nome='NCM'     , codigo='I05' , tamanho=[2, 8]                       , raiz='//det/prod', obrigatorio=False)
-        self.EXTIPI   = TagCaracter(nome='EXTIPI'  , codigo='I06' , tamanho=[2, 3]                       , raiz='//det/prod', obrigatorio=False)
-        self.genero   = TagCaracter(nome='genero'  , codigo='I07' , tamanho=[2, 2, 2]                    , raiz='//det/prod', obrigatorio=False)
-        self.CFOP     = TagInteiro(nome='CFOP'     , codigo='I08' , tamanho=[4, 4, 4]                    , raiz='//det/prod')
-        self.uCom     = TagCaracter(nome='uCom'    , codigo='I09' , tamanho=[1, 6]                       , raiz='//det/prod')
-        self.qCom     = TagDecimal(nome='qCom'     , codigo='I10' , tamanho=[1, 12, 1], decimais=[0, 4, 4], raiz='//det/prod')
-        self.vUnCom   = TagDecimal(nome='vUnCom'   , codigo='I10a', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='//det/prod')
-        self.vProd    = TagDecimal(nome='vProd'    , codigo='I11' , tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod')
+        self.cProd = TagCaracter(nome='cProd'   , codigo='I02' , tamanho=[1, 60]                       , raiz='//det/prod')
+        self.cEAN = TagCaracter(nome='cEAN'    , codigo='I03' , tamanho=[0, 14]                       , raiz='//det/prod')
+        self.xProd = TagCaracter(nome='xProd'   , codigo='I04' , tamanho=[1, 120]                       , raiz='//det/prod')
+        self.NCM = TagCaracter(nome='NCM'     , codigo='I05' , tamanho=[2, 8]                       , raiz='//det/prod', obrigatorio=False)
+        self.EXTIPI = TagCaracter(nome='EXTIPI'  , codigo='I06' , tamanho=[2, 3]                       , raiz='//det/prod', obrigatorio=False)
+        self.genero = TagCaracter(nome='genero'  , codigo='I07' , tamanho=[2, 2, 2]                    , raiz='//det/prod', obrigatorio=False)
+        self.CFOP = TagInteiro(nome='CFOP'     , codigo='I08' , tamanho=[4, 4, 4]                    , raiz='//det/prod')
+        self.uCom = TagCaracter(nome='uCom'    , codigo='I09' , tamanho=[1, 6]                       , raiz='//det/prod')
+        self.qCom = TagDecimal(nome='qCom'     , codigo='I10' , tamanho=[1, 12, 1], decimais=[0, 4, 4], raiz='//det/prod')
+        self.vUnCom = TagDecimal(nome='vUnCom'   , codigo='I10a', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='//det/prod')
+        self.vProd = TagDecimal(nome='vProd'    , codigo='I11' , tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod')
         self.cEANTrib = TagCaracter(nome='cEANTrib', codigo='I12' , tamanho=[0, 14]                       , raiz='//det/prod')
-        self.uTrib    = TagCaracter(nome='uTrib'   , codigo='I13' , tamanho=[1, 6]                       , raiz='//det/prod')
-        self.qTrib    = TagDecimal(nome='qTrib'    , codigo='I14' , tamanho=[1, 12, 1], decimais=[0, 4, 4], raiz='//det/prod')
-        self.vUnTrib  = TagDecimal(nome='vUnTrib'  , codigo='I14a', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='//det/prod')
-        self.vTrib    = TagDecimal(nome='vTrib'    , codigo=''    , tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod', obrigatorio=False)
-        self.vFrete   = TagDecimal(nome='vFrete'   , codigo='I15' , tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod', obrigatorio=False)
-        self.vSeg     = TagDecimal(nome='vSeg'     , codigo='I16' , tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod', obrigatorio=False)
-        self.vDesc    = TagDecimal(nome='vDesc'    , codigo='I17' , tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod', obrigatorio=False)
-        self.DI       = []
+        self.uTrib = TagCaracter(nome='uTrib'   , codigo='I13' , tamanho=[1, 6]                       , raiz='//det/prod')
+        self.qTrib = TagDecimal(nome='qTrib'    , codigo='I14' , tamanho=[1, 12, 1], decimais=[0, 4, 4], raiz='//det/prod')
+        self.vUnTrib = TagDecimal(nome='vUnTrib'  , codigo='I14a', tamanho=[1, 16, 1], decimais=[0, 4, 4], raiz='//det/prod')
+        self.vTrib = TagDecimal(nome='vTrib'    , codigo=''    , tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod', obrigatorio=False)
+        self.vFrete = TagDecimal(nome='vFrete'   , codigo='I15' , tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod', obrigatorio=False)
+        self.vSeg = TagDecimal(nome='vSeg'     , codigo='I16' , tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod', obrigatorio=False)
+        self.vDesc = TagDecimal(nome='vDesc'    , codigo='I17' , tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//det/prod', obrigatorio=False)
+        self.DI = []
         self.veicProd = VeicProd()
-        self.med      = []
-        self.arma     = []
-        self.comb     = Comb()
+        self.med = []
+        self.arma = []
+        self.comb = Comb()
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -2033,24 +2033,24 @@ class Prod(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.cProd.xml    = arquivo
-            self.cEAN.xml     = arquivo
-            self.xProd.xml    = arquivo
-            self.NCM.xml      = arquivo
-            self.EXTIPI.xml   = arquivo
-            self.genero.xml   = arquivo
-            self.CFOP.xml     = arquivo
-            self.uCom.xml     = arquivo
-            self.qCom.xml     = arquivo
-            self.vUnCom.xml   = arquivo
-            self.vProd.xml    = arquivo
+            self.cProd.xml = arquivo
+            self.cEAN.xml = arquivo
+            self.xProd.xml = arquivo
+            self.NCM.xml = arquivo
+            self.EXTIPI.xml = arquivo
+            self.genero.xml = arquivo
+            self.CFOP.xml = arquivo
+            self.uCom.xml = arquivo
+            self.qCom.xml = arquivo
+            self.vUnCom.xml = arquivo
+            self.vProd.xml = arquivo
             self.cEANTrib.xml = arquivo
-            self.uTrib.xml    = arquivo
-            self.qTrib.xml    = arquivo
-            self.vUnTrib.xml  = arquivo
-            self.vFrete.xml   = arquivo
-            self.vSeg.xml     = arquivo
-            self.vDesc.xml    = arquivo
+            self.uTrib.xml = arquivo
+            self.qTrib.xml = arquivo
+            self.vUnTrib.xml = arquivo
+            self.vFrete.xml = arquivo
+            self.vSeg.xml = arquivo
+            self.vDesc.xml = arquivo
 
             #
             # Técnica para leitura de tags múltiplas
@@ -2119,9 +2119,9 @@ class Det(XMLNFe):
 
     def __init__(self):
         super(Det, self).__init__()
-        self.nItem     = TagInteiro(nome='det'       , codigo='H01', tamanho=[1, 3], propriedade='nItem', raiz='/')  # , namespace=NAMESPACE_NFE)
-        self.prod      = Prod()
-        self.imposto   = Imposto()
+        self.nItem = TagInteiro(nome='det'       , codigo='H01', tamanho=[1, 3], propriedade='nItem', raiz='/')  # , namespace=NAMESPACE_NFE)
+        self.prod = Prod()
+        self.imposto = Imposto()
         self.infAdProd = TagCaracter(nome='infAdProd', codigo='V01', tamanho=[1, 500], raiz='//det', obrigatorio=False)
 
     def get_xml(self):
@@ -2135,9 +2135,9 @@ class Det(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.nItem.xml     = arquivo
-            self.prod.xml      = arquivo
-            self.imposto.xml   = arquivo
+            self.nItem.xml = arquivo
+            self.prod.xml = arquivo
+            self.imposto.xml = arquivo
             self.infAdProd.xml = arquivo
 
     xml = property(get_xml, set_xml)
@@ -2174,7 +2174,7 @@ class Compra(XMLNFe):
     def __init__(self):
         super(Compra, self).__init__()
         self.xNEmp = TagCaracter(nome='xNEmp', codigo='ZB02', tamanho=[1, 17], raiz='//NFe/infNFe/compra', obrigatorio=False)
-        self.xPed  = TagCaracter(nome='xPed' , codigo='ZB03', tamanho=[1, 60], raiz='//NFe/infNFe/compra', obrigatorio=False)
+        self.xPed = TagCaracter(nome='xPed' , codigo='ZB03', tamanho=[1, 60], raiz='//NFe/infNFe/compra', obrigatorio=False)
         self.xCont = TagCaracter(nome='xCont', codigo='ZB04', tamanho=[1, 60], raiz='//NFe/infNFe/compra', obrigatorio=False)
 
     def get_xml(self):
@@ -2192,7 +2192,7 @@ class Compra(XMLNFe):
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
             self.xNEmp.xml = arquivo
-            self.xPed.xml  = arquivo
+            self.xPed.xml = arquivo
             self.xCont.xml = arquivo
 
     xml = property(get_xml, set_xml)
@@ -2215,7 +2215,7 @@ class Exporta(XMLNFe):
 
     def __init__(self):
         super(Exporta, self).__init__()
-        self.UFEmbarq   = TagCaracter(nome='UFEmbarq'  , codigo='ZA02', tamanho=[2, 2], raiz='//NFe/infNFe/exporta', obrigatorio=False)
+        self.UFEmbarq = TagCaracter(nome='UFEmbarq'  , codigo='ZA02', tamanho=[2, 2], raiz='//NFe/infNFe/exporta', obrigatorio=False)
         self.xLocEmbarq = TagCaracter(nome='xLocEmbarq', codigo='ZA03', tamanho=[1, 60], raiz='//NFe/infNFe/exporta', obrigatorio=False)
 
     def get_xml(self):
@@ -2231,7 +2231,7 @@ class Exporta(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.UFEmbarq.xml   = arquivo
+            self.UFEmbarq.xml = arquivo
             self.xLocEmbarq.xml = arquivo
 
     xml = property(get_xml, set_xml)
@@ -2253,7 +2253,7 @@ class ProcRef(XMLNFe):
 
     def __init__(self):
         super(ProcRef, self).__init__()
-        self.nProc   = TagCaracter(nome='nProc' , codigo='Z11', tamanho=[1, 60], raiz='//procRef')
+        self.nProc = TagCaracter(nome='nProc' , codigo='Z11', tamanho=[1, 60], raiz='//procRef')
         self.indProc = TagInteiro(nome='indProc', codigo='Z12', tamanho=[1, 1], raiz='//procRef')
 
     def get_xml(self):
@@ -2366,10 +2366,10 @@ class InfAdic(XMLNFe):
     def __init__(self):
         super(InfAdic, self).__init__()
         self.infAdFisco = TagCaracter(nome='infAdFisco', codigo='Z02', tamanho=[1, 256], raiz='//NFe/infNFe/infAdic', obrigatorio=False)
-        self.infCpl     = TagCaracter(nome='infCpl'    , codigo='Z03', tamanho=[1, 5000], raiz='//NFe/infNFe/infAdic', obrigatorio=False)
-        self.obsCont    = []
-        self.obsFisco   = []
-        self.procRef    = []
+        self.infCpl = TagCaracter(nome='infCpl'    , codigo='Z03', tamanho=[1, 5000], raiz='//NFe/infNFe/infAdic', obrigatorio=False)
+        self.obsCont = []
+        self.obsFisco = []
+        self.procRef = []
 
     def get_xml(self):
         if not (self.infAdFisco.valor or self.infCpl.valor or len(self.obsCont) or len(self.obsFisco) or len(self.procRef)):
@@ -2395,7 +2395,7 @@ class InfAdic(XMLNFe):
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
             self.infAdFisco.xml = arquivo
-            self.infCpl.xml     = arquivo
+            self.infCpl.xml = arquivo
             #
             # Técnica para leitura de tags múltiplas
             # As classes dessas tags, e suas filhas, devem ser
@@ -2435,9 +2435,9 @@ class Dup(XMLNFe):
 
     def __init__(self):
         super(Dup, self).__init__()
-        self.nDup  = TagCaracter(nome='nDup', codigo='Y08', tamanho=[1, 60], raiz='//dup', obrigatorio=False)
+        self.nDup = TagCaracter(nome='nDup', codigo='Y08', tamanho=[1, 60], raiz='//dup', obrigatorio=False)
         self.dVenc = TagData(nome='dVenc'   , codigo='Y09', raiz='//dup', obrigatorio=False)
-        self.vDup  = TagDecimal(nome='vDup' , codigo='Y10', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//dup', obrigatorio=False)
+        self.vDup = TagDecimal(nome='vDup' , codigo='Y10', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//dup', obrigatorio=False)
 
     def get_xml(self):
         if not (self.nDup.valor or self.dVenc.valor or self.vDup.valor):
@@ -2453,9 +2453,9 @@ class Dup(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.nDup.xml  = arquivo
+            self.nDup.xml = arquivo
             self.dVenc.xml = arquivo
-            self.vDup.xml  = arquivo
+            self.vDup.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -2477,10 +2477,10 @@ class Fat(XMLNFe):
 
     def __init__(self):
         super(Fat, self).__init__()
-        self.nFat  = TagCaracter(nome='nFat', codigo='Y03', tamanho=[1, 60], raiz='//NFe/infNFe/cobr/fat', obrigatorio=False)
+        self.nFat = TagCaracter(nome='nFat', codigo='Y03', tamanho=[1, 60], raiz='//NFe/infNFe/cobr/fat', obrigatorio=False)
         self.vOrig = TagDecimal(nome='vOrig', codigo='Y04', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/cobr/fat', obrigatorio=False)
         self.vDesc = TagDecimal(nome='vDesc', codigo='Y05', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/cobr/fat', obrigatorio=False)
-        self.vLiq  = TagDecimal(nome='vLiq' , codigo='Y06', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/cobr/fat', obrigatorio=False)
+        self.vLiq = TagDecimal(nome='vLiq' , codigo='Y06', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/cobr/fat', obrigatorio=False)
 
     def get_xml(self):
         if not (self.nFat.valor or self.vOrig.valor or self.vDesc.valor or self.vLiq.valor):
@@ -2497,10 +2497,10 @@ class Fat(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.nFat.xml  = arquivo
+            self.nFat.xml = arquivo
             self.vOrig.xml = arquivo
             self.vDesc.xml = arquivo
-            self.vLiq.xml  = arquivo
+            self.vLiq.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -2542,7 +2542,7 @@ class Cobr(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.fat.xml  = arquivo
+            self.fat.xml = arquivo
             #
             # Técnica para leitura de tags múltiplas
             # As classes dessas tags, e suas filhas, devem ser
@@ -2626,13 +2626,13 @@ class Vol(XMLNFe):
 
     def __init__(self, xml=None):
         super(Vol, self).__init__()
-        self.qVol   = TagInteiro(nome='qVol'  , codigo='X27', tamanho=[1, 15], raiz='//vol', obrigatorio=False)
+        self.qVol = TagInteiro(nome='qVol'  , codigo='X27', tamanho=[1, 15], raiz='//vol', obrigatorio=False)
         # self.qVol   = self.TagInteiroVolume(nome='qVol'  , codigo='X27', tamanho=[1, 15], raiz='//vol', obrigatorio=False)
-        self.esp    = TagCaracter(nome='esp'  , codigo='X28', tamanho=[1, 60], raiz='//vol', obrigatorio=False)
-        self.marca  = TagCaracter(nome='marca', codigo='X29', tamanho=[1, 60], raiz='//vol', obrigatorio=False)
-        self.nVol   = TagCaracter(nome='nVol' , codigo='X30', tamanho=[1, 60], raiz='//vol', obrigatorio=False)
-        self.pesoL  = TagDecimal(nome='pesoL' , codiog='X31', tamanho=[1, 15, 1], decimais=[0, 3, 3], raiz='//vol', obrigatorio=False)
-        self.pesoB  = TagDecimal(nome='pesoB' , codiog='X32', tamanho=[1, 15, 1], decimais=[0, 3, 3], raiz='//vol', obrigatorio=False)
+        self.esp = TagCaracter(nome='esp'  , codigo='X28', tamanho=[1, 60], raiz='//vol', obrigatorio=False)
+        self.marca = TagCaracter(nome='marca', codigo='X29', tamanho=[1, 60], raiz='//vol', obrigatorio=False)
+        self.nVol = TagCaracter(nome='nVol' , codigo='X30', tamanho=[1, 60], raiz='//vol', obrigatorio=False)
+        self.pesoL = TagDecimal(nome='pesoL' , codiog='X31', tamanho=[1, 15, 1], decimais=[0, 3, 3], raiz='//vol', obrigatorio=False)
+        self.pesoB = TagDecimal(nome='pesoB' , codiog='X32', tamanho=[1, 15, 1], decimais=[0, 3, 3], raiz='//vol', obrigatorio=False)
         # self.pesoL  = self.TagDecimalVolume(nome='pesoL' , codiog='X31', tamanho=[1, 15, 1], decimais=[0, 3, 3], raiz='//vol', obrigatorio=False)
         # self.pesoB  = self.TagDecimalVolume(nome='pesoB' , codiog='X32', tamanho=[1, 15, 1], decimais=[0, 3, 3], raiz='//vol', obrigatorio=False)
         self.lacres = []
@@ -2700,8 +2700,8 @@ class Reboque(XMLNFe):
     def __init__(self):
         super(Reboque, self).__init__()
         self.placa = TagCaracter(nome='placa', codigo='X23', tamanho=[1, 8], raiz='//reboque')
-        self.UF    = TagCaracter(nome='UF'   , codigo='X24', tamanho=[2, 2], raiz='//reboque')
-        self.RNTC  = TagCaracter(nome='RNTC' , codigo='X25', tamanho=[1, 20], raiz='//reboque', obrigatorio=False)
+        self.UF = TagCaracter(nome='UF'   , codigo='X24', tamanho=[2, 2], raiz='//reboque')
+        self.RNTC = TagCaracter(nome='RNTC' , codigo='X25', tamanho=[1, 20], raiz='//reboque', obrigatorio=False)
 
     def get_xml(self):
         if not (self.placa.valor or self.UF.valor or self.RNTC.valor):
@@ -2718,8 +2718,8 @@ class Reboque(XMLNFe):
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
             self.placa.xml = arquivo
-            self.UF.xml    = arquivo
-            self.RNTC.xml  = arquivo
+            self.UF.xml = arquivo
+            self.RNTC.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -2742,8 +2742,8 @@ class VeicTransp(XMLNFe):
     def __init__(self):
         super(VeicTransp, self).__init__()
         self.placa = TagCaracter(nome='placa', codigo='X19', tamanho=[1, 8], raiz='//NFe/infNFe/transp/veicTransp')
-        self.UF    = TagCaracter(nome='UF'   , codigo='X20', tamanho=[2, 2], raiz='//NFe/infNFe/transp/veicTransp')
-        self.RNTC  = TagCaracter(nome='RNTC' , codigo='X21', tamanho=[1, 20], raiz='//NFe/infNFe/transp/veicTransp', obrigatorio=False)
+        self.UF = TagCaracter(nome='UF'   , codigo='X20', tamanho=[2, 2], raiz='//NFe/infNFe/transp/veicTransp')
+        self.RNTC = TagCaracter(nome='RNTC' , codigo='X21', tamanho=[1, 20], raiz='//NFe/infNFe/transp/veicTransp', obrigatorio=False)
 
     def get_xml(self):
         if not (self.placa.valor or self.UF.valor or self.RNTC.valor):
@@ -2760,8 +2760,8 @@ class VeicTransp(XMLNFe):
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
             self.placa.xml = arquivo
-            self.UF.xml    = arquivo
-            self.RNTC.xml  = arquivo
+            self.UF.xml = arquivo
+            self.RNTC.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -2783,12 +2783,12 @@ class RetTransp(XMLNFe):
 
     def __init__(self):
         super(RetTransp, self).__init__()
-        self.vServ    = TagDecimal(nome='vServ'   , codigo='X12', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/transp/retTransp')
-        self.vBCRet   = TagDecimal(nome='vBCRet'  , codigo='X13', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/transp/retTransp')
+        self.vServ = TagDecimal(nome='vServ'   , codigo='X12', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/transp/retTransp')
+        self.vBCRet = TagDecimal(nome='vBCRet'  , codigo='X13', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/transp/retTransp')
         self.pICMSRet = TagDecimal(nome='vICMSRet', codigo='X14', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/transp/retTransp')
         self.vICMSRet = TagDecimal(nome='vICMSRet', codigo='X15', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/transp/retTransp')
-        self.CFOP     = TagInteiro(nome='CFOP'    , codigo='X16', tamanho=[4, 4, 4], raiz='//NFe/infNFe/transp/retTransp')
-        self.cMunFG   = TagInteiro(nome='cMunFG'  , codigo='X17', tamanho=[7, 7, 7], raiz='//NFe/infNFe/transp/retTransp')
+        self.CFOP = TagInteiro(nome='CFOP'    , codigo='X16', tamanho=[4, 4, 4], raiz='//NFe/infNFe/transp/retTransp')
+        self.cMunFG = TagInteiro(nome='cMunFG'  , codigo='X17', tamanho=[7, 7, 7], raiz='//NFe/infNFe/transp/retTransp')
 
     def get_xml(self):
         if not (self.vServ.valor or self.vBCRet.valor or self.pICMSRet.valor or self.vICMSRet.valor or self.CFOP.valor or self.cMunFG.valor):
@@ -2807,12 +2807,12 @@ class RetTransp(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.vServ.xml    = arquivo
-            self.vBCRet.xml   = arquivo
+            self.vServ.xml = arquivo
+            self.vBCRet.xml = arquivo
             self.pICMSRet.xml = arquivo
             self.vICMSRet.xml = arquivo
-            self.CFOP.xml     = arquivo
-            self.cMunFG.xml   = arquivo
+            self.CFOP.xml = arquivo
+            self.cMunFG.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -2837,13 +2837,13 @@ class Transporta(XMLNFe):
 
     def __init__(self):
         super(Transporta, self).__init__()
-        self.CNPJ   = TagCaracter(nome='CNPJ'  , codigo='X04', tamanho=[14, 14], raiz='//NFe/infNFe/transp/transporta', obrigatorio=False)
-        self.CPF    = TagCaracter(nome='CPF'   , codigo='X05', tamanho=[11, 11], raiz='//NFe/infNFe/transp/transporta', obrigatorio=False)
-        self.xNome  = TagCaracter(nome='xNome' , codigo='X06', tamanho=[ 1, 60], raiz='//NFe/infNFe/transp/transporta', obrigatorio=False)
-        self.IE     = TagCaracter(nome='IE'    , codigo='X07', tamanho=[ 2, 14], raiz='//NFe/infNFe/transp/transporta', obrigatorio=False)
+        self.CNPJ = TagCaracter(nome='CNPJ'  , codigo='X04', tamanho=[14, 14], raiz='//NFe/infNFe/transp/transporta', obrigatorio=False)
+        self.CPF = TagCaracter(nome='CPF'   , codigo='X05', tamanho=[11, 11], raiz='//NFe/infNFe/transp/transporta', obrigatorio=False)
+        self.xNome = TagCaracter(nome='xNome' , codigo='X06', tamanho=[ 1, 60], raiz='//NFe/infNFe/transp/transporta', obrigatorio=False)
+        self.IE = TagCaracter(nome='IE'    , codigo='X07', tamanho=[ 2, 14], raiz='//NFe/infNFe/transp/transporta', obrigatorio=False)
         self.xEnder = TagCaracter(nome='xEnder', codigo='X08', tamanho=[ 1, 60], raiz='//NFe/infNFe/transp/transporta', obrigatorio=False)
-        self.xMun   = TagCaracter(nome='xMun'  , codigo='X09', tamanho=[ 1, 60], raiz='//NFe/infNFe/transp/transporta', obrigatorio=False)
-        self.UF     = TagCaracter(nome='UF'    , codigo='X10', tamanho=[ 2, 2], raiz='//NFe/infNFe/transp/transporta', obrigatorio=False)
+        self.xMun = TagCaracter(nome='xMun'  , codigo='X09', tamanho=[ 1, 60], raiz='//NFe/infNFe/transp/transporta', obrigatorio=False)
+        self.UF = TagCaracter(nome='UF'    , codigo='X10', tamanho=[ 2, 2], raiz='//NFe/infNFe/transp/transporta', obrigatorio=False)
 
     def get_xml(self):
         if not (self.CNPJ.valor or self.CPF.valor or self.xNome.valor or self.IE.valor or self.xEnder.valor or self.xMun.valor or self.UF.valor):
@@ -2863,13 +2863,13 @@ class Transporta(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.CNPJ.xml   = arquivo
-            self.CPF.xml    = arquivo
-            self.xNome.xml  = arquivo
-            self.IE.xml     = arquivo
+            self.CNPJ.xml = arquivo
+            self.CPF.xml = arquivo
+            self.xNome.xml = arquivo
+            self.IE.xml = arquivo
             self.xEnder.xml = arquivo
-            self.xMun.xml   = arquivo
-            self.UF.xml     = arquivo
+            self.xMun.xml = arquivo
+            self.UF.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -2899,12 +2899,12 @@ class Transp(XMLNFe):
 
     def __init__(self):
         super(Transp, self).__init__()
-        self.modFrete   = TagInteiro(nome='modFrete', codigo='X02', tamanho=[ 1, 1, 1], raiz='//NFe/infNFe/transp')
+        self.modFrete = TagInteiro(nome='modFrete', codigo='X02', tamanho=[ 1, 1, 1], raiz='//NFe/infNFe/transp')
         self.transporta = Transporta()
-        self.retTransp  = RetTransp()
+        self.retTransp = RetTransp()
         self.veicTransp = VeicTransp()
-        self.reboque    = []
-        self.vol        = []
+        self.reboque = []
+        self.vol = []
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -2925,9 +2925,9 @@ class Transp(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.modFrete.xml   = arquivo
+            self.modFrete.xml = arquivo
             self.transporta.xml = arquivo
-            self.retTransp.xml  = arquivo
+            self.retTransp.xml = arquivo
             self.veicTransp.xml = arquivo
 
             #
@@ -2963,13 +2963,13 @@ class RetTrib(XMLNFe):
 
     def __init__(self):
         super(RetTrib, self).__init__()
-        self.vRetPIS    = TagDecimal(nome='vRetPIS'   , codigo='W24', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/retTrib', obrigatorio=False)
+        self.vRetPIS = TagDecimal(nome='vRetPIS'   , codigo='W24', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/retTrib', obrigatorio=False)
         self.vRetCOFINS = TagDecimal(nome='vRetCOFINS', codigo='W25', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/retTrib', obrigatorio=False)
-        self.vRetCSLL   = TagDecimal(nome='vRetCSLL'  , codigo='W26', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/retTrib', obrigatorio=False)
-        self.vBCIRRF    = TagDecimal(nome='vBCIRRF'   , codigo='W27', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/retTrib', obrigatorio=False)
-        self.vIRRF      = TagDecimal(nome='vIRRF'     , codigo='W28', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/retTrib', obrigatorio=False)
+        self.vRetCSLL = TagDecimal(nome='vRetCSLL'  , codigo='W26', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/retTrib', obrigatorio=False)
+        self.vBCIRRF = TagDecimal(nome='vBCIRRF'   , codigo='W27', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/retTrib', obrigatorio=False)
+        self.vIRRF = TagDecimal(nome='vIRRF'     , codigo='W28', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/retTrib', obrigatorio=False)
         self.vBCRetPrev = TagDecimal(nome='vBCRetPrev', codigo='W29', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/retTrib', obrigatorio=False)
-        self.vRetPrev   = TagDecimal(nome='vRetPrev'  , codigo='W30', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/retTrib', obrigatorio=False)
+        self.vRetPrev = TagDecimal(nome='vRetPrev'  , codigo='W30', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/retTrib', obrigatorio=False)
 
     def get_xml(self):
         if not (self.vRetPIS.valor or self.vRetCOFINS.valor or self.vRetCSLL.valor or self.vBCIRRF.valor or self.vIRRF.valor or self.vBCRetPrev.valor or self.vRetPrev.valor):
@@ -2989,13 +2989,13 @@ class RetTrib(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.vRetPIS.xml    = arquivo
+            self.vRetPIS.xml = arquivo
             self.vRetCOFINS.xml = arquivo
-            self.vRetCSLL.xml   = arquivo
-            self.vBCIRRF.xml    = arquivo
-            self.vIRRF.xml      = arquivo
+            self.vRetCSLL.xml = arquivo
+            self.vBCIRRF.xml = arquivo
+            self.vIRRF.xml = arquivo
             self.vBCRetPrev.xml = arquivo
-            self.vRetPrev.xml   = arquivo
+            self.vRetPrev.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -3021,10 +3021,10 @@ class ISSQNTot(XMLNFe):
 
     def __init__(self):
         super(ISSQNTot, self).__init__()
-        self.vServ   = TagDecimal(nome='vServ'  , codigo='W18', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ISSQNtot', obrigatorio=False)
-        self.vBC     = TagDecimal(nome='vBC'    , codigo='W19', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ISSQNtot', obrigatorio=False)
-        self.vISS    = TagDecimal(nome='vISS'   , codigo='W20', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ISSQNtot', obrigatorio=False)
-        self.vPIS    = TagDecimal(nome='vPIS'   , codigo='W21', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ISSQNtot', obrigatorio=False)
+        self.vServ = TagDecimal(nome='vServ'  , codigo='W18', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ISSQNtot', obrigatorio=False)
+        self.vBC = TagDecimal(nome='vBC'    , codigo='W19', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ISSQNtot', obrigatorio=False)
+        self.vISS = TagDecimal(nome='vISS'   , codigo='W20', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ISSQNtot', obrigatorio=False)
+        self.vPIS = TagDecimal(nome='vPIS'   , codigo='W21', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ISSQNtot', obrigatorio=False)
         self.vCOFINS = TagDecimal(nome='vCOFINS', codigo='W22', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ISSQNtot', obrigatorio=False)
 
     def get_xml(self):
@@ -3043,10 +3043,10 @@ class ISSQNTot(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.vServ.xml   = arquivo
-            self.vBC.xml     = arquivo
-            self.vISS.xml    = arquivo
-            self.vPIS.xml    = arquivo
+            self.vServ.xml = arquivo
+            self.vBC.xml = arquivo
+            self.vISS.xml = arquivo
+            self.vPIS.xml = arquivo
             self.vCOFINS.xml = arquivo
 
     xml = property(get_xml, set_xml)
@@ -3071,20 +3071,20 @@ class ICMSTot(XMLNFe):
 
     def __init__(self):
         super(ICMSTot, self).__init__()
-        self.vBC     = TagDecimal(nome='vBC'    , codigo='W03', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
-        self.vICMS   = TagDecimal(nome='vICMS'  , codigo='W04', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
-        self.vBCST   = TagDecimal(nome='vBCST'  , codigo='W05', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
-        self.vST     = TagDecimal(nome='vST'    , codigo='W06', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
-        self.vProd   = TagDecimal(nome='vProd'  , codigo='W07', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
-        self.vFrete  = TagDecimal(nome='vFrete' , codigo='W08', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
-        self.vSeg    = TagDecimal(nome='vSeg'   , codigo='W09', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
-        self.vDesc   = TagDecimal(nome='vDesc'  , codigo='W10', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
-        self.vII     = TagDecimal(nome='vII'    , codigo='W11', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
-        self.vIPI    = TagDecimal(nome='vIPI'   , codigo='W12', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
-        self.vPIS    = TagDecimal(nome='vPIS'   , codigo='W13', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
+        self.vBC = TagDecimal(nome='vBC'    , codigo='W03', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
+        self.vICMS = TagDecimal(nome='vICMS'  , codigo='W04', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
+        self.vBCST = TagDecimal(nome='vBCST'  , codigo='W05', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
+        self.vST = TagDecimal(nome='vST'    , codigo='W06', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
+        self.vProd = TagDecimal(nome='vProd'  , codigo='W07', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
+        self.vFrete = TagDecimal(nome='vFrete' , codigo='W08', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
+        self.vSeg = TagDecimal(nome='vSeg'   , codigo='W09', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
+        self.vDesc = TagDecimal(nome='vDesc'  , codigo='W10', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
+        self.vII = TagDecimal(nome='vII'    , codigo='W11', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
+        self.vIPI = TagDecimal(nome='vIPI'   , codigo='W12', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
+        self.vPIS = TagDecimal(nome='vPIS'   , codigo='W13', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
         self.vCOFINS = TagDecimal(nome='vCOFINS', codigo='W14', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
-        self.vOutro  = TagDecimal(nome='vOutro' , codigo='W15', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
-        self.vNF     = TagDecimal(nome='vNF'    , codigo='W16', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
+        self.vOutro = TagDecimal(nome='vOutro' , codigo='W15', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
+        self.vNF = TagDecimal(nome='vNF'    , codigo='W16', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -3108,20 +3108,20 @@ class ICMSTot(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.vBC.xml     = arquivo
-            self.vICMS.xml   = arquivo
-            self.vBCST.xml   = arquivo
-            self.vST.xml     = arquivo
-            self.vProd.xml   = arquivo
-            self.vFrete.xml  = arquivo
-            self.vSeg.xml    = arquivo
-            self.vDesc.xml   = arquivo
-            self.vII.xml     = arquivo
-            self.vIPI.xml    = arquivo
-            self.vPIS.xml    = arquivo
+            self.vBC.xml = arquivo
+            self.vICMS.xml = arquivo
+            self.vBCST.xml = arquivo
+            self.vST.xml = arquivo
+            self.vProd.xml = arquivo
+            self.vFrete.xml = arquivo
+            self.vSeg.xml = arquivo
+            self.vDesc.xml = arquivo
+            self.vII.xml = arquivo
+            self.vIPI.xml = arquivo
+            self.vPIS.xml = arquivo
             self.vCOFINS.xml = arquivo
-            self.vOutro.xml  = arquivo
-            self.vNF.xml     = arquivo
+            self.vOutro.xml = arquivo
+            self.vNF.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -3153,7 +3153,7 @@ class Total(XMLNFe):
         super(Total, self).__init__()
         self.ICMSTot = ICMSTot()
         self.ISSQNTot = ISSQNTot()
-        self.retTrib  = RetTrib()
+        self.retTrib = RetTrib()
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -3166,9 +3166,9 @@ class Total(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.ICMSTot.xml  = arquivo
+            self.ICMSTot.xml = arquivo
             self.ISSQNTot.xml = arquivo
-            self.retTrib.xml  = arquivo
+            self.retTrib.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -3186,14 +3186,14 @@ class Entrega(XMLNFe):
 
     def __init__(self):
         super(Entrega, self).__init__()
-        self.CNPJ    = TagCaracter(nome='CNPJ'   , codigo='G01', tamanho=[14, 14]   , raiz='//NFe/infNFe/entrega')
-        self.xLgr    = TagCaracter(nome='xLgr'   , codigo='G02', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/entrega')
-        self.nro     = TagCaracter(nome='nro'    , codigo='G03', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/entrega')
-        self.xCpl    = TagCaracter(nome='xCpl'   , codigo='G04', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/entrega', obrigatorio=False)
+        self.CNPJ = TagCaracter(nome='CNPJ'   , codigo='G01', tamanho=[14, 14]   , raiz='//NFe/infNFe/entrega')
+        self.xLgr = TagCaracter(nome='xLgr'   , codigo='G02', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/entrega')
+        self.nro = TagCaracter(nome='nro'    , codigo='G03', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/entrega')
+        self.xCpl = TagCaracter(nome='xCpl'   , codigo='G04', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/entrega', obrigatorio=False)
         self.xBairro = TagCaracter(nome='xBairro', codigo='G05', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/entrega')
-        self.cMun    = TagInteiro(nome='cMun'    , codigo='G06', tamanho=[ 7, 7, 7], raiz='//NFe/infNFe/entrega')
-        self.xMun    = TagCaracter(nome='xMun'   , codigo='G07', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/entrega')
-        self.UF      = TagCaracter(nome='UF'     , codigo='G08', tamanho=[ 2, 2]   , raiz='//NFe/infNFe/entrega')
+        self.cMun = TagInteiro(nome='cMun'    , codigo='G06', tamanho=[ 7, 7, 7], raiz='//NFe/infNFe/entrega')
+        self.xMun = TagCaracter(nome='xMun'   , codigo='G07', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/entrega')
+        self.UF = TagCaracter(nome='UF'     , codigo='G08', tamanho=[ 2, 2]   , raiz='//NFe/infNFe/entrega')
 
     def get_xml(self):
         if not len(self.CNPJ.valor):
@@ -3215,13 +3215,13 @@ class Entrega(XMLNFe):
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
             self.CNPJ.xml = arquivo
-            self.xLgr.xml    = arquivo
-            self.nro.xml     = arquivo
-            self.xCpl.xml    = arquivo
+            self.xLgr.xml = arquivo
+            self.nro.xml = arquivo
+            self.xCpl.xml = arquivo
             self.xBairro.xml = arquivo
-            self.cMun.xml    = arquivo
-            self.xMun.xml    = arquivo
-            self.UF.xml      = arquivo
+            self.cMun.xml = arquivo
+            self.xMun.xml = arquivo
+            self.UF.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -3248,14 +3248,14 @@ class Retirada(XMLNFe):
 
     def __init__(self):
         super(Retirada, self).__init__()
-        self.CNPJ    = TagCaracter(nome='CNPJ'   , codigo='F01', tamanho=[14, 14]   , raiz='//NFe/infNFe/retirada')
-        self.xLgr    = TagCaracter(nome='xLgr'   , codigo='F02', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/retirada')
-        self.nro     = TagCaracter(nome='nro'    , codigo='F03', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/retirada')
-        self.xCpl    = TagCaracter(nome='xCpl'   , codigo='F04', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/retirada', obrigatorio=False)
+        self.CNPJ = TagCaracter(nome='CNPJ'   , codigo='F01', tamanho=[14, 14]   , raiz='//NFe/infNFe/retirada')
+        self.xLgr = TagCaracter(nome='xLgr'   , codigo='F02', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/retirada')
+        self.nro = TagCaracter(nome='nro'    , codigo='F03', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/retirada')
+        self.xCpl = TagCaracter(nome='xCpl'   , codigo='F04', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/retirada', obrigatorio=False)
         self.xBairro = TagCaracter(nome='xBairro', codigo='F05', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/retirada')
-        self.cMun    = TagInteiro(nome='cMun'    , codigo='F06', tamanho=[ 7, 7, 7], raiz='//NFe/infNFe/retirada')
-        self.xMun    = TagCaracter(nome='xMun'   , codigo='F07', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/retirada')
-        self.UF      = TagCaracter(nome='UF'     , codigo='F08', tamanho=[ 2, 2]   , raiz='//NFe/infNFe/retirada')
+        self.cMun = TagInteiro(nome='cMun'    , codigo='F06', tamanho=[ 7, 7, 7], raiz='//NFe/infNFe/retirada')
+        self.xMun = TagCaracter(nome='xMun'   , codigo='F07', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/retirada')
+        self.UF = TagCaracter(nome='UF'     , codigo='F08', tamanho=[ 2, 2]   , raiz='//NFe/infNFe/retirada')
 
     def get_xml(self):
         if not len(self.CNPJ.valor):
@@ -3277,13 +3277,13 @@ class Retirada(XMLNFe):
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
             self.CNPJ.xml = arquivo
-            self.xLgr.xml    = arquivo
-            self.nro.xml     = arquivo
-            self.xCpl.xml    = arquivo
+            self.xLgr.xml = arquivo
+            self.nro.xml = arquivo
+            self.xCpl.xml = arquivo
             self.xBairro.xml = arquivo
-            self.cMun.xml    = arquivo
-            self.xMun.xml    = arquivo
-            self.UF.xml      = arquivo
+            self.cMun.xml = arquivo
+            self.xMun.xml = arquivo
+            self.UF.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -3310,17 +3310,17 @@ class EnderDest(XMLNFe):
 
     def __init__(self):
         super(EnderDest, self).__init__()
-        self.xLgr    = TagCaracter(nome='xLgr'   , codigo='E06', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/dest/enderDest')
-        self.nro     = TagCaracter(nome='nro'    , codigo='E07', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/dest/enderDest')
-        self.xCpl    = TagCaracter(nome='xCpl'   , codigo='E08', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/dest/enderDest', obrigatorio=False)
+        self.xLgr = TagCaracter(nome='xLgr'   , codigo='E06', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/dest/enderDest')
+        self.nro = TagCaracter(nome='nro'    , codigo='E07', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/dest/enderDest')
+        self.xCpl = TagCaracter(nome='xCpl'   , codigo='E08', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/dest/enderDest', obrigatorio=False)
         self.xBairro = TagCaracter(nome='xBairro', codigo='E09', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/dest/enderDest')
-        self.cMun    = TagInteiro(nome='cMun'    , codigo='E10', tamanho=[ 7, 7, 7], raiz='//NFe/infNFe/dest/enderDest')
-        self.xMun    = TagCaracter(nome='xMun'   , codigo='E11', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/dest/enderDest')
-        self.UF      = TagCaracter(nome='UF'     , codigo='E12', tamanho=[ 2, 2]   , raiz='//NFe/infNFe/dest/enderDest')
-        self.CEP     = TagCaracter(nome='CEP'    , codigo='E13', tamanho=[ 8, 8, 8], raiz='//NFe/infNFe/dest/enderDest', obrigatorio=False)
-        self.cPais   = TagInteiro(nome='cPais'   , codigo='E14', tamanho=[ 4, 4, 4], raiz='//NFe/infNFe/dest/enderDest', obrigatorio=False)
-        self.xPais   = TagCaracter(nome='xPais'  , codigo='E15', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/dest/enderDest', obrigatorio=False)
-        self.fone    = TagInteiro(nome='fone'    , codigo='E16', tamanho=[ 1, 10]   , raiz='//NFe/infNFe/dest/enderDest', obrigatorio=False)
+        self.cMun = TagInteiro(nome='cMun'    , codigo='E10', tamanho=[ 7, 7, 7], raiz='//NFe/infNFe/dest/enderDest')
+        self.xMun = TagCaracter(nome='xMun'   , codigo='E11', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/dest/enderDest')
+        self.UF = TagCaracter(nome='UF'     , codigo='E12', tamanho=[ 2, 2]   , raiz='//NFe/infNFe/dest/enderDest')
+        self.CEP = TagCaracter(nome='CEP'    , codigo='E13', tamanho=[ 8, 8, 8], raiz='//NFe/infNFe/dest/enderDest', obrigatorio=False)
+        self.cPais = TagInteiro(nome='cPais'   , codigo='E14', tamanho=[ 4, 4, 4], raiz='//NFe/infNFe/dest/enderDest', obrigatorio=False)
+        self.xPais = TagCaracter(nome='xPais'  , codigo='E15', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/dest/enderDest', obrigatorio=False)
+        self.fone = TagInteiro(nome='fone'    , codigo='E16', tamanho=[ 1, 10]   , raiz='//NFe/infNFe/dest/enderDest', obrigatorio=False)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -3341,17 +3341,17 @@ class EnderDest(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.xLgr.xml    = arquivo
-            self.nro.xml     = arquivo
-            self.xCpl.xml    = arquivo
+            self.xLgr.xml = arquivo
+            self.nro.xml = arquivo
+            self.xCpl.xml = arquivo
             self.xBairro.xml = arquivo
-            self.cMun.xml    = arquivo
-            self.xMun.xml    = arquivo
-            self.UF.xml      = arquivo
-            self.CEP.xml     = arquivo
-            self.cPais.xml   = arquivo
-            self.xPais.xml   = arquivo
-            self.fone.xml    = arquivo
+            self.cMun.xml = arquivo
+            self.xMun.xml = arquivo
+            self.UF.xml = arquivo
+            self.CEP.xml = arquivo
+            self.cPais.xml = arquivo
+            self.xPais.xml = arquivo
+            self.fone.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -3378,12 +3378,12 @@ class Dest(XMLNFe):
 
     def __init__(self):
         super(Dest, self).__init__()
-        self.CNPJ      = TagCaracter(nome='CNPJ' , codigo='E02', tamanho=[0 , 14]   , raiz='//NFe/infNFe/dest', obrigatorio=False)
-        self.CPF       = TagCaracter(nome='CPF'  , codigo='E03', tamanho=[11, 11]   , raiz='//NFe/infNFe/dest', obrigatorio=False)
-        self.xNome     = TagCaracter(nome='xNome', codigo='E04', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/dest')
+        self.CNPJ = TagCaracter(nome='CNPJ' , codigo='E02', tamanho=[0 , 14]   , raiz='//NFe/infNFe/dest', obrigatorio=False)
+        self.CPF = TagCaracter(nome='CPF'  , codigo='E03', tamanho=[11, 11]   , raiz='//NFe/infNFe/dest', obrigatorio=False)
+        self.xNome = TagCaracter(nome='xNome', codigo='E04', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/dest')
         self.enderDest = EnderDest()
-        self.IE        = TagCaracter(nome='IE'   , codigo='E17', tamanho=[ 2, 14]   , raiz='//NFe/infNFe/dest')
-        self.ISUF      = TagCaracter(nome='ISUF' , codigo='E18', tamanho=[ 9, 9]   , raiz='//NFe/infNFe/dest', obrigatorio=False)
+        self.IE = TagCaracter(nome='IE'   , codigo='E17', tamanho=[ 2, 14]   , raiz='//NFe/infNFe/dest')
+        self.ISUF = TagCaracter(nome='ISUF' , codigo='E18', tamanho=[ 9, 9]   , raiz='//NFe/infNFe/dest', obrigatorio=False)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -3408,12 +3408,12 @@ class Dest(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.CNPJ.xml      = arquivo
-            self.CPF.xml       = arquivo
-            self.xNome.xml     = arquivo
+            self.CNPJ.xml = arquivo
+            self.CPF.xml = arquivo
+            self.xNome.xml = arquivo
             self.enderDest.xml = arquivo
-            self.IE.xml        = arquivo
-            self.ISUF.xml      = arquivo
+            self.IE.xml = arquivo
+            self.ISUF.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -3439,17 +3439,17 @@ class Avulsa(XMLNFe):
 
     def __init__(self):
         super(Avulsa, self).__init__()
-        self.CNPJ    = TagCaracter(nome='CNPJ'   , codigo='D02', tamanho=[14, 14], raiz='//NFe/infNFe/avulsa')
-        self.xOrgao  = TagCaracter(nome='xOrgao' , codigo='D03', tamanho=[ 1, 60], raiz='//NFe/infNFe/avulsa')
-        self.matr    = TagCaracter(nome='matr'   , codigo='D04', tamanho=[ 1, 60], raiz='//NFe/infNFe/avulsa')
+        self.CNPJ = TagCaracter(nome='CNPJ'   , codigo='D02', tamanho=[14, 14], raiz='//NFe/infNFe/avulsa')
+        self.xOrgao = TagCaracter(nome='xOrgao' , codigo='D03', tamanho=[ 1, 60], raiz='//NFe/infNFe/avulsa')
+        self.matr = TagCaracter(nome='matr'   , codigo='D04', tamanho=[ 1, 60], raiz='//NFe/infNFe/avulsa')
         self.xAgente = TagCaracter(nome='xAgente', codigo='D05', tamanho=[ 1, 60], raiz='//NFe/infNFe/avulsa')
-        self.fone    = TagInteiro(nome='fone'    , codigo='D06', tamanho=[ 1, 10], raiz='//NFe/infNFe/avulsa')
-        self.UF      = TagCaracter(nome='UF'     , codigo='D07', tamanho=[ 2, 2], raiz='//NFe/infNFe/avulsa')
-        self.nDAR    = TagCaracter(nome='nDAR'   , codigo='D08', tamanho=[ 1, 60], raiz='//NFe/infNFe/avulsa')
-        self.dEmi    = TagData(nome='dEmi'       , codigo='D09', raiz='//NFe/infNFe/avulsa')
-        self.vDAR    = TagDecimal(nome='vDAR'    , codigo='D10', tamanho=[ 1, 15], decimais=[0, 2, 2], raiz='//NFe/infNFe/avulsa')
-        self.repEmi  = TagCaracter(nome='repEmi' , codigo='D11', tamanho=[ 1, 60], raiz='//NFe/infNFe/avulsa')
-        self.dPag    = TagData(nome='dPag'       , codigo='D12', raiz='//NFe/infNFe/avulsa', obrigatorio=False)
+        self.fone = TagInteiro(nome='fone'    , codigo='D06', tamanho=[ 1, 10], raiz='//NFe/infNFe/avulsa')
+        self.UF = TagCaracter(nome='UF'     , codigo='D07', tamanho=[ 2, 2], raiz='//NFe/infNFe/avulsa')
+        self.nDAR = TagCaracter(nome='nDAR'   , codigo='D08', tamanho=[ 1, 60], raiz='//NFe/infNFe/avulsa')
+        self.dEmi = TagData(nome='dEmi'       , codigo='D09', raiz='//NFe/infNFe/avulsa')
+        self.vDAR = TagDecimal(nome='vDAR'    , codigo='D10', tamanho=[ 1, 15], decimais=[0, 2, 2], raiz='//NFe/infNFe/avulsa')
+        self.repEmi = TagCaracter(nome='repEmi' , codigo='D11', tamanho=[ 1, 60], raiz='//NFe/infNFe/avulsa')
+        self.dPag = TagData(nome='dPag'       , codigo='D12', raiz='//NFe/infNFe/avulsa', obrigatorio=False)
 
     def get_xml(self):
         if not len(self.CNPJ.valor):
@@ -3473,17 +3473,17 @@ class Avulsa(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.CNPJ.xml    = arquivo
-            self.xOrgao.xml  = arquivo
-            self.matr.xml    = arquivo
+            self.CNPJ.xml = arquivo
+            self.xOrgao.xml = arquivo
+            self.matr.xml = arquivo
             self.xAgente.xml = arquivo
-            self.fone.xml    = arquivo
-            self.UF.xml      = arquivo
-            self.nDAR.xml    = arquivo
-            self.dEmi.xml    = arquivo
-            self.vDAR.xml    = arquivo
-            self.repEmi.xml  = arquivo
-            self.dPag.xml    = arquivo
+            self.fone.xml = arquivo
+            self.UF.xml = arquivo
+            self.nDAR.xml = arquivo
+            self.dEmi.xml = arquivo
+            self.vDAR.xml = arquivo
+            self.repEmi.xml = arquivo
+            self.dPag.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -3514,17 +3514,17 @@ class EnderEmit(XMLNFe):
 
     def __init__(self):
         super(EnderEmit, self).__init__()
-        self.xLgr    = TagCaracter(nome='xLgr'   , codigo='C06', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/emit/enderEmit')
-        self.nro     = TagCaracter(nome='nro'    , codigo='C07', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/emit/enderEmit')
-        self.xCpl    = TagCaracter(nome='xCpl'   , codigo='C08', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/emit/enderEmit', obrigatorio=False)
+        self.xLgr = TagCaracter(nome='xLgr'   , codigo='C06', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/emit/enderEmit')
+        self.nro = TagCaracter(nome='nro'    , codigo='C07', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/emit/enderEmit')
+        self.xCpl = TagCaracter(nome='xCpl'   , codigo='C08', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/emit/enderEmit', obrigatorio=False)
         self.xBairro = TagCaracter(nome='xBairro', codigo='C09', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/emit/enderEmit')
-        self.cMun    = TagInteiro(nome='cMun'    , codigo='C10', tamanho=[ 7, 7, 7], raiz='//NFe/infNFe/emit/enderEmit')
-        self.xMun    = TagCaracter(nome='xMun'   , codigo='C11', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/emit/enderEmit')
-        self.UF      = TagCaracter(nome='UF'     , codigo='C12', tamanho=[ 2, 2]   , raiz='//NFe/infNFe/emit/enderEmit')
-        self.CEP     = TagCaracter(nome='CEP'    , codigo='C13', tamanho=[ 8, 8, 8], raiz='//NFe/infNFe/emit/enderEmit', obrigatorio=False)
-        self.cPais   = TagInteiro(nome='cPais'   , codigo='C14', tamanho=[ 4, 4, 4], raiz='//NFe/infNFe/emit/enderEmit', obrigatorio=False)
-        self.xPais   = TagCaracter(nome='xPais'  , codigo='C15', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/emit/enderEmit', obrigatorio=False)
-        self.fone    = TagInteiro(nome='fone'    , codigo='C16', tamanho=[ 1, 10]   , raiz='//NFe/infNFe/emit/enderEmit', obrigatorio=False)
+        self.cMun = TagInteiro(nome='cMun'    , codigo='C10', tamanho=[ 7, 7, 7], raiz='//NFe/infNFe/emit/enderEmit')
+        self.xMun = TagCaracter(nome='xMun'   , codigo='C11', tamanho=[ 2, 60]   , raiz='//NFe/infNFe/emit/enderEmit')
+        self.UF = TagCaracter(nome='UF'     , codigo='C12', tamanho=[ 2, 2]   , raiz='//NFe/infNFe/emit/enderEmit')
+        self.CEP = TagCaracter(nome='CEP'    , codigo='C13', tamanho=[ 8, 8, 8], raiz='//NFe/infNFe/emit/enderEmit', obrigatorio=False)
+        self.cPais = TagInteiro(nome='cPais'   , codigo='C14', tamanho=[ 4, 4, 4], raiz='//NFe/infNFe/emit/enderEmit', obrigatorio=False)
+        self.xPais = TagCaracter(nome='xPais'  , codigo='C15', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/emit/enderEmit', obrigatorio=False)
+        self.fone = TagInteiro(nome='fone'    , codigo='C16', tamanho=[ 1, 10]   , raiz='//NFe/infNFe/emit/enderEmit', obrigatorio=False)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -3545,17 +3545,17 @@ class EnderEmit(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.xLgr.xml    = arquivo
-            self.nro.xml     = arquivo
-            self.xCpl.xml    = arquivo
+            self.xLgr.xml = arquivo
+            self.nro.xml = arquivo
+            self.xCpl.xml = arquivo
             self.xBairro.xml = arquivo
-            self.cMun.xml    = arquivo
-            self.xMun.xml    = arquivo
-            self.UF.xml      = arquivo
-            self.CEP.xml     = arquivo
-            self.cPais.xml   = arquivo
-            self.xPais.xml   = arquivo
-            self.fone.xml    = arquivo
+            self.cMun.xml = arquivo
+            self.xMun.xml = arquivo
+            self.UF.xml = arquivo
+            self.CEP.xml = arquivo
+            self.cPais.xml = arquivo
+            self.xPais.xml = arquivo
+            self.fone.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -3583,15 +3583,15 @@ class Emit(XMLNFe):
 
     def __init__(self):
         super(Emit, self).__init__()
-        self.CNPJ      = TagCaracter(nome='CNPJ' , codigo='C02' , tamanho=[14, 14], raiz='//NFe/infNFe/emit', obrigatorio=False)
-        self.CPF       = TagCaracter(nome='CPF'  , codigo='C02a', tamanho=[11, 11], raiz='//NFe/infNFe/emit', obrigatorio=False)
-        self.xNome     = TagCaracter(nome='xNome', codigo='C03' , tamanho=[ 2, 60], raiz='//NFe/infNFe/emit')
-        self.xFant     = TagCaracter(nome='xFant', codigo='C04' , tamanho=[ 1, 60], raiz='//NFe/infNFe/emit', obrigatorio=False)
+        self.CNPJ = TagCaracter(nome='CNPJ' , codigo='C02' , tamanho=[14, 14], raiz='//NFe/infNFe/emit', obrigatorio=False)
+        self.CPF = TagCaracter(nome='CPF'  , codigo='C02a', tamanho=[11, 11], raiz='//NFe/infNFe/emit', obrigatorio=False)
+        self.xNome = TagCaracter(nome='xNome', codigo='C03' , tamanho=[ 2, 60], raiz='//NFe/infNFe/emit')
+        self.xFant = TagCaracter(nome='xFant', codigo='C04' , tamanho=[ 1, 60], raiz='//NFe/infNFe/emit', obrigatorio=False)
         self.enderEmit = EnderEmit()
-        self.IE        = TagCaracter(nome='IE'   , codigo='C17' , tamanho=[ 2, 14], raiz='//NFe/infNFe/emit', obrigatorio=False)
-        self.IEST      = TagCaracter(nome='IEST' , codigo='C18' , tamanho=[ 2, 14], raiz='//NFe/infNFe/emit', obrigatorio=False)
-        self.IM        = TagCaracter(nome='IM'   , codigo='C19' , tamanho=[ 1, 15], raiz='//NFe/infNFe/emit', obrigatorio=False)
-        self.CNAE      = TagCaracter(nome='CNAE' , codigo='C20' , tamanho=[ 7, 7], raiz='//NFe/infNFe/emit', obrigatorio=False)
+        self.IE = TagCaracter(nome='IE'   , codigo='C17' , tamanho=[ 2, 14], raiz='//NFe/infNFe/emit', obrigatorio=False)
+        self.IEST = TagCaracter(nome='IEST' , codigo='C18' , tamanho=[ 2, 14], raiz='//NFe/infNFe/emit', obrigatorio=False)
+        self.IM = TagCaracter(nome='IM'   , codigo='C19' , tamanho=[ 1, 15], raiz='//NFe/infNFe/emit', obrigatorio=False)
+        self.CNAE = TagCaracter(nome='CNAE' , codigo='C20' , tamanho=[ 7, 7], raiz='//NFe/infNFe/emit', obrigatorio=False)
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -3610,15 +3610,15 @@ class Emit(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.CNPJ.xml      = arquivo
-            self.CPF.xml       = arquivo
-            self.xNome.xml     = arquivo
-            self.xFant.xml     = arquivo
+            self.CNPJ.xml = arquivo
+            self.CPF.xml = arquivo
+            self.xNome.xml = arquivo
+            self.xFant.xml = arquivo
             self.enderEmit.xml = arquivo
-            self.IE.xml        = arquivo
-            self.IEST.xml      = arquivo
-            self.IM.xml        = arquivo
-            self.CNAE.xml      = arquivo
+            self.IE.xml = arquivo
+            self.IEST.xml = arquivo
+            self.IM.xml = arquivo
+            self.CNAE.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -3649,12 +3649,12 @@ class RefNF(XMLNFe):
 
     def __init__(self):
         super(RefNF, self).__init__()
-        self.cUF   = TagInteiro(nome='cUF'  , codigo='B15', tamanho=[ 2, 2, 2], raiz='//NFref/refNF')
-        self.AAMM  = TagCaracter(nome='AAMM', codigo='B16', tamanho=[ 4, 4, 4], raiz='//NFref/refNF')
-        self.CNPJ  = TagCaracter(nome='CNPJ', codigo='B17', tamanho=[14, 14]   , raiz='//NFref/refNF')
-        self.mod   = TagCaracter(nome='mod' , codigo='B18', tamanho=[ 2, 2, 2], raiz='//NFref/refNF')
+        self.cUF = TagInteiro(nome='cUF'  , codigo='B15', tamanho=[ 2, 2, 2], raiz='//NFref/refNF')
+        self.AAMM = TagCaracter(nome='AAMM', codigo='B16', tamanho=[ 4, 4, 4], raiz='//NFref/refNF')
+        self.CNPJ = TagCaracter(nome='CNPJ', codigo='B17', tamanho=[14, 14]   , raiz='//NFref/refNF')
+        self.mod = TagCaracter(nome='mod' , codigo='B18', tamanho=[ 2, 2, 2], raiz='//NFref/refNF')
         self.serie = TagInteiro(nome='serie', codigo='B19', tamanho=[ 1, 3, 1], raiz='//NFref/refNF')
-        self.nNF   = TagInteiro(nome='nNF'  , codigo='B20', tamanho=[ 1, 9, 1], raiz='//NFref/refNF')
+        self.nNF = TagInteiro(nome='nNF'  , codigo='B20', tamanho=[ 1, 9, 1], raiz='//NFref/refNF')
 
     def get_xml(self):
         if not (self.cUF.valor or self.AAMM.valor or self.CNPJ.valor or self.mod.valor or self.serie.valor or self.nNF.valor):
@@ -3673,12 +3673,12 @@ class RefNF(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.cUF.xml   = arquivo
-            self.AAMM.xml  = arquivo
-            self.CNPJ.xml  = arquivo
-            self.mod.xml   = arquivo
+            self.cUF.xml = arquivo
+            self.AAMM.xml = arquivo
+            self.CNPJ.xml = arquivo
+            self.mod.xml = arquivo
             self.serie.xml = arquivo
-            self.nNF.xml   = arquivo
+            self.nNF.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -3704,7 +3704,7 @@ class NFRef(XMLNFe):
     def __init__(self):
         super(NFRef, self).__init__()
         self.refNFe = TagCaracter(nome='refNFe', codigo='B13', tamanho=[44, 44], raiz='//NFRef', obrigatorio=False)
-        self.refNF  = RefNF()
+        self.refNF = RefNF()
 
     def get_xml(self):
         if not (self.refNFe.valor or self.refNF.xml):
@@ -3720,7 +3720,7 @@ class NFRef(XMLNFe):
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
             self.refNFe.xml = arquivo
-            self.refNF.xml  = arquivo
+            self.refNF.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -3742,23 +3742,23 @@ class Ide(XMLNFe):
 
     def __init__(self):
         super(Ide, self).__init__()
-        self.cUF     = TagInteiro(nome='cUF'     , codigo='B02', tamanho=[ 2, 2, 2], raiz='//NFe/infNFe/ide')
-        self.cNF     = TagCaracter(nome='cNF'    , codigo='B03', tamanho=[ 9, 9, 9], raiz='//NFe/infNFe/ide')
-        self.natOp   = TagCaracter(nome='natOp'  , codigo='B04', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/ide')
-        self.indPag  = TagInteiro(nome='indPag'  , codigo='B05', tamanho=[ 1, 1, 1], raiz='//NFe/infNFe/ide')
-        self.mod     = TagInteiro(nome='mod'     , codigo='B06', tamanho=[ 2, 2, 2], raiz='//NFe/infNFe/ide', valor=55)
-        self.serie   = TagInteiro(nome='serie'   , codigo='B07', tamanho=[ 1, 3, 1], raiz='//NFe/infNFe/ide')
-        self.nNF     = TagInteiro(nome='nNF'     , codigo='B08', tamanho=[ 1, 9, 1], raiz='//NFe/infNFe/ide')
-        self.dEmi    = TagData(nome='dEmi'       , codigo='B09', raiz='//NFe/infNFe/ide')
+        self.cUF = TagInteiro(nome='cUF'     , codigo='B02', tamanho=[ 2, 2, 2], raiz='//NFe/infNFe/ide')
+        self.cNF = TagCaracter(nome='cNF'    , codigo='B03', tamanho=[ 9, 9, 9], raiz='//NFe/infNFe/ide')
+        self.natOp = TagCaracter(nome='natOp'  , codigo='B04', tamanho=[ 1, 60]   , raiz='//NFe/infNFe/ide')
+        self.indPag = TagInteiro(nome='indPag'  , codigo='B05', tamanho=[ 1, 1, 1], raiz='//NFe/infNFe/ide')
+        self.mod = TagInteiro(nome='mod'     , codigo='B06', tamanho=[ 2, 2, 2], raiz='//NFe/infNFe/ide', valor=55)
+        self.serie = TagInteiro(nome='serie'   , codigo='B07', tamanho=[ 1, 3, 1], raiz='//NFe/infNFe/ide')
+        self.nNF = TagInteiro(nome='nNF'     , codigo='B08', tamanho=[ 1, 9, 1], raiz='//NFe/infNFe/ide')
+        self.dEmi = TagData(nome='dEmi'       , codigo='B09', raiz='//NFe/infNFe/ide')
         self.dSaiEnt = TagData(nome='dSaiEnt'    , codigo='B10', raiz='//NFe/infNFe/ide', obrigatorio=False)
-        self.tpNF    = TagInteiro(nome='tpNF'    , codigo='B11', tamanho=[ 1, 1, 1], raiz='//NFe/infNFe/ide', valor=1)
-        self.cMunFG  = TagInteiro(nome='cMunFG'  , codigo='B12', tamanho=[ 7, 7, 7], raiz='//NFe/infNFe/ide')
-        self.NFref   = []
-        self.tpImp   = TagInteiro(nome='tpImp'   , codigo='B21', tamanho=[ 1, 1, 1], raiz='//NFe/infNFe/ide', valor=1)
-        self.tpEmis  = TagInteiro(nome='tpEmis'  , codigo='B22', tamanho=[ 1, 1, 1], raiz='//NFe/infNFe/ide', valor=1)
-        self.cDV     = TagInteiro(nome='cDV'     , codigo='B23', tamanho=[ 1, 1, 1], raiz='//NFe/infNFe/ide')
-        self.tpAmb   = TagInteiro(nome='tpAmb'   , codigo='B24', tamanho=[ 1, 1, 1], raiz='//NFe/infNFe/ide', valor=2)
-        self.finNFe  = TagInteiro(nome='finNFe'  , codigo='B25', tamanho=[ 1, 1, 1], raiz='//NFe/infNFe/ide', valor=1)
+        self.tpNF = TagInteiro(nome='tpNF'    , codigo='B11', tamanho=[ 1, 1, 1], raiz='//NFe/infNFe/ide', valor=1)
+        self.cMunFG = TagInteiro(nome='cMunFG'  , codigo='B12', tamanho=[ 7, 7, 7], raiz='//NFe/infNFe/ide')
+        self.NFref = []
+        self.tpImp = TagInteiro(nome='tpImp'   , codigo='B21', tamanho=[ 1, 1, 1], raiz='//NFe/infNFe/ide', valor=1)
+        self.tpEmis = TagInteiro(nome='tpEmis'  , codigo='B22', tamanho=[ 1, 1, 1], raiz='//NFe/infNFe/ide', valor=1)
+        self.cDV = TagInteiro(nome='cDV'     , codigo='B23', tamanho=[ 1, 1, 1], raiz='//NFe/infNFe/ide')
+        self.tpAmb = TagInteiro(nome='tpAmb'   , codigo='B24', tamanho=[ 1, 1, 1], raiz='//NFe/infNFe/ide', valor=2)
+        self.finNFe = TagInteiro(nome='finNFe'  , codigo='B25', tamanho=[ 1, 1, 1], raiz='//NFe/infNFe/ide', valor=1)
         self.procEmi = TagInteiro(nome='procEmi' , codigo='B26', tamanho=[ 1, 1, 1], raiz='//NFe/infNFe/ide')
         self.verProc = TagCaracter(nome='verProc', codigo='B27', tamanho=[ 1, 20]   , raiz='//NFe/infNFe/ide')
         self.hSaiEnt = TagHora(nome='hSaiEnt'    , codigo=''   , raiz='//NFe/infNFe/ide', obrigatorio=False)
@@ -3793,17 +3793,17 @@ class Ide(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.cUF.xml     = arquivo
-            self.cNF.xml     = arquivo
-            self.natOp.xml   = arquivo
-            self.indPag.xml  = arquivo
-            self.mod.xml     = arquivo
-            self.serie.xml   = arquivo
-            self.nNF.xml     = arquivo
-            self.dEmi.xml    = arquivo
+            self.cUF.xml = arquivo
+            self.cNF.xml = arquivo
+            self.natOp.xml = arquivo
+            self.indPag.xml = arquivo
+            self.mod.xml = arquivo
+            self.serie.xml = arquivo
+            self.nNF.xml = arquivo
+            self.dEmi.xml = arquivo
             self.dSaiEnt.xml = arquivo
-            self.tpNF.xml    = arquivo
-            self.cMunFG.xml  = arquivo
+            self.tpNF.xml = arquivo
+            self.cMunFG.xml = arquivo
 
             #
             # Técnica para leitura de tags múltiplas
@@ -3813,11 +3813,11 @@ class Ide(XMLNFe):
             #
             self.NFRef = self.le_grupo('//NFe/infNFe/ide/NFref', NFRef)
 
-            self.tpImp.xml   = arquivo
-            self.tpEmis.xml  = arquivo
-            self.cDV.xml     = arquivo
-            self.tpAmb.xml   = arquivo
-            self.finNFe.xml  = arquivo
+            self.tpImp.xml = arquivo
+            self.tpEmis.xml = arquivo
+            self.cDV.xml = arquivo
+            self.tpAmb.xml = arquivo
+            self.finNFe.xml = arquivo
             self.procEmi.xml = arquivo
             self.verProc.xml = arquivo
 
@@ -3857,21 +3857,21 @@ class InfNFe(XMLNFe):
 
     def __init__(self):
         super(InfNFe, self).__init__()
-        self.versao   = TagDecimal(nome='infNFe' , codigo='A01', propriedade='versao', raiz='//NFe', namespace=NAMESPACE_NFE, valor='1.10')
-        self.Id       = TagCaracter(nome='infNFe', codigo='A03', propriedade='Id'    , raiz='//NFe', namespace=NAMESPACE_NFE)
-        self.ide      = Ide()
-        self.emit     = Emit()
-        self.avulsa   = Avulsa()
-        self.dest     = Dest()
+        self.versao = TagDecimal(nome='infNFe' , codigo='A01', propriedade='versao', raiz='//NFe', namespace=NAMESPACE_NFE, valor='1.10')
+        self.Id = TagCaracter(nome='infNFe', codigo='A03', propriedade='Id'    , raiz='//NFe', namespace=NAMESPACE_NFE)
+        self.ide = Ide()
+        self.emit = Emit()
+        self.avulsa = Avulsa()
+        self.dest = Dest()
         self.retirada = Retirada()
-        self.entrega  = Entrega()
-        self.det      = []
-        self.total    = Total()
-        self.transp   = Transp()
-        self.cobr     = Cobr()
-        self.infAdic  = InfAdic()
-        self.exporta  = Exporta()
-        self.compra   = Compra()
+        self.entrega = Entrega()
+        self.det = []
+        self.total = Total()
+        self.transp = Transp()
+        self.cobr = Cobr()
+        self.infAdic = InfAdic()
+        self.exporta = Exporta()
+        self.compra = Compra()
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -3897,14 +3897,14 @@ class InfNFe(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.versao.xml   = arquivo
-            self.Id.xml       = arquivo
-            self.ide.xml      = arquivo
-            self.emit.xml     = arquivo
-            self.avulsa.xml   = arquivo
-            self.dest.xml     = arquivo
+            self.versao.xml = arquivo
+            self.Id.xml = arquivo
+            self.ide.xml = arquivo
+            self.emit.xml = arquivo
+            self.avulsa.xml = arquivo
+            self.dest.xml = arquivo
             self.retirada.xml = arquivo
-            self.entrega.xml  = arquivo
+            self.entrega.xml = arquivo
 
             #
             # Técnica para leitura de tags múltiplas
@@ -3914,12 +3914,12 @@ class InfNFe(XMLNFe):
             #
             self.det = self.le_grupo('//NFe/infNFe/det', Det)
 
-            self.total.xml    = arquivo
-            self.transp.xml   = arquivo
-            self.cobr.xml     = arquivo
-            self.infAdic.xml  = arquivo
-            self.exporta.xml  = arquivo
-            self.compra.xml   = arquivo
+            self.total.xml = arquivo
+            self.transp.xml = arquivo
+            self.cobr.xml = arquivo
+            self.infAdic.xml = arquivo
+            self.exporta.xml = arquivo
+            self.compra.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -3981,7 +3981,7 @@ class NFe(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.infNFe.xml    = arquivo
+            self.infNFe.xml = arquivo
             self.Signature.xml = self._le_noh('//NFe/sig:Signature')
 
     xml = property(get_xml, set_xml)

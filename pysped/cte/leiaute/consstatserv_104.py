@@ -55,9 +55,9 @@ class ConsStatServCTe(XMLNFe):
     def __init__(self):
         super(ConsStatServCTe, self).__init__()
         self.versao = TagDecimal(nome='consStatServCte', codigo='FP01', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
-        self.tpAmb  = TagInteiro(nome='tpAmb'       , codigo='FP03', tamanho=[1, 1, 1], raiz='//consStatServCte', valor=2)
-        self.cUF    = TagInteiro(nome='cUF'         , codigo='FP04', tamanho=[2, 2, 2], raiz='//consStatServCte', valor=35)
-        self.xServ  = TagCaracter(nome='xServ'      , codigo='FP05', tamanho=[6, 6]   , raiz='//consStatServCte', valor='STATUS')
+        self.tpAmb = TagInteiro(nome='tpAmb'       , codigo='FP03', tamanho=[1, 1, 1], raiz='//consStatServCte', valor=2)
+        self.cUF = TagInteiro(nome='cUF'         , codigo='FP04', tamanho=[2, 2, 2], raiz='//consStatServCte', valor=35)
+        self.xServ = TagCaracter(nome='xServ'      , codigo='FP05', tamanho=[6, 6]   , raiz='//consStatServCte', valor='STATUS')
         self.caminho_esquema = os.path.join(DIRNAME, 'schema', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'consStatServCte_v1.04.xsd'
 
@@ -74,9 +74,9 @@ class ConsStatServCTe(XMLNFe):
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
             self.versao.xml = arquivo
-            self.tpAmb.xml  = arquivo
-            self.cUF.xml    = arquivo
-            self.xServ.xml  = arquivo
+            self.tpAmb.xml = arquivo
+            self.cUF.xml = arquivo
+            self.xServ.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -85,16 +85,16 @@ class RetConsStatServCTe(XMLNFe):
 
     def __init__(self):
         super(RetConsStatServCTe, self).__init__()
-        self.versao    = TagDecimal(nome='retConsStatServCte', codigo='FR01', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
-        self.tpAmb     = TagInteiro(nome='tpAmb'          , codigo='FR03', tamanho=[1, 1, 1], raiz='//retConsStatServCte', valor=2)
-        self.verAplic  = TagCaracter(nome='verAplic'      , codigo='FR04', tamanho=[1, 20]  , raiz='//retConsStatServCte')
-        self.cStat     = TagCaracter(nome='cStat'         , codigo='FR05', tamanho=[3, 3, 3], raiz='//retConsStatServCte')
-        self.xMotivo   = TagCaracter(nome='xMotivo'       , codigo='FR06', tamanho=[1, 255] , raiz='//retConsStatServCte')
-        self.cUF       = TagInteiro(nome='cUF'            , codigo='FR07', tamanho=[2, 2, 2], raiz='//retConsStatServCte')
-        self.dhRecbto  = TagDataHora(nome='dhRecbto'      , codigo='FR08', raiz='//retConsStatServCte')
-        self.tMed      = TagInteiro(nome='tMed'           , codigo='FR09', tamanho=[1, 4]   , raiz='//retConsStatServCte', obrigatorio=False)
+        self.versao = TagDecimal(nome='retConsStatServCte', codigo='FR01', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
+        self.tpAmb = TagInteiro(nome='tpAmb'          , codigo='FR03', tamanho=[1, 1, 1], raiz='//retConsStatServCte', valor=2)
+        self.verAplic = TagCaracter(nome='verAplic'      , codigo='FR04', tamanho=[1, 20]  , raiz='//retConsStatServCte')
+        self.cStat = TagCaracter(nome='cStat'         , codigo='FR05', tamanho=[3, 3, 3], raiz='//retConsStatServCte')
+        self.xMotivo = TagCaracter(nome='xMotivo'       , codigo='FR06', tamanho=[1, 255] , raiz='//retConsStatServCte')
+        self.cUF = TagInteiro(nome='cUF'            , codigo='FR07', tamanho=[2, 2, 2], raiz='//retConsStatServCte')
+        self.dhRecbto = TagDataHora(nome='dhRecbto'      , codigo='FR08', raiz='//retConsStatServCte')
+        self.tMed = TagInteiro(nome='tMed'           , codigo='FR09', tamanho=[1, 4]   , raiz='//retConsStatServCte', obrigatorio=False)
         self.dhRetorno = TagDataHora(nome='dhRetorno'     , codigo='FR10', raiz='//retConsStatServCte', obrigatorio=False)
-        self.xObs      = TagCaracter(nome='xObs'          , codigo='FR11', tamanho=[1, 255] , raiz='//retConsStatServCte', obrigatorio=False)
+        self.xObs = TagCaracter(nome='xObs'          , codigo='FR11', tamanho=[1, 255] , raiz='//retConsStatServCte', obrigatorio=False)
         self.caminho_esquema = os.path.join(DIRNAME, 'schema', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'retConsStatServCte_v1.04.xsd'
 
@@ -116,15 +116,15 @@ class RetConsStatServCTe(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.versao.xml    = arquivo
-            self.tpAmb.xml     = arquivo
-            self.verAplic.xml  = arquivo
-            self.cStat.xml     = arquivo
-            self.xMotivo.xml   = arquivo
-            self.cUF.xml       = arquivo
-            self.dhRecbto.xml  = arquivo
-            self.tMed.xml      = arquivo
+            self.versao.xml = arquivo
+            self.tpAmb.xml = arquivo
+            self.verAplic.xml = arquivo
+            self.cStat.xml = arquivo
+            self.xMotivo.xml = arquivo
+            self.cUF.xml = arquivo
+            self.dhRecbto.xml = arquivo
+            self.tMed.xml = arquivo
             self.dhRetorno.xml = arquivo
-            self.xObs.xml      = arquivo
+            self.xObs.xml = arquivo
 
     xml = property(get_xml, set_xml)

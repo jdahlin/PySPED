@@ -55,9 +55,9 @@ class ConsReciCTe(XMLNFe):
 
     def __init__(self):
         super(ConsReciCTe, self).__init__()
-        self.versao  = TagDecimal(nome='consReciCTe', codigo='BP02', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
-        self.tpAmb   = TagInteiro(nome='tpAmb'      , codigo='BP03', tamanho=[1, 1, 1]  , raiz='//consReciCTe')
-        self.nRec    = TagCaracter(nome='nRec'      , codigo='BP04', tamanho=[1, 15, 1]   , raiz='//consReciCTe')
+        self.versao = TagDecimal(nome='consReciCTe', codigo='BP02', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
+        self.tpAmb = TagInteiro(nome='tpAmb'      , codigo='BP03', tamanho=[1, 1, 1]  , raiz='//consReciCTe')
+        self.nRec = TagCaracter(nome='nRec'      , codigo='BP04', tamanho=[1, 15, 1]   , raiz='//consReciCTe')
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'consReciCte_v1.04.xsd'
 
@@ -73,8 +73,8 @@ class ConsReciCTe(XMLNFe):
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
             self.versao.xml = arquivo
-            self.tpAmb.xml  = arquivo
-            self.nRec.xml   = arquivo
+            self.tpAmb.xml = arquivo
+            self.nRec.xml = arquivo
 
         return self.xml
 
@@ -85,15 +85,15 @@ class InfProt(XMLNFe):
 
     def __init__(self):
         super(InfProt, self).__init__()
-        self.Id        = TagCaracter(nome='infProt' , codigo='PR04', propriedade='Id'  , raiz='/'        , obrigatorio=False)
-        self.tpAmb     = TagInteiro(nome='tpAmb'    , codigo='PR05', tamanho=[1, 1, 1], raiz='//infProt')
-        self.verAplic  = TagCaracter(nome='verAplic', codigo='PR06', tamanho=[1, 20]   , raiz='//infProt')
-        self.chCTe     = TagCaracter(nome='chCTe'   , codigo='PR07', tamanho=[44, 44]   , raiz='//infProt')
-        self.dhRecbto  = TagDataHora(nome='dhRecbto', codigo='PR08'                     , raiz='//infProt')
-        self.nProt     = TagCaracter(nome='nProt'   , codigo='PR09', tamanho=[15, 15]   , raiz='//infProt', obrigatorio=False)
-        self.digVal    = TagCaracter(nome='digVal'  , codigo='PR10', tamanho=[28, 28]   , raiz='//infProt', obrigatorio=False)
-        self.cStat     = TagCaracter(nome='cStat'   , codigo='PR11' , tamanho=[1, 3]  , raiz='//infProt')
-        self.xMotivo   = TagCaracter(nome='xMotivo' , codigo='PR12' , tamanho=[1, 255]  , raiz='//infProt')
+        self.Id = TagCaracter(nome='infProt' , codigo='PR04', propriedade='Id'  , raiz='/'        , obrigatorio=False)
+        self.tpAmb = TagInteiro(nome='tpAmb'    , codigo='PR05', tamanho=[1, 1, 1], raiz='//infProt')
+        self.verAplic = TagCaracter(nome='verAplic', codigo='PR06', tamanho=[1, 20]   , raiz='//infProt')
+        self.chCTe = TagCaracter(nome='chCTe'   , codigo='PR07', tamanho=[44, 44]   , raiz='//infProt')
+        self.dhRecbto = TagDataHora(nome='dhRecbto', codigo='PR08'                     , raiz='//infProt')
+        self.nProt = TagCaracter(nome='nProt'   , codigo='PR09', tamanho=[15, 15]   , raiz='//infProt', obrigatorio=False)
+        self.digVal = TagCaracter(nome='digVal'  , codigo='PR10', tamanho=[28, 28]   , raiz='//infProt', obrigatorio=False)
+        self.cStat = TagCaracter(nome='cStat'   , codigo='PR11' , tamanho=[1, 3]  , raiz='//infProt')
+        self.xMotivo = TagCaracter(nome='xMotivo' , codigo='PR12' , tamanho=[1, 255]  , raiz='//infProt')
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -116,15 +116,15 @@ class InfProt(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.Id.xml        = arquivo
-            self.tpAmb.xml     = arquivo
-            self.verAplic.xml  = arquivo
-            self.chCTe.xml     = arquivo
-            self.dhRecbto.xml  = arquivo
-            self.nProt.xml     = arquivo
-            self.digVal.xml    = arquivo
-            self.cStat.xml     = arquivo
-            self.xMotivo.xml   = arquivo
+            self.Id.xml = arquivo
+            self.tpAmb.xml = arquivo
+            self.verAplic.xml = arquivo
+            self.chCTe.xml = arquivo
+            self.dhRecbto.xml = arquivo
+            self.nProt.xml = arquivo
+            self.digVal.xml = arquivo
+            self.cStat.xml = arquivo
+            self.xMotivo.xml = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -133,7 +133,7 @@ class ProtCTe(XMLNFe):
 
     def __init__(self):
         super(ProtCTe, self).__init__()
-        self.versao  = TagDecimal(nome='protCTe', codigo='PR02' , propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
+        self.versao = TagDecimal(nome='protCTe', codigo='PR02' , propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
         self.infProt = InfProt()
         self.Signature = Signature()
 
@@ -150,7 +150,7 @@ class ProtCTe(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.versao.xml  = arquivo
+            self.versao.xml = arquivo
             #
             # o grupo infProt é usado também no webservice de consulta da situação de uma NF-e
             # por isso, a raiz dele não pode ser assumida como sendo sempre o grupo
@@ -175,14 +175,14 @@ class RetConsReciCTe(XMLNFe):
 
     def __init__(self):
         super(RetConsReciCTe, self).__init__()
-        self.versao   = TagDecimal(nome='retConsReciCTe', codigo='BR02' , propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
-        self.tpAmb    = TagInteiro(nome='tpAmb'         , codigo='BR03' , tamanho=[1, 1, 1], raiz='//retConsReciCTe')
+        self.versao = TagDecimal(nome='retConsReciCTe', codigo='BR02' , propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
+        self.tpAmb = TagInteiro(nome='tpAmb'         , codigo='BR03' , tamanho=[1, 1, 1], raiz='//retConsReciCTe')
         self.verAplic = TagCaracter(nome='verAplic'     , codigo='BR04' , tamanho=[1, 20]   , raiz='//retConsReciCTe')
-        self.nRec     = TagCaracter(nome='nRec'         , codigo='BR04a', tamanho=[1, 15, 1] , raiz='//retConsReciCTe')
-        self.cStat    = TagCaracter(nome='cStat'        , codigo='BR05' , tamanho=[1, 3]   , raiz='//retConsReciCTe')
-        self.xMotivo  = TagCaracter(nome='xMotivo'      , codigo='BR06' , tamanho=[1, 255]   , raiz='//retConsReciCTe')
-        self.cUF      = TagCaracter(nome='cUF'          , codigo='BR06a', tamanho=[2, 2, 2], raiz='//retConsReciCTe')
-        self.protCTe  = []
+        self.nRec = TagCaracter(nome='nRec'         , codigo='BR04a', tamanho=[1, 15, 1] , raiz='//retConsReciCTe')
+        self.cStat = TagCaracter(nome='cStat'        , codigo='BR05' , tamanho=[1, 3]   , raiz='//retConsReciCTe')
+        self.xMotivo = TagCaracter(nome='xMotivo'      , codigo='BR06' , tamanho=[1, 255]   , raiz='//retConsReciCTe')
+        self.cUF = TagCaracter(nome='cUF'          , codigo='BR06a', tamanho=[2, 2, 2], raiz='//retConsReciCTe')
+        self.protCTe = []
 
         #
         # Dicionário dos protocolos, com a chave sendo a chave de NF-e
@@ -214,14 +214,14 @@ class RetConsReciCTe(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.versao.xml   = arquivo
-            self.tpAmb.xml    = arquivo
+            self.versao.xml = arquivo
+            self.tpAmb.xml = arquivo
             self.verAplic.xml = arquivo
-            self.nRec.xml     = arquivo
-            self.cStat.xml    = arquivo
-            self.xMotivo.xml  = arquivo
-            self.cUF.xml      = arquivo
-            self.protCTe      = self.le_grupo('//retConsReciCTe/protCTe', ProtCTe)
+            self.nRec.xml = arquivo
+            self.cStat.xml = arquivo
+            self.xMotivo.xml = arquivo
+            self.cUF.xml = arquivo
+            self.protCTe = self.le_grupo('//retConsReciCTe/protCTe', ProtCTe)
 
             #
             # Monta o dicionário dos protocolos
@@ -236,8 +236,8 @@ class ProcCTe(XMLNFe):
 
     def __init__(self):
         super(ProcCTe, self).__init__()
-        self.versao  = TagDecimal(nome='cteProc', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
-        self.CTe     = CTe()
+        self.versao = TagDecimal(nome='cteProc', propriedade='versao', namespace=NAMESPACE_CTE, valor='1.04', raiz='/')
+        self.CTe = CTe()
         self.protCTe = ProtCTe()
         self.caminho_esquema = os.path.join(DIRNAME, 'schema/', ESQUEMA_ATUAL + '/')
         self.arquivo_esquema = 'procCTe_v1.04.xsd'
@@ -253,7 +253,7 @@ class ProcCTe(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.CTe.xml     = arquivo
+            self.CTe.xml = arquivo
             self.protCTe.xml = arquivo
 
     xml = property(get_xml, set_xml)

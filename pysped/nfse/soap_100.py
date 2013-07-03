@@ -64,13 +64,13 @@ class SOAPEnvio(XMLNFe):
         xml = XMLNFe.get_xml(self)
         xml += ABERTURA
         xml += '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:nfse="http://wsnfe2.dsfnet.com.br">'
-        xml +=     '<soap:Body>'
-        xml +=         '<nfse:' + self.metodo + '>'
-        xml +=             '<mensagemXml>'
+        xml += '<soap:Body>'
+        xml += '<nfse:' + self.metodo + '>'
+        xml += '<mensagemXml>'
         xml += tirar_acentos(self.envio.xml)
-        xml +=             '</mensagemXml>'
-        xml +=         '</nfse:' + self.metodo + '>'
-        xml +=     '</soap:Body>'
+        xml += '</mensagemXml>'
+        xml += '</nfse:' + self.metodo + '>'
+        xml += '</soap:Body>'
         xml += '</soap:Envelope>'
         return xml
 
@@ -97,16 +97,16 @@ class SOAPRetorno(XMLNFe):
         xml = XMLNFe.get_xml(self)
         xml += ABERTURA
         xml += '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:nfse="http://wsnfe2.dsfnet.com.br">'
-        xml +=     '<soap:Body>'
-        xml +=         '<nfse:' + self.metodo + 'Response xmlns:nfse="http://wsnfe2.dsfnet.com.br">'
-        xml +=             '<sr:result xmlns:sr="http://www.w3.org/2003/05/soap-rpc">'
-        xml +=                 self.metodo + 'Return'
-        xml +=             '</sr:result>'
-        xml +=             '<' + self.metodo + 'Return>'
+        xml += '<soap:Body>'
+        xml += '<nfse:' + self.metodo + 'Response xmlns:nfse="http://wsnfe2.dsfnet.com.br">'
+        xml += '<sr:result xmlns:sr="http://www.w3.org/2003/05/soap-rpc">'
+        xml += self.metodo + 'Return'
+        xml += '</sr:result>'
+        xml += '<' + self.metodo + 'Return>'
         xml += tirar_acentos(self.resposta.xml)
-        xml +=             '</' + self.metodo + 'Return>'
-        xml +=         '</nfse:' + self.metodo + 'Response>'
-        xml +=     '</soap:Body>'
+        xml += '</' + self.metodo + 'Return>'
+        xml += '</nfse:' + self.metodo + 'Response>'
+        xml += '</soap:Body>'
         xml += '</soap:Envelope>'
         return xml
 

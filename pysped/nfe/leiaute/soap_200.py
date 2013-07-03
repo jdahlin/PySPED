@@ -53,7 +53,7 @@ class NFeCabecMsg(XMLNFe):
     def __init__(self):
         super(NFeCabecMsg, self).__init__()
         self.webservice = ''
-        self.cUF         = TagInteiro(nome='cUF'        , codigo='', raiz='//cabecMsg', tamanho=[2, 2], valor=35)
+        self.cUF = TagInteiro(nome='cUF'        , codigo='', raiz='//cabecMsg', tamanho=[2, 2], valor=35)
         self.versaoDados = TagDecimal(nome='versaoDados', codigo='', raiz='//cabecMsg', tamanho=[1, 4], valor='2.00')
 
     def get_xml(self):
@@ -66,7 +66,7 @@ class NFeCabecMsg(XMLNFe):
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
-            self.cUF.xml         = arquivo
+            self.cUF.xml = arquivo
             self.versaoDados.xml = arquivo
 
         return self.xml
@@ -100,8 +100,8 @@ class SOAPEnvio(XMLNFe):
         super(SOAPEnvio, self).__init__()
         self.webservice = ''
         self.metodo = ''
-        self.cUF    = None
-        self.envio  = None
+        self.cUF = None
+        self.envio = None
         self.nfeCabecMsg = NFeCabecMsg()
         self.nfeDadosMsg = NFeDadosMsg()
         self._header = {b'content-type': b'application/soap+xml; charset=utf-8'}
@@ -119,12 +119,12 @@ class SOAPEnvio(XMLNFe):
         xml = XMLNFe.get_xml(self)
         xml += ABERTURA
         xml += '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">'
-        xml +=     '<soap:Header>'
-        xml +=             self.nfeCabecMsg.xml
-        xml +=     '</soap:Header>'
-        xml +=     '<soap:Body>'
-        xml +=             self.nfeDadosMsg.xml
-        xml +=     '</soap:Body>'
+        xml += '<soap:Header>'
+        xml += self.nfeCabecMsg.xml
+        xml += '</soap:Header>'
+        xml += '<soap:Body>'
+        xml += self.nfeDadosMsg.xml
+        xml += '</soap:Body>'
         xml += '</soap:Envelope>'
         return xml
 
@@ -153,16 +153,16 @@ class SOAPRetorno(XMLNFe):
         xml = XMLNFe.get_xml(self)
         xml += ABERTURA
         xml += '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">'
-        xml +=     '<soap:Header>'
-        xml +=         '<nfeCabecMsg xmlns="http://www.portalfiscal.inf.br/nfe/wsdl/' + self.webservice + '">'
-        xml +=             self.nfeCabecMsg.xml
-        xml +=         '</nfeCabecMsg>'
-        xml +=     '</soap:Header>'
-        xml +=     '<soap:Body>'
-        xml +=         '<' + self.metodo + 'Result xmlns="http://www.portalfiscal.inf.br/nfe/wsdl/' + self.webservice + '">'
-        xml +=             self.resposta.xml
-        xml +=         '</' + self.metodo + 'Result>'
-        xml +=     '</soap:Body>'
+        xml += '<soap:Header>'
+        xml += '<nfeCabecMsg xmlns="http://www.portalfiscal.inf.br/nfe/wsdl/' + self.webservice + '">'
+        xml += self.nfeCabecMsg.xml
+        xml += '</nfeCabecMsg>'
+        xml += '</soap:Header>'
+        xml += '<soap:Body>'
+        xml += '<' + self.metodo + 'Result xmlns="http://www.portalfiscal.inf.br/nfe/wsdl/' + self.webservice + '">'
+        xml += self.resposta.xml
+        xml += '</' + self.metodo + 'Result>'
+        xml += '</soap:Body>'
         xml += '</soap:Envelope>'
         return xml
 
