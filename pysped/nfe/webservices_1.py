@@ -94,7 +94,7 @@ SVRS = {
         WS_NFE_INUTILIZACAO: 'ws/nfeinutilizacao/NfeInutilizacao.asmx',
         WS_NFE_CONSULTA: 'ws/nfeconsulta/NfeConsulta.asmx',
         WS_NFE_SITUACAO: 'ws/nfestatusservico/NfeStatusServico.asmx'
-},
+    },
     NFE_AMBIENTE_HOMOLOGACAO: {
         'servidor': 'homologacao.nfe.sefazvirtual.rs.gov.br',
         WS_NFE_ENVIO_LOTE: 'ws/nferecepcao/NfeRecepcao.asmx',
@@ -103,7 +103,7 @@ SVRS = {
         WS_NFE_INUTILIZACAO: 'ws/nfeinutilizacao/NfeInutilizacao.asmx',
         WS_NFE_CONSULTA: 'ws/nfeconsulta/NfeConsulta.asmx',
         WS_NFE_SITUACAO: 'ws/nfestatusservico/NfeStatusServico.asmx'
-}
+    }
 }
 
 SVAN = {
@@ -115,7 +115,7 @@ SVAN = {
         WS_NFE_INUTILIZACAO: 'NFeInutilizacao/NFeInutilizacao.asmx',
         WS_NFE_CONSULTA: 'nfeconsulta/nfeconsulta.asmx',
         WS_NFE_SITUACAO: 'NFeStatusServico/NFeStatusServico.asmx'
-},
+    },
     NFE_AMBIENTE_HOMOLOGACAO: {
         'servidor': 'hom.nfe.fazenda.gov.br',
         WS_NFE_ENVIO_LOTE: 'NfeRecepcao/NfeRecepcao.asmx',
@@ -124,7 +124,7 @@ SVAN = {
         WS_NFE_INUTILIZACAO: 'NFeInutilizacao/NFeInutilizacao.asmx',
         WS_NFE_CONSULTA: 'nfeconsulta/nfeconsulta.asmx',
         WS_NFE_SITUACAO: 'NFeStatusServico/NFeStatusServico.asmx'
-}
+    }
 }
 
 SCAN = {
@@ -136,7 +136,7 @@ SCAN = {
         WS_NFE_INUTILIZACAO: 'NfeInutilizacao/NfeInutilizacao.asmx',
         WS_NFE_CONSULTA: 'NfeConsulta/NfeConsulta.asmx',
         WS_NFE_SITUACAO: 'NfeStatusServico/NfeStatusServico.asmx'
-},
+    },
     NFE_AMBIENTE_HOMOLOGACAO: {
         'servidor': 'hom.nfe.fazenda.gov.br',
         WS_NFE_ENVIO_LOTE: 'SCAN/NfeRecepcao/NfeRecepcao.asmx',
@@ -145,7 +145,7 @@ SCAN = {
         WS_NFE_INUTILIZACAO: 'SCAN/NfeInutilizacao/NfeInutilizacao.asmx',
         WS_NFE_CONSULTA: 'SCAN/NfeConsulta/NfeConsulta.asmx',
         WS_NFE_SITUACAO: 'SCAN/NfeStatusServico/NfeStatusServico.asmx'
-}
+    }
 }
 
 DPEC = {
@@ -170,7 +170,7 @@ UFAM = {
         WS_NFE_INUTILIZACAO: 'ws/services/NfeInutilizacao',
         WS_NFE_CONSULTA: 'ws/services/NfeConsulta',
         WS_NFE_SITUACAO: 'ws/services/NfeStatusServico'
-},
+    },
     NFE_AMBIENTE_HOMOLOGACAO: {
         'servidor': 'homnfe.sefaz.am.gov.br',
         WS_NFE_ENVIO_LOTE: 'ws/services/NfeRecepcao',
@@ -179,7 +179,7 @@ UFAM = {
         WS_NFE_INUTILIZACAO: 'ws/services/NfeInutilizacao',
         WS_NFE_CONSULTA: 'ws/services/NfeConsulta',
         WS_NFE_SITUACAO: 'ws/services/NfeStatusServico'
-}
+    }
 }
 
 UFBA = {
@@ -192,7 +192,7 @@ UFBA = {
         WS_NFE_CONSULTA: 'webservices/nfe/NfeConsulta.asmx',
         WS_NFE_SITUACAO: 'webservices/nfe/NfeStatusServico.asmx',
         WS_NFE_CONSULTA_CADASTRO: 'webservices/nfe/NfeConsulta.asmx'
-},
+    },
     NFE_AMBIENTE_HOMOLOGACAO: {
         'servidor': 'hnfe.sefaz.ba.gov.br',
         WS_NFE_ENVIO_LOTE: 'webservices/nfe/NfeRecepcao.asmx',
@@ -201,7 +201,7 @@ UFBA = {
         WS_NFE_INUTILIZACAO: 'webservices/nfe/NfeInutilizacao.asmx',
         WS_NFE_CONSULTA: 'webservices/nfe/NfeConsulta.asmx',
         WS_NFE_SITUACAO: 'webservices/nfe/NfeStatusServico.asmx'
-}
+    }
 }
 
 UFCE = {
@@ -214,7 +214,7 @@ UFCE = {
         WS_NFE_CONSULTA: 'nfe/services/NfeConsulta',
         WS_NFE_SITUACAO: 'nfe/services/NfeStatusServico',
         WS_NFE_CONSULTA_CADASTRO: 'nfe/services/CadConsultaCadastro'
-},
+    },
     NFE_AMBIENTE_HOMOLOGACAO: {
         'servidor': 'nfeh.sefaz.ce.gov.br',
         WS_NFE_ENVIO_LOTE: 'nfe/services/NfeRecepcao',
@@ -224,7 +224,7 @@ UFCE = {
         WS_NFE_CONSULTA: 'nfe/services/NfeConsulta',
         WS_NFE_SITUACAO: 'nfe/services/NfeStatusServico',
         WS_NFE_CONSULTA_CADASTRO: 'nfe/services/CadConsultaCadastro'
-}
+    }
 }
 
 # UFDF = {
@@ -260,7 +260,7 @@ UFGO = {
         WS_NFE_CONSULTA: 'nfe/services/NfeConsulta',
         WS_NFE_SITUACAO: 'nfe/services/NfeStatusServico',
         WS_NFE_CONSULTA_CADASTRO: 'nfe/services/CadConsultaCadastro'
-},
+    },
     NFE_AMBIENTE_HOMOLOGACAO: {
         'servidor': 'homolog.sefaz.go.gov.br',
         WS_NFE_ENVIO_LOTE: 'nfe/services/NfeRecepcao',
@@ -270,7 +270,7 @@ UFGO = {
         WS_NFE_CONSULTA: 'nfe/services/NfeConsulta',
         WS_NFE_SITUACAO: 'nfe/services/NfeStatusServico',
         WS_NFE_CONSULTA_CADASTRO: 'nfe/services/CadConsultaCadastro'
-}
+    }
 }
 
 UFMT = {
@@ -283,7 +283,7 @@ UFMT = {
         WS_NFE_CONSULTA: 'nfews/NfeConsulta',
         WS_NFE_SITUACAO: 'nfews/NfeStatusServico',
         WS_NFE_CONSULTA_CADASTRO: 'nfews/CadConsultaCadastro'
-},
+    },
     NFE_AMBIENTE_HOMOLOGACAO: {
         'servidor': 'homologacao.sefaz.mt.gov.br',
         WS_NFE_ENVIO_LOTE: 'nfews/NfeRecepcao',
@@ -293,7 +293,7 @@ UFMT = {
         WS_NFE_CONSULTA: 'nfews/NfeConsulta',
         WS_NFE_SITUACAO: 'nfews/NfeStatusServico',
         WS_NFE_CONSULTA_CADASTRO: 'nfews/CadConsultaCadastro'
-}
+    }
 }
 
 UFMS = {
@@ -305,7 +305,7 @@ UFMS = {
         WS_NFE_INUTILIZACAO: 'producao/services/NfeInutilizacao',
         WS_NFE_CONSULTA: 'producao/services/NfeConsulta',
         WS_NFE_SITUACAO: 'producao/services/NfeStatusServico'
-},
+    },
     NFE_AMBIENTE_HOMOLOGACAO: {
         'servidor': 'homologacao.nfe.ms.gov.br',
         WS_NFE_ENVIO_LOTE: 'homologacao/services/NfeRecepcao',
@@ -314,7 +314,7 @@ UFMS = {
         WS_NFE_INUTILIZACAO: 'homologacao/services/NfeInutilizacao',
         WS_NFE_CONSULTA: 'homologacao/services/NfeConsulta',
         WS_NFE_SITUACAO: 'homologacao/services/NfeStatusServico'
-}
+    }
 }
 
 UFMG = {
@@ -327,7 +327,7 @@ UFMG = {
         WS_NFE_CONSULTA: 'nfe/services/NfeConsulta',
         WS_NFE_SITUACAO: 'nfe/services/NfeStatusServico',
         WS_NFE_CONSULTA_CADASTRO: 'nfe/services/CadConsultaCadastro'
-},
+    },
     NFE_AMBIENTE_HOMOLOGACAO: {
         'servidor': 'hnfe.fazenda.mg.gov.br',
         WS_NFE_ENVIO_LOTE: 'nfe/services/NfeRecepcao',
@@ -337,7 +337,7 @@ UFMG = {
         WS_NFE_CONSULTA: 'nfe/services/NfeConsulta',
         WS_NFE_SITUACAO: 'nfe/services/NfeStatusServico',
         WS_NFE_CONSULTA_CADASTRO: 'nfe/services/CadConsultaCadastro'
-}
+    }
 }
 
 UFPR = {
@@ -349,7 +349,7 @@ UFPR = {
         WS_NFE_INUTILIZACAO: 'NFENWebServices/services/nfeInutilizacaoNF',
         WS_NFE_CONSULTA: 'NFENWebServices/services/nfeConsultaNF',
         WS_NFE_SITUACAO: 'NFENWebServices/services/nfeStatusServicoNF'
-},
+    },
     NFE_AMBIENTE_HOMOLOGACAO: {
         'servidor': 'homologacao.nfe.fazenda.pr.gov.br',
         WS_NFE_ENVIO_LOTE: 'NFENWebServices/services/nfeRecepcao',
@@ -358,7 +358,7 @@ UFPR = {
         WS_NFE_INUTILIZACAO: 'NFENWebServices/services/nfeInutilizacaoNF',
         WS_NFE_CONSULTA: 'NFENWebServices/services/nfeConsultaNF',
         WS_NFE_SITUACAO: 'NFENWebServices/services/nfeStatusServicoNF'
-}
+    }
 }
 
 UFPE = {
@@ -371,7 +371,7 @@ UFPE = {
         WS_NFE_CONSULTA: 'nfe-service/services/NfeConsulta',
         WS_NFE_SITUACAO: 'nfe-service/services/NfeStatusServico',
         WS_NFE_CONSULTA_CADASTRO: 'nfe-service/services/CadConsultaCadastro'
-},
+    },
     NFE_AMBIENTE_HOMOLOGACAO: {
         'servidor': 'nfehomolog.sefaz.pe.gov.br',
         WS_NFE_ENVIO_LOTE: 'nfe-service/services/NfeRecepcao',
@@ -439,7 +439,7 @@ UFSP = {
         WS_NFE_CONSULTA: 'nfeweb/services/nfeconsulta.asmx',
         WS_NFE_SITUACAO: 'nfeweb/services/nfestatusservico.asmx',
         WS_NFE_CONSULTA_CADASTRO: 'nfeweb/services/cadconsultacadastro.asmx'
-},
+    },
     NFE_AMBIENTE_HOMOLOGACAO: {
         'servidor': 'homologacao.nfe.fazenda.sp.gov.br',
         WS_NFE_ENVIO_LOTE: 'nfeweb/services/nferecepcao.asmx',
@@ -449,7 +449,7 @@ UFSP = {
         WS_NFE_CONSULTA: 'nfeweb/services/nfeconsulta.asmx',
         WS_NFE_SITUACAO: 'nfeweb/services/nfestatusservico.asmx',
         WS_NFE_CONSULTA_CADASTRO: 'nfeWEB/services/cadconsultacadastro.asmx'
-}
+    }
 }
 
 
