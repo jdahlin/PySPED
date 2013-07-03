@@ -1530,7 +1530,7 @@ class Compl(XMLNFe):
 
     def get_xml(self):
         if not (self.xCaracAd.valor or self.xCaracSer.valor or self.xEmi.valor or self.origCalc.valor or self.destCalc.valor or
-            self.xObs.valor or len(self.ObsCont) or len(self.ObsFisco) or self.fluxo is not None or self.Entrega is not None):
+                self.xObs.valor or len(self.ObsCont) or len(self.ObsFisco) or self.fluxo is not None or self.Entrega is not None):
             return ''
 
         xml = XMLNFe.get_xml(self)
