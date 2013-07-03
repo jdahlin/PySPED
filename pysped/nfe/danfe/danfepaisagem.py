@@ -82,7 +82,7 @@ class DANFEPaisagem(Report):
         super(DANFEPaisagem, self).__init__(*args, **kargs)
 
     def on_new_page(self, generator):
-        if generator._current_page_number <> 1:
+        if generator._current_page_number != 1:
             self.band_page_footer = None
 
             self.band_page_header = RemetentePaisagem()
