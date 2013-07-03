@@ -1932,7 +1932,7 @@ class CTe(XMLNFe):
     def _calcula_dv(self, valor):
         soma = 0
         m = 2
-        for i in range(len(valor)-1, -1, -1):
+        for i in range(len(valor) - 1, -1, -1):
             c = valor[i]
             soma += int(c) * m
             m += 1
@@ -2160,9 +2160,9 @@ class CTe(XMLNFe):
         # Assume 8 dígitos para o número, 2 para o DD, e o restante é o DDI
         #
         else:
-            numero = fone[len(fone)-8:]
-            ddd = fone[len(fone)-10:len(fone)-8]
-            ddi = fone[:len(fone)-10]
+            numero = fone[len(fone) - 8:]
+            ddd = fone[len(fone) - 10:len(fone) - 8]
+            ddi = fone[:len(fone) - 10]
             formatado = '+' + ddi + ' (' + ddd + ') ' + numero[:-4] + '-' + numero[-4:]
 
         return formatado

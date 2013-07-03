@@ -70,12 +70,12 @@ if __name__ == '__main__':
     #
     # arquivo 'certificado_caminho.txt' deve conter o caminho para o 'certificado.pfx'
     #
-    p.certificado.arquivo = open(FILE_DIR+'/certificado_caminho.txt').read().strip()
+    p.certificado.arquivo = open(FILE_DIR + '/certificado_caminho.txt').read().strip()
 
     #
     # arquivo 'certificado_senha.txt' deve conter a senha para o 'certificado.pfx'
     #
-    p.certificado.senha   = open(FILE_DIR+'/certificado_senha.txt').read().strip()
+    p.certificado.senha   = open(FILE_DIR + '/certificado_senha.txt').read().strip()
 
     p.salva_arquivos      = True
     p.contingencia_SCAN   = False

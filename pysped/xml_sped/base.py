@@ -143,7 +143,7 @@ class NohXML(object):
         nohs = self._le_nohs(tag, ns)
 
         if (nohs is not None) and (len(nohs) >= ocorrencia):
-            return nohs[ocorrencia-1]
+            return nohs[ocorrencia - 1]
         else:
             return None
 

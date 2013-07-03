@@ -944,7 +944,7 @@ class ProcessadorNFe(object):
             arq.write(envio.xml.encode('utf-8'))
             arq.close()
 
-        self._conectar_servico(WS_NFE_RECEPCAO_EVENTO, envio, resposta, somente_ambiente_nacional=tipo_evento=='confrec')
+        self._conectar_servico(WS_NFE_RECEPCAO_EVENTO, envio, resposta, somente_ambiente_nacional=tipo_evento == 'confrec')
 
         # resposta.validar()
         if self.salvar_arquivos:

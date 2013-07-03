@@ -98,7 +98,7 @@ class Certificado(object):
 
         linhas_certificado = ['-----BEGIN CERTIFICATE-----\n']
         for i in range(0, len(cert_txt), 64):
-            linhas_certificado.append(cert_txt[i:i+64] + '\n')
+            linhas_certificado.append(cert_txt[i:i + 64] + '\n')
         linhas_certificado.append('-----END CERTIFICATE-----\n')
 
         self.certificado = ''.join(linhas_certificado)
@@ -403,7 +403,7 @@ class Certificado(object):
         xpath = doc_xml.xpathNewContext()
         xpath.xpathRegisterNs('sig', NAMESPACE_SIG)
         certificados = xpath.xpathEval('//sig:X509Data/sig:X509Certificate')
-        for i in range(len(certificados)-1):
+        for i in range(len(certificados) - 1):
             certificados[i].unlinkNode()
             certificados[i].freeNode()
 
