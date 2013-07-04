@@ -1,8 +1,16 @@
 # -*- coding: utf-8 -*-
+from __future__ import division, print_function, unicode_literals
+import difflib
+import errno
 import fnmatch
 import os
+import re
+import xml.dom.minidom
 
 import pysped
+
+xml_root = os.path.abspath(
+    os.path.join(os.path.dirname(pysped.__file__), '..', 'tests', 'xml'))
 
 
 def list_recursively(directory, pattern):
@@ -53,7 +61,7 @@ class SourceTest(object):
             testname = testname[:-3].replace('/', '_')
             name = 'test_%s' % (testname, )
             func = lambda self, r=root, f=filename: self.check_filename(r, f)
-            func.__name__ = name
+            func.__name__ = str(name)
             setattr(cls, name, func)
 
     def check_filename(self, root, filename):
@@ -81,3 +89,47 @@ def indent(elem, level=0):
     else:
         if level and (not elem.tail or not elem.tail.strip()):
             elem.tail = i
+
+
+def prettyxml(xmls):
+    doc = xml.dom.minidom.parseString(xmls.encode("utf-8"))
+    xmls = doc.toprettyxml(indent='  ')
+
+    text_re = re.compile('>\n\s+([^<>\s].*?)\n\s+</', re.DOTALL)
+    xmls = text_re.sub('>\g<1></', xmls)
+    return xmls
+
+
+def _diff(orig, new, short):
+    lines = difflib.unified_diff(orig, new)
+    if not lines:
+        return ''
+
+    items = []
+    for line in lines:
+        if type(line) is str:
+            line = unicode(line, 'utf-8')
+        item = '%s: %r\n' % (short, line)
+        items.append(item)
+    return "".join(items)
+
+
+def validar_xml(xml, prefix):
+    pretty = prettyxml(xml)
+    actual = [line + "\n" for line in pretty.split("\n")]
+
+    filename = prefix + ".xml"
+    expected_filename = os.path.join(xml_root, filename)
+    try:
+        expected = open(expected_filename).readlines()
+    except IOError, e:
+        if e.errno != errno.ENOENT:
+            raise
+        data = "".join(actual)
+        open(expected_filename, "w").write(data.encode('utf-8'))
+        return
+
+    expected = [unicode(line, 'utf-8') for line in expected]
+    error = _diff(expected, actual, filename)
+    if error:
+        raise AssertionError(error)
